@@ -77,6 +77,7 @@ toc: true
 
 ![](http://oljkaeely.bkt.clouddn.com/static/image/world-is-tender/sakura.jpg) 
 >2017.4 东京 目黑川
+
 那一次车祸令我感悟很多，从姐姐家高崎一路哭到上野，然后一个人昏昏沉沉的睡一下午来缓和自己的内心。 然后我就这样到达了东京，去看了目黑川上飘落的樱花。关于富士山，是很多年前一句“谁能凭爱意要富士山私有”，富士山不能动，但我可以走过来啊。那种略带“我偏要勉强”的不甘。结果就是被认为是付出型选手，忽视对方个人意志。 
 
 ![](http://oljkaeely.bkt.clouddn.com/static/image/world-is-tender/fujisan.jpg) 
