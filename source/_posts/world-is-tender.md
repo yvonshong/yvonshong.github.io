@@ -89,6 +89,7 @@ toc: true
 
 ![](http://oljkaeely.bkt.clouddn.com/static/image/world-is-tender/kurume.jpg) 
 >2017.8 久留米 筑后川花火大会
+
 冬假的时候去了北海道，冷酷仙境与世界尽头，一个人搭雪国列车，苍茫天地，窗外树影快速滑过，去往小樽偶遇的彩虹，去往星野看过的深山，去往函馆全程的海岸线，都是我收藏进内心成为我抵抗世界的温柔记忆。 
 
  ![](http://oljkaeely.bkt.clouddn.com/static/image/world-is-tender/hokaido.jpg)
