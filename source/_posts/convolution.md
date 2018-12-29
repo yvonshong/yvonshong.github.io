@@ -78,7 +78,7 @@ g(x)=∫f(x)f(t-x)dt
 
 多项式乘法：
 
-![](../../static/image/image-processing/多项式乘法.jpg)
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4iv2udbj21aw0ujac1.jpg)
 
 
 多项式a(n1)乘多项式b(n2)
@@ -96,7 +96,7 @@ c(i)=\sum_{k=0}^i a(k)b(i-k),i=0~(n1+n2)
 
 ### 二维离散卷积公式
 
-![](../../static/image/image-processing/二维卷积.jpg)
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4iv43egj20nk09haad.jpg)
 
 
 ### 二维连续卷积公式
@@ -150,7 +150,7 @@ c(i)=\sum_{k=0}^i a(k)b(i-k),i=0~(n1+n2)
 
 ## 为什么要反转？
 
-![](../../static/image/image-processing/反转.jpg)
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4iv5xplj20go0et420.jpg)
 
 卷积的其中一方参与者是冲击响应，它所描述的的曲线方向与时间流逝一致。而卷积的输出等于以前的信号效果累加，这个累加必然从当前时间点逆时间流逝方向进行的。很显然，离当前时间越近，那个输入残留在系统中的回响就越大。
 
@@ -203,4 +203,4 @@ g(x)=∫f(x)(t-x)dt   ----->   g(x)=∫f(x)f(x,t-x)dt
 这一定理对拉普拉斯变换、双边拉普拉斯变换、Z变换、Mellin变换和Hartley变换等各种傅里叶变换的变体同样成立。在调和分析中还可以推广到在局部紧致的阿贝尔群上定义的傅里叶变换。
 利用卷积定理可以简化卷积的运算量。对于长度为n的序列，按照卷积的定义进行计算，需要做2n-1组对位乘法，其计算复杂度为O(n^2)；而利用傅里叶变换将序列变换到频域上后，只需要一组对位乘法，利用傅里叶变换的快速算法之后，总的计算复杂度为O(n*log n)。这一结果可以在快速乘法计算中得到应用。
 
-![](../../static/image/image-processing/卷积定理的证明.jpg)
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4iuyhzdj20p60qdgmq.jpg)

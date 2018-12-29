@@ -43,9 +43,9 @@ free for opensource project
 Github授权，关联相关repo（更新文档的repo）（我都是在[/blog](http://github.com/yvon-shong/blog) ）
 设置项目
 - setting-general
-![setting-general.jpg](../../static/image/hexo-ci/setting-general.jpg)
+![setting-general.jpg](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5hpfrsej20k40i0gm6.jpg)
 - setting-env
-![setting-env.jpg](../../static/image/hexo-ci/setting-env.jpg)
+![setting-env.jpg](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5hpebl2j20ps0cdgm4.jpg)
 3. 配置appveyor.yml到文档repo
 
 需要利用GitHub Access Token，这玩意儿相当于你的git的密钥，[GitHub上生成token的相关官方文档](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)
@@ -125,7 +125,7 @@ build_script:
 这里又回顾了一波git bash命令（通常都用sourcetree的我。。。）
 
 然后终于成功了！！！
-![success](../../static/image/hexo-ci/success.jpg)
+![success](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5hpgj8sj211y0kgmzv.jpg)
 
 至此，接下来只需要深入了解appveyor的自动集成周期等更详细的信息就行了。
 appveyor还可以根据你git更新打的tag来触发！欢迎尝试！

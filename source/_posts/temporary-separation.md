@@ -15,44 +15,44 @@ toc: true
 
 
 
-![](../../static/image/temporary-separation/1.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teq4jxj20hs0dcwew.jpg)                                                         
 
 
 <!-- more -->
 
-![](../../static/image/temporary-separation/2.jpg)                                 
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teu31gj20hs0c174s.jpg)                                 
 
-![](../../static/image/temporary-separation/3.jpg)                                                         
-
-
-![](../../static/image/temporary-separation/4.jpg)                                 
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tetmu2j20ho0db75j.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/5.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tev0i9j20hs0bvwev.jpg)                                 
 
 
-![](../../static/image/temporary-separation/6.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teto06j20hs0bpglv.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/7.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tevvlvj20hs0b2jru.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/8.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tev1ykj20hs0bv74m.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/9.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teg035j20hs0dcaag.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/10.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tegm7lj20hs0bvjrs.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/11.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tegeolj20hs0c3js2.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/12.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teh0stj20hs0bvwf4.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/13.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tei9ijj20hs0bvglz.jpg)                                                         
+
+
+                                         
 
 -------
 
@@ -68,13 +68,13 @@ toc: true
 明年回来拿毕业证的时候再拍
 
 
-![](../../static/image/temporary-separation/14.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teifovj20hs0bujrc.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/15.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teh3qnj20hs0bvaav.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/16.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tegtoaj20hs0cg0tc.jpg)                                                         
 
 
 
@@ -86,57 +86,46 @@ toc: true
 
 还没落实
 
-![](../../static/image/temporary-separation/17.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tei9m6j20hs0qo74r.jpg)                                                         
 
-![](../../static/image/temporary-separation/18.jpg)                                                         
-
-
-![](../../static/image/temporary-separation/19.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teqpd2j20hs0hsmys.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/20.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teiwlnj20hs0cnjrv.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/21.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teixlhj20hs0bzt8w.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/22.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4temukuj20hs0csmxm.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/23.jpg)                                                         
-
-![](../../static/image/temporary-separation/24.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tem9wlj20hs0bvq3p.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/25.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tejammj20hs0bvdgl.jpg)                                                         
+
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tekl34j20hs0bvdg1.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/26.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tejx5pj20hs0bv3yq.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/27.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tel623j20hs0bvt8x.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/28.jpg)                                                         
-
-
-![](../../static/image/temporary-separation/29.jpg)                                                         
-
-![](../../static/image/temporary-separation/30.jpg)                                                         
 
 
 --------
 
 忽而复夏
 
-![](../../static/image/temporary-separation/31.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tesvhcj20hs0qo0tk.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/32.jpg)                                 
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tepwmqj20hs0bvq3c.jpg)                                 
 
 
-
-![](../../static/image/temporary-separation/33.jpg)                                                         
 
 
 -------
@@ -152,14 +141,14 @@ toc: true
 
 于是去报了新生文化季哈哈哈
 
-![](../../static/image/temporary-separation/34.jpg)                                 
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tekhggj20hs0d0mxd.jpg)                                 
 
 
-![](../../static/image/temporary-separation/35.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tekqbuj20hs0bv74i.jpg)                                                         
 
-![](../../static/image/temporary-separation/36.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4temcioj20hs0bv0t1.jpg)                                                         
 
-![](../../static/image/temporary-separation/37.jpg)                                 
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4tetsxnj20hs0bu74x.jpg)                                 
 
 
 
@@ -173,10 +162,10 @@ toc: true
 
 可还是做了很多事情
 
-![](../../static/image/temporary-separation/38.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teqek9j20hs0bvaaq.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/39.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teoc5pj20hs0bvwf9.jpg)                                                         
 
 
 多年前
@@ -196,13 +185,13 @@ toc: true
 每一年都足以难忘
 
 
-![](../../static/image/temporary-separation/40.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teqopfj20hs0bvglx.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/41.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4temzq0j20hs0bvt8j.jpg)                                                         
 
 
-![](../../static/image/temporary-separation/42.jpg)                                                         
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teoa5fj20hs0bv3z8.jpg)                                                         
 
 
 
@@ -212,11 +201,9 @@ toc: true
 
 下一个闷热又潮湿的夏天
 
-![](../../static/image/temporary-separation/43.jpg)                                 
+![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4ten3wdj20hs0bvjrq.jpg)                                 
 
 
-
-![](../../static/image/temporary-separation/44.jpg)                                                         
 
 -------
 
