@@ -97,12 +97,13 @@ toc: true
 
  以及自己的第一个旅拍 vlog ~
 
-<video src='http://oljkaeely.bkt.clouddn.com/static/video/hokaido.mp4' type='video/mp4' controls='controls'  width='100%' height='100%'>
-</video>
+<iframe src="//player.bilibili.com/player.html?aid=31058417&cid=54244680&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 从北海道回来后，九州下了好几次雪，可是我却变得怠惰，开始无感，内心只是：“噢，下雪了“。没有了以前的激动和欢喜（我可是南方人诶）。仔细想了想，不能归咎于曾经沧海难为水。如果去过远方而放弃眼前的日常，那我宁愿未曾去过冷酷仙境，不然怎么温柔对待生活。 
 
 其实也有和伙伴夏天穿浴衣逛京都，冬天穿短袖游台湾。无锡的毕业旅行，上海的夜里游街，玩到精疲力竭的大阪环球影城，在开往关西机场特急JR前的告别，时隔半年在花莲的石砾滩上看火花，在九份围桌夜聊，平溪天灯淡水落日，还有在台北的客居日常。那天从台大回来，路上买了个给阿姨准备的生日蛋糕，一路拎回来，当时居然有一丝在这个城市生活的错觉。这些所有一切，除去故事进行时反反复复的破除羁绊，然后就是强烈的不真实感，真的是大学时代最好的朋友了，以及结束后的落寞。
+
+<iframe src="//player.bilibili.com/player.html?aid=31058518&cid=54244906&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 在今年23岁前，随性去了四国爱媛，松山和伊予，去看了莉香和完治分别的车站，梅津寺站，在松山站看到一张伊予下滩站的照片吸引住，是因为真的太漂亮了，于是第二天前往，才知道原来是青春十八宣传海报名景。 
 

@@ -48,9 +48,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: '喝一杯 java'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: http://oljkaeely.bkt.clouddn.com/alipay.jpg
+alipay: http://ww1.sinaimg.cn/large/6b2f6355ly1fyo438owfuj2083083jsc.jpg
 # 微信二维码图片地址
-weixin: http://oljkaeely.bkt.clouddn.com/weixinpay.jpg
+weixin: http://ww1.sinaimg.cn/large/6b2f6355ly1fyo43wmet4j20gz0gvn07.jpg
 
 # Miscellaneous
 baidu_analytics: ''
