@@ -10,7 +10,7 @@ toc: true
 >一时，我竟不知道如何开头，学着王家卫的语气说，“那一刻，我很暖。”
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/1.jpg)
+![](../../static/image//Socrates-in-Love/1.jpg)
 *12.31 日本京都知恩寺初诣 在等待新年的钟声*
  <!-- more -->
 
@@ -23,15 +23,15 @@ toc: true
 
 是去这个国家最东边的岛屿上看21岁的第一轮日出，开启我一生的黄金时代，时至今日，我仍然希望保留我的那颗少年心，是叫嚣世界的勇气，和对待生活温柔的心。在来霓虹之前讲过了，我也不再赘述。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/2.jpg)
+![](../../static/image//Socrates-in-Love/2.jpg)
 *4.10 想在21岁生日那天在东极岛看日出*
 
 是去三亚为热爱和信仰的东西挥洒汗水和燃烧青春，开始一点点的意识到自己的梦想，要为梦想去发力，有一次道别的时候，Lancer跟我说，“梦想之巅再见。”，现在看着伙伴站上了他曾经说想要站上的舞台，我也要加油。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/3.jpg)    
+![](../../static/image//Socrates-in-Love/3.jpg)    
 *4.27 海南三亚 MSP在进行舞蹈彩排 我在聚光灯下*
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/4.jpg)      
+![](../../static/image//Socrates-in-Love/4.jpg)      
 *4.28 海南三亚微软创新杯总决赛 MSP合影*
 
 是在南京的第三年又去看了樱花，去赏了二月兰。也是年前种下的，潜伏了一个冬天的种子发了芽后，在春天开了花，虽然历经短暂的盛放后枯萎了，我也很感谢她的盛放。不过最近很开心的是，曾经以为被我遗弃，深深怨念着的花，在一轮又一轮的冬天后，还是会绽放的，希望遇见的人能明白，哪怕花瓣再微弱，她也准备了一个冬天。
@@ -41,22 +41,22 @@ toc: true
 
 夏天，很多时间都在和院里的伙伴准备材料，跑手续，拿了早大的offer，曾经如此梦寐以求的霓虹自由行，最后没想到最后以留学的方式成了现实。也很开心一起来的伙伴里，有从大一开始就多少次互相伤害后来变成互相安抚的伙伴，夏天里那次那一夜的暴雨，和Aki在学校里到处找喝醉的伙伴，淋了个湿透的大家，现在想起来也仍是如此迷醉的一夜。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/5.jpg)   
+![](../../static/image//Socrates-in-Love/5.jpg)   
 *7.31 南京 30多度的夏夜 在李文正图书馆前大草坪露营*
 
 也因为要留在南京跑手续的缘故，选择了在南京实习，育儿网，实习前端工程师，虽然感觉实习的三个月里没为老东家做太多贡献，但还是挺感谢我的第一个“我司”的。
 
 去写字楼的夏天，是不同于往常的，办公室里的空调与外卖，和外面街道上炽热的太阳，聒噪的蝉栖息在盛夏的梧桐树上，绿荫的街道，突如其来的暴雨，每日早餐的包子豆浆，当然也不能忘了我吃了将近半年的螺蛳粉。也托研究生学长的福住在了四牌楼（这里非常感谢炎帝），也开始有了对未来的想象，我会变成一个什么样的大人呢，由于我善良开朗又自在，我应该会更帅吧（。），以后工作的时候我想要住在公司旁，不用挤漫长的地铁，好好装扮我的小家，不会加太多班，下班后做一些自己感兴趣的事情。三年后，五年后，我们会变成什么样子呢？
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/6.jpg)   
+![](../../static/image//Socrates-in-Love/6.jpg)   
 *6.13-8.29 从写字楼里看到的夏天的南京*
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/7.jpg)     
+![](../../static/image//Socrates-in-Love/7.jpg)     
 *8.24 南京 炎帝骑自行车接我下班 一起去吃望湖璇宫旋转餐厅 路上遇见的紫峰大厦和夕阳*
 
 然后在这座城市呆过了又一个完整的，闷热的，潮湿的，聒噪的夏天.上班的闲暇之余也有与友人相约，去上海找Annie和Mike玩，去找zn和陌陌做黑暗料理，也有多次约饭票去玩期待了很久的事情，入夜后的紫金山，承包了工作日里的溜冰场，在天空树上看见「我♥南京」。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/8.jpg)    
+![](../../static/image//Socrates-in-Love/8.jpg)    
 *9.18 南京 出国前和饭票约在天空树吃饭 外面的「我♥南京」*
 
 
@@ -64,28 +64,28 @@ toc: true
 
 秋天大概是关于离别和收获的，在夏天的末尾，和三火约在学校里拍了一套纪念写真，在操场的看台上，摄影师把M豆放在我脸上摆造型，巧克力豆慢慢融化，留下了彩色的残渍。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/9.jpg)    
+![](../../static/image//Socrates-in-Love/9.jpg)    
 *8.13 南京东南大学 天气太热了 只能在室内拍纪念写真* 
 
 然后是不断的和伙伴告别，也短暂的回了家，缺席了第四年的同乡会，很久没有在家过的中秋，就像是我前一阵子骑车去学校，看到路边金黄色的银杏树落叶，才想起很多年没有看过成都的银杏了。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/10.jpg)     
+![](../../static/image//Socrates-in-Love/10.jpg)     
 *8.26 南京东南大学焦廷标馆外 和川群的伙伴一起在新生入学时摆摊*
 *这一年 和川群仍然有很多故事*
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/11.jpg)   
+![](../../static/image//Socrates-in-Love/11.jpg)   
 *6.19 南京 大一学团联的伙伴，学长学姐们要毕业了*
 
 
 然后我开始启程，又去往另一个异国他乡，走上了自己选择的路。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/12.jpg)    
+![](../../static/image//Socrates-in-Love/12.jpg)    
 *9.20 上海浦东机场 飞机起飞前 计软伙伴的合影*
 
 曾经有个问题是，什么才是真正的成熟？撇去关于感情和世故，能为自己做决定，也能为自己的决定负责，这大概就也能算成熟了吧。其实我也未曾后悔过来到南京，现在自然也是不会后悔，因为，我相信眼界的力量。十六岁的时候，说想要哆啦A梦里的道具，未来日记和任意门，想要的东西和想去的地方，瞬间就可以。现在，未来依靠自己的双手去谱写，走路去旅行，要去看更广大的世界，一直没有变过。
  
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/13.jpg)    
+![](../../static/image//Socrates-in-Love/13.jpg)    
 *9.24 日本福冈北九州 入学式的正装*
 
 
@@ -93,20 +93,20 @@ toc: true
     
 后来我开始慢慢习惯了离开南京的日子，人生大概是个不断跳出舒适圈，不断甩下包袱，然后才能不断向前的过程。开始习惯了住在离海10公里，偶尔心情不好便能去看海，每天自己做饭，上课，骑车。冬假一个人去了关西，大阪奈良和京都，在语言不熟的国度，一个人旅行会孤独么？我大概真的很喜欢现在自己这样的状态，说起来可能是自私，我可以就只照顾自己的心情，旅途中随心所欲，遇见有趣的人可以搭讪，而也不用花太多的精力去和他人相处。其实我能享受一个人的过法，也会去珍惜和伙伴一起的生活。所以我深刻的记得，有一次我和饭票约出去玩，一天下来走了很远，她很累了。晚上从颐和书馆走回鼓楼地铁站，一路我俩都很安静，路过紫峰大厦，我问她，觉得两个人不说话会尴尬么？所幸的是，我觉得我好像遇见了很好的partner。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/14.jpg)    
+![](../../static/image//Socrates-in-Love/14.jpg)    
 *7.27 闷热的潮湿的夏天 和饭票走在入夜后的紫金山上玩*
 
 日本的冬天和南京大概是不一样的，去年冬天还是考试周，和川群的伙伴约图书馆，考试前夕连夜进城去看下雪的南京，炸鸡配啤酒。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/15.jpg)     
+![](../../static/image//Socrates-in-Love/15.jpg)     
 *1.22 南京 最后一年短时间内下了两场雪 回家前一天的凌晨在学校里拍照*
  
 今年呢，跨年还是像去年在紫金山顶时一样冷，不过会有了不一样的期待。不过去年的孔明灯，承载着不一样的愿望和不一样的心事，在回忆里也开始变得很美。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/16.jpg)     
+![](../../static/image//Socrates-in-Love/16.jpg)     
 *1.1 南京紫金山 等待新年第一轮日出*
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/17.jpg)                    
+![](../../static/image//Socrates-in-Love/17.jpg)                    
 *12.31 日本京都音羽山 最后一轮日落*
  
 2016年就这样再见了，当我试图去叩问自己，这一年，我有什么遗憾么，下一年，我有什么希望么？思来想去，居然是觉得，没有，我接纳了发生的所有事实。
@@ -143,4 +143,4 @@ toc: true
 >「おめでとう」「恭喜你呀」
 >Take care of yourself.
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Socrates-in-Love/18.jpg)    
+![](../../static/image//Socrates-in-Love/18.jpg)    

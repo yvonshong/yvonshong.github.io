@@ -29,7 +29,7 @@ toc: true
 
 匹配场反演
 
-![mfp](http://oljkaeely.bkt.clouddn.com/static/image/mfp/mfp.png)
+![mfp](../../static/image//mfp/mfp.png)
 
 但这三者都有不确定性和随机性 必须利用信号处理方法进行参数估计
 

@@ -18,10 +18,8 @@ toc: true
 海南炎热的天，为信仰燃烧青春的我们，分组跟进参赛选手，拍摄比赛和大会素材，在网络上进行写稿播报，甚至通宵剪辑视频。
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/chinafinal.jpg)
-*微软创新杯中国区总决赛开幕*
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/chinafinal.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/chinafinal.jpg)
 *来自全国各地的 MSP*
 
 
@@ -34,7 +32,7 @@ toc: true
 
 最终来自中国的由东北大学、北京师范大学、UC Berkeley 联合组队完成的 BoneyCare 项目从众多参赛项目中脱颖而出，获得组委会特设的 Ability Award 奖项。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/worldfinal2.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/worldfinal2.jpg)
 
 *创新杯决赛现场的中国国旗*
 
@@ -43,7 +41,7 @@ toc: true
 BoneyCare 是一款基于云端语音识别技术和波形分析技术的口吃辅助治疗 App，结合口吃治疗的传统模式进行 “朗读训练” ，通过提供文章供用户朗读，将语音传至云端并进行分析，同时反馈给用户个性化的评价和指导意见。
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/worldfinal1.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/worldfinal1.jpg)
 *BoneyCare 团队*
 
 
@@ -54,7 +52,7 @@ BoneyCare 是一款基于云端语音识别技术和波形分析技术的口吃�
 
 如今又是新的一年了，而我们又在为2017年的微软创新杯积蓄着力量，开始了新一轮了校园宣传，不同于往年，我们开创了式新的形，借助B站直播 ImageTour 主题讲座，用弹幕来进行互动。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/show1.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/show1.jpg)
 *Imagine Tour 主题讲座宣传海报*
 
 
@@ -70,7 +68,7 @@ BoneyCare 是一款基于云端语音识别技术和波形分析技术的口吃�
 MSP 其实不仅仅是一个围绕着创新杯而展开的组织，记得在中国区总决赛的时候，我们要为最后一天的晚会进行排舞，在夜晚的楼下，在卫生间对着镜子，练习，编排动作，最后在晚会前教会他人，或许，这对我们来说也是一种成长吧。
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/chinafinal3.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/chinafinal3.jpg)
 *来自深圳万科梅沙书院的高中生MSP与来自南京东南大学的MSP在台上领舞*
 
 
@@ -89,7 +87,7 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/connect.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/connect.jpg)
 *根据反馈而制成活动照片墙，覆盖近20所高校*
 
 
@@ -101,25 +99,25 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 我们逐渐进步，在更大的范围内推广我们的活动。
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/hoc1.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/hoc1.jpg)
 *电子科技大学*
 
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/hoc2.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/hoc2.jpg)
 *河北建筑工程学院*
 
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/hoc3.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/hoc3.jpg)
 *福建警察学院*
 
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/hoc4.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/hoc4.jpg)
 *海南大学*
 
 
@@ -132,14 +130,14 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 于是，我们开始走向更广大的舞台，我们会举办更大的会议；
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/recruitment1.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/recruitment1.jpg)
 *MSP Recruitment 大连理工大学*
 
 
 
  我们召集更多的人，我们走向户外。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/ic.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/ic.jpg)
 *MSP Recruitment 大连理工大学*
 
 
@@ -148,53 +146,53 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/ignite1.jpg )
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/ignite1.jpg )
 *Microsoft Ignite China 微软技术大会开幕*
 
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/ignite2.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/ignite2.jpg)
 *微软技术大会期间相约在一起的 MSP*
 
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/ignite3.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/ignite3.jpg)
 *微软技术大会分会场*
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/ignite4.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/ignite4.jpg)
 *微软技术大会·来自全国各地的 MSP*
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/centerone1.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/centerone1.jpg)
 *MSP参观微软大楼的 Center One*
 
 
 
 甚至，我们开始走出国门，我们借助网络，和派去西雅图的伙伴，联络起其他国家的 MSP。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/worldfinal3.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/worldfinal3.jpg)
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/worldfinal6.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/worldfinal6.jpg)
 
 *7月 World Final & MSP Global Summit*
 
 
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/mvp2.jpg)
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/mvp1.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/mvp2.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/mvp1.jpg)
 *11月 MSP in MVP Summit*
 
 
 也正是在 World Final 和 MSP Summit 的两次西雅图之行中，我们参与了原先亚太地区 MSP 兴起的 msp-times 项目，开始逐渐面向范围更大更广阔的世界。
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Imagine-Tour-of-MSPChina-in-2016/msptimes.jpg)
+![](../../static/image//Imagine-Tour-of-MSPChina-in-2016/msptimes.jpg)
 
 *MSP Times网站首页*
 

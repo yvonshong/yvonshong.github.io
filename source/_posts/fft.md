@@ -20,7 +20,7 @@ toc: true
 
 傅里叶变换示意图
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/image-processing/FFT.gif)
+![](../../static/image//image-processing/FFT.gif)
 
 
 
@@ -29,12 +29,12 @@ toc: true
 
 时域-相位
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/image-processing/频谱图.jpg)
+![](../../static/image//image-processing/频谱图.jpg)
 
 
 时域-频域-相位
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/image-processing/fft3.png)
+![](../../static/image//image-processing/fft3.png)
 
 
 
@@ -82,7 +82,7 @@ toc: true
  
  ### 傅里叶变换的种类与之间的关系
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/image-processing/Fourier-Relation.png)
+![](../../static/image//image-processing/Fourier-Relation.png)
 
 
 
@@ -185,7 +185,7 @@ subplot(2,2,4)
 
 ```
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/image-processing/spectrum.png)
+![](../../static/image//image-processing/spectrum.png)
 
 
 
@@ -206,7 +206,7 @@ subplot(2,2,4)
 而非吉布斯现象。
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/image-processing/error.png)
+![](../../static/image//image-processing/error.png)
 
 FFT在数学上是完全可逆的。
 

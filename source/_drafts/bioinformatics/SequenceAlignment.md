@@ -57,7 +57,7 @@ function Match(m,n)
 }
 ```
 Its output result:
-![Result](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/result.jpg)
+![Result](../../static/image//bioinformatics/result.jpg)
 
 So the best match sequence is
 
@@ -81,27 +81,27 @@ or
 
 *Set the word size to 2 (“word size” is basically the same as “window”).  Using a word size of  2, the algorithm will scan a window of 2 amino acids and put one dot in the matrix when the two sequences have identical amino acids.  Dottup has no threshold, so it is simpler than Dotmatcher.*
 
-![dottup](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dottup.jpg)
+![dottup](../../static/image//bioinformatics/dottup.jpg)
 
-![dottup_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dottup_graph.png)
+![dottup_graph](../../static/image//bioinformatics/dottup_graph.png)
 
 ## [Dotmatcher](http://mobyle.pasteur.fr/cgi-bin/portal.py?#forms::dotmatcher)
 
 *Set the window to 10 and threshold to 23 in order to filter out the “noise.”*
 
-![dotmatcher](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dotmatcher.jpg)
+![dotmatcher](../../static/image//bioinformatics/dotmatcher.jpg)
 
-![dotmatcher_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dotmatcher_graph.png)
+![dotmatcher_graph](../../static/image//bioinformatics/dotmatcher_graph.png)
 
 ## Examine the two dot matrices 
 ### Windows Size
 **Windows=2**
 
-![dottup_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dottup_graph.png)
+![dottup_graph](../../static/image//bioinformatics/dottup_graph.png)
 
 **Windows=10**
 
-![dottup_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dottup_10.png)
+![dottup_graph](../../static/image//bioinformatics/dottup_10.png)
 
 
 **Windows Size** means the length of the piece of the sequence you use to compare to the other sequence. 
@@ -109,19 +109,19 @@ or
 ### Threshold
 **Threshold=0**
 
-![dotmatcher_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dotmatcher_graph.0.png)
+![dotmatcher_graph](../../static/image//bioinformatics/dotmatcher_graph.0.png)
 
 **Threshold=10**
 
-![dotmatcher_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dotmatcher_graph.10.png)
+![dotmatcher_graph](../../static/image//bioinformatics/dotmatcher_graph.10.png)
 
 **Threshold=23**
 
-![dotmatcher_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dotmatcher_graph.png)
+![dotmatcher_graph](../../static/image//bioinformatics/dotmatcher_graph.png)
 
 **Threshold=50**
 
-![dotmatcher_graph](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/dotmatcher_graph.50.png)
+![dotmatcher_graph](../../static/image//bioinformatics/dotmatcher_graph.50.png)
 
 
 

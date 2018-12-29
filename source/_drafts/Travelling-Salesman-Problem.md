@@ -32,27 +32,27 @@ Genetic Algorithm (GA) is a metaheuristic inspired by the process of natural sel
 
 ### Flow chart
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/ga-flow.png)
+![](../../static/image//Travelling-Salesman-Problem/ga-flow.png)
 
 
 ### Result
 1000 iterations
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/ga_result_1000.jpg)
+![](../../static/image//Travelling-Salesman-Problem/ga_result_1000.jpg)
 
 1000000 iterations with the same rate in GA expression.
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/ga_result_1000000.jpg)
+![](../../static/image//Travelling-Salesman-Problem/ga_result_1000000.jpg)
 
 So we can find that the rate of descent is really slow. especially campared with other algorithms.
 
 ### Improvement
 In order to know the parameters' efficiency in the expression, especially in the crossRate and mutationRate, I calculate the crossRate from 0-0.5 stepped by 0.1, mutationRate from 0-0.5 stepped by 0.05, iterations times is 10000, and show the temporary result of each 100 iterations.
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/diagram.jpg)
+![](../../static/image//Travelling-Salesman-Problem/diagram.jpg)
 And the calculate the decreate rate of each state, with considering 10 results, using the method of successive minus.
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/ga_rate_test.jpg)
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/descreate_rate.jpg)
+![](../../static/image//Travelling-Salesman-Problem/ga_rate_test.jpg)
+![](../../static/image//Travelling-Salesman-Problem/descreate_rate.jpg)
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/descreate_rate_2.jpg)
+![](../../static/image//Travelling-Salesman-Problem/descreate_rate_2.jpg)
 
 ### Conclusion
 So we can find that the parameter in expression of GA, if you want to steepest descent to the final result, maybe you can choose crossRate as 0.4 and mutationRate as 0.35.
@@ -94,7 +94,7 @@ $p^k_{ij} = $
 
 ### Result
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/aco_result_1000.jpg)
+![](../../static/image//Travelling-Salesman-Problem/aco_result_1000.jpg)
 
 
 
@@ -131,7 +131,7 @@ while a termination criterion is not met do:
 
 ### Result
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/Travelling-Salesman-Problem/pso_result_1000.jpg)
+![](../../static/image//Travelling-Salesman-Problem/pso_result_1000.jpg)
 
 ### Conclusion
 We can find that the PSO is the slowest descent to the result, and it cost too much time than others.

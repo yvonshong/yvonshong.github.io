@@ -50,7 +50,7 @@ toc: true
 
 在几何语言中，测量到的 $ X $ 向量能在M维空间可视化为一个矢量，比如矩阵 $ A $ 的列向量，即模态向量  $ a(\theta_j)=a_{ij}, i=1,2,...,M $  能被可视化。公式（1）说明 $ X $ 是模态向量的线性组合。 $ F $ 的元素是组合的系数。 $ X $ 向量被限制在矩阵A所表示的空间内，即如果A有两列，则空间范围是在M空间内不超过二维的子空间，X比必须在子空间内。所以 $ a(\theta) $  ，连接所有可能的模态向量，位于M空间却又是非线性的。图（1）可帮助理解它的可视化。比如在对方向角的测向系统中， $ \theta $  将有单个参数组成。在方位/海拔/距离系统中，原 $ \theta $ 角会被  $ \theta,\phi,r $  代替。在任何情况下， $ a(\theta) $ 是在M空间中的像蛇一般（仅有方向角）或者像拧紧的床单一样的向量连接体。实际上，测量连接体 $ a(\theta) $ 或者建立其他的过程反映了阵列的校准。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/graduation/music-1.jpg)
+![](../../static/image//graduation/music-1.jpg)
 
 在图（1）中的几何术语，求解多个入射波阵面的到达方向的问题包含定位连接体 $ a(\theta) $ 和A的范围空间的交点。A的范围空间是从观测到的数据中形成的，而获得范围空间的方法必要时它的维数（入射信号的个数D）满足下式。
 
@@ -120,7 +120,7 @@ toc: true
 
 算法的步骤如下所示（如图2所示）：
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/graduation/music-2.jpg)
+![](../../static/image//graduation/music-2.jpg)
 
 0. 收集数据，表示为 $ S $ 
 1. 计算在 $ S_0 $ 度量下的矩阵 $ S $ 的特征结构
@@ -133,9 +133,9 @@ toc: true
 
 ## 和其他方法比较
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/graduation/music-3.jpg)
+![](../../static/image//graduation/music-3.jpg)
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/graduation/music-4.jpg)
+![](../../static/image//graduation/music-4.jpg)
 
 将MUSIC算法和原始的波束成形（BF），最大似然（ML）和最大熵（ME）进行比较，表达式如下，图见图3和图4
 
@@ -163,9 +163,9 @@ toc: true
 
 在准备此论文时，发现了Gething和Davies的相关工作，不根据联立方程和特殊线性关系，借助特征结构，提出了一部分解决方案。然而也错失了S矩阵的特征结构和向量空间设置的几何意义。Reddi按此方法近期做了更多相关工作，虽然仍局限于均匀并且全向元件的共线的阵列，也没有显式利用整个噪声子空间。Ziegenbein应用相同的基本概念，其特点是将时间序列频谱分析引入到Karhunen-Loeve变换。El-Behery 和 MacPhie 和 Capon 使用最大似然法处理全向元件均匀共线阵列。Pisarenko则处理全是正弦波的情况下的时间序列和地址，即一维噪声子空间。
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/graduation/music-5.jpg)
+![](../../static/image//graduation/music-5.jpg)
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/graduation/music-6.jpg)
+![](../../static/image//graduation/music-6.jpg)
 
 提出的多信号分类法是普适并应用广泛的，该方法是可解释在复数的M空间的几何结构，其中所测量的S矩阵的特征结构起主要作用。MUSIC算法提供了一种通用的信号参数的渐近无偏估计来趋近于真正的Cramer-Rao 界。MUSIC算法将数据模型化为信号源和噪声的总和，而不是白噪声驱动的点源传播函数的卷积（即自回归模型和最大熵）或者假设X向量是零均值高斯函数的最大概率（高斯信号通常使用最大似然法）。在几何意义上，MUSIC算法求的是  $ a(\theta) $  连接体到信号子空间的最小值，并以最大似然最小化为距离部分的加权向量。
 

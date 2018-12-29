@@ -26,9 +26,9 @@ b) identify closely related organisms that also contain this particular DNA sequ
 
 - Wait for the results page to automatically launch.  The wait time depends on the type of search you are doing and how many other researchers are using the NCBI website at the same time you are!
 
-![BLAST1.1.jpg](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/BLAST1.1.jpg) 
-![BLAST1.2.jpg](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/BLAST1.2.jpg) 
-![BLAST1.3.jpg](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/BLAST1.3.jpg) 
+![BLAST1.1.jpg](../../static/image//bioinformatics/BLAST1.1.jpg) 
+![BLAST1.2.jpg](../../static/image//bioinformatics/BLAST1.2.jpg) 
+![BLAST1.3.jpg](../../static/image//bioinformatics/BLAST1.3.jpg) 
 
 1.	Did your fake sequence produce a significant alignment (probably not since a significant hit is below E-10 usually): **Yes**
 
@@ -52,9 +52,9 @@ GTTGCAGCAATGGTAGACTCAACGGTAGCAATAACTGCAGGACCTAGAGGAAAAACAGTAGGGATTAATAAGCCCTATGG
 
 - Select ‘BLAST!’ A new window appears
 
-![BLAST2.1.jpg](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/BLAST2.1.jpg) 
+![BLAST2.1.jpg](../../static/image//bioinformatics/BLAST2.1.jpg) 
 
-![BLAST2.2.jpg](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/BLAST2.2.jpg) 
+![BLAST2.2.jpg](../../static/image//bioinformatics/BLAST2.2.jpg) 
 
 
 1.	How long (query length) is the *Wolbachia* sequence that you used to search the database?: **873 letters**
@@ -89,9 +89,9 @@ GTTGCAGCAATGGTAGACTCAACGGTAGCAATAACTGCAGGACCTAGAGGAAAAACAGTAGGGATTAATAAGCCCTATGG
 
 - As you did before, select ‘BLAST!’ A new window appears
 
-![BLAST3.1.jpg](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/BLAST3.1.jpg) 
+![BLAST3.1.jpg](../../static/image//bioinformatics/BLAST3.1.jpg) 
 
-![BLAST3.2.jpg](http://oljkaeely.bkt.clouddn.com/static/image/bioinformatics/BLAST3.2.jpg) 
+![BLAST3.2.jpg](../../static/image//bioinformatics/BLAST3.2.jpg) 
 
 1.	What is the E-value and Max score of the best hit (the first matching sequence)?
 *Wolbachia endosymbiont of Nasonia longicornis GroEL (groEL) gene, partial cds* with the E-value:6e-63 and the Max score: **250**

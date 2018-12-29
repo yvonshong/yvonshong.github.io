@@ -80,14 +80,14 @@ title('OpenCVFilter')
 
 $G(x)=\frac{1}{\sqrt{2\pi }\sigma} e^{-\frac{x^2}{2\sigma^2}}$
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/gaussian.jpg)
+![](../../static/image//gaussian-spatial-filter/img/gaussian.jpg)
 
 
 ### 2D-Gaussian fucntion
 $G(x,y)=\frac{1}{\sqrt{2\pi }\sigma^2} e^{-\frac{x^2+y^2}{2\sigma^2}}$
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/2d-gaussian.jpg)
+![](../../static/image//gaussian-spatial-filter/img/2d-gaussian.jpg)
 
 
 ### Gaussian kernel
@@ -98,7 +98,7 @@ $H_{i,j}=\frac{1}{\sqrt{2\pi }\sigma^2} e^{-\frac{(i-k-1)^2+(j-k-1)^2}{2\sigma^2
 
 I use 5*5 grid Gaussian kernel with sigma=1.
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/0.jpg)
+![](../../static/image//gaussian-spatial-filter/img/0.jpg)
 
 ### Gaussian function in OpenCV
 function prototype
@@ -117,10 +117,10 @@ After the completion of the Gauss kernel, the Gauss filter is used to perform th
 
 ### Color picture
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/1.0.jpg)
+![](../../static/image//gaussian-spatial-filter/img/1.0.jpg)
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/color.jpg)
+![](../../static/image//gaussian-spatial-filter/img/color.jpg)
 
 
 So you can see that the result in color picture is really bad, maybe because the noise effect in 3 channels is different, so I use the DIY filter to proccess it, and get the bad result.
@@ -128,10 +128,10 @@ So you can see that the result in color picture is really bad, maybe because the
 
 ### Gray picture
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/2.0.jpg)
+![](../../static/image//gaussian-spatial-filter/img/2.0.jpg)
 
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/gray.jpg)
+![](../../static/image//gaussian-spatial-filter/img/gray.jpg)
 
 
 You can see that the effect of DIY filter is similar with the original algorithm in OpenCV. But we should pay more attention on the border in DIY filter, you can see the result on the border in DIY filter is really bad, because I have not haddled with the border in the algorithm.
@@ -144,23 +144,23 @@ So I will try different sigma to proccess the gray picture with Gaussian Noise.
 the Gaussian kernel makes the picture mixed with its neighbor field averagely. It is a total black picture except the border of the picture.
 Its Gaussian kernel module is as follow:
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/sigma10kernel.jpg)
+![](../../static/image//gaussian-spatial-filter/img/sigma10kernel.jpg)
 
 
 - when sigma is 1:
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/0.jpg)
+![](../../static/image//gaussian-spatial-filter/img/0.jpg)
 
 The result has been shown as above. 
 
 - when sigma is 0.01:
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/sigma0.1kernel.jpg)
+![](../../static/image//gaussian-spatial-filter/img/sigma0.1kernel.jpg)
 
 
 You can see the kernel is out of control, with very very big number in the middle.
 
-![](http://oljkaeely.bkt.clouddn.com/static/image/gaussian-spatial-filter/img/sigma0.1diy.jpg)
+![](../../static/image//gaussian-spatial-filter/img/sigma0.1diy.jpg)
 
 
 So you can see that the sigma is of vital importance for Gaussian function. If it is near 1, the effect will be better.
