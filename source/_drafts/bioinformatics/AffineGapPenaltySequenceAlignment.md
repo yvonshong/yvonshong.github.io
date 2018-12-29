@@ -170,12 +170,12 @@ When **gap_opening_penalty = -11** and **gap_extension_penalty = -1;**
 
 Its output:
 
-![](../../static/image//bioinformatics/result1.jpg)
+![](../../static/image/bioinformatics/result1.jpg)
 
 
 Processed by Excel:
 
-![](../../static/image//bioinformatics/result1.5.jpg)
+![](../../static/image/bioinformatics/result1.5.jpg)
 
 
 So its final score for the DNA sequence alignment is **21**.
@@ -189,7 +189,7 @@ When **gap_opening_penalty = -2** and **gap_extension_penalty = -6;**
 
 Its output processed by Excel:
 
-![](../../static/image//bioinformatics/result2.5.jpg)
+![](../../static/image/bioinformatics/result2.5.jpg)
 
 
 
@@ -278,10 +278,10 @@ seq2   LNS
 
 And its output :
 
-![](../../static/image//bioinformatics/result2.7.jpg)
+![](../../static/image/bioinformatics/result2.7.jpg)
 
 
-![](../../static/image//bioinformatics/result2.9.jpg)
+![](../../static/image/bioinformatics/result2.9.jpg)
 
 
 
@@ -304,7 +304,7 @@ So the best-match path is
 The Matrix of BLOSUM62 is copied from [stackoverflow](http://stackoverflow.com/questions/38647306/blosum62-or-45-scoring-in-javascript) :
 
 
-![](../../static/image//bioinformatics/BLOSUM62.jpg)
+![](../../static/image/bioinformatics/BLOSUM62.jpg)
 
 
 
@@ -321,10 +321,10 @@ Of course, you can see the whole source code in my GitHub : [https://github.com/
 
 And its output :
 
-![](../../static/image//bioinformatics/result3.jpg)
+![](../../static/image/bioinformatics/result3.jpg)
 
 
-![](../../static/image//bioinformatics/result3.5.j)
+![](../../static/image/bioinformatics/result3.5.j)
 
 
 So the final score is **0**

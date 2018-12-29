@@ -27,7 +27,7 @@ D(u,v)是(u,v)点距离频率矩形原点的距离
 
 并尝试更改通道半径产生不同的效果。
 
-![](../../static/image//image-processing/理想highpass.jpg)
+![](../../static/image/image-processing/理想highpass.jpg)
 
 
 
@@ -39,7 +39,7 @@ D(u,v)是(u,v)点距离频率矩形原点的距离
 $H(u,v)=1-1/{1+[D(u,v)/D_0]^{2n}$
 
 
-![](../../static/image//image-processing/butterworthhighpass.jpg)
+![](../../static/image/image-processing/butterworthhighpass.jpg)
 
 ##指数滤波器
 
@@ -47,7 +47,7 @@ $H(u,v)=1-exp{[-D(u,v)/D_0]^n }$
 
 ###n是决定衰减率的系数
 
-![](../../static/image//image-processing/指数highpass.jpg)
+![](../../static/image/image-processing/指数highpass.jpg)
 
 
 
@@ -55,7 +55,7 @@ $H(u,v)=1-exp{[-D(u,v)/D_0]^n }$
 
 $H(u,v=1-exp{ -1/2*[D(u,v)/D_0]^2 }$
 
-![](../../static/image//image-processing/高斯highpass.jpg)
+![](../../static/image/image-processing/高斯highpass.jpg)
 
 
 
@@ -71,7 +71,7 @@ $D_1 < D(u,v)$时
 $H(u,v)=1$
 
 
-![](../../static/image//image-processing/梯形highpass.jpg)
+![](../../static/image/image-processing/梯形highpass.jpg)
 
 #总结
 在高斯滤波之后，只剩下大致的轮廓，所以不同函数的效果也更难以区分。
@@ -80,12 +80,12 @@ $H(u,v)=1$
 
 半径较小时：
 
-![](../../static/image//image-processing/小半径.jpg)
+![](../../static/image/image-processing/小半径.jpg)
 
 
 半径较大，三维曲面图更直接时：
 
-![](../../static/image//image-processing/大半径.jpg)
+![](../../static/image/image-processing/大半径.jpg)
 
 
 

@@ -98,7 +98,7 @@ H(u,v)=0
 D(u,v)是(u,v)点距离频率矩形原点的距离
 
 
-![](../../static/image//image-processing/理想滤波器.jpg)
+![](../../static/image/image-processing/理想滤波器.jpg)
 
 ### 如何确定D_0？
 
@@ -119,7 +119,7 @@ D(u,v)是(u,v)点距离频率矩形原点的距离
 
 $H(u,v)=\frac{1}{1+[D(u,v)/D_0]^{2n}}$
 
-![](../../static/image//image-processing/巴特沃斯滤波器.jpg)
+![](../../static/image/image-processing/巴特沃斯滤波器.jpg)
 
 
 
@@ -137,7 +137,7 @@ $H(u,v)=exp{[-D(u,v)/D_0]^n }$
 
 $H(u,v=1-exp{ -1/2*[D(u,v)/D_0]^2 }$
 
-![](../../static/image//image-processing/高斯滤波器.jpg)
+![](../../static/image/image-processing/高斯滤波器.jpg)
 
 
 ###梯形低通滤波器
@@ -195,11 +195,11 @@ S(x,y)---->Log---->DFT---->频域滤波---->IDFT---->Exp---->T(x,y)
 #结果
 ##椒盐噪声
 
-![](../../static/image//image-processing/椒盐噪声.jpg)
+![](../../static/image/image-processing/椒盐噪声.jpg)
 
 ##高斯噪声
 
-![](../../static/image//image-processing/高斯噪声.jpg)
+![](../../static/image/image-processing/高斯噪声.jpg)
 
 
 

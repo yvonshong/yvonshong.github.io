@@ -9,7 +9,7 @@ toc: true
 
 本程序是基于MATLAB的GUI界面的类Office Lens应用，还有很多待提高
 
-![](../../static/image//matlablens/1.png)
+![](../../static/image/matlablens/1.png)
 
 其中主要功能有
 - GUI界面，方便快捷的操作
@@ -30,18 +30,18 @@ toc: true
 - 文件选择功能
 利用uioutfile函数，调用Windows熟悉的文件选择
 
-![](../../static/image//matlablens/2.png)
+![](../../static/image/matlablens/2.png)
 
 - 透视变换
 透视变换时本程序效率最低，大概需要跑2min的功能，利用MIT的算法，从左到右从上到下选择要进行透视变换的四个点，这四个点之间的图像将被处理变换为矩形，其原理是将这四个点的坐标，转换为矩形定点，联立求解四元四次方程组，得到透视变换矩阵，将透视变换矩阵作用到四个点中间的其他坐标进行变换。
 效率最低的地方应该就是解方程的步骤。
  
-![](../../static/image//matlablens/3.png)
+![](../../static/image/matlablens/3.png)
 
 - 图像手动剪切
 利用imcrop函数，本想在透视变换后直接利用顶点坐标进行裁剪，但其实透视变换后，处理后的图像会对变换后没有像素的地方进行黑色填补，导致顶点坐标发生变化。
 
-![](../../static/image//matlablens/4.png)
+![](../../static/image/matlablens/4.png)
 
 - 图像降噪
 对图像进行进行高斯滤波。

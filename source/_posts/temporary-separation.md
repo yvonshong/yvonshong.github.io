@@ -15,44 +15,44 @@ toc: true
 
 
 
-![](../../static/image//temporary-separation/1.jpg)                                                         
+![](../../static/image/temporary-separation/1.jpg)                                                         
 
 
 <!-- more -->
 
-![](../../static/image//temporary-separation/2.jpg)                                 
+![](../../static/image/temporary-separation/2.jpg)                                 
 
-![](../../static/image//temporary-separation/3.jpg)                                                         
-
-
-![](../../static/image//temporary-separation/4.jpg)                                 
+![](../../static/image/temporary-separation/3.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/5.jpg)                                                         
+![](../../static/image/temporary-separation/4.jpg)                                 
 
 
-![](../../static/image//temporary-separation/6.jpg)                                                         
+![](../../static/image/temporary-separation/5.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/7.jpg)                                                         
+![](../../static/image/temporary-separation/6.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/8.jpg)                                                         
+![](../../static/image/temporary-separation/7.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/9.jpg)                                                         
+![](../../static/image/temporary-separation/8.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/10.jpg)                                                         
+![](../../static/image/temporary-separation/9.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/11.jpg)                                                         
+![](../../static/image/temporary-separation/10.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/12.jpg)                                                         
+![](../../static/image/temporary-separation/11.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/13.jpg)                                                         
+![](../../static/image/temporary-separation/12.jpg)                                                         
+
+
+![](../../static/image/temporary-separation/13.jpg)                                                         
 
 -------
 
@@ -68,13 +68,13 @@ toc: true
 明年回来拿毕业证的时候再拍
 
 
-![](../../static/image//temporary-separation/14.jpg)                                                         
+![](../../static/image/temporary-separation/14.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/15.jpg)                                                         
+![](../../static/image/temporary-separation/15.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/16.jpg)                                                         
+![](../../static/image/temporary-separation/16.jpg)                                                         
 
 
 
@@ -86,57 +86,57 @@ toc: true
 
 还没落实
 
-![](../../static/image//temporary-separation/17.jpg)                                                         
+![](../../static/image/temporary-separation/17.jpg)                                                         
 
-![](../../static/image//temporary-separation/18.jpg)                                                         
-
-
-![](../../static/image//temporary-separation/19.jpg)                                                         
+![](../../static/image/temporary-separation/18.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/20.jpg)                                                         
+![](../../static/image/temporary-separation/19.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/21.jpg)                                                         
+![](../../static/image/temporary-separation/20.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/22.jpg)                                                         
+![](../../static/image/temporary-separation/21.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/23.jpg)                                                         
-
-![](../../static/image//temporary-separation/24.jpg)                                                         
+![](../../static/image/temporary-separation/22.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/25.jpg)                                                         
+![](../../static/image/temporary-separation/23.jpg)                                                         
+
+![](../../static/image/temporary-separation/24.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/26.jpg)                                                         
+![](../../static/image/temporary-separation/25.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/27.jpg)                                                         
+![](../../static/image/temporary-separation/26.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/28.jpg)                                                         
+![](../../static/image/temporary-separation/27.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/29.jpg)                                                         
+![](../../static/image/temporary-separation/28.jpg)                                                         
 
-![](../../static/image//temporary-separation/30.jpg)                                                         
+
+![](../../static/image/temporary-separation/29.jpg)                                                         
+
+![](../../static/image/temporary-separation/30.jpg)                                                         
 
 
 --------
 
 忽而复夏
 
-![](../../static/image//temporary-separation/31.jpg)                                                         
+![](../../static/image/temporary-separation/31.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/32.jpg)                                 
+![](../../static/image/temporary-separation/32.jpg)                                 
 
 
 
-![](../../static/image//temporary-separation/33.jpg)                                                         
+![](../../static/image/temporary-separation/33.jpg)                                                         
 
 
 -------
@@ -152,14 +152,14 @@ toc: true
 
 于是去报了新生文化季哈哈哈
 
-![](../../static/image//temporary-separation/34.jpg)                                 
+![](../../static/image/temporary-separation/34.jpg)                                 
 
 
-![](../../static/image//temporary-separation/35.jpg)                                                         
+![](../../static/image/temporary-separation/35.jpg)                                                         
 
-![](../../static/image//temporary-separation/36.jpg)                                                         
+![](../../static/image/temporary-separation/36.jpg)                                                         
 
-![](../../static/image//temporary-separation/37.jpg)                                 
+![](../../static/image/temporary-separation/37.jpg)                                 
 
 
 
@@ -173,10 +173,10 @@ toc: true
 
 可还是做了很多事情
 
-![](../../static/image//temporary-separation/38.jpg)                                                         
+![](../../static/image/temporary-separation/38.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/39.jpg)                                                         
+![](../../static/image/temporary-separation/39.jpg)                                                         
 
 
 多年前
@@ -196,13 +196,13 @@ toc: true
 每一年都足以难忘
 
 
-![](../../static/image//temporary-separation/40.jpg)                                                         
+![](../../static/image/temporary-separation/40.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/41.jpg)                                                         
+![](../../static/image/temporary-separation/41.jpg)                                                         
 
 
-![](../../static/image//temporary-separation/42.jpg)                                                         
+![](../../static/image/temporary-separation/42.jpg)                                                         
 
 
 
@@ -212,11 +212,11 @@ toc: true
 
 下一个闷热又潮湿的夏天
 
-![](../../static/image//temporary-separation/43.jpg)                                 
+![](../../static/image/temporary-separation/43.jpg)                                 
 
 
 
-![](../../static/image//temporary-separation/44.jpg)                                                         
+![](../../static/image/temporary-separation/44.jpg)                                                         
 
 -------
 
