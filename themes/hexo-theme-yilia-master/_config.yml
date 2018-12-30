@@ -58,7 +58,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: http://ww1.sinaimg.cn/mw690/6b2f6355jw8famnzl9bkoj20do0e83zk.jpg
+avatar: http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5ta11dqj226i26jb0m.jpg
 
 #是否开启分享
 share_jia: true
@@ -87,13 +87,14 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '所有文章'
-  friends: "友情链接"
+  friends: "链接"
   aboutme: '关于我'
 
 
-aboutme: 软狗MSP<br>少年心<br>霓虹修士在读
+aboutme: 自动驾驶算法工程师<br>软狗MSP<br>少年心
 
 friends: 
-  yian: https://yian.me/blog/
-  zhengzi: https://zhengzi.me/
+  TuSimple: http://tusimple.ai
+  Waseda University: http://www.waseda.jp
+  Southeast University: http://www.seu.edu.cn
   ippclub: http://ippclub.org/
