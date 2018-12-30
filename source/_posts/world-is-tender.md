@@ -1,6 +1,6 @@
 ---
 title: 充实人生的常态是成长的阵痛
-date: 2016-0６-1２ 1５:00:00
+date: 2016-06-17 15:00:00
 categories: essay
 toc: true
 ---
