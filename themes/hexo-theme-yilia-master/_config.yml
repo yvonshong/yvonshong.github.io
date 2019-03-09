@@ -9,7 +9,8 @@ menu:
 # SubNav
 subnav:
   github: "http://github.com/yvon-shong"
-  weibo: "http://weibo.com/yiwenggogo"
+  # weibo: "http://weibo.com/yiwenggogo"
+  bilibili: https://space.bilibili.com/6083595
   zhihu: "http://zhihu.com/people/yvon-shong"
   #qq: "#"
   #weixin: "#"
@@ -85,16 +86,20 @@ slider:
 # 比如
 #smart_menu:
 #  friends: false
+
 smart_menu:
   innerArchive: '所有文章'
-  friends: "链接"
   aboutme: '关于我'
+  friends: "链接"
 
-
-aboutme: 自动驾驶算法工程师<br>软狗MSP<br>少年心
+aboutme: 自动驾驶从业者🚚 | TuSimple<br>微软大法传教士⛪️ | MSP <br>早稻田修士🌸 | Waseda University<br>vlogger🎥 <br>还有少年热忱🙋🏻‍♂️
 
 friends: 
-  TuSimple: http://tusimple.ai
-  Waseda University: http://www.waseda.jp
-  Southeast University: http://www.seu.edu.cn
-  ippclub: http://ippclub.org/
+  TuSimple | 图森未来: http://tusimple.ai
+  Waseda University | 早稻田大学: http://www.waseda.jp
+  Southeast University | 东南大学: http://www.seu.edu.cn
+  Chengdu No.7 Middle High School | 成都七中: http://www.cdqz.net
+  PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
+  Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
+  ippclub | I++俱乐部: http://ippclub.org/
+  Appveyor: https://ci.appveyor.com/project/shong/yvon-shong-github-io
