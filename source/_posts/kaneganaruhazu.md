@@ -6,9 +6,11 @@ toc: true
 ---
 「帝都冬夜，到家楼下便利店买水，在 seven 的冰柜前抬头看到了 カルピス 饮料，我一下子愣住了。原来两年真的已经过去了，这两年的记忆如盛夏般炽热而漫长，就像仲夏夜的一场梦。」
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=448916487&auto=1&height=66"></iframe>
 
 <!-- more -->
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=448916487&auto=1&height=66"></iframe>
+
 
 梦里有我对日本的所有记忆，关于日本的四季，关于学校和研究室，关于铁道 JR，关于打工和便利店，关于从北到南走过的全境四岛。
 
