@@ -89,24 +89,22 @@ slider:
 smart_menu:
   innerArchive: '所有文章'
   aboutme: '关于我'
-  album: "专辑"
   friends: "友链"
 
 aboutme: 自动驾驶从业者🚚 | TuSimple<br>微软大法传教士⛪️ | MSP <br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | b站id yvonshong <br>还有少年热忱🙋🏻‍♂️
 
-album:
-  Yvon's Horizon | 知乎专栏: https://zhuanlan.zhihu.com/yvon-horizon
-  自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
-  微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
-  vlog 合辑 | bilibili: https://space.bilibili.com/6083595
 friends: 
-  TuSimple | 图森未来: http://tusimple.ai
+  Yvon's Horizon | 知乎专栏: https://zhuanlan.zhihu.com/yvon-horizon
+  微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
+  自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
+  vlog 合辑 | bilibili: https://space.bilibili.com/6083595
   Waseda University | 早稻田大学: http://www.waseda.jp
   Southeast University | 东南大学: http://www.seu.edu.cn
   Chengdu No.7 Middle High School | 成都七中: http://www.cdqz.net
+  TuSimple | 图森未来: http://tusimple.ai
+  Wondergate | 奇阵科技: http://wondergate.io/
+  ci123 | 育儿网: http://ippclub.org/
   PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
   Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
   ippclub | I++俱乐部: http://ippclub.org/
-  wondergate | 奇阵科技: http://wondergate.io/
-  ci123 | 育儿网: http://ippclub.org/
   Appveyor: https://ci.appveyor.com/project/shong/yvon-shong-github-io
