@@ -4,7 +4,7 @@ menu:
   主页: /
   随笔: /categories/essay/
   项目: /categories/project/
-  
+  画廊: /gallery/
 
 # SubNav
 subnav:
@@ -104,6 +104,7 @@ friends:
   TuSimple | 图森未来: http://tusimple.ai
   Wondergate | 奇阵科技: http://wondergate.io/
   ci123 | 育儿网: http://ippclub.org/
+  asamaedu | 浅间留学: http://asamaedu.com
   PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
   Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
   ippclub | I++俱乐部: http://ippclub.org/
