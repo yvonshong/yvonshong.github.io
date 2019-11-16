@@ -4,7 +4,6 @@ menu:
   主页: /
   随笔: /categories/essay/
   项目: /categories/project/
-  画廊: /gallery/
 
 # SubNav
 subnav:
@@ -55,7 +54,7 @@ weixin: http://ww1.sinaimg.cn/large/6b2f6355ly1fyo43wmet4j20gz0gvn07.jpg
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /favicon.png
+favicon: http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5ta11dqj226i26jb0m.jpg
 
 #你的头像url
 avatar: http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5ta11dqj226i26jb0m.jpg
