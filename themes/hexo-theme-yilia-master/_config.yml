@@ -3,12 +3,12 @@
 menu:
   主页: /
   随笔: /categories/essay/
-  项目: /categories/project/
+  # 项目: /categories/project/
 
 # SubNav
 subnav:
   github: "http://github.com/yvon-shong"
-  weibo: "http://weibo.com/yiwenggogo"
+  # weibo: "http://weibo.com/yiwenggogo"
   zhihu: "http://zhihu.com/people/yvon-shong"
   #qq: "#"
   #weixin: "#"
@@ -93,18 +93,18 @@ smart_menu:
 aboutme: 自动驾驶从业者🚚 | TuSimple<br>微软大法传教士⛪️ | MSP <br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | b站id yvonshong <br>还有少年热忱🙋🏻‍♂️
 
 friends: 
-  Yvon's Horizon | 知乎专栏: https://zhuanlan.zhihu.com/yvon-horizon
-  微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
-  自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
+  # Yvon's Horizon | 知乎专栏: https://zhuanlan.zhihu.com/yvon-horizon
+  # 微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
+  # 自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
   vlog 合辑 | bilibili: https://space.bilibili.com/6083595
   Waseda University | 早稻田大学: http://www.waseda.jp
   Southeast University | 东南大学: http://www.seu.edu.cn
   Chengdu No.7 Middle High School | 成都七中: http://www.cdqz.net
   TuSimple | 图森未来: http://tusimple.ai
-  Wondergate | 奇阵科技: http://wondergate.io/
-  ci123 | 育儿网: http://ippclub.org/
-  asamaedu | 浅间留学: http://asamaedu.com
+  # Wondergate | 奇阵科技: http://wondergate.io/
+  # ci123 | 育儿网: http://ippclub.org/
+  # asamaedu | 浅间留学: http://asamaedu.com
   PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
   Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
-  ippclub | I++俱乐部: http://ippclub.org/
+  # ippclub | I++俱乐部: http://ippclub.org/
   Appveyor: https://ci.appveyor.com/project/shong/yvon-shong-github-io
