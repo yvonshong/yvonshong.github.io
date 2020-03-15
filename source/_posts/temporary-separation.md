@@ -13,12 +13,12 @@ toc: true
 
 再见·东南大学
 
+<!-- more -->
 
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teq4jxj20hs0dcwew.jpg)                                                         
 
 
-<!-- more -->
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo4teu31gj20hs0c174s.jpg)                                 
 
