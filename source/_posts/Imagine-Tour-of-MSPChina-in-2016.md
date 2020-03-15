@@ -1,7 +1,7 @@
 ---
 title: 2016年 MSP 的创新之旅
 date: 2017-01-24 00:00:00
-categories: essay
+categories: microsoft
 tags: microsoft
 toc: true
 ---
