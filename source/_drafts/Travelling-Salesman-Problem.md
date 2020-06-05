@@ -150,4 +150,4 @@ https://en.wikipedia.org/wiki/Particle_swarm_optimization
 
 
 # Appendix - Source Code in TSP
-[github](https://github.com/Yvon-Shong/Waseda/tree/master/Computational_Intelligence/TSP)
+[github](https://github.com/yvonshong/Waseda/tree/master/Computational_Intelligence/TSP)

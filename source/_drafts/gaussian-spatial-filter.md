@@ -14,7 +14,7 @@ Research in the Gaussian spatial filter to proccess different pictures, color pi
 
 # Flow
 
-I use MATLAB to create some pictures as above, [you can see it in this GitHub/Yvon-Shong/Waseda repo](create_picture.m). 
+I use MATLAB to create some pictures as above, [you can see it in this GitHub/yvonshong/Waseda repo](create_picture.m). 
 
 ```matlab
 P=imread('pic0.jpg');         

@@ -7,9 +7,9 @@ menu:
 
 # SubNav
 subnav:
-  github: "http://github.com/yvon-shong"
+  github: "http://github.com/yvonshong"
   # weibo: "http://weibo.com/yiwenggogo"
-  zhihu: "http://zhihu.com/people/yvon-shong"
+  zhihu: "http://zhihu.com/people/yvonshong"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -94,8 +94,8 @@ aboutme: 自动驾驶从业者🚚 | TuSimple<br>微软大法传教士⛪️ | M
 
 friends: 
   # Yvon's Horizon | 知乎专栏: https://zhuanlan.zhihu.com/yvon-horizon
-  # 微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
-  # 自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
+  # 微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
+  自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
   vlog 合辑 | bilibili: https://space.bilibili.com/6083595
   Waseda University | 早稻田大学: http://www.waseda.jp
   Southeast University | 东南大学: http://www.seu.edu.cn
@@ -107,4 +107,4 @@ friends:
   PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
   Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
   # ippclub | I++俱乐部: http://ippclub.org/
-  Appveyor: https://ci.appveyor.com/project/shong/yvon-shong-github-io
+  Appveyor: https://ci.appveyor.com/project/shong/yvonshong-github-io

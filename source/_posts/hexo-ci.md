@@ -40,7 +40,7 @@ toc: true
 1. 注册登陆AppVeyor
 free for opensource project
 2. appveyor新建project
-Github授权，关联相关repo（更新文档的repo）（我都是在[/blog](http://github.com/yvon-shong/blog) ）
+Github授权，关联相关repo（更新文档的repo）（我都是在[/blog](http://github.com/yvonshong/blog) ）
 设置项目
 - setting-general
 ![setting-general.jpg](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5hpfrsej20k40i0gm6.jpg)

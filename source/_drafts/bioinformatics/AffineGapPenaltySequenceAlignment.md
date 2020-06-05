@@ -317,7 +317,7 @@ var gap_extension_penalty=-4;
 var matchMatrix = BLOSUM62;
 ```
 
-Of course, you can see the whole source code in my GitHub : [https://github.com/Yvon-Shong/Waseda/blob/master/Bioinformatics/SequenceAlignment/BLOSUM62.js]((https://github.com/Yvon-Shong/Waseda/blob/master/Bioinformatics/SequenceAlignment/BLOSUM62.js))
+Of course, you can see the whole source code in my GitHub : [https://github.com/yvonshong/Waseda/blob/master/Bioinformatics/SequenceAlignment/BLOSUM62.js]((https://github.com/yvonshong/Waseda/blob/master/Bioinformatics/SequenceAlignment/BLOSUM62.js))
 
 And its output :
 

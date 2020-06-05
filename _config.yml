@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Blog of Yvon Shong
+title: blog @ yvonshong
 subtitle: 人生应当如盛夏🔆
 description: Personal Page
 author: Yvon Shong
@@ -102,7 +102,7 @@ jsonContent:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:Yvon-Shong/yvon-shong.github.io.git
+  repo: git@github.com:yvonshong/yvonshong.github.io.git
   branch: master
 
 # disqus
