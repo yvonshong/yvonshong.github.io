@@ -6,6 +6,12 @@ environment:
 install:
 - node --version
 - npm --version
+- npm install npm@latest -g
+- npm cache clean -f
+- npm install -g n
+- n stable
+- node --version
+- npm --version
 - npm install
 - npm install hexo-cli -g
 - npm i hexo-generator-json-content --save
@@ -17,15 +23,14 @@ build_script:
 artifacts:
 - path: public
 on_success:
+- echo https://$($env:access_token):x-oauth-basic@github.com $env:USERPROFILE/.git-credentials
 - git config --global credential.helper store
-- ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
 - git config --global user.email "%GIT_USER_EMAIL%"
 - git config --global user.name "%GIT_USER_NAME%"
-- git clone --depth 5 -q --branch=%TARGET_BRANCH% %STATIC_SITE_REPO% %TEMP%\static-site
-- cd %TEMP%\static-site
-- del * /f /q
-- for /d %%p IN (*) do rmdir "%%p" /s /q
-- SETLOCAL EnableDelayedExpansion & robocopy "%APPVEYOR_BUILD_FOLDER%\public" "%TEMP%\static-site" /e & IF !ERRORLEVEL! EQU 1 (exit 0) ELSE (IF !ERRORLEVEL! EQU 3 (exit 0) ELSE (exit 1))
+- git clone --branch=%TARGET_BRANCH% %STATIC_SITE_REPO% %TEMP%/static-site
+- cd %TEMP%/static-site
+- rm -rf !(.git) 
+- cp -rf %APPVEYOR_BUILD_FOLDER%/public %TEMP%/static-site
 - echo www.shong.win >> CNAME
 - npm i hexo-generator-json-content --save
 - git add -A
