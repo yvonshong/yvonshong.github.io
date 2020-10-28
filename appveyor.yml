@@ -11,8 +11,7 @@ install:
 - npm i hexo-generator-json-content --save
 - npm install markdown-it-checkbox --save
 build_script:
-- hexo clean
-- hexo generate
+- hexo generate -f
 
 
 artifacts:
