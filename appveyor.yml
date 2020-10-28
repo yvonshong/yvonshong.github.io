@@ -6,12 +6,6 @@ environment:
 install:
 - node --version
 - npm --version
-- npm install npm@latest -g
-- npm cache clean -f
-- npm install -g n
-- n stable
-- node --version
-- npm --version
 - npm install
 - npm install hexo-cli -g
 - npm i hexo-generator-json-content --save
