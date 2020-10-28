@@ -69,6 +69,7 @@ Plugins:
 - hexo-generator-baidusitemap
 - hexo-generator-feed
 - hexo-generator-json-content
+- hexo-deployer-git
 
 
 sitemap:
