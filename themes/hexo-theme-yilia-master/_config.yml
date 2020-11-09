@@ -1,0 +1,110 @@
+# Header
+
+menu:
+  主页: /
+  随笔: /categories/essay/
+  # 项目: /categories/project/
+
+# SubNav
+subnav:
+  github: "http://github.com/yvonshong"
+  # weibo: "http://weibo.com/yiwenggogo"
+  zhihu: "http://zhihu.com/people/yvonshong"
+  #qq: "#"
+  #weixin: "#"
+  #jianshu: "#"
+  #douban: "#"
+  mail: "mailto:yvon@shong.win"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# 是否需要修改 root 路径
+# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
+# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+url: http://www.shong.win/blog
+root: /blog/
+
+# Content
+
+# 文章太长，截断按钮文字
+excerpt_link: more
+# 文章卡片右下角常驻链接，不需要请设置为false
+show_all_link: false
+# 数学公式
+mathjax: true
+# 是否在新窗口打开链接
+open_in_new: false
+
+# 打赏
+# 请在需要打赏的文章的md文件头部，设置属性reward: true
+
+# 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
+reward_type: 2
+# 打赏wording
+reward_wording: '人民币版的赞'
+# 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
+# alipay: https://i.loli.net/2020/10/28/8jJiNGcROCedwEA.png
+# 微信二维码图片地址
+weixin: https://i.loli.net/2020/10/28/It31kXcofTA9UB2.png
+
+# Miscellaneous
+baidu_analytics: ''
+google_analytics: ''
+favicon: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+
+#你的头像url
+avatar: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+
+#是否开启分享
+share_jia: true
+
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+# duoshuo: shong
+
+
+# 样式定制 - 一般不需要修改，除非有很强的定制欲望…
+style:
+  # 头像上面的背景颜色
+  header: '#4acaa8'
+  # 右滑板块背景
+  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
+
+# slider的设置
+slider:
+  # 是否默认展开tags板块
+  showTags: true
+
+# 智能菜单
+# 如不需要，将该对应项置为false
+# 比如
+#smart_menu:
+#  friends: false
+
+smart_menu:
+  innerArchive: '所有文章'
+  aboutme: '关于我'
+  friends: "友链"
+
+aboutme: 自动驾驶从业者🚚 | TuSimple<br>微软大法传教士⛪️ | MSP <br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | b站id yvonshong <br>还有少年热忱🙋🏻‍♂️
+
+friends: 
+  # Yvon's Horizon | 知乎专栏: https://zhuanlan.zhihu.com/yvon-horizon
+  # 微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
+  自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
+  vlog 合辑 | bilibili: https://space.bilibili.com/6083595
+  Waseda University | 早稻田大学: http://www.waseda.jp
+  Southeast University | 东南大学: http://www.seu.edu.cn
+  Chengdu No.7 Middle High School | 成都七中: http://www.cdqz.net
+  TuSimple | 图森未来: http://tusimple.ai
+  # Wondergate | 奇阵科技: http://wondergate.io/
+  # ci123 | 育儿网: http://ippclub.org/
+  # asamaedu | 浅间留学: http://asamaedu.com
+  PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
+  Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
+  # ippclub | I++俱乐部: http://ippclub.org/
+  # Appveyor: https://ci.appveyor.com/project/shong/yvonshong-github-io
