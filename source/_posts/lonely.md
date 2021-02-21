@@ -65,7 +65,7 @@ toc: true
 
 关于离开了的活动
 前面有一篇日志 还在讲前路的迷茫 只是后来 离开的人是我 没有留任下来 无他可说 只有对主席团一些处理方式的略微不满(反正主席看不到这里 嗯哼)
-![](http://a4.qpic.cn/psb?/c9970f0c-216e-486b-bc4b-32fed895e7dd/NPadwBwoNNorvK3XyZmysuam0Vb3gTvc2NuOo2p1yDw!/b/dNJGRVVPMAAA&ek=1&kp=1&pt=0&bo=ZAJkAgAAAAAFACM!&tl=3&su=0185849873&tm=1552111200&sce=0-12-12&rf=2-9)
+![image.png](https://i.loli.net/2021/02/21/pQvEZOhgkd2Gy6C.png)
 
 
 

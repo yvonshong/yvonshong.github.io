@@ -7,6 +7,7 @@ toc: true
 并且有一大弊端，当你转移电脑的时候，你需要转移你根目录下很多配置文件和之前的md文件，（图片等资源文件我是利用插件同步到了七牛的，所以资源文件不用担心），这也需要备份！（这个时候我想到了利用我Github Pages的同一个仓库，通过建不同的分支来实现，比如我是username.github.io仓库，master分支为hexo生成同步的web展示页分支，我新建一个hexo分支，就是包含了我根目录下的themes/, source/ ,_config.yml,package.json 然后就能在其他环境下重新搭建hexo）
 
 为了达到自动更新和在线编辑的目的，我遍寻方法。
+【2020： 最新请直接使用 github action】
 <!-- more -->
 
 - ide.coding.net
