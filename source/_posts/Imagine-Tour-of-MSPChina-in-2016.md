@@ -1,5 +1,5 @@
 ---
-title: 2016年 MSP 的创新之旅
+title: 2016 年 MSP 的创新之旅
 date: 2017-01-24 00:00:00
 categories: microsoft
 toc: true
@@ -27,7 +27,7 @@ toc: true
 
 ---
 
-7月，中国区的两名优秀 MSP，同角逐出的 IC 中国区冠军远赴美国西雅图，微软总部，参加MSP Global Summit 和全球总决赛。
+7 月，中国区的两名优秀 MSP，同角逐出的 IC 中国区冠军远赴美国西雅图，微软总部，参加 MSP Global Summit 和全球总决赛。
 
 最终来自中国的由东北大学、北京师范大学、UC Berkeley 联合组队完成的 BoneyCare 项目从众多参赛项目中脱颖而出，获得组委会特设的 Ability Award 奖项。
 
@@ -49,7 +49,7 @@ BoneyCare 是一款基于云端语音识别技术和波形分析技术的口吃�
 
 
 
-如今又是新的一年了，而我们又在为2017年的微软创新杯积蓄着力量，开始了新一轮了校园宣传，不同于往年，我们开创了式新的形，借助B站直播 ImageTour 主题讲座，用弹幕来进行互动。
+如今又是新的一年了，而我们又在为 2017 年的微软创新杯积蓄着力量，开始了新一轮了校园宣传，不同于往年，我们开创了式新的形，借助 B 站直播 ImageTour 主题讲座，用弹幕来进行互动。
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5b67ggfj20fk0783zn.jpg)
 *Imagine Tour 主题讲座宣传海报*
@@ -68,7 +68,7 @@ MSP 其实不仅仅是一个围绕着创新杯而展开的组织，记得在中�
 
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5bkvy9nj23vc2kwnpi.jpg)
-*来自深圳万科梅沙书院的高中生MSP与来自南京东南大学的MSP在台上领舞*
+*来自深圳万科梅沙书院的高中生 MSP 与来自南京东南大学的 MSP 在台上领舞*
 
 
 
@@ -78,16 +78,16 @@ MSP 其实不仅仅是一个围绕着创新杯而展开的组织，记得在中�
 
 ### Connect 大会
 
-Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动态，在微信群里刷弹幕，更有微软科技媒体组织B站的同声传译，和邀请嘉宾进行点评。而更技术向的 Connect 大会不同于这种发自于对微软的热爱而自行进行观看的活动，作为 MSP，要组织大家聚在一起观看视频直播，这个形式其实是有一些难度的，
+Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动态，在微信群里刷弹幕，更有微软科技媒体组织 B 站的同声传译，和邀请嘉宾进行点评。而更技术向的 Connect 大会不同于这种发自于对微软的热爱而自行进行观看的活动，作为 MSP，要组织大家聚在一起观看视频直播，这个形式其实是有一些难度的，
 
-从很多MSP的反馈来看，范围不够广，不够吸引人，一直都是线下活动中最突出的矛盾。
+从很多 MSP 的反馈来看，范围不够广，不够吸引人，一直都是线下活动中最突出的矛盾。
 
 可是 MSP 是来自群众，走到群众中去也十分容易，于是我们便以寝室为单位，带动身边的同学，一起进行观看。
 
 
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5bliqt8j23nd2qjnpj.jpg)
-*根据反馈而制成活动照片墙，覆盖近20所高校*
+*根据反馈而制成活动照片墙，覆盖近 20 所高校*
 
 
 
@@ -168,7 +168,7 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5b6q9isj20hs0bv0vo.jpg)
-*MSP参观微软大楼的 Center One*
+*MSP 参观微软大楼的 Center One*
 
 
 
@@ -178,14 +178,14 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5b734asj20ja0ctad3.jpg)
 
-*7月 World Final & MSP Global Summit*
+*7 月 World Final & MSP Global Summit*
 
 
 
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5bh201mj245c2c07wk.jpg)
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5b8u0l9j21kw16o1gy.jpg)
-*11月 MSP in MVP Summit*
+*11 月 MSP in MVP Summit*
 
 
 也正是在 World Final 和 MSP Summit 的两次西雅图之行中，我们参与了原先亚太地区 MSP 兴起的 msp-times 项目，开始逐渐面向范围更大更广阔的世界。
@@ -193,7 +193,7 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 ![](http://ww1.sinaimg.cn/large/6b2f6355ly1fyo5b6i7t7j21o012cn1h.jpg)
 
-*MSP Times网站首页*
+*MSP Times 网站首页*
 
 
 
