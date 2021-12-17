@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: blog @ yvonshong
+title: Blog of Yvon Shong
 subtitle: 人生应当如盛夏🔆
 description: Personal Page
 author: Yvon Shong
@@ -117,3 +117,9 @@ feed:
   path: atom.xml
   limit: 50
 
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
