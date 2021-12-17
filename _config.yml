@@ -70,6 +70,8 @@ Plugins:
 - hexo-generator-feed
 - hexo-generator-json-content
 - hexo-deployer-git
+- hexo-generator-searchdb
+- hexo-generator-feed
 
 
 sitemap:
@@ -117,9 +119,24 @@ feed:
   path: atom.xml
   limit: 50
 
-
+# search
 search:
   path: search.xml
   field: post
   content: true
   format: html
+
+# rss
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:
