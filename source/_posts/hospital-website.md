@@ -1,7 +1,7 @@
 ---
 title: Hospital Website based on VUE.js+PHP+MySQL
 date: 2016-08-01 19:05:39
-categories: project
+categories: tech
 tags: 
 - web
 toc: true

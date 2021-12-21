@@ -1,6 +1,7 @@
 ---
 title: 键盘摄影（一）——相机成像基本元件
 date: 2020-05-06 12:00:00
+categories: tech
 tags: photography
 toc: true
 ---

@@ -2,8 +2,9 @@
 
 menu:
   主页: /
+  技术: /categories/tech/
   随笔: /categories/essay/
-  # 项目: /categories/project/
+  
 
 # SubNav
 subnav:
@@ -107,4 +108,3 @@ friends:
   PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
   Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
   # ippclub | I++俱乐部: http://ippclub.org/
-  # Appveyor: https://ci.appveyor.com/project/shong/yvonshong-github-io

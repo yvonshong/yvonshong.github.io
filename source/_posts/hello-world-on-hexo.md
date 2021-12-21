@@ -1,6 +1,7 @@
 ---
 title: Hello world on Hexo, my new personal blog.
 date: 2017-02-18 00:00:00
+categories: tech
 toc: true
 ---
 利用Hexo在Github Pages上搭建个人博客
@@ -13,10 +14,10 @@ toc: true
 ## 域名
 在这里根据续费查询域名商以及挑选后缀
 [在这里找到续费域名最便宜的域名商](http://www.domain265.com/renew/)
-最后选择了在[西部数码](http://www.west.cn) 购买shong.win域名，十年。
+最后选择了在[西部数码](http://www.west.cn)
 
 ### 子域名
-在域名管理处增加url跳转，比如blog.shong.win 跳转到www.shong.win/blog 这样就实现了子域名。
+在域名管理处增加url跳转，比如blog.yvonshong.com 跳转到www.yvonshong.com/blog 这样就实现了子域名。
 ## 邮箱
 有了域名就可以作邮箱， .win域名由于不太常见，腾讯企业邮箱不支持，所幸的是网易域名邮箱支持[163域名邮箱](http://app.ym.163.com/ym/help/help.html)。并在域名管理处增加MX记录，起效后便能使用邮箱了。
 
@@ -81,5 +82,5 @@ $ hexo d
 - hexo丰富的插件，能够有多说的评论，主题自带的打赏功能，搜索功能，tag，categories等功能。
 
 ## 下一阶段
-接下来想尝试hexo的其他插件，并利用[coding](http://coding.net)试一试coding的功能，比如web IDE，增加coding.shong.win
+接下来想尝试hexo的其他插件，并利用[coding](http://coding.net)试一试coding的功能，比如web IDE，增加coding.yvonshong.com
 后面可以再尝试在Microsoft Azure上搭建ss（之前一直失败。。。），就能充分利用子域名指向ip实现各种功能啦！

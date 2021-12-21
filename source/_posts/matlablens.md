@@ -1,7 +1,7 @@
 ---
 title: MatlabLens
 date: 2016-06-11 19:05:39
-categories: project
+categories: tech
 tags: matlab
 toc: true
 ---

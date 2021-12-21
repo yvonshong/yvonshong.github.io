@@ -1,6 +1,7 @@
 ---
 title: Hexo利用AppVeyor持续集成
 date: 2017-02-20 02:18:00
+categories: tech
 toc: true
 ---
 在第一天尝试了hexo之后，觉得这个静态博客远比不上wordpress托管到主机上的博客方便，因为太依赖本机环境，需要nodejs和git，每次更新后需要自己生成静态页面（虽然也就两行代码的事情），这一点都不cool！
