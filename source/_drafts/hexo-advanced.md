@@ -49,7 +49,7 @@ path: baidusitemap.xml
 
 在这里 你可以进行站长管理 https://www.google.com/webmasters/tools/home?hl=zh-CN
 
-http://zhanzhang.baidu.com/dashboard/index?site=http://www.shong.win/
+http://zhanzhang.baidu.com/dashboard/index?site=http://www.yvonshong.com/
 
 
 - CDN加速

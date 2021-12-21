@@ -22,7 +22,7 @@ Padding （padding或不padding，以及各种padding方式，对网络的影响
 
 以前写过一个关于卷积的，滤波器的本质就是空间上做卷积
 
-http://www.shong.win/blog/2016/04/13/convolution/
+http://www.yvonshong.com/2016/04/13/convolution/
 
 # CNN
 
