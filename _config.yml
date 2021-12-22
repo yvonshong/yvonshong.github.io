@@ -102,13 +102,16 @@ jsonContent:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:yvonshong/yvonshong.github.io.git
-  branch: master
+  - type: git
+    repo: git@github.com:yvonshong/yvonshong.github.io.git
+    branch: master
+
+  - type: git
+    repo: git@github.com:yvonshong/blog.git
+    branch: master
 
 # disqus
 disqus_shortname: shong
-
 
 
 #Feed Atom
