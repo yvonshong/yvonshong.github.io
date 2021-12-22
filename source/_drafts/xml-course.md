@@ -24,10 +24,6 @@ More detaily, there are
 
 ### Group 8
 
-- 宋代伟 71113334 
-- 韩畅 71113317
-- 张雷铭 71113319 
-
 
 ## Update log
 

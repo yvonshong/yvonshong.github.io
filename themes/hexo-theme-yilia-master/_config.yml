@@ -3,14 +3,15 @@
 menu:
   主页: /
   技术: /categories/tech/
+  知乎: https://www.zhihu.com/column/jiritsu-soko
   随笔: /categories/essay/
   
 
 # SubNav
 subnav:
-  github: "http://github.com/yvonshong"
-  # weibo: "http://weibo.com/yiwenggogo"
+  bilibili: "https://space.bilibili.com/6083595"
   zhihu: "http://zhihu.com/people/yvonshong"
+  github: "http://github.com/yvonshong"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
