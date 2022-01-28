@@ -8,7 +8,9 @@ tags:
 
 
 # Obsidian
-Obsidian 是根据卢曼卡片盒方法论构建的次世代笔记系统，基于本地 markdown 软件和双向链接。具体使用方式可以参考《卡片盒阅读法》和 Notion。
+Obsidian 是根据卢曼卡片盒方法论构建的次世代笔记系统，基于本地 markdown 编辑和双向链接特殊语法。具体使用方式可以参考《卡片盒阅读法》和 Notion。
+
+<!-- more -->
 
 官网 https://obsidian.md/ ，目前支持 Windows, macOS, Linux, iOS, iPadOS, Android.
 同步支持 Obsidian 应用内付费同步， 苹果生态支持 iCloud 同步，可自建其他云盘同步和 Git 同步。
