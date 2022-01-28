@@ -1,6 +1,6 @@
 ---
 title: 计算摄影（一）——相机噪声
-date: 2021-12-29 12:00:00
+date: 2022-02-29 12:00:00
 categories: tech
 tags: 
 - camera
@@ -12,7 +12,6 @@ toc: true
 
 
 # Reference
- 
 
 - [数字图像传感器的噪声模型及标定](https://ridiqulous.com/image-sensor-noise-modeling-and-calibration/)
 - [相机噪声](https://zhuanlan.zhihu.com/p/23868867)

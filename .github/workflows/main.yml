@@ -34,14 +34,17 @@ jobs:
 
         # set up private key for deploy
         mkdir -p ~/.ssh/
-        echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa # 配置秘钥
+        # 配置秘钥
+        echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa 
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         # set git infomation
-        git config --global user.name 'yvon' # 换成你自己的邮箱和名字
+        # 换成你自己的邮箱和名字
+        git config --global user.name 'yvon'
         git config --global user.email 'yvon@shong.win'
         # install dependencies
-        npm i -g hexo-cli # 安装hexo
+        # 安装hexo
+        npm i -g hexo-cli
         npm i
         sudo apt-get install -y pandoc
         npm un hexo-renderer-marked --save
@@ -51,4 +54,5 @@ jobs:
       run: |
         # publish
         hexo clean && hexo generate -f
-        hexo deploy # 执行部署程序
+        # 执行部署程序
+        hexo deploy 

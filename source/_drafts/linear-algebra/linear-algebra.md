@@ -27,7 +27,7 @@ $G=\begin{bmatrix}p&q\\r&s\end{bmatrix}$
 
 $H=\begin{bmatrix}ap+br&aq+bs\\cp+dr&cq+ds\end{bmatrix}$
 
-$F\cdot G=H $
+$F\cdot G=H$
 
 线性复合映射
 
