@@ -120,7 +120,7 @@ onedrive --synchronize
 
 ```bash
 # 使用前提是 OneDrive 网盘和 /root/OneDrive 文件夹都有这个文件夹
-onedrive --synchronize --single-directory MOERATS
+onedrive --synchronize --single-directory Desktop/Obsidian
 ```
 
 ### 单向同步
@@ -140,11 +140,5 @@ onedrive --synchronize --upload-only
 cd ~/onedrive
 make uninstall
 rm -rf ~/.config/onedrive
-```
-
-所以最后只需要使用以下命令可进行双向同步。
-
-```bash
-onedrive --synchronize --single-directory Desktop/Obsidian
 ```
 
