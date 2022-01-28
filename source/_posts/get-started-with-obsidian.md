@@ -1,6 +1,7 @@
 ---
 title: Get started with Obsidian
 date: 2022-01-28 12:00:00
+categories: tech
 toc: true
 tags:
 - obsidian
@@ -28,6 +29,7 @@ Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，�
 
 1. icon: 首先下载好 Obsidian 的图标;
 2. 新建 `Obsidian.desktop` 文件:
+
     ```
     [Desktop Entry]
     Name=Obsidian
@@ -38,9 +40,11 @@ Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，�
     ```
     - `Exec` 指向应用文件
     - `Icon` 指向应用图标
+
 3. 修改权限：对文件 右键 >> 属性 (Property) >> 权限 (Permissions) >> 允许作为程序执行文件 (Allow executing file as program)，打勾。
 4. 移动该文件到 `/usr/share/applications`
 5. 便可以在应用列表下搜索到该应用
+
 
 # Ubuntu 20.04 下安装 OneDrive 进行同步
 
@@ -49,6 +53,7 @@ Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，�
 可以跟着以下[教程](https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md#distribution-ubuntu-2004) 在 ubuntu 20.04 上安装 Onedrive。
 
 1. Update `/etc/apt/sources.list`
+
     ```bash
     sudo gedit /etc/apt/sources.list
     ```
@@ -58,19 +63,26 @@ Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，�
     ```bash
     deb https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_20.04/ ./
     ```
+
 2. Download and add the release key
+
     ```bash
     wget https://download.opensuse.org/repositories/home:/npreining:/debian-ubuntu-onedrive/xUbuntu_20.04/Release.key
     apt-key add ./Release.key
     ```
+
 3. Update your apt package cache
+
     ```bash
     sudo apt-get update
     ```
+
 4. Install 'onedrive'
+
     ```bash
     sudo apt install onedrive
     ```
+
 5. auth the application
     
     在命令行中输入 `onedrive` 然后打开最后列出的授权链接 `Enter the response url` ,在链接中同意便可。
@@ -80,6 +92,7 @@ Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，�
 更多同步，具体可参考[该文](https://jiumbk.com/zjjc/294/)。
 
 1. 完全同步
+    
     ```bash
     onedrive --synchronize
     ```
