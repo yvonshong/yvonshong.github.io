@@ -39,7 +39,7 @@ show_all_link: false
 # 数学公式
 mathjax: true
 # 是否在新窗口打开链接
-open_in_new: false
+open_in_new: true
 
 # 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
 reward_type: 2
@@ -118,19 +118,20 @@ smart_menu:
   aboutme: '关于我'
   friends: '友链'
 
-aboutme: 自动驾驶从业者🚛 | TuSimple<br>微软大法传教士⛪️ | MSP <br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | b站id yvonshong <br>还有少年热忱🙋🏻‍♂️
+aboutme: 自动驾驶从业者🤖 | Hesai Tech<br>微软大法传教士⛪️ | MSP <br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | B站id yvonshong <br>少年热忱🙋🏻‍♂️
 
 friends: 
   # Yvon's Horizon | 知乎专栏: https://zhuanlan.zhihu.com/yvon-horizon
   # 微软大法好 | 知乎专栏: https://zhuanlan.zhihu.com/microsoft
   自律走行 | 知乎专栏: https://zhuanlan.zhihu.com/jiritsu-soko
   # vlog 合辑 | bilibili: https://space.bilibili.com/6083595
+  Hesai Tech | 禾赛科技: https://www.hesaitech.com
+  TuSimple | 图森未来: https://tusimple.com
+  # Wondergate | 奇阵科技: http://wondergate.io/
+  # ci123 | 育儿网: http://ippclub.org/
   Waseda University | 早稻田大学: http://www.waseda.jp
   Southeast University | 东南大学: http://www.seu.edu.cn
   Chengdu No.7 Middle High School | 成都七中: http://www.cdqz.net
-  TuSimple | 图森未来: http://tusimple.ai
-  # Wondergate | 奇阵科技: http://wondergate.io/
-  # ci123 | 育儿网: http://ippclub.org/
   # asamaedu | 浅间留学: http://asamaedu.com
   PaoPaoRobot | 泡泡机器人: http://paopaorobot.org/
   Microsoft Student Partner | 微软校园精英: https://studentpartners.microsoft.com/
