@@ -41,7 +41,7 @@ jobs:
         # set git infomation
         # 换成你自己的邮箱和名字
         git config --global user.name 'yvon'
-        git config --global user.email 'yvon@shong.win'
+        git config --global user.email '8537780+yvonshong@users.noreply.github.com'
         # install dependencies
         # 安装hexo
         npm i -g hexo-cli
