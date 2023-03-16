@@ -5,6 +5,7 @@ categories: tech
 tags: 
 - photography
 - camera
+- sensor
 toc: true
 ---
 
