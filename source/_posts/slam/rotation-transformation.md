@@ -5,9 +5,9 @@ categories: tech
 toc: true
 ---
 
+记录 C++(Eigen), Python(scipy)的旋转表达式之间的转换。
 
 <!-- more -->
-
 # C++ Eigen
 
 ## 欧拉角转其他
