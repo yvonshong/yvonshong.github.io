@@ -36,7 +36,7 @@ Eigen::Matrix3d rotationMatrix = yawAngle * pitchAngle * rollAngle;
 
 ```cpp
 // 初始化四元数
-Eigen::Quaterniond quaternion(w,x,y,z);
+Eigen::Quaterniond quaternion(w,x,y,z); // Halmiton!
 
 // 四元数转旋转向量
 Eigen::AngleAxisd rotation_vector(quaternion);
@@ -98,7 +98,7 @@ Eigen::Quaterniond quaternion(rotationVector);
 ```python
 from scipy.spatial.transform import Rotation as R 
 # quaternion
-quaternion = [0, 0, np.sin(np.pi/4), np.cos(np.pi/4)] # [w,x,y,z]
+quaternion = [0, 0, np.sin(np.pi/4), np.cos(np.pi/4)] # [x,y,z,w] JPL!
 scipy_r = R.from_quat(quaternion) 
 
 quaternion = scipy_r.as_quat() 
