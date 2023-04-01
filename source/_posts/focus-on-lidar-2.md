@@ -319,5 +319,5 @@ VCSEL 技术的许多优点可以总结如下：
 欢迎在我的专栏「[自律走行](https://www.zhihu.com/column/jiritsu-soko)」中查看更多「聚焦激光雷达」系列文章
 
 - [聚焦激光雷达（一）——扫描器](https://zhuanlan.zhihu.com/p/611852342)
-- [聚焦激光雷达（二）——激光器](https://zhuanlan.zhihu.com/p/616243016/)
-
+- [聚焦激光雷达（二）——激光器](https://zhuanlan.zhihu.com/p/616243016)
+- [聚焦激光雷达（三）——接收器](https://zhuanlan.zhihu.com/p/618634684)
