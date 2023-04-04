@@ -1,5 +1,5 @@
 ---
-title: 聚焦激光雷达（三）——激光器
+title: 聚焦激光雷达（三）——接收器
 date: 2023-04-01 23:30:00
 categories: tech
 tags: 
