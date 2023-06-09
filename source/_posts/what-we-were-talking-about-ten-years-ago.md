@@ -2,6 +2,8 @@
 title: 我们把往事的记忆幻化成光影纸质想使之永垂不朽
 date: 2023-06-07 10:00:00
 # categories: essay
+tags: 
+- cdqz
 toc: false
 ---
 
