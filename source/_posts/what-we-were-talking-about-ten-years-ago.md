@@ -37,7 +37,7 @@ toc: false
 - PDF 下载链接 - [《九世呓语》下载](https://www.yvonshong.com/911/pdf/%E4%B9%9D%E4%B8%96%E5%91%93%E8%AF%AD.pdf)
 - 在线阅读网页 - [《九世呓语》在线阅读](https://www.yvonshong.com/911/README.html)
 
-
+也分享一下我在其中写的 [急](https://www.yvonshong.com/911/md/3.%E6%80%A5.html) 部分，没办法，年少时中二用序破急来命名书的章节。。。
 
 我还翻到了我当时在夏令营上给学弟学妹分享的文稿
 
