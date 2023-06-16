@@ -1,7 +1,7 @@
 ---
 title: 输入法杂谈
 date: 2023-06-15 19:00:00
-# categories: tech
+categories: tech
 tags: 
 - IME
 toc: true
@@ -41,7 +41,7 @@ toc: true
 看着很一头雾水对不对，其实注音输入法只是一种键盘位排列和字符的映射。其排列规律为26键键盘+上方数字+ENTER附近符号，从左到右，从上到下，为我们学习的元音辅音排列，比如 1QAZ 为 bpmf ，即波泼摸佛。因此我们重新整理上述表。
 
 
-![VbATOJ.png](https://i.imgloc.com/2023/06/15/VbATOJ.png)
+![](https://i.imgloc.com/2023/06/15/VbATOJ.png)
 
 |1|2|3|4|5|6|7|8|9|0|-|
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -89,7 +89,7 @@ toc: true
 
 但是实在受不了手机上无法打分号，微软双拼方案几乎完全无法用，学了一个月后我就换自然码了，但是 iOS 过了很久才系统级支持自然码，这期间也多了几分辛酸泪。
 
-![VbAPit.png](https://i.imgloc.com/2023/06/15/VbAPit.png)
+![](https://i.imgloc.com/2023/06/15/VbAPit.png)
 
 双拼只需要熟悉以上映射，目前我已完全熟练掌握自然码，手机电脑平板车机均使用双拼输入法，其实也是自我设备的一种加密。
 
@@ -98,7 +98,7 @@ toc: true
 
 自然码辅助码方案可以查看： [qiaomusan: 双拼自然码辅助码方案及键位分布](https://zhuanlan.zhihu.com/p/122866844)
 
-![VbAazc.png](https://i.imgloc.com/2023/06/15/VbAazc.png)
+![](https://i.imgloc.com/2023/06/15/VbAazc.png)
 
 小鹤双拼双形可以查看小鹤的[官网](https://help.flypy.com/#/ux)。
 
