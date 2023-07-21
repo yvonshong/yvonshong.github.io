@@ -122,7 +122,7 @@ toc: true
 
 但是实在受不了手机上无法打分号，微软双拼方案几乎完全无法用，学了一个月后我就换自然码了，但是 iOS 过了很久才系统级支持自然码，这期间也多了几分辛酸泪。
 
-![](https://i.imgloc.com/2023/06/15/VbAPit.png)
+![](https://picx.zhimg.com/v2-8d663b0ad33ef5d9f20b02e1d84c2da6_1440w.jpg?source=172ae18b)
 
 双拼只需要熟悉以上映射，目前我已完全熟练掌握自然码，手机电脑平板车机均使用双拼输入法，其实也是自我设备的一种加密。
 
@@ -131,7 +131,7 @@ toc: true
 
 自然码辅助码方案可以查看： [qiaomusan: 双拼自然码辅助码方案及键位分布](https://zhuanlan.zhihu.com/p/122866844)
 
-![](https://i.imgloc.com/2023/06/15/VbAazc.png)
+![](https://pic1.zhimg.com/v2-d5a73b82896a4eef86213f4c2e22ddde_1440w.jpg?source=172ae18b)
 
 小鹤双拼双形可以查看小鹤的[官网](https://help.flypy.com/#/ux)。
 
