@@ -19,8 +19,7 @@ toc: true
 - Type-C 电源线（无需支持快充标准）
 - 10W 以上充电头
 
-![NanoPi R2S](https://i.328888.xyz/2023/05/16/ViWFdc.png)
-
+![NanoPi R2S](https://s2.loli.net/2023/10/30/vhUpS5CFyaXo7OZ.png)
 
 # 刷系统
 
@@ -42,8 +41,10 @@ toc: true
 
 ### 电脑直连
 
+![modem-router-nanopi-pc](https://s2.loli.net/2023/10/30/liRkbNPfaBwSdDt.png)
 
-![modem-router-nanopi-pc](https://i.328888.xyz/2023/05/16/ViWxWC.png)
+
+modem-router-nanopi-pc
 
 接线方式：原家庭路由和光猫的接线方式不变，R2S 的 WAN 口连接原家庭主路由的 LAN 口，R2S 无需设置，R2S 的 LAN 口连接电脑网口；
 
@@ -53,7 +54,10 @@ toc: true
 
 ### 路由器直连
 
-![modem-nanopi-router-pc](https://i.328888.xyz/2023/05/16/ViW6IJ.png)
+
+![modem-nanopi-router-pc](https://s2.loli.net/2023/10/30/HDKQ3cbNxSeZICy.png)
+
+modem-nanopi-router-pc
 
 R2S 的 WAN 口连接光猫，R2S 的 LAN 口连接原家庭无线路由器的任意一个LAN口；
  
