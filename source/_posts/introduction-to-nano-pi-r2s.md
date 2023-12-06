@@ -113,7 +113,7 @@ opkg update
 ## 插件
 ### openclash
 
-[OpenClash](https://github.com/vernesong/OpenClash/tags)
+github vernesong O p e n / C l a s h WIKI
 
 ### 广告过滤
 
@@ -156,7 +156,4 @@ https://pkgs.org/download/luci-app-wol
 # Reference
 
 - [friendlywrt wiki](https://wiki.friendlyelec.com/wiki/index.php/NanoPi_R2S/zh)
-- [openclash 使用 wiki](https://github.com/vernesong/OpenClash/wiki/%E5%AE%89%E8%A3%85)
-- [机场](https://portal.shadowsocks.au/aff.php?aff=19280)
-- [酱紫表： OpenClash 使用教程](https://qust.me/post/openClash/)
 - [巴掌大小的 Nanopi R2S 软路由 固件分享和体验](https://zhongce.sina.com.cn/article/view/72480)

@@ -25,8 +25,14 @@ Windows, Linux(Ubuntu 20.04), macOS, 都使用 Onedrive 同步；
 
 官网 [obsidian.md](https://obsidian.md/)
 
+
 # 启动 Launch
-Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，而不是点击图标，所以可以自制 launch 文件。
+
+可以直接在 https://obsidian.md/download 下载 deb。
+
+<del>Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，而不是点击图标，所以可以自制 launch 文件。</del>
+
+
 
 1. icon: 首先下载好 Obsidian 的图标;
 2. 新建 `Obsidian.desktop` 文件:
@@ -47,9 +53,14 @@ Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，�
 5. 便可以在应用列表下搜索到该应用
 
 
-# Ubuntu 20.04 下安装 OneDrive 进行同步
+# OneDrive 进行同步
 
-## Ubuntu 20.04 安装 OneDrive
+可以直接使用 Obsidian 第三方插件 Remotely Save https://github.com/remotely-save/remotely-save
+
+
+## <del>Ubuntu 安装 OneDrive</del>
+
+https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md
 
 可以跟着以下[教程](https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md#distribution-ubuntu-2004) 在 ubuntu 20.04 上安装 Onedrive。
 
