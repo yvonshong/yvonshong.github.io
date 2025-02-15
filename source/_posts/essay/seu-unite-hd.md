@@ -9,14 +9,11 @@ toc: false
 
 今天终于在学团联散伙饭时大喝一场，喝了好多酒，向老主席和新一届主席们敬(灌)酒，当小桥、小明明、霓学姐、范学长、馒头哥哥等上一届乃至上上一届等祖师爷级别的活动中心成员和我们的主任，干事们围在一起喊了好几次“活动万岁！”的，那时真的幸福感爆棚。
 
- 
 <!-- more -->
 
 玩游戏，徐玉秋被派去灌孟主席，居然变成炮灰被她手下挡酒了…我们去敬老主席、高级干事和新主席们，我酒量不行一会就开始上脸了。
 
 酒劲起来的时候，有开始哭的了，毕竟我们主任也没有留下来。然后我们开始和伙伴们碰杯，相拥，我还祝福了异地恋的伙伴以后要好好的呢 T^T。
-
- 
 
 今天我喝下的酒，都替代我想要流下来的眼泪。
 
@@ -26,16 +23,14 @@ toc: false
 
 对学团联的感情好像更多了一分。
 
- 
-
 大一入学百团大战的时候，是被这张喷绘吸引的：
 
-![](https://i.loli.net/2020/07/01/rGkb37DQg5BYRdq.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/rGkb37DQg5BYRdq.png)
 
 这是上一届社巡闭幕式，那种全体穿会服的成员感
-这是今年的我们： 
+这是今年的我们：
 
-![](https://i.loli.net/2020/07/01/AZjLBpGWvN2oKOq.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/AZjLBpGWvN2oKOq.png)
 
 然后报了学团联活动中心，且不接受调剂。
 
@@ -43,7 +38,7 @@ toc: false
 
 后来我们过了干事培训，第一个场控精品活动答辩会，后来办九周年庆典，去露营，在慢慢八卦的环境中感情越来越好。其实，是活动给了我大学里第一份也是最深刻的归属感，总共 14 个伙伴和主任。
 
-我们去参加精英发展论坛闭幕式的舞会，去准备元旦跨年舞会，在热血的跳了 6 个多小时精疲力竭中度过 1314，这学期主要就在准备第三届学生团体巡礼节，开幕式的时候布置场地，最后在夜色，在聚光灯下收拾胶布，打扫场地，闭幕式也有太多太多的想说的，当大家走上舞台高举双手谢幕的时候，站上焦标舞台上，头上聚光灯，感谢那段时间的汗水。 
+我们去参加精英发展论坛闭幕式的舞会，去准备元旦跨年舞会，在热血的跳了 6 个多小时精疲力竭中度过 1314，这学期主要就在准备第三届学生团体巡礼节，开幕式的时候布置场地，最后在夜色，在聚光灯下收拾胶布，打扫场地，闭幕式也有太多太多的想说的，当大家走上舞台高举双手谢幕的时候，站上焦标舞台上，头上聚光灯，感谢那段时间的汗水。
 
 在准备开团代会换届的时候，忽然意识到，好像能为学团联做事的时间不多了，因为我也不知道会不会让我留下来。
 
@@ -63,31 +58,28 @@ toc: false
 
 还要桥姐，还要翟主席，聂学长，晓琛学姐，小明明，人事中心的小伙伴。
 
-下周值班去把我社巡给大家签名的我的会服 拿去偷偷盖一个学团联的章以彰显我活动中心日常审批的职能 hhhhh 
+下周值班去把我社巡给大家签名的我的会服 拿去偷偷盖一个学团联的章以彰显我活动中心日常审批的职能 hhhhh
 
- 
-![](https://i.loli.net/2020/07/01/P1ydMVamgDNQozX.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/P1ydMVamgDNQozX.png)
 
-![](https://i.loli.net/2020/07/01/bDoQ6utGSXY9mJk.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/bDoQ6utGSXY9mJk.png)
 
-![](https://i.loli.net/2020/07/01/5Pa7vMcLFHqiWrJ.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/5Pa7vMcLFHqiWrJ.png)
 
-![](https://i.loli.net/2020/07/01/HEYShmV1LcZf5CW.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/HEYShmV1LcZf5CW.png)
 
-![](https://i.loli.net/2020/07/01/L26vJs1kPtqSV3Q.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/L26vJs1kPtqSV3Q.png)
 
-![](https://i.loli.net/2020/07/01/xNQwL8KYSImvGPF.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/xNQwL8KYSImvGPF.png)
 
-![](https://i.loli.net/2020/07/01/sjB1hWuEg4K8QNx.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/sjB1hWuEg4K8QNx.png)
 
-![](https://i.loli.net/2020/07/01/AuGjUBrxX7lhV5N.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/AuGjUBrxX7lhV5N.png)
 
-![](https://i.loli.net/2020/07/01/tW4xQuBjGKdn3hl.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/7mgztGOLnA9u2oa.png)
 
-![](https://i.loli.net/2020/07/01/7mgztGOLnA9u2oa.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/kqMoyJWN7vLCbal.png)
 
-![](https://i.loli.net/2020/07/01/kqMoyJWN7vLCbal.png)
+还有好多想说的...时间轴也好混乱 等下周结果出来了再说吧
 
-还有好多想说的...时间轴也好混乱    等下周结果出来了再说吧
-
-至少感谢大学最疯狂的时候 是和你们。 
+至少感谢大学最疯狂的时候 是和你们。

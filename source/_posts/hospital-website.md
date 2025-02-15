@@ -2,8 +2,8 @@
 title: Hospital Website based on VUE.js+PHP+MySQL
 date: 2016-08-01 19:05:39
 categories: tech
-tags: 
-- web
+tags:
+  - web
 toc: true
 ---
 
@@ -19,8 +19,6 @@ toc: true
 
 在开发的过程中，我有一些如下的感悟：
 
- 
-
 ## 技术经验的积累
 
 PHP 的 CodeIgniter 框架的使用
@@ -35,7 +33,9 @@ git 的客户端 SourceTree 和 GitFlow
 
 gitflow 最主要的是区分了 master-develop，并在 develop 上建立 feature，master 上建 hotfix。
 
-![gitflow](http://images.cnblogs.com/cnblogs_com/cnblogsfans/771108/o_git-flow-nvie.png)
+![gitflow](https://raw.githubusercontent.com/yvonshong/picbed/master/o_git-flow-nvie.png)
+
+C:\Users\daiwe\Documents\picbed\o_git-flow-nvie.png
 
 ## 踩的坑
 
@@ -43,19 +43,15 @@ AJAX 的 POST 请求是异步操作
 
 ## 一些软件设计
 
-### MVC架构
+### MVC 架构
 
 写后端 PHP 时，MVC 的理念是将接口和实现分离，controller 层接受数据，并对数据利用框架进行安全过滤（而不是让 POST 贯穿整个 controller-model），通过传参的方式调用 model 层进行操作数据库。
 
 所以在 model 层里面写如何操作数据的方法，在 controller 层里面写业务逻辑和如何调用 model 里的方法。
 
- 
-
 model 操作数据库，control 调用操作，view 展现视图
 
 甚至是 MVVM（Model-View-ViewModel）
-
- 
 
 ### 模块化
 
@@ -64,8 +60,6 @@ model 操作数据库，control 调用操作，view 展现视图
 这增大了前端代码的冗余和后期维护的难度。显然应该在模块划分的时候，尽量的解耦合和去冗余。
 
 解耦合的目的，不仅仅是利于开发过程中的模块划分，更方便与小组的人员分工，达到并行的开发。
-
- 
 
 ## 软件开发流程
 
@@ -92,15 +86,10 @@ apiSuccessExample 成功时返回的数据格式
 
 在公司的软件开发，不同于个人开发的地方主要是协作，在代码层面，是需要利用 git 解决冲突，拉取最新的小组分支或者 develop 分支
 
- 
-
 ## 团队协作
 
 和在人力的协作方面，这次我出现了很多问题，我的两个模块的两个小组，都有着分别不同程度的 delay，我们的模块的复杂程度是一方面（需要操作三层的业务数据表），我的分工也是一个方面。
 
- 
-
 ## 软件工程的理解
 
 软件工程不同于 Computer Science 计算机科学的地方，在于它更强调一个工程的概念，所以我们在课堂里学到软件工程导论，软件项目管理与实践，都是当时无关紧要的课，现在更突显价值。
-

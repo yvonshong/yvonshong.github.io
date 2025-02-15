@@ -17,11 +17,11 @@ toc: false
 
 海南炎热的天，为信仰燃烧青春的我们，分组跟进参赛选手，拍摄比赛和大会素材，在网络上进行写稿播报，甚至通宵剪辑视频。
 
-![](https://s2.loli.net/2021/12/23/5LmXoZtBShx3qr8.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/5LmXoZtBShx3qr8.jpg)
 
-> *来自全国各地的 MSP*
+> _来自全国各地的 MSP_
 
-***更多关于我们剪辑的视频，请访问[微软妹叫你来三亚 优酷播单](http://list.youku.com/albumlist/show/id_27159022.html?spm=a2h0j.8191423.module_basic_info.5~5!2~5~5~5~5~A)***
+**_更多关于我们剪辑的视频，请访问[微软妹叫你来三亚 优酷播单](http://list.youku.com/albumlist/show/id_27159022.html?spm=a2h0j.8191423.module_basic_info.5~5!2~5~5~5~5~A)_**
 
 ---
 
@@ -29,33 +29,33 @@ toc: false
 
 最终来自中国的由东北大学、北京师范大学、UC Berkeley 联合组队完成的 BoneyCare 项目从众多参赛项目中脱颖而出，获得组委会特设的 Ability Award 奖项。
 
-![](https://s2.loli.net/2021/12/23/YuQeJ8rRjsx1bhz.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/YuQeJ8rRjsx1bhz.jpg)
 
-*创新杯决赛现场的中国国旗*
+_创新杯决赛现场的中国国旗_
 
 BoneyCare 是一款基于云端语音识别技术和波形分析技术的口吃辅助治疗 App，结合口吃治疗的传统模式进行 “朗读训练” ，通过提供文章供用户朗读，将语音传至云端并进行分析，同时反馈给用户个性化的评价和指导意见。
 
-![](https://s2.loli.net/2021/12/23/mT4I3Q62RrPNiyB.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/mT4I3Q62RrPNiyB.jpg)
 
-> *BoneyCare 团队*
+> _BoneyCare 团队_
 
 自去年设立，Ability Award 旨在奖励致力于改善残障人士生活的团队项目，有潜力让世界更加包容亲近。BoneyCare 团队未来将重新回到雷德蒙德，在微软专家的帮助下完善自己的项目。
 
 如今又是新的一年了，而我们又在为 2017 年的微软创新杯积蓄着力量，开始了新一轮了校园宣传，不同于往年，我们开创了式新的形，借助 B 站直播 ImageTour 主题讲座，用弹幕来进行互动。
 
-![](https://s2.loli.net/2021/12/23/rBeYm89zEKX7J35.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/rBeYm89zEKX7J35.jpg)
 
-> *Imagine Tour 主题讲座宣传海报*
+> _Imagine Tour 主题讲座宣传海报_
 
-***关于 Imagine Tour 主题讲座请访问 [http://aka.ms/ICChina](http://aka.ms/ICChina)***
+**_关于 Imagine Tour 主题讲座请访问 [http://aka.ms/ICChina](http://aka.ms/ICChina)_**
 
 ## 在路上
 
 MSP 其实不仅仅是一个围绕着创新杯而展开的组织，记得在中国区总决赛的时候，我们要为最后一天的晚会进行排舞，在夜晚的楼下，在卫生间对着镜子，练习，编排动作，最后在晚会前教会他人，或许，这对我们来说也是一种成长吧。
 
-![](https://s2.loli.net/2021/12/23/BLnplNzgcPQsV1S.png)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/BLnplNzgcPQsV1S.png)
 
-> *来自深圳万科梅沙书院的高中生 MSP 与来自南京东南大学的 MSP 在台上领舞*
+> _来自深圳万科梅沙书院的高中生 MSP 与来自南京东南大学的 MSP 在台上领舞_
 
 所以，其实我更想讲的是，在这一年的创新之旅中，关于我们进步的故事。
 
@@ -71,7 +71,7 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5bliqt8j23nd2qjnpj.jpg)
 
-> *根据反馈而制成活动照片墙，覆盖近 20 所高校*
+> _根据反馈而制成活动照片墙，覆盖近 20 所高校_
 
 ### Hour of Code
 
@@ -81,19 +81,19 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b6hw9wj21fe0swwoh.jpg)
 
-> *电子科技大学*
+> _电子科技大学_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b9y7imj22v71nye83.jpg)
 
-> *河北建筑工程学院*
+> _河北建筑工程学院_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5bi86dfj23k02dcb2c.jpg)
 
-> *福建警察学院*
+> _福建警察学院_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5bixppnj23k02o04qs.jpg)
 
-> *海南大学*
+> _海南大学_
 
 我们开始去感染更多的人，甚至是非计算机领域专业的同学，让他们开始涉猎计算机科学，埋下对编程兴趣的萌芽。
 
@@ -101,35 +101,35 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5bk31zrj24842d3x6t.jpg)
 
-> *MSP Recruitment 大连理工大学*
+> _MSP Recruitment 大连理工大学_
 
 我们召集更多的人，我们走向户外。
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5bdq51gj23402c0npf.jpg)
 
-> *MSP Recruitment 大连理工大学*
+> _MSP Recruitment 大连理工大学_
 
 不满足于 Build2016 般线上的狂欢，我们开始线下面基，前往北京参加 Microsoft Ignite China 微软技术大会。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b8jbm4j218x0rgat0.jpg )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b8jbm4j218x0rgat0.jpg)
 
-> *Microsoft Ignite China 微软技术大会开幕*
+> _Microsoft Ignite China 微软技术大会开幕_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b77b2oj22l30cvh6k.jpg)
 
-> *微软技术大会期间相约在一起的 MSP*
+> _微软技术大会期间相约在一起的 MSP_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b6tq3aj218w0muqfr.jpg)
 
-> *微软技术大会分会场*
+> _微软技术大会分会场_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b6rmttj20zk0nqk1z.jpg)
 
-> *微软技术大会·来自全国各地的 MSP*
+> _微软技术大会·来自全国各地的 MSP_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b6q9isj20hs0bv0vo.jpg)
 
-> *MSP 参观微软大楼的 Center One*
+> _MSP 参观微软大楼的 Center One_
 
 甚至，我们开始走出国门，我们借助网络，和派去西雅图的伙伴，联络起其他国家的 MSP。
 
@@ -137,23 +137,22 @@ Build 2016 大会的时候，微软粉丝就像是在过年，在微博上发动
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b734asj20ja0ctad3.jpg)
 
-*7 月 World Final & MSP Global Summit*
+_7 月 World Final & MSP Global Summit_
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5bh201mj245c2c07wk.jpg)
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b8u0l9j21kw16o1gy.jpg)
 
-> *11 月 MSP in MVP Summit*
+> _11 月 MSP in MVP Summit_
 
 也正是在 World Final 和 MSP Summit 的两次西雅图之行中，我们参与了原先亚太地区 MSP 兴起的 msp-times 项目，开始逐渐面向范围更大更广阔的世界。
 
 ![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5b6i7t7j21o012cn1h.jpg)
 
-*MSP Times 网站首页*
+_MSP Times 网站首页_
 
 最开始喜欢上微软的原因是觉得“科技予力众生”(Empower Us All)，这个概念真的太酷了。后来加入了 MSP，一起迈上了创新之旅，在这途中，曾被三亚秀丽的景色吸引，也曾艳羡去西雅图大本营的伙伴，然而我觉得最重要的，不是收集到的多少微软纪念品文化衫，而是认识的其他 MSP 啊，“在同一片天空下，我们彼此，为着共同喜爱的东西，一起进步，即使相隔很远，我们也会有机会见面，我们也会分享喜好，分享彼此的生活，到见面的时候，像是认识多年的老友。”
 
-这一切的一切，都起源于迈上创新之旅的那一步。 
+这一切的一切，都起源于迈上创新之旅的那一步。
 
 2016 年的创新之旅，有关于微软创新杯的盛大赛事，也有关于 MSP 成长的故事。
-

@@ -4,6 +4,7 @@ date: 2019-02-08 03:38:00
 categories: essay
 toc: false
 ---
+
 「帝都冬夜，到家楼下便利店买水，在 seven 的冰柜前抬头看到了 カルピス 饮料，我一下子愣住了。原来两年真的已经过去了，这两年的记忆如盛夏般炽热而漫长，就像仲夏夜的一场梦。」
 
 <!-- more -->
@@ -16,25 +17,25 @@ toc: false
 
 原来两年真的已经过去了，再怎么想回去咸鱼也回不去了。从毕业发表到卒业修了式，那个在夏天的末尾，告别了所有，然后回到曾经日思夜寐的帝都，在一家自动驾驶创业公司做定位算法工程师。人生就是逃离舒适区，丢掉包袱清零，然后又开始新的挑战。
 
-![](https://s2.loli.net/2021/12/23/keu8fpNby4iS31W.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/keu8fpNby4iS31W.jpg)
 
-> *2018.10.9 北京 | 回家路上*
+> _2018.10.9 北京 | 回家路上_
 
 所幸的是在北京也和研里回国去其他自动驾驶公司/研究所/车企的伙伴几次聚餐，重逢的时候感叹到，正是和这些伙伴一起经历的过去，有了今时今日的我。冬假出玩前和研里伙伴拍脑袋说想做个 demo，自动驾驶去海边，开始和伙伴推进计划和后来的丰田项目，这件事一直忙到三月份到中发，期间请教了在国内自动驾驶创业公司工作和在京大读博的学长，后来碰巧博士学长回研究室和前辈到学研都市做路测，抓住机会请教了很多。我们一起讨论整个系统的划分，每个组件的 SOTA 和如今的解决方案，也没想到这成为了后来的一系列草蛇灰线，四月份去了北京实习和毕业后回来上班。期间之后的事情全靠研里伙伴继续推进，其间还接受了丰田现任总社长的父亲（即上任社长）的视察，以及毕业发表后，留在学校做 Car Robo 的助教，都无一没有我们一起讨论的痕迹。这件事情大概是这两年值得一提的收获。如今在一个更大的平台做自动驾驶，新的一年于我而言更多的是挑战。
 
-![](https://s2.loli.net/2021/12/23/ysJOw3tfzhmUqKl.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/ysJOw3tfzhmUqKl.jpg)
 
-> *2018.03.04 日本宫若 | 丰田园区*
+> _2018.03.04 日本宫若 | 丰田园区_
 
-![](https://s2.loli.net/2021/12/23/Fe4vgfYGlLKwork.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/Fe4vgfYGlLKwork.jpg)
 
-> *2018.08.20 日本北九州 | Car Robo 课程调车准备*
+> _2018.08.20 日本北九州 | Car Robo 课程调车准备_
 
 毕业典礼后第二天便又飞往了北京去入职，而后的日子在工作上不是十分的顺畅，也在挫折中领悟很多。在做科研的方法和心态上都有着很多需要纠正的地方，工作不仅仅是软件工程学中的人月神话，还有和上下游的沟通，自我观点和工作内容的表达和呈现方法；其中最值得一提的一点是关于实验，像是本科时觉得很无脑的物理实验，和自己看 paper 时只关注 idea 或 contribution，忽视了实验的设计，以及实验的结果是否能够足够支撑自己的理论；并且不是根据实验结果去猜测原因，而是提出假说，设计实验做实验去验证。这一点是上班几个月连续被捶时最大的感悟，只是自己还得快速进步，我相信接下来的这一年对我来说充满了挑战，不过我也会欣然接受最坏的结果，所以我不在怕的。
 
 怕什么真理无穷，进一步有进一步的欢喜。
 
-#  
+#
 
 可是现在努力想变成可靠大人去面对现实的我们，似乎也要交出此番成长应付的代价了。
 
@@ -46,38 +47,38 @@ toc: false
 
 租了房有了个人的房间后我懒得去开始养花，将理由推脱给时节；房间内贴过一次的照片墙将其撕了下来，将所有拍立得收纳进抽屉；遇到那只猫时，就没有抱过将其驯养的念头，却又擅自给她取了名字ーー桜；以及无数次告诉过自己和人相处时不要逃避，转身又只会用这一种方式保护自己。
 
-![](https://s2.loli.net/2021/12/23/euc1ONp3CThwUdH.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/euc1ONp3CThwUdH.jpg)
 
-> *2018.08.05 日本北九州 | 在路上救下的 sakura 和几个月后的她*
+> _2018.08.05 日本北九州 | 在路上救下的 sakura 和几个月后的她_
 
 也希望你能接受这样不完美的我，不过在不断的自我观照下，今时今日的我也是不断的在卸下老化腐朽的甲板木头，竖起新的船帆。
 
 比如我仍然在努力去更远的地方，中发后和实习前的三天空白，我在毫无攻略只知在哪坐船的情况下，独自去爱媛过了生日，去了松山梅津寺站和伊予下滩，从 20 岁到学生时代最后一年 23 岁，都在努力用生日为节点和仪式感去完成远行的目标，而下一个人生目标是 30 岁前去冰岛。
 
-![](https://s2.loli.net/2021/12/23/WQb7w96lJUr1kHY.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/WQb7w96lJUr1kHY.jpg)
 
-> *2018.04.11 日本爱媛 | 梅津寺站*
+> _2018.04.11 日本爱媛 | 梅津寺站_
 
 跟别人提及到冰岛这一人生愿望时，我说好想 30 岁时有女朋友一起去冰岛看极光啊，或者时夏至时海平面上不落的太阳。朋友反问我，如果那时是单身你还会去么？我想都没想，肯定会去啊。毕竟这些年我也独自前往山川河流，看过人山人海。可惜我也不知这一年是进步还是退步，我开始依赖和他人的世界相溶，冬假的时候去了冲绳和台湾，从花莲的海边砾石堆聊到九份围炉夜话，平溪灯起，淡水日落，夏休时去了新加坡，城市屋顶旖旎风光，印尼海边咸鱼生活，感受到和好朋友远行是这般的舒服，毕竟一起旅行也是一种考验，日语有一个词叫做「成田分手」，讲旅行归来，在成田机场就直接相互拉黑再见，当然故事也会发生在朋友之间。
 
-![](https://s2.loli.net/2021/12/23/ui1bOy4JQSEFIvh.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/ui1bOy4JQSEFIvh.jpg)
 
-> *2018.02.21 日本冲绳 | 古宇利岛*
+> _2018.02.21 日本冲绳 | 古宇利岛_
 
-![](https://s2.loli.net/2021/12/23/NME3irh8bASud5C.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/NME3irh8bASud5C.jpg)
 
-> *2018.02.24 台湾花莲 | 七星潭*
+> _2018.02.24 台湾花莲 | 七星潭_
 
-![](https://s2.loli.net/2021/12/23/h2BlNZJfD1zqXFG.jpg)
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/h2BlNZJfD1zqXFG.jpg)
 
-> *2018.07.25 新加坡 | 鱼尾狮公园*
+> _2018.07.25 新加坡 | 鱼尾狮公园_
 
 旅途的时候我跟好朋友抱怨，我其实也只是想有个能一起分享快乐的人，有的时候很开心想找人分享，第一反应是想不到人，第二反应才是好朋友，因为看过身边很多亲密关系带来的桎梏失去了自我，只是如今更多的是豪猪之间因为彼此身上存在的的刺和刺，距离太远无法互相取暖。这种恍惚之间的挫败感，生成无尽的虚无和寂寞，不再是只拥有独行时纯粹的孤独感。
 
 周末有一次去刚来北京安顿下来的朋友家吃饭，说来也是有趣，女生是只有那一次一起坐飞机遇大雪延误了 12h 的照面，男生是次自驾去阿苏时认识的，跟着朋友和为其来北京的对象一起去超市买菜， 我和男生笑，在日本买菜回家我们在 lamu 超市只需要非常熟练的拿起肉盘和菜绕一圈早就结束了，根本不会像现在一样精挑细选左右衡量买什么菜回家煮火锅，那天吃完火锅我们在沙发打 switch 打到瘫倒睡觉，我却开始羡慕起他俩生活里的烟火气，女生是个很喜欢写文章的人，想起其毕业时写下的笔触，讲其归家的生活感悟，却又无比映照今日我过年回家心境。在两年没有回老家后的这个假期，在见到了好几个算是一起长大的哥哥们后，看到他们如今已经成家生子，应了那「昔别君未婚，儿女忽成行」。
 
 > 口口声声说着要去流浪的中二的我，听到这样的话语，难道会不动容吗。正如《夜航》里有一句话：要想获得尘世间的幸福，你不能匆匆而过。可是，从一首歌的旁边经过，歇歇脚，前方的道路还是要继续走啊。或许此时此刻此身，还握不住稳稳的幸福，因为无法放弃因布满迷雾而更加诱人的远方。
-> 
+>
 > ———— 我要稳稳的幸福 | 吗？
 
 不过我依然觉得「人生，还有无限的可能」。过几年我会想出去读博么，我会在这个城市呆多久，以前觉得看不清未来无法做出长远的规划而感到迷茫，可是正是这样的未知，人生才会有冒险的感觉啊。工作带来的好处有了一定的规律能计划更长远一段时间内的事情，比如我给自己报了个一年期的班，买了故宫的年卡。那个暑假做的工作还是读书的决定我觉得我一辈子都不会后悔，以前我相信眼界的力量，现在我更清楚每个时期都有每个时期的局限性和历史进程。
@@ -86,45 +87,45 @@ toc: false
 
 见过花火，便见不得花火。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rjl11dj22c02wyx6s.jpg   )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rjl11dj22c02wyx6s.jpg)
 
-> *2018.03.28 日本北九州 | 校园里的樱花*
+> _2018.03.28 日本北九州 | 校园里的樱花_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg   )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg)
 
-> *2018.04.01 日本北九州 | 黑崎城山公园*
+> _2018.04.01 日本北九州 | 黑崎城山公园_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r7wtntj21400u0dj4.jpg  )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r7wtntj21400u0dj4.jpg)
 
-> *2018.06.09 日本北九州 | 岩屋海滩*
+> _2018.06.09 日本北九州 | 岩屋海滩_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg  )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg)
 
-> *2018.06.18 日本北九州 | 高塔山公园*
+> _2018.06.18 日本北九州 | 高塔山公园_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r9lg8cj21zk1hoe81.jpg   )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r9lg8cj21zk1hoe81.jpg)
 
-> *2018.07.18 日本福冈 | 海边公园花火大会浴衣*
+> _2018.07.18 日本福冈 | 海边公园花火大会浴衣_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rpldajj253u1yeb2j.jpg )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rpldajj253u1yeb2j.jpg)
 
-> *2018.07.18 日本福冈 | 海边公园花火大会*
+> _2018.07.18 日本福冈 | 海边公园花火大会_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg  )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg)
 
-> *2018.09.09 日本北九州 | 研究室外阳台的一年光影*
+> _2018.09.09 日本北九州 | 研究室外阳台的一年光影_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r7ubkzj21ar0u0n2c.jpg   )
+![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r7ubkzj21ar0u0n2c.jpg)
 
-> *2018.09.17 河北曹妃甸 | 入职*
+> _2018.09.17 河北曹妃甸 | 入职_
 
-#  
+#
 
 梦醒了，那就道别吧。
 
 从今以后，还有更多更美的梦要去实现。
 
-#  
+#
 
 2018 新年愿望
 
@@ -133,47 +134,45 @@ toc: false
 > - [x] 樱花季
 >
 > - [x] 去 tw
-> 
+>
 > - [x] 花火大会
-> 
+>
 > - [x] 研究生顺利毕业
-> 
+>
 > - [x] 去 sg
-> 
+>
 > - [x] 自己租的房子里养一只猫
-> 
+>
 > - [x] 房间的照片墙和明信片墙
-> 
+>
 > - [ ] 去 us
-> 
+>
 > - [ ] 养活一盆花
-> 
 
 2019 新年计划
 
 > - [ ] N2
-> 
+>
 > - [ ] 上海
-> 
+>
 > - [ ] 去美帝
-> 
+>
 > - [ ] 回一次南京
-> 
+>
 > - [ ] 练习市区内开车
-> 
+>
 > - [ ] 每个月出一支 vlog
-> 
+>
 > - [ ] 每个月存定量的钱
-> 
+>
 > - [ ] 去看下雪的故宫
-> 
+>
 > - [ ] 读完书和补完笔记
-> 
->	- [ ] MVG 
 >
->	- [ ] 概率机器人 
+>   - [ ] MVG
 >
->	- [ ] 状态估计
+>   - [ ] 概率机器人
 >
->	- [ ] 因子图
-
+>   - [ ] 状态估计
+>
+>   - [ ] 因子图
