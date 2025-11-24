@@ -17,6 +17,19 @@ root: /
 permalink: :year/:month/:day/:name/
 permalink_defaults:
 
+# Lazyload
+lazyload:
+  enable: true
+  onlypost: false
+  loadingImg: # eg ./images/loading.gif
+
+# Nofollow
+nofollow:
+  enable: true
+  exclude:
+    - yvonshong.com
+    - github.com
+
 # Directory
 source_dir: source
 public_dir: public
