@@ -49,9 +49,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: '人民币版的赞'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-# alipay: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/8jJiNGcROCedwEA.png
+# alipay: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/8jJiNGcROCedwEA.png
 # 微信二维码图片地址
-weixin: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png
+weixin: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
@@ -67,10 +67,10 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
+favicon: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png
 
 #你的头像url
-avatar: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
+avatar: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png
 
 #是否开启分享
 share_jia: true

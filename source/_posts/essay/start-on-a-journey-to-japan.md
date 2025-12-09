@@ -26,13 +26,13 @@ toc: false
 
 “可是我前一段时间读一本散文集啊，卡尔维诺的《看不见的城市》，他说，其实城市和城市都是相似的，每个城市都会有它的地标，公园，学校等等等等。就像我喜欢成都，很多原因是因为我在那个城市发生了很多的故事遇见了很多的人。所以大概我喜欢南京也是因为，我爱那些在这座城市遇到的人吧。”
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo55t16xqj20qy0fm76s.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo55t16xqj20qy0fm76s.jpg)
 
 > *2016.09.18 江苏南京 | 摄于天空树*
 
 在大学的时候，我又养过花。是啊，继完全没有发芽的玫瑰之后，我终于再次鼓起来勇气去养花，是用玻璃瓶栽的水植风信子。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo52g7fwgj20a00hsdg7.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo52g7fwgj20a00hsdg7.jpg)
 
 > *2016.03.03 江苏南京 | 发芽的风信子*
 
@@ -46,11 +46,11 @@ toc: false
 
 How wonderful you are.
  
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo52g7mqpj20hs0vmgmw.jpg)     
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo52g7mqpj20hs0vmgmw.jpg)     
 
 无奈的是花期不长，花期之后，我再也无心打理，去等到她的重生，于是花枯萎之后，我也就狠心的将它丢弃了。
  
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo52g7eqkj20hs0bhjrt.jpg)   
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo52g7eqkj20hs0bhjrt.jpg)   
 
 当年没有发芽的玫瑰花种子，还在我身边的抽屉里，而这朵花呢，开花时无比绚烂，我觉得这个世界都不及她的美，可是枯萎的时候却深深的刺痛了我的心，养不到下一轮花期了，枯萎的日子里慢慢丧失了对我的致命吸引力。
 
@@ -58,7 +58,7 @@ How wonderful you are.
 
 其实不是因为它不再开花啊，而只是因为，它刺痛到了我。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo52g739sj20hs0hr3yt.jpg)    
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo52g739sj20hs0hr3yt.jpg)    
 
  
 

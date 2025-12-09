@@ -19,7 +19,7 @@ toc: true
 
 毕业离开了南京。我记得离开的那一天，风雨相送，我拖着所有的家当，下起暴雨来误了动车，然后改签。临别的感受却是，我真的太喜欢南京了，可是我知道我要离开她了，不会再回来了。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4laxq2wj23s024oqv5.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4laxq2wj23s024oqv5.jpg)
 
 > *2017.06.07 江苏南京 | Fi 给我拍毕业写真*
 
@@ -35,7 +35,7 @@ toc: true
 
 秋之红叶狩的时候又去了一次东京，内心变成了，我还是想要在大城市生活啊，既然城市都是一样的，那为什么不去一个更好的更大的城市呢？ 
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4lar8glj23402c0hdu.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4lar8glj23402c0hdu.jpg)
 
 > *2017.11.08 日本东京 | 代代木公园 东京爱情故事*
 
@@ -76,13 +76,13 @@ toc: true
 
 去年开春的时候，第一次去了东京，日思夜想的东京之旅，去独自看了富士山。 想去东京大概是 18 岁的事情了，终于在 22 岁之前完成。却也差一点死在了东京之旅的前一日。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4lcb7wlj23k02o0hdw.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4lcb7wlj23k02o0hdw.jpg)
 
 > *2017.04.09 日本东京 | 目黑川上飘落的樱花*
 
 那一次车祸令我感悟很多，从姐姐家高崎一路哭到上野，然后一个人昏昏沉沉的睡一下午来缓和自己的内心。 然后我就这样到达了东京，去看了目黑川上飘落的樱花。关于富士山，是很多年前一句“谁能凭爱意要富士山私有”，富士山不能动，但我可以走过来啊。那种略带“我偏要勉强”的不甘。结果就是被认为是付出型选手，忽视对方个人意志。 
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4soqa0jj21uo1e0e4n.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4soqa0jj21uo1e0e4n.jpg)
 
 > *2017.04.11 富士山 22 岁*
 
@@ -90,13 +90,13 @@ toc: true
 
 然后是夏天，回国实习前去久留米看的花火大会，西日本最大，花火大会快要成为我夏天最美好的回忆，那一天逢魔之时开始的花火大会，河堤边的晚风浮动着杂草，穿着浴衣躺在草坪上，好朋友在身边聊天，仰天看着花火闪耀，真的，此生无憾的感觉。 
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4l7r7amj23402c0npd.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4l7r7amj23402c0npd.jpg)
 
 > *2017.08.06 日本久留米 | 筑后川花火大会*
 
 冬假的时候去了北海道，冷酷仙境与世界尽头，一个人搭雪国列车，苍茫天地，窗外树影快速滑过，去往小樽偶遇的彩虹，去往星野看过的深山，去往函馆全程的海岸线，都是我收藏进内心成为我抵抗世界的温柔记忆。 
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4l6u19kj23402c04qp.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4l6u19kj23402c04qp.jpg)
 
 > *2017.12.25 北海道小樽 | 冬天的海*
 
@@ -112,13 +112,13 @@ toc: true
 
 在今年 23 岁前，随性去了四国爱媛，松山和伊予，去看了莉香和完治分别的车站，梅津寺站，在松山站看到一张伊予下滩站的照片吸引住，是因为真的太漂亮了，于是第二天前往，才知道原来是青春十八宣传海报名景。 
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4quqir7j22ir3ymqv7.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4quqir7j22ir3ymqv7.jpg)
 
 > *2018.04.12 日本爱媛伊予 | 下滩车站*
 
 说到梅津寺车站，后来才想起原来也是《龙族》里路明非和绘梨衣乘着阳光盛大逃跑最后的分别地点。江南更《龙族 5》的时候重新回看了龙 3 最喜欢的章节，那段被命名为 *Tokyo Love Story* 的行动，路明非带着绘梨衣跳出了设定的剧本飞驰前往爱媛，在梅津寺町山上看暮色如海潮般涌来。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4l6pt7hj23402c07wh.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4l6pt7hj23402c07wh.jpg)
 
 > *2018.04.11 日本爱媛松山 | 梅津寺站*
 
@@ -138,7 +138,7 @@ toc: true
 
 以上大段其实都写在很久之前没有完工，中间甚至博客被自己删库了。。。我以后再也不拖这么久了。。。因为这段时间很多想法游发生了改变。。。不久前终于定了自己的 offer，要去北漂啦。 [Tusimple](tusimple.ai)，图森未来，激光雷达传感器工程师。 拿到 offer 的那天，晚上赶着去和伙伴聚餐，在地铁通道里跑的时候，笑的很开心，觉得要很开心的接纳北京啦，北京也有不好的地方，一直觉得整个城市灰头土脸的，春天来的时候漫天的柳絮，冬天的雾霾。 可是北京是年少时的向往啊，终究是作为首都的这个国家的心脏，这个城市有着其他无法比肩的资源与机会，有着无数的展览和文化活动，我太相信眼界的力量了，一直想要去看，更广大的世界。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4ldyz1dj23vc2kw7wk.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4ldyz1dj23vc2kw7wk.jpg)
 
 > *2017 年 合辑*
 
@@ -169,7 +169,7 @@ toc: true
 - [ ] 养活一盆花
 - [x] 房间的照片墙和明信片墙
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo4lcmv5kj234022gqv6.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4lcmv5kj234022gqv6.jpg)
 
 > *这一年里拍的拍立得*
 

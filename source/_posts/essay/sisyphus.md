@@ -23,7 +23,7 @@ toc: false
 
 只是想留下一点点希望。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/psbhana.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbhana.jpg)
 
 守和教的：这是个小概率事件，
 

@@ -33,16 +33,16 @@ social:
 disable_top_img: false
 
 default_top_img: 
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/2vwh7VtPLJrnCHW.png
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/mvXB9SGaQ1IHoWP.png
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/mLo31msuABfdRkaZ.jpg
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/psbtw.jpg
-  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/yL2ePjwagcG5IBV.jpg
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2vwh7VtPLJrnCHW.png
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/mvXB9SGaQ1IHoWP.png
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/mLo31msuABfdRkaZ.jpg
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbtw.jpg
+  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/yL2ePjwagcG5IBV.jpg
 
-index_img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/2vwh7VtPLJrnCHW.png
+index_img: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2vwh7VtPLJrnCHW.png
 
 
 # ==============================================================================
@@ -50,7 +50,7 @@ index_img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/
 # ==============================================================================
 # 对应 Yilia 的 avatar
 avatar:
-  img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
+  img: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png
   effect: false
 
 # 对应 Yilia 的 aboutme
@@ -103,7 +103,7 @@ disqus:
 # 页面功能与样式 (Features & Style)
 # ==============================================================================
 # 网站图标
-favicon: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
+favicon: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png
 
 # 代码块
 code:
@@ -143,7 +143,7 @@ darkmode:
 reward:
   enable: true
   QR_code:
-     - img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png
+     - img: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png
        link:
        text: Wechat
 
@@ -185,7 +185,7 @@ search:
 lazyload:
   enable: true
   field: site
-  placeholder: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
+  placeholder: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png
 
 # 底部信息
 footer:

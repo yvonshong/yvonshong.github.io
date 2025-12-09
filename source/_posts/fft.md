@@ -19,15 +19,15 @@ toc: true
 
 傅里叶变换示意图
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5msih81g208c06o45l.gif)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5msih81g208c06o45l.gif)
 
 时域-相位
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5n9bo5wj20go0huju5.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5n9bo5wj20go0huju5.jpg)
 
 时域-频域-相位
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5ofjrqbj20go0dtaes.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5ofjrqbj20go0dtaes.jpg)
 
 ## 傅里叶变换的种类
 
@@ -73,7 +73,7 @@ W_N^nk=e^(-j*2*Pi*nk/N)
  
 ### 傅里叶变换的种类与之间的关系
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5ouop80j22b51p8aen.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5ouop80j22b51p8aen.jpg)
 
 ## 为什么选择正弦函数？
 
@@ -171,7 +171,7 @@ subplot(2,2,4)
 
 ```
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5p3ad47j21400negwf.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5p3ad47j21400negwf.jpg)
 
 ## 彩色图像的傅里叶变换
 分为RGB三通道执行FFT
@@ -186,7 +186,7 @@ subplot(2,2,4)
 而另一个求和是都转换成uint8 8位无符号整数，精度下降，我有理由推测，是精度的问题。
 而非吉布斯现象。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5pboyvkj21140seq9m.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5pboyvkj21140seq9m.jpg)
 
 FFT在数学上是完全可逆的。
 

@@ -41,7 +41,7 @@ toc: true
 
 看着很一头雾水对不对，其实注音输入法只是一种键盘位排列和字符的映射。其排列规律为 26 键键盘+上方数字+ENTER 附近符号，从左到右，从上到下，为我们学习的元音辅音排列，比如 1QAZ 为 bpmf ，即波泼摸佛。因此我们重新整理上述表。
 
-![image.png](https://raw.githubusercontent.com/yvonshong/picbed/master/wrZ8xoif2eR46YQ.png)
+![image.png](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/wrZ8xoif2eR46YQ.png)
 
 |   1   |   2   |   3    |   4    |     5     |    6    |    7    |      8      |   9   |   0    |   -   |
 | :---: | :---: | :----: | :----: | :-------: | :-----: | :-----: | :---------: | :---: | :----: | :---: |

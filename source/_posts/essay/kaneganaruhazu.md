@@ -17,17 +17,17 @@ toc: false
 
 原来两年真的已经过去了，再怎么想回去咸鱼也回不去了。从毕业发表到卒业修了式，那个在夏天的末尾，告别了所有，然后回到曾经日思夜寐的帝都，在一家自动驾驶创业公司做定位算法工程师。人生就是逃离舒适区，丢掉包袱清零，然后又开始新的挑战。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/keu8fpNby4iS31W.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/keu8fpNby4iS31W.jpg)
 
 > _2018.10.9 北京 | 回家路上_
 
 所幸的是在北京也和研里回国去其他自动驾驶公司/研究所/车企的伙伴几次聚餐，重逢的时候感叹到，正是和这些伙伴一起经历的过去，有了今时今日的我。冬假出玩前和研里伙伴拍脑袋说想做个 demo，自动驾驶去海边，开始和伙伴推进计划和后来的丰田项目，这件事一直忙到三月份到中发，期间请教了在国内自动驾驶创业公司工作和在京大读博的学长，后来碰巧博士学长回研究室和前辈到学研都市做路测，抓住机会请教了很多。我们一起讨论整个系统的划分，每个组件的 SOTA 和如今的解决方案，也没想到这成为了后来的一系列草蛇灰线，四月份去了北京实习和毕业后回来上班。期间之后的事情全靠研里伙伴继续推进，其间还接受了丰田现任总社长的父亲（即上任社长）的视察，以及毕业发表后，留在学校做 Car Robo 的助教，都无一没有我们一起讨论的痕迹。这件事情大概是这两年值得一提的收获。如今在一个更大的平台做自动驾驶，新的一年于我而言更多的是挑战。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/ysJOw3tfzhmUqKl.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/ysJOw3tfzhmUqKl.jpg)
 
 > _2018.03.04 日本宫若 | 丰田园区_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/Fe4vgfYGlLKwork.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/Fe4vgfYGlLKwork.jpg)
 
 > _2018.08.20 日本北九州 | Car Robo 课程调车准备_
 
@@ -47,7 +47,7 @@ toc: false
 
 租了房有了个人的房间后我懒得去开始养花，将理由推脱给时节；房间内贴过一次的照片墙将其撕了下来，将所有拍立得收纳进抽屉；遇到那只猫时，就没有抱过将其驯养的念头，却又擅自给她取了名字ーー桜；以及无数次告诉过自己和人相处时不要逃避，转身又只会用这一种方式保护自己。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/euc1ONp3CThwUdH.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/euc1ONp3CThwUdH.jpg)
 
 > _2018.08.05 日本北九州 | 在路上救下的 sakura 和几个月后的她_
 
@@ -55,21 +55,21 @@ toc: false
 
 比如我仍然在努力去更远的地方，中发后和实习前的三天空白，我在毫无攻略只知在哪坐船的情况下，独自去爱媛过了生日，去了松山梅津寺站和伊予下滩，从 20 岁到学生时代最后一年 23 岁，都在努力用生日为节点和仪式感去完成远行的目标，而下一个人生目标是 30 岁前去冰岛。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/WQb7w96lJUr1kHY.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/WQb7w96lJUr1kHY.jpg)
 
 > _2018.04.11 日本爱媛 | 梅津寺站_
 
 跟别人提及到冰岛这一人生愿望时，我说好想 30 岁时有女朋友一起去冰岛看极光啊，或者时夏至时海平面上不落的太阳。朋友反问我，如果那时是单身你还会去么？我想都没想，肯定会去啊。毕竟这些年我也独自前往山川河流，看过人山人海。可惜我也不知这一年是进步还是退步，我开始依赖和他人的世界相溶，冬假的时候去了冲绳和台湾，从花莲的海边砾石堆聊到九份围炉夜话，平溪灯起，淡水日落，夏休时去了新加坡，城市屋顶旖旎风光，印尼海边咸鱼生活，感受到和好朋友远行是这般的舒服，毕竟一起旅行也是一种考验，日语有一个词叫做「成田分手」，讲旅行归来，在成田机场就直接相互拉黑再见，当然故事也会发生在朋友之间。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/ui1bOy4JQSEFIvh.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/ui1bOy4JQSEFIvh.jpg)
 
 > _2018.02.21 日本冲绳 | 古宇利岛_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/NME3irh8bASud5C.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/NME3irh8bASud5C.jpg)
 
 > _2018.02.24 台湾花莲 | 七星潭_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/h2BlNZJfD1zqXFG.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/h2BlNZJfD1zqXFG.jpg)
 
 > _2018.07.25 新加坡 | 鱼尾狮公园_
 
@@ -87,35 +87,35 @@ toc: false
 
 见过花火，便见不得花火。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rjl11dj22c02wyx6s.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rjl11dj22c02wyx6s.jpg)
 
 > _2018.03.28 日本北九州 | 校园里的樱花_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg)
 
 > _2018.04.01 日本北九州 | 黑崎城山公园_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r7wtntj21400u0dj4.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7r7wtntj21400u0dj4.jpg)
 
 > _2018.06.09 日本北九州 | 岩屋海滩_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg)
 
 > _2018.06.18 日本北九州 | 高塔山公园_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r9lg8cj21zk1hoe81.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7r9lg8cj21zk1hoe81.jpg)
 
 > _2018.07.18 日本福冈 | 海边公园花火大会浴衣_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rpldajj253u1yeb2j.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rpldajj253u1yeb2j.jpg)
 
 > _2018.07.18 日本福冈 | 海边公园花火大会_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg)
 
 > _2018.09.09 日本北九州 | 研究室外阳台的一年光影_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo7r7ubkzj21ar0u0n2c.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7r7ubkzj21ar0u0n2c.jpg)
 
 > _2018.09.17 河北曹妃甸 | 入职_
 

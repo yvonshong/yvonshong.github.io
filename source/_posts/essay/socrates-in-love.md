@@ -8,7 +8,7 @@ toc: false
 >“荞麦面/神社庙会/寺院初诣 品味足足日式的新年，无论是知恩院的一百零八声撞钟，还是出来后随着人群走到高台寺，坐在篝火旁分发的热酒酿…”
 >一时，我竟不知道如何开头，学着王家卫的语气说，“那一刻，我很暖。”
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56cz5mfj20hs0630sx.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56cz5mfj20hs0630sx.jpg)
 
 > *2016.12.31 日本京都 | 知恩寺初诣 在等待新年的钟声*
  
@@ -23,17 +23,17 @@ toc: false
 
 是去这个国家最东边的岛屿上看 21 岁的第一轮日出，开启我一生的黄金时代，时至今日，我仍然希望保留我的那颗少年心，是叫嚣世界的勇气，和对待生活温柔的心。在来霓虹之前讲过了，我也不再赘述。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56dpbl1j21z015x7wh.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56dpbl1j21z015x7wh.jpg)
 
 > *2016.04.10 浙江舟山东极岛 | 想在 21 岁生日那天在东极岛看日出*
 
 是去三亚为热爱和信仰的东西挥洒汗水和燃烧青春，开始一点点的意识到自己的梦想，要为梦想去发力，有一次道别的时候，Lancer 跟我说，“梦想之巅再见。”，现在看着伙伴站上了他曾经说想要站上的舞台，我也要加油。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56czg9rj20hs0bvq3s.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56czg9rj20hs0bvq3s.jpg)
 
 > *2016.04.27 海南三亚 | MSP 在进行舞蹈彩排 我在聚光灯下*
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56d12fdj20go0c9gpm.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56d12fdj20go0c9gpm.jpg)
 
 > *2016.04.28 海南三亚 | 微软创新杯总决赛 MSP 合影*
 
@@ -43,7 +43,7 @@ toc: false
 
 夏天，很多时间都在和院里的伙伴准备材料，跑手续，拿了早大的 offer，曾经如此梦寐以求的霓虹自由行，最后没想到最后以留学的方式成了现实。也很开心一起来的伙伴里，有从大一开始就多少次互相伤害后来变成互相安抚的伙伴，夏天里那次那一夜的暴雨，和 Aki 在学校里到处找喝醉的伙伴，淋了个湿透的大家，现在想起来也仍是如此迷醉的一夜。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56fdevgj23vc2kw4qu.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56fdevgj23vc2kw4qu.jpg)
 
 > *2016.07.31 江苏南京 | 30 多度的夏夜 在李文正图书馆前大草坪露营*
 
@@ -51,17 +51,17 @@ toc: false
 
 去写字楼的夏天，是不同于往常的，办公室里的空调与外卖，和外面街道上炽热的太阳，聒噪的蝉栖息在盛夏的梧桐树上，绿荫的街道，突如其来的暴雨，每日早餐的包子豆浆，当然也不能忘了我吃了将近半年的螺蛳粉。也托研究生学长的福住在了四牌楼（这里非常感谢炎帝），也开始有了对未来的想象，我会变成一个什么样的大人呢，由于我善良开朗又自在，我应该会更帅吧（。），以后工作的时候我想要住在公司旁，不用挤漫长的地铁，好好装扮我的小家，不会加太多班，下班后做一些自己感兴趣的事情。三年后，五年后，我们会变成什么样子呢？
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56d2igxj20hs0exjsm.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56d2igxj20hs0exjsm.jpg)
 
 > *2016.06.13-08.29 江苏南京 | 从写字楼里看到的夏天的南京*
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56d2dhpj20hs0a03yu.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56d2dhpj20hs0a03yu.jpg)
 
 > *2016.08.24 江苏南京 | 炎帝骑自行车接我下班 一起去吃望湖璇宫旋转餐厅 路上遇见的紫峰大厦和夕阳*
 
 然后在这座城市呆过了又一个完整的，闷热的，潮湿的，聒噪的夏天.上班的闲暇之余也有与友人相约，去上海找 Annie 和 Mike 玩，去找 zn 和陌陌做黑暗料理，也有多次约饭票去玩期待了很久的事情，入夜后的紫金山，承包了工作日里的溜冰场，在天空树上看见「我♥南京」。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56co3jtj20hs0dct97.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56co3jtj20hs0dct97.jpg)
 
 > *2016.09.18 江苏南京 | 出国前和饭票约在天空树吃饭 外面的「我♥南京」*
 
@@ -69,30 +69,30 @@ toc: false
 
 秋天大概是关于离别和收获的，在夏天的末尾，和三火约在学校里拍了一套纪念写真，在操场的看台上，摄影师把 M 豆放在我脸上摆造型，巧克力豆慢慢融化，留下了彩色的残渍。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56co6mlj20hs0dcwew.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56co6mlj20hs0dcwew.jpg)
 
 > *2016.08.13 江苏南京 | 天气太热了 只能在学校室内拍纪念写真* 
 
 然后是不断的和伙伴告别，也短暂的回了家，缺席了第四年的同乡会，很久没有在家过的中秋，就像是我前一阵子骑车去学校，看到路边金黄色的银杏树落叶，才想起很多年没有看过成都的银杏了。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56cul7vj20zk0qogxh.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56cul7vj20zk0qogxh.jpg)
 
 > *2016.08.26 江苏南京 | 东南大学焦廷标馆外 和川群的伙伴一起在新生入学时摆摊*
 *这一年 和川群仍然有很多故事*
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5aqa7wfj208d06at94.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5aqa7wfj208d06at94.jpg)
 
 > *2016.06.19 江苏南京 | 大一学团联的伙伴，学长学姐们要毕业了*
 
 然后我开始启程，又去往另一个异国他乡，走上了自己选择的路。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56cz4wqj21400u0k57.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56cz4wqj21400u0k57.jpg)
 
 > *2016.09.20 上海 | 浦东机场 飞机起飞前 计软伙伴的合影*
 
 曾经有个问题是，什么才是真正的成熟？撇去关于感情和世故，能为自己做决定，也能为自己的决定负责，这大概就也能算成熟了吧。其实我也未曾后悔过来到南京，现在自然也是不会后悔，因为，我相信眼界的力量。十六岁的时候，说想要哆啦 A 梦里的道具，未来日记和任意门，想要的东西和想去的地方，瞬间就可以。现在，未来依靠自己的双手去谱写，走路去旅行，要去看更广大的世界，一直没有变过。
  
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56cw5zxj20hs0m83zl.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56cw5zxj20hs0m83zl.jpg)
 
 > *2016.09.24 日本福冈北九州 | 入学式的正装*
 
@@ -100,23 +100,23 @@ toc: false
     
 后来我开始慢慢习惯了离开南京的日子，人生大概是个不断跳出舒适圈，不断甩下包袱，然后才能不断向前的过程。开始习惯了住在离海 10 公里，偶尔心情不好便能去看海，每天自己做饭，上课，骑车。冬假一个人去了关西，大阪奈良和京都，在语言不熟的国度，一个人旅行会孤独么？我大概真的很喜欢现在自己这样的状态，说起来可能是自私，我可以就只照顾自己的心情，旅途中随心所欲，遇见有趣的人可以搭讪，而也不用花太多的精力去和他人相处。其实我能享受一个人的过法，也会去珍惜和伙伴一起的生活。所以我深刻的记得，有一次我和饭票约出去玩，一天下来走了很远，她很累了。晚上从颐和书馆走回鼓楼地铁站，一路我俩都很安静，路过紫峰大厦，我问她，觉得两个人不说话会尴尬么？所幸的是，我觉得我好像遇见了很好的 partner。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56d6c57j20j20q8n22.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56d6c57j20j20q8n22.jpg)
 
 > *2016.07.27 江苏南京 | 闷热的潮湿的夏天 和饭票走在入夜后的紫金山上玩*
 
 日本的冬天和南京大概是不一样的，去年冬天还是考试周，和川群的伙伴约图书馆，考试前夕连夜进城去看下雪的南京，炸鸡配啤酒。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56dlmfzj210t0kndv2.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56dlmfzj210t0kndv2.jpg)
 
 > *2016.01.22 江苏南京 | 最后一年短时间内下了两场雪 回家前一天的凌晨在学校里拍照*
  
 今年呢，跨年还是像去年在紫金山顶时一样冷，不过会有了不一样的期待。不过去年的孔明灯，承载着不一样的愿望和不一样的心事，在回忆里也开始变得很美。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56cwgenj20hs0bvgli.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56cwgenj20hs0bvgli.jpg)
 
 > *2016.01.01 江苏南京紫金山 | 等待新年第一轮日出*
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo56cwes1j20hs0a0t8o.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56cwes1j20hs0a0t8o.jpg)
 
 > *2016.12.31 日本京都音羽山 | 最后一轮日落*
  

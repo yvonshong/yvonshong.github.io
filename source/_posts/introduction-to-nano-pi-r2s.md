@@ -18,7 +18,7 @@ toc: true
 - Type-C 电源线（无需支持快充标准）
 - 10W 以上充电头
 
-![NanoPi R2S](https://raw.githubusercontent.com/yvonshong/picbed/master/vhUpS5CFyaXo7OZ.png)
+![NanoPi R2S](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/vhUpS5CFyaXo7OZ.png)
 
 # 刷系统
 
@@ -38,7 +38,7 @@ toc: true
 
 ### 电脑直连
 
-![modem-router-nanopi-pc](https://raw.githubusercontent.com/yvonshong/picbed/master/liRkbNPfaBwSdDt.png)
+![modem-router-nanopi-pc](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/liRkbNPfaBwSdDt.png)
 
 modem-router-nanopi-pc
 
@@ -50,7 +50,7 @@ modem-router-nanopi-pc
 
 ### 路由器直连
 
-![modem-nanopi-router-pc](https://raw.githubusercontent.com/yvonshong/picbed/master/HDKQ3cbNxSeZICy.png)
+![modem-nanopi-router-pc](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HDKQ3cbNxSeZICy.png)
 
 modem-nanopi-router-pc
 

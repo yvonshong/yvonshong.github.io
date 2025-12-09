@@ -25,12 +25,12 @@ toc: false
 
 大一入学百团大战的时候，是被这张喷绘吸引的：
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/rGkb37DQg5BYRdq.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/rGkb37DQg5BYRdq.png)
 
 这是上一届社巡闭幕式，那种全体穿会服的成员感
 这是今年的我们：
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/AZjLBpGWvN2oKOq.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/AZjLBpGWvN2oKOq.png)
 
 然后报了学团联活动中心，且不接受调剂。
 
@@ -60,25 +60,25 @@ toc: false
 
 下周值班去把我社巡给大家签名的我的会服 拿去偷偷盖一个学团联的章以彰显我活动中心日常审批的职能 hhhhh
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/P1ydMVamgDNQozX.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/P1ydMVamgDNQozX.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/bDoQ6utGSXY9mJk.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/bDoQ6utGSXY9mJk.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/5Pa7vMcLFHqiWrJ.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/5Pa7vMcLFHqiWrJ.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/HEYShmV1LcZf5CW.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HEYShmV1LcZf5CW.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/L26vJs1kPtqSV3Q.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/L26vJs1kPtqSV3Q.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/xNQwL8KYSImvGPF.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/xNQwL8KYSImvGPF.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/sjB1hWuEg4K8QNx.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/sjB1hWuEg4K8QNx.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/AuGjUBrxX7lhV5N.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/AuGjUBrxX7lhV5N.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/7mgztGOLnA9u2oa.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/7mgztGOLnA9u2oa.png)
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/kqMoyJWN7vLCbal.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/kqMoyJWN7vLCbal.png)
 
 还有好多想说的...时间轴也好混乱 等下周结果出来了再说吧
 

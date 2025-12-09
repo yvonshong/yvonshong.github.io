@@ -35,13 +35,13 @@ toc: false
 
 其实在回南京之前也见过 Fi，距离上次见面时隔一年半，我们去了江西婺源看油菜花，如今只记得当年在大阪和 Fi 告别时的感受，和今年的告别是完全不一样的，是「一定会再见的吧」。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/pAU432SluyGDKIJ.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/pAU432SluyGDKIJ.jpg)
 
 > _2019.04.05 江西上饶婺源 | 油菜花与徽派建筑_
 
 争吵的最后我们也没有得到答案，却在火车上听见对方说，那时很开心，而开始湿了眼眶。可那时早已经结束了，我最后认识的学弟学妹们都已经毕业了，我也会很长一段时间都不会回南京了。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/cdRS6wqIPvlLNkh.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/cdRS6wqIPvlLNkh.jpg)
 
 > _2019.06.07 江苏南京 | 我们的城市又到了夏天_
 
@@ -58,7 +58,7 @@ toc: false
 
 过完二十四岁生日后的几天，在漫长的洲际航班上，我看到天地之间有十万支金喇叭齐鸣。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/nxR98pPTtkWMOwU.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/nxR98pPTtkWMOwU.jpg)
 
 > _2019.04.27 北京-西雅图 | 阳光穿过透明的空气 在暗蓝色的天空飞过 在黑暗尚未褪去的海面上燃烧着十万支蜡烛_
 
@@ -114,11 +114,11 @@ toc: false
 
 2019 年 4 月，赴了和歌歌说了很多年的约，去了美帝西雅图，我们开车去了奥林匹克国家公园，去了微软雷德蒙德，在安杰列斯港篝火旁看星星的夜晚，我们在房车内抱着暖和的被子里聊我们的高中，聊彼此，聊大家，我终于将心里很多年前的事情释怀。我高中时代几乎形影不离的朋友，在毕业后这么久后又见上了面，怎不会记起多少少年往事。第二天我们在草坪上晒着太阳弹尤克里里，诗情画意，我见犹怜。动心指数，五颗星。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/UGPO9KWB8xbo1nX.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/UGPO9KWB8xbo1nX.jpg)
 
 > _2019.04.30 美国华州西雅图 | 安杰列斯港的房车篝火与星辰大海_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/woUkHgGpN1Q4bBu.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/woUkHgGpN1Q4bBu.jpg)
 
 > _2019.05.01 美国华州西雅图 | 安杰列斯港的草坪与尤克里里_
 
@@ -128,11 +128,11 @@ toc: false
 
 研一的时候，机缘巧合来了北京实习，便等到了 9 月 1 日左右，一年之中人最少的时候去故宫。谁也没能想到那之后我开始了不属于我，也不知道什么时候才能停止的北漂生活。在玩遍北京后，我就指望着故宫和展子活下去了，无聊的时候不如去看清晨无人的太和殿广场，元宵夜也运气超好能去到上元节灯会。春天的花，夏天的晴空，秋天宫墙上飞过的训鸽，以及我有生之年终于看到的，故宫的雪。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/OK8A3SE75MFwzD6.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/OK8A3SE75MFwzD6.jpg)
 
 > _2019.02.20 北京 | 紫禁城上元之夜_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/QBujts7wfam9bWK.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/QBujts7wfam9bWK.jpg)
 
 > _2019.11.30 北京 | 下雪的故宫_
 
@@ -140,7 +140,7 @@ toc: false
 
 去看冰山梁露营看银河的旅程，我们单程开了六个小时的车，选中了这一年夏末最后能看到银心的朔日，和流星雨的极盛。那天我们撑起帐篷，看了金色时刻和蓝色时刻壮丽的太阳。等到夜色降临，才真的感慨，原来肉眼是可以看见银河的。人生难以忘怀的初体验。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/vKWmGTLfyhPYEt2.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/vKWmGTLfyhPYEt2.jpg)
 
 > _2019.08.31 张家口赤城县冰山梁 | 你如果要问我那天夜晚踟蹰路上的心情 我想起的却不是孤单和路长 而是波澜壮阔的海和天空中闪耀的星光_
 
@@ -148,11 +148,11 @@ toc: false
 
 北欧的旅途里，前半程是转瞬即逝的峡湾，我闭上眼睛仍然能想起车窗外，峡湾下的村落和风雨交加的大西洋公路。以及温柔的阳光打在落满雪的树梢，眼前所见，便是挪威的森林。而更多关于北欧的旅途所见，可以期待一下我（不值得猴年马月能剪出来）的 vlog！
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/Vo8MslNAgrOZBQR.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/Vo8MslNAgrOZBQR.jpg)
 
 > _2019.12.27 挪威 | 峡湾下的村落_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2019/hbKe4Tsi7gHXG65.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/hbKe4Tsi7gHXG65.jpg)
 
 > _2019.12.30 挪威利勒哈默尔 | 新年前夕_
 

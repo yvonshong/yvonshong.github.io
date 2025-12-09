@@ -14,7 +14,7 @@ Una rosa es una rosa.
 
 结果是爱上了浇花的过程。回校时为它满心欢喜，一直惦记着为什么还没有发芽，放在窗边放在桌上，最初只是想圆去年的一个愿望，更多感受到的却是一种迟到的苦涩，近三十天，好多个月，一点点的推下去更多的是知道它不会发芽了对吧，自己当初种的时候只是以为好好爱着它就对了吧。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/psbflower.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbflower.jpg)
 
 再也不要让一朵花如此举足轻重的充溢着自己的脑海，可却被告知是自己对花还不够好，连芽都没有长出来。可就是没有长出来的过程当中，为一朵花闪耀的日子。
 

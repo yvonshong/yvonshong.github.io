@@ -38,7 +38,7 @@ toc: false
 
 2020 年，是我人生轨迹变化的一年，自己实现了近年来最大的阶段性目标，实现了毕业时的愿望，我终于来到了自己喜欢的城市，在看得见城市地标的地方工作生活。也曾去过很多地方，无论是曾经在日本独自去过的旅行还是在国内玩，如今每次回上海从舷窗看下这中国最大的都市圈，有了更多关于生活在喜欢的城市的感受。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/cCTi6k5DS1lRfUj.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/cCTi6k5DS1lRfUj.png)
 
 > _2020.09.16 上海 | 不同时分的切片_
 
@@ -68,11 +68,11 @@ toc: false
 
 算上这一次搬家，大概是第十一次来上海了，朋友送我的生日礼物是个烤箱，比我还先到我的住处，第一次抱着常驻的心理，更或者说会努力想在此定居？开始了在这里真正意义上的生活。卧室的窗户可以远远的看到陆家嘴三件套，配合远处复旦的一排排树林，总有一种当年路过新宿御苑的感觉。 ​​​​
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/d2119969.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/d2119969.jpg)
 
 > _东京新宿御苑_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/2vwh7VtPLJrnCHW.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2vwh7VtPLJrnCHW.png)
 
 > _2020.12.30 上海 | 阳光打在一墙的拍立得上 我做到了关于生活的设想_
 
@@ -90,7 +90,7 @@ toc: false
 
 25 岁生日，正是前往上海的前一天，在北京生活的最后一天，我独自去王小波墓前扫墓，朋友问我生日约了谁玩呢，我很郑重其事的回答说：「约了我自己」。也正是因为我能直面当时的我，终于学会了接纳自己，接纳包括自己在内的很多事物的不完美，接纳当时内心受尽挫折的自己，才能和当下的自己愉快地相处，也才会一直秉承生活不仅是需要有工作学习朋友家人，也需要有与自我相处时间的信念。并在这个过程中，持续地向内寻求力量，而不靠外界的评价来建立对自我的肯定，或是从中获得满足。其间当然也要能够修正自我的认知，比如不是为了吸引人而去变得更好，而是觉得变成那样好像很不错，才能够在心中指引方向，然后不撞南墙不回头，为此骄傲，为此我才是我。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/aHom9jb7A6dUCeN.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png)
 
 > _2020.04.11 北京 | 王小波墓前_
 
@@ -128,11 +128,11 @@ moment 是神启，是点亮花火的瞬间，可是瞬间是并不能永恒的�
 
 开始明白人生的阶段性，开始意识到生活是由无数挑战支撑起来的，开始意识到树立短周期目标和 review 的重要性，开始明白方法论。开始区分相关性和因果性，也开始区分手段和目的，比如说我们在不同阶段面临的不同挑战便是手段而不是目的，我们并不是为了去完成关卡达成挑战而活的。就像皮克斯的电影《心灵奇旅》，twenty-two 坐在路边台阶，仿佛升格般看着生活日常时，我太感同身受了，我就是为了去拥有那些无数瞬间，去进入我管它叫做 inner peace 的状态。
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/mvXB9SGaQ1IHoWP.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/mvXB9SGaQ1IHoWP.png)
 
 > _2020.8.30 西藏林芝 | 南迦巴瓦峰前坐了六个小时_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/oAUh3d4ROBQLq6D.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/oAUh3d4ROBQLq6D.png)
 
 > _2020.8.15 浙江宁波 | 渔山岛民宿，狭长的走廊，窗外是一幅大海_
 

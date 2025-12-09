@@ -148,23 +148,23 @@ toc: false
 也有在毕业离校那天搜刮教室里面的东西留下的照片无数，谢老给我的班上的奖状，班旗【真当我收破烂的班助队长啊= = 】
 话不多说直接上图
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/SWUlCu8edBKncwt.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/SWUlCu8edBKncwt.png)
 
 > _大概是三次换组照的小组照吧_
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/uBYzl6RNHq3mQUw.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.png)
 
 > _毕业留念做出来的东西_
 
 那个 成长与离别 的光碟鉴于经费不够只刻了 5 张，我留有一张，其他的让家长给老师去了= =
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/5FM3Rm7u9dNXzhJ.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/5FM3Rm7u9dNXzhJ.png)
 
 > _三年里我到底买了多少明信片_
 
 剩下了多少明信片 oh shit= =
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/KulPUY9X3psoW5f.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/KulPUY9X3psoW5f.png)
 
 > _这大概就是三年里收到的信件吧_
 
@@ -173,7 +173,7 @@ toc: false
 【你们能找到各自的么~ 】
 这些信大概就封存在家里了吧，不带去大学，
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/dzH5qmEePL4ZAh9.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/dzH5qmEePL4ZAh9.png)
 
 > _这是歌歌的大作！！！_
 

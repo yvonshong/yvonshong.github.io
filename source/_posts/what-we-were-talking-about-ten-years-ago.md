@@ -15,18 +15,18 @@ toc: false
 
 是的，如今提到高中，得说是十(几)年前了，那三年间，我们一起记录，Rich 制作了电子相册，我攒下了很多照片和视频。我还记得高考出成绩的那天晚上，我下午还在忙着语录印书的事情。
 
-![alt text](https://raw.githubusercontent.com/yvonshong/picbed/master/2013/jiushiyiyu.jpg)
+![alt text](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg)
 
-![alt text](https://raw.githubusercontent.com/yvonshong/picbed/master/2013/WP_20130819_008.jpg)
+![alt text](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/WP_20130819_008.jpg)
 
 暑期来校的高一新生夏令营里，还制作了海报趁机贩卖。
-![alt text](https://raw.githubusercontent.com/yvonshong/picbed/master/2013/WP_20130713_001.jpg)
+![alt text](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/WP_20130713_001.jpg)
 
-![alt text](https://raw.githubusercontent.com/yvonshong/picbed/master/2013/WP_20130720_012.jpg)
+![alt text](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/WP_20130720_012.jpg)
 
-![alt text](https://raw.githubusercontent.com/yvonshong/picbed/master/2013/poster.jpg)
+![alt text](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/poster.jpg)
 
-![alt text](https://raw.githubusercontent.com/yvonshong/picbed/master/2013/f9cbf7d3572c11df8a04ee1a612762d0f603c2c0.jpg)
+![alt text](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/f9cbf7d3572c11df8a04ee1a612762d0f603c2c0.jpg)
 
 贩卖后净收入一千余，事后请大家一起吃了顿大餐，给参与书籍排班的同学们送了纪念礼物。
 

@@ -50,11 +50,11 @@ Github 授权，关联相关 repo（更新文档的 repo）（我都是在[/blog
 
 - setting-general
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5hpfrsej20k40i0gm6.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5hpfrsej20k40i0gm6.jpg)
 
 - setting-env
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5hpebl2j20ps0cdgm4.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5hpebl2j20ps0cdgm4.jpg)
 
 1. 配置 `appveyor.yml` 到文档 repo
 
@@ -135,7 +135,7 @@ build_script:
 这里又回顾了一波 git bash 命令（通常都用 sourcetree 的我。。。）
 
 然后终于成功了！！！
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/6b2f6355ly1fyo5hpgj8sj211y0kgmzv.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5hpgj8sj211y0kgmzv.jpg)
 
 至此，接下来只需要深入了解 AppVeyor 的自动集成周期等更详细的信息就行了。
 AppVeyor 还可以根据你 git 更新打的 tag 来触发！欢迎尝试！

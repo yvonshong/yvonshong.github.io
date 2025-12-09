@@ -25,7 +25,7 @@ toc: false
 
 阿信有一段时间特别迷惑 在骑机车过自强隧道之后一下子豁然
 
-![](https://raw.githubusercontent.com/yvonshong/picbed/master/psbtw.jpg)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbtw.jpg)
 
 > 「我只能有一个自强隧道那麼长的迷惑。 」—— 阿信
 
@@ -58,7 +58,7 @@ toc: false
 关于离开了的活动
 前面有一篇日志 还在讲前路的迷茫 只是后来 离开的人是我 没有留任下来 无他可说 只有对主席团一些处理方式的略微不满(反正主席看不到这里 嗯哼)
 
-![image.png](https://raw.githubusercontent.com/yvonshong/picbed/master/pQvEZOhgkd2Gy6C.png)
+![image.png](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/pQvEZOhgkd2Gy6C.png)
 
 结束的时候 主任们的信里 史主任说 「每次都卖掉自己的节操来换得大家的开心，真是辛苦你了。虽然表面上一直都是嘻嘻哈哈毫不在乎的样子，但是我看得出你是所有人中对活动感情最深的一个。」对活动的感情 算什么呢 大概只是因为最初时在大学里给的第一份归属感 结束了 还是开开心心一起复习期末
 只是我有时会想 人生海海 后会无期
