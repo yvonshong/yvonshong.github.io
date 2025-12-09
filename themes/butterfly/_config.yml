@@ -133,8 +133,9 @@ wordcount:
 
 # 深色模式 (Dark Mode)
 darkmode:
-  enable: false
-  button: true
+  enable: true  # 改为 true
+  button: true  # 显示切换按钮
+  autoChangeMode: 1 # (可选) 1: 根据系统设置自动切换; 2: 根据时间自动切换
 
 # ==============================================================================
 # 交互 (Interaction)
