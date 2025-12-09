@@ -146,12 +146,39 @@ share:
   sharejs:
     sites: facebook,twitter,wechat,weibo
 
-# 搜索设置
-local_search:
-  enable: true
-  preload: false
-  top_n_per_article: 1
-  unescape: false
+search:
+  # Choose: algolia_search / local_search / docsearch
+  # leave it empty if you don't need search
+  use: local_search
+  placeholder:
+
+  # Algolia Search
+  algolia_search:
+    # Number of search results per page
+    hitsPerPage: 6
+
+  # Local Search
+  local_search:
+    # Preload the search data when the page loads.
+    preload: false
+    # Show top n results per article, show all results by setting to -1
+    top_n_per_article: 1
+    # Unescape html strings to the readable one.
+    unescape: false
+    pagination:
+      enable: true
+      # Number of search results per page
+      hitsPerPage: 8
+    CDN:
+
+  # Docsearch
+  # https://docsearch.algolia.com/
+  docsearch:
+    appId:
+    apiKey:
+    indexName:
+    option:
+
 
 # 图片懒加载
 lazyload:
