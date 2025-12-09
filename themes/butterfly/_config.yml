@@ -30,7 +30,7 @@ social:
   fas fa-envelope: mailto:yvon@shong.win || Email || '#f0ad4e'
   fas fa-rss: /atom.xml || RSS || '#f26522'
 
-disable_top_img: true
+disable_top_img: false
 
 default_top_img: 
   - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/2vwh7VtPLJrnCHW.png
