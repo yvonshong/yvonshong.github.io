@@ -145,7 +145,7 @@ reward:
   QR_code:
      - img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png
        link:
-       text: 支付宝版的赞
+       text: Wechat
 
 # 分享 (Share)
 share:
