@@ -24,6 +24,7 @@
     "hexo-wordcount": "^6.0.1",
     "hexo-filter-nofollow": "^2.0.2",
     "hexo-all-minifier": "^0.5.2",
-    "hexo-filter-github-emojis": "^3.0.4"
+    "hexo-filter-github-emojis": "^3.0.4",
+    "hexo-butterfly-tag-plugins-plus": "^1.0.18"
   }
 }

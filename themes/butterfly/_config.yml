@@ -144,3 +144,14 @@ footer:
     enable: true
     since: 2020
   copyright: true
+
+pjax:
+  enable: true
+  exclude:
+    # - /music/  # 如果有不需要刷新的页面可填在这里
+
+# 找到 busuanzi
+busuanzi:
+  site_uv: true  # 统计本站访客数 (人数)
+  site_pv: true  # 统计本站总访问量 (点击次)
+  page_pv: true  # 统计单篇文章阅读量
