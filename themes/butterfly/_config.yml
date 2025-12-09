@@ -11,10 +11,22 @@ menu:
 # 社交图标 (对应 Yilia 的 subnav)
 social:
   fab fa-bilibili: https://space.bilibili.com/6083595 || Bilibili || '#fb7299'
-  fas fa-zhihu: http://zhihu.com/people/yvonshong || 知乎 || '#0084ff'
+  fab fa-zhihu: http://zhihu.com/people/yvonshong || 知乎 || '#0084ff'
   fab fa-github: http://github.com/yvonshong || Github || '#24292e'
   fas fa-envelope: mailto:yvon@shong.win || Email || '#f0ad4e'
   fas fa-rss: /atom.xml || RSS || '#f26522'
+
+disable_top_img: false
+
+default_top_img: 
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/2vwh7VtPLJrnCHW.png
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/mvXB9SGaQ1IHoWP.png
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/mLo31msuABfdRkaZ.jpg
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/psbtw.jpg
+  - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/yL2ePjwagcG5IBV.jpg
 
 index_img:
   - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/2vwh7VtPLJrnCHW.png
@@ -41,9 +53,9 @@ card_author:
   description: "自动驾驶从业者🤖 | Hesai Tech<br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | B站id yvonshong <br>少年热忱🙋🏻‍♂️"
   button:
     enable: true
-    icon: fab fa-github
-    text: Follow Me
-    link: http://github.com/yvonshong
+    icon: fab fa-zhihu
+    text: Follow me on Zhihu
+    link: http://zhihu.com/people/yvonshong
 
 # 侧边栏配置
 aside:
@@ -166,3 +178,4 @@ busuanzi:
   site_uv: true  # 统计本站访客数 (人数)
   site_pv: true  # 统计本站总访问量 (点击次)
   page_pv: true  # 统计单篇文章阅读量
+

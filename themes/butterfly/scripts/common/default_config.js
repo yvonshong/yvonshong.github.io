@@ -97,9 +97,9 @@ module.exports = {
     license_url: 'https://creativecommons.org/licenses/by-nc-sa/4.0/'
   },
   reward: {
-    enable: false,
-    text: null,
-    QR_code: null
+    enable: true,
+    text: "人民币版的赞",
+    QR_code: "https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png"
   },
   post_edit: {
     enable: false,
