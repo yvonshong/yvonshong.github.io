@@ -1,0 +1,139 @@
+# ==============================================================================
+# 核心导航与社交 (Menu & Social)
+# ==============================================================================
+menu:
+  主页: / || fas fa-home
+  技术: /categories/tech/ || fas fa-microchip
+  随笔: /categories/essay/ || fas fa-pen-nib
+  友链: /link/ || fas fa-link   # 对应 Yilia 的 friends
+  关于: /about/ || fas fa-user  # 对应 Yilia 的 aboutme
+
+# 社交图标 (对应 Yilia 的 subnav)
+social:
+  fab fa-bilibili: https://space.bilibili.com/6083595 || Bilibili || '#fb7299'
+  fas fa-book: http://zhihu.com/people/yvonshong || 知乎 || '#0084ff'
+  fab fa-github: http://github.com/yvonshong || Github || '#24292e'
+  fas fa-envelope: mailto:yvon@shong.win || Email || '#f0ad4e'
+  fas fa-rss: /atom.xml || RSS || '#f26522'
+
+# ==============================================================================
+# 个人信息与侧边栏 (Author & Sidebar)
+# ==============================================================================
+# 对应 Yilia 的 avatar
+avatar:
+  img: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+  effect: true
+
+# 对应 Yilia 的 aboutme
+card_author:
+  enable: true
+  description: "自动驾驶从业者🤖 | Hesai Tech<br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | B站id yvonshong <br>少年热忱🙋🏻‍♂️"
+  button:
+    enable: true
+    icon: fab fa-github
+    text: Follow Me
+    link: http://github.com/yvonshong
+
+# 侧边栏配置
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  card_author:
+    enable: true
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+    sort_order: desc
+  card_categories:
+    enable: true
+  card_tags:
+    enable: true
+  card_archives:
+    enable: true
+  card_webinfo:
+    enable: true
+
+# ==============================================================================
+# 评论系统 (Comments - Disqus)
+# ==============================================================================
+comments:
+  use: Disqus  # 启用 Disqus
+  text: true
+  lazyload: false # Disqus 建议关闭懒加载以确保加载稳定
+  count: true
+
+disqus:
+  shortname: shong # 你的 Disqus Shortname
+  apikey: 
+
+# ==============================================================================
+# 页面功能与样式 (Features & Style)
+# ==============================================================================
+# 网站图标
+favicon: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+
+# 代码块
+code:
+  copy: true
+  style: mac
+  highlight: true
+
+# 目录 (TOC)
+toc:
+  post: true
+  page: true
+  expand: true
+  number: false
+
+# 数学公式 (MathJax)
+math:
+  mathjax:
+    enable: true
+    per_page: false
+
+# 字数统计
+wordcount:
+  enable: true
+  post_wordcount: true
+  min2read: true
+  total_wordcount: true
+
+# 深色模式 (Dark Mode)
+darkmode:
+  enable: false
+  button: true
+
+# ==============================================================================
+# 交互 (Interaction)
+# ==============================================================================
+# 打赏 (Reward)
+reward:
+  enable: true
+  QR_code:
+    - https://i.loli.net/2020/10/28/It31kXcofTA9UB2.png || 微信 || fab fa-weixin
+    - https://i.loli.net/2020/10/28/8jJiNGcROCedwEA.png || 支付宝 || fab fa-alipay
+  text: '人民币版的赞'
+
+# 分享 (Share)
+share:
+  enable: true
+  type: sharejs
+  sharejs:
+    sites: facebook,twitter,wechat,weibo,douban
+
+# 图片懒加载
+lazyload:
+  enable: true
+  field: site
+  placeholder: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+
+# 底部信息
+footer:
+  owner:
+    enable: true
+    since: 2020
+  copyright: true

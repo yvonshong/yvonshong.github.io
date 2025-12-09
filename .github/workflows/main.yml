@@ -1,59 +1,50 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the hexo branch
 on:
   push:
-    branches: [hexo]
+    branches: [hexo] # 确保这里是你平时写博客的分支名，如果是 master 请改为 master
   pull_request:
     branches: [hexo]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout # 将仓库内master分支的内容下载到工作目录
-        uses: actions/checkout@v3 # 脚本来自 https://github.com/actions/checkout
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Use Node.js 18.x # 配置Node环境
-        uses: actions/setup-node@v3 # 配置脚本来自 https://github.com/actions/setup-node
+      # 1. 升级 Node.js 到 18.x 以支持 Hexo 6 和 Butterfly
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
-          cache: 'npm'
+          node-version: "18.x"
+          # 暂时去掉了 cache: 'npm'，因为你刚删除了 lock 文件，缓存会失效报错
 
       - name: Setup Hexo env
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.ACTION_DEPLOY_KEY }}
         run: |
-
-          # set up private key for deploy
+          # --- 配置 SSH 密钥 (保持不变) ---
           mkdir -p ~/.ssh/
-          # 配置秘钥
           echo "$ACTION_DEPLOY_KEY" | tr -d '\r' > ~/.ssh/id_rsa 
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
-          # set git infomation
-          # 换成你自己的邮箱和名字
+          
+          # --- 配置 Git 用户 (保持不变) ---
           git config --global user.name 'yvon'
           git config --global user.email '8537780+yvonshong@users.noreply.github.com'
-          # install dependencies
-          # 安装hexo
-          npm i -g hexo-cli
-          npm i
-          sudo apt-get install -y pandoc
-          npm un hexo-renderer-marked --save
-          npm i hexo-renderer-pandoc --save
+          
+          # --- 安装依赖 (核心变化) ---
+          npm install -g hexo-cli
+          
+          # 直接运行 npm install
+          # 它会自动读取你刚才修改过的 package.json
+          # 不需要再手动安装 pandoc 或卸载 marked 了，因为 package.json 里已经配置好了
+          npm install
 
       - name: Deploy
         run: |
-          # publish
-          hexo clean && hexo generate -f
-          # 执行部署程序
+          hexo clean
+          hexo generate
           hexo deploy

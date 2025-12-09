@@ -76,8 +76,9 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: hexo-theme-yilia-master
-theme: yilia
+# theme: yilia
+theme: butterfly
+
 Plugins: 
 - hexo-generator-sitemap
 - hexo-generator-baidusitemap
