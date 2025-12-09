@@ -16,7 +16,7 @@ social:
   fas fa-envelope: mailto:yvon@shong.win || Email || '#f0ad4e'
   fas fa-rss: /atom.xml || RSS || '#f26522'
 
-disable_top_img: false
+disable_top_img: true
 
 default_top_img: 
   - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/2vwh7VtPLJrnCHW.png
@@ -144,7 +144,7 @@ share:
   enable: true
   type: sharejs
   sharejs:
-    sites: facebook,twitter,wechat,weibo,douban
+    sites: facebook,twitter,wechat,weibo
 
 # 搜索设置
 local_search:
