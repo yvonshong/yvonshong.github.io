@@ -3,6 +3,7 @@ title: 在世界中心呼唤爱的野兽
 date: 2017-01-02 22:00:00
 categories: essay
 toc: false
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo56cz5mfj20hs0630sx.jpg
 ---
 
 >“荞麦面/神社庙会/寺院初诣 品味足足日式的新年，无论是知恩院的一百零八声撞钟，还是出来后随着人群走到高台寺，坐在篝火旁分发的热酒酿…”

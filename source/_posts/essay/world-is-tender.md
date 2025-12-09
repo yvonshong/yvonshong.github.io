@@ -3,6 +3,7 @@ title: 充实人生的常态是成长的阵痛
 date: 2018-06-17 15:00:00
 categories: essay
 toc: true
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4l7r7amj23402c0npd.jpg
 ---
 
 笔记本里去年的年终总结都还没有写完。。。结果这一年都过了二分之一了。就顺便写一下这一年多来的一些感慨吧。 有时不得不说时间在推着我走，仿佛毕业是昨天的事，又仿佛过了很久。在交替间的错乱，使我觉得生活还在继续，却又发现有些地方已经回不去了。 

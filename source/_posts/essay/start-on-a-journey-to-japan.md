@@ -3,6 +3,7 @@ title: 那么多的人，你要去哪里
 date: 2016-09-19 21:00:00
 categories: essay
 toc: false
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo55t16xqj20qy0fm76s.jpg
 ---
 
 一下子在九龙湖这个地方呆了三年，当我知道我过了 Waseda 的时候，很开心的跟伙伴打电话分享，那天阳光很好，我骑着单车飞驰在回寝室路上，那时候还是春天，却忽然意识到，那我是不是要说再见了。

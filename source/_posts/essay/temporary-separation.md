@@ -3,6 +3,7 @@ title: 窗外日光弹指过·席间花影坐前移
 date: 2016-08-25 21:03:50
 categories: essay
 toc: true
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4teq4jxj20hs0dcwew.jpg
 ---
 
 我也不知道

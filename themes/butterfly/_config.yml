@@ -25,8 +25,7 @@ subtitle:
 # 社交图标 (对应 Yilia 的 subnav)
 social:
   fab fa-bilibili: https://space.bilibili.com/6083595 || Bilibili || '#fb7299'
-  # fab fa-zhihu: http://zhihu.com/people/yvonshong || 知乎 || '#0084ff'
-  fab fa-github: http://github.com/yvonshong || Github || '#24292e'
+  fab fa-github: http://github.com/yvonshong || Github || '#dbd6d1'
   fas fa-envelope: mailto:yvon@shong.win || Email || '#f0ad4e'
   fas fa-rss: /atom.xml || RSS || '#f26522'
 
@@ -55,11 +54,11 @@ avatar:
 # 对应 Yilia 的 aboutme
 card_author:
   enable: true
-  description: "自动驾驶从业者🤖 | Hesai Tech<br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | B站id yvonshong <br>少年热忱🙋🏻‍♂️"
+  description: "自动驾驶从业者🚚 | RoboTruck.jp<br>早稻田修士🌸 | Waseda University<br>vlogger🎥 | B站id yvonshong <br>少年热忱🙋🏻‍♂️"
   button:
     enable: true
     icon: fab fa-zhihu
-    text: Follow me on Zhihu
+    text: 关注知乎
     link: http://zhihu.com/people/yvonshong
 
 # 侧边栏配置

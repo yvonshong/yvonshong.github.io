@@ -2,7 +2,7 @@
 title: 后高考时代
 date: 2013-10-13 14:41:22
 categories: essay
-toc: false
+toc: true
 ---
 
 请别忘记你为何出发以及付出的努力

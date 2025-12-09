@@ -3,6 +3,7 @@ title: 当时的月亮
 date: 2022-01-01 06:00:00
 categories: essay
 toc: true
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/qKYvjPJsGXumrDL.jpg
 ---
 
 「敬通雅好辞说，而坎壈盛世，显志自序，亦蚌病成珠矣。」

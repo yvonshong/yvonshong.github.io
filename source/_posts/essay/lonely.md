@@ -3,6 +3,7 @@ title: 一个人活
 date: 2014-08-30 00:39:00
 categories: essay
 toc: false
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbtw.jpg
 ---
 
 故事 大概要从两个月前出发的一个人的旅行 开始说起

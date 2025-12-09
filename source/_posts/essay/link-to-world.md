@@ -3,6 +3,7 @@ title: 与世界连接
 date: 2021-02-21 18:00:00
 categories: essay
 toc: false
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png
 ---
 
 时间在记忆中是非线性流逝的，你的少年光景，被压缩成弹指须臾，你正在经历的故事，结束之后空留一地虚无。
