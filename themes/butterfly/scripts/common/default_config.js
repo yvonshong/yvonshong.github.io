@@ -147,15 +147,15 @@ module.exports = {
       description: null,
       button: {
         enable: true,
-        icon: 'fab fa-github',
-        text: 'Follow Me',
-        link: 'https://github.com/xxxxxx'
+        icon: 'fab fa-zhihu',
+        text: 'Follow me on Zhihu',
+        link: 'http://zhihu.com/people/yvonshong'
       }
     },
-    card_announcement: {
-      enable: true,
-      content: 'This is my Blog'
-    },
+    // card_announcement: {
+    //   enable: true,
+    //   content: 'This is my Blog'
+    // },
     card_recent_post: {
       enable: true,
       limit: 5,
