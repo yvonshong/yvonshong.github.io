@@ -134,10 +134,10 @@ darkmode:
 # 交互 (Interaction)
 # ==============================================================================
 # 打赏 (Reward)
-reward:
-  enable: true
-  QR_code: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png
-  text: '人民币版的赞'
+# reward:
+#   enable: true
+#   QR_code: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png
+#   text: '人民币版的赞'
 
 # 分享 (Share)
 share:
@@ -150,7 +150,7 @@ search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
   use: local_search
-  placeholder:
+  placeholder: 'Search...'
 
   # Algolia Search
   algolia_search:
@@ -160,6 +160,7 @@ search:
   # Local Search
   local_search:
     # Preload the search data when the page loads.
+    enable: true
     preload: false
     # Show top n results per article, show all results by setting to -1
     top_n_per_article: 1
@@ -171,13 +172,21 @@ search:
       hitsPerPage: 8
     CDN:
 
-  # Docsearch
-  # https://docsearch.algolia.com/
-  docsearch:
-    appId:
-    apiKey:
-    indexName:
-    option:
+
+# Local Search
+local_search:
+  enable: true
+  # Preload the search data when the page loads.
+  preload: false
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  pagination:
+    enable: true
+    # Number of search results per page
+    hitsPerPage: 8
+  CDN:
 
 
 # 图片懒加载

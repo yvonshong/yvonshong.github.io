@@ -99,7 +99,7 @@ module.exports = {
   reward: {
     enable: true,
     text: "人民币版的赞",
-    QR_code: "https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png"
+    QR_code: 'https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png'
   },
   post_edit: {
     enable: false,
