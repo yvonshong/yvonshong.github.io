@@ -33,7 +33,7 @@ index_img:
 # 对应 Yilia 的 avatar
 avatar:
   img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
-  effect: true
+  effect: false
 
 # 对应 Yilia 的 aboutme
 card_author:
