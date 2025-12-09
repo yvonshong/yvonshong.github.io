@@ -42,7 +42,7 @@ default_top_img:
   - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/psbtw.jpg
   - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/yL2ePjwagcG5IBV.jpg
 
-index_img: https://pica.zhimg.com/80/v2-ebb9c94260c5a90f3c459cc2949c3b00_720w.webp?source=c8b7c179
+index_img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/2vwh7VtPLJrnCHW.png
 
 
 # ==============================================================================
@@ -179,22 +179,6 @@ search:
       # Number of search results per page
       hitsPerPage: 8
     CDN:
-
-
-# Local Search
-local_search:
-  enable: true
-  # Preload the search data when the page loads.
-  preload: false
-  # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
-  # Unescape html strings to the readable one.
-  unescape: false
-  pagination:
-    enable: true
-    # Number of search results per page
-    hitsPerPage: 8
-  CDN:
 
 
 # 图片懒加载
