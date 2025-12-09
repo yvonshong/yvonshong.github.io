@@ -86,10 +86,31 @@ Plugins:
 - hexo-generator-json-content
 - hexo-deployer-git
 
+# Search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
+# Sitemap
 sitemap:
   path: sitemap.xml
+
+# Baidu Sitemap
 baidusitemap:
   path: baidusitemap.xml
+
+# Feed (RSS)
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
 
 jsonContent:
     meta: false
@@ -121,8 +142,18 @@ deploy:
 # disqus
 disqus_shortname: shong
 
-#Feed Atom
-feed:
-  type: atom
-  path: atom.xml
-  limit: 50
+# 1. Minifier (代码压缩 - 提升加载速度)
+all_minifier:
+  enable: true
+  html: true
+  css: true
+  js: true
+  minifyClientSideJS: true
+  
+# 2. Github Emojis (原生表情支持)
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:

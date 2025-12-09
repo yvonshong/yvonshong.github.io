@@ -21,7 +21,7 @@ social:
 # ==============================================================================
 # 对应 Yilia 的 avatar
 avatar:
-  img: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+  img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
   effect: true
 
 # 对应 Yilia 的 aboutme
@@ -74,7 +74,7 @@ disqus:
 # 页面功能与样式 (Features & Style)
 # ==============================================================================
 # 网站图标
-favicon: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+favicon: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
 
 # 代码块
 code:
@@ -114,8 +114,8 @@ darkmode:
 reward:
   enable: true
   QR_code:
-    - https://i.loli.net/2020/10/28/It31kXcofTA9UB2.png || 微信 || fab fa-weixin
-    - https://i.loli.net/2020/10/28/8jJiNGcROCedwEA.png || 支付宝 || fab fa-alipay
+    - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png || 微信 || fab fa-weixin
+    - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/8jJiNGcROCedwEA.png || 支付宝 || fab fa-alipay
   text: '人民币版的赞'
 
 # 分享 (Share)
@@ -125,11 +125,18 @@ share:
   sharejs:
     sites: facebook,twitter,wechat,weibo,douban
 
+# 搜索设置
+local_search:
+  enable: true
+  preload: false
+  top_n_per_article: 1
+  unescape: false
+
 # 图片懒加载
 lazyload:
   enable: true
   field: site
-  placeholder: https://i.loli.net/2020/10/28/HAbatdcnuM37PKf.png
+  placeholder: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/HAbatdcnuM37PKf.png
 
 # 底部信息
 footer:
