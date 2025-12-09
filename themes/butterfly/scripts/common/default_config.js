@@ -152,10 +152,10 @@ module.exports = {
         link: 'http://zhihu.com/people/yvonshong'
       }
     },
-    // card_announcement: {
-    //   enable: true,
-    //   content: 'This is my Blog'
-    // },
+    card_announcement: {
+      enable: false,
+      content: 'This is my Blog'
+    },
     card_recent_post: {
       enable: true,
       limit: 5,
