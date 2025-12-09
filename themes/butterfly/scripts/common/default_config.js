@@ -138,7 +138,7 @@ module.exports = {
     mobile: true,
     position: 'right',
     display: {
-      archive: true,
+      archive: false,
       tag: true,
       category: true
     },

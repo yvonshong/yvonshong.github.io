@@ -82,7 +82,7 @@ aside:
   card_tags:
     enable: true
   card_archives:
-    enable: true
+    enable: false
   card_webinfo:
     enable: true
 
