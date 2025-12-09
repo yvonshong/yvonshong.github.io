@@ -11,7 +11,7 @@ menu:
 # 社交图标 (对应 Yilia 的 subnav)
 social:
   fab fa-bilibili: https://space.bilibili.com/6083595 || Bilibili || '#fb7299'
-  fab fa-zhihu: http://zhihu.com/people/yvonshong || 知乎 || '#0084ff'
+  # fab fa-zhihu: http://zhihu.com/people/yvonshong || 知乎 || '#0084ff'
   fab fa-github: http://github.com/yvonshong || Github || '#24292e'
   fas fa-envelope: mailto:yvon@shong.win || Email || '#f0ad4e'
   fas fa-rss: /atom.xml || RSS || '#f26522'
@@ -136,9 +136,7 @@ darkmode:
 # 打赏 (Reward)
 reward:
   enable: true
-  QR_code:
-    - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png || 微信 || fab fa-weixin
-    - https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/8jJiNGcROCedwEA.png || 支付宝 || fab fa-alipay
+  QR_code: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png || 微信 || fab fa-weixin
   text: '人民币版的赞'
 
 # 分享 (Share)
