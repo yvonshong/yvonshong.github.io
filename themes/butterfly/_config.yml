@@ -5,8 +5,8 @@ menu:
   主页: / || fas fa-home
   技术: /categories/tech/ || fas fa-microchip
   随笔: /categories/essay/ || fas fa-pen-nib
-  友链: /link/ || fas fa-link   # 对应 Yilia 的 friends
-  关于: /about/ || fas fa-user  # 对应 Yilia 的 aboutme
+  # 友链: /link/ || fas fa-link   # 对应 Yilia 的 friends
+  # 关于: /about/ || fas fa-user  # 对应 Yilia 的 aboutme
 
 # 社交图标 (对应 Yilia 的 subnav)
 social:
