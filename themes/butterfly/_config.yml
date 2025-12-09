@@ -32,19 +32,14 @@ social:
 
 disable_top_img: false
 
-default_top_img: 
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2vwh7VtPLJrnCHW.png
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rjhg43j23vc2kwe84.jpg
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rrnrhrj23vc2kwe8a.jpg
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/mvXB9SGaQ1IHoWP.png
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/mLo31msuABfdRkaZ.jpg
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbtw.jpg
-  - https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/yL2ePjwagcG5IBV.jpg
-
 index_img: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2vwh7VtPLJrnCHW.png
 
-
+default_top_img: false
+archive_img: false
+tag_img: false
+tag_per_img: false
+category_img: false
+category_per_img: false
 # ==============================================================================
 # 个人信息与侧边栏 (Author & Sidebar)
 # ==============================================================================
