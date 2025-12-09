@@ -136,8 +136,10 @@ darkmode:
 # 打赏 (Reward)
 reward:
   enable: true
-  QR_code: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png
-  text: "人民币版的赞"
+  QR_code:
+     - img: https://raw.githubusercontent.com/yvonshong/picbed/refs/heads/master/It31kXcofTA9UB2.png
+       link:
+       text: 支付宝版的赞
 
 # 分享 (Share)
 share:
