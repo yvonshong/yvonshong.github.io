@@ -148,7 +148,7 @@ module.exports = {
       button: {
         enable: true,
         icon: 'fab fa-zhihu',
-        text: 'Follow me on Zhihu',
+        text: '关注知乎',
         link: 'http://zhihu.com/people/yvonshong'
       }
     },
