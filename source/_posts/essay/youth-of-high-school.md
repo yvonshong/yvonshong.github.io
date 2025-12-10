@@ -3,6 +3,7 @@ title: 青春荒唐我不负你
 date: 2013-06-11 04:01:00
 categories: essay
 toc: false
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.png
 ---
 
 高考倒计时 10 天，高考倒计时 1 天，高考，高考完的那个晚上，毕业典礼，谢师宴。也就在恍惚之间，高考并没有想象中的那么轰轰烈烈，仿佛是想要凭此事刻下自己来过的痕迹。

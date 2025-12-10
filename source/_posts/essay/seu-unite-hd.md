@@ -3,6 +3,7 @@ title: 写在前路未知时·爱在心口难开
 date: 2014-05-24 18:26:00
 categories: essay
 toc: false
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/AZjLBpGWvN2oKOq.png
 ---
 
 今天凌晨 3、4 点写的...懒得改时间称呼了...说不出感动的话 等下还有去和他们自习 hhhh 爱在心口难开

@@ -3,7 +3,7 @@ title: 见过花火
 date: 2019-02-08 03:38:00
 categories: essay
 toc: false
-cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7r7ubkzj21ar0u0n2c.jpg
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rdb603j21fq0o2x6p.jpg
 ---
 
 「帝都冬夜，到家楼下便利店买水，在 seven 的冰柜前抬头看到了 カルピス 饮料，我一下子愣住了。原来两年真的已经过去了，这两年的记忆如盛夏般炽热而漫长，就像仲夏夜的一场梦。」

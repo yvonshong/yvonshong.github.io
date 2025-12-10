@@ -3,6 +3,7 @@ title: 玫瑰色
 date: 2012-04-30 20:45:00
 categories: essay
 toc: false
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbflower.jpg
 ---
 
 清明时种下花的种子再也不会开，纵使自己每天给它浇水那也怎样，天气好的时候捧着它到走廊去晒太阳，贴上标签怕它掉了，说那是自己的花要对它负责，可它不会给你长出幼芽的机会。
