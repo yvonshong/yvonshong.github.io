@@ -184,7 +184,7 @@ search:
 lazyload:
   enable: true
   field: site
-  placeholder: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png
+  placeholder: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png
 
 # 底部信息
 footer:
