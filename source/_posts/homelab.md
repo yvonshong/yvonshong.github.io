@@ -35,6 +35,20 @@ DockerHub中，包含以下一些常用的镜像。
 | `cloudflared` | Cloudflare Tunnel 服务，用于安全地将选定服务暴露到公网，无需公网 IP，配合nginx打洞。|
 
 
+## 🗄 SMB 轻 NAS
+
+宿主机是 Windows，最简单的文件共享方式莫过于系统原生的 SMB (Server Message Block) 协议。不需要像 TrueNAS 那样直通硬盘，利用 Windows 的“高级共享”功能，配合局域网和 TailScale，就能实现一个内网跑满带宽，外网随时存取的轻量 NAS。
+开启共享：右键点击想要共享的大容量硬盘或文件夹（例如 D:\Downloads 或 E:\Movies）。选择 属性 (Properties) -> 共享 (Sharing) -> 高级共享 (Advanced Sharing)。勾选 “共享此文件夹”。点击 权限 (Permissions) -> 添加 guest -> 给予 完全控制 (Full Control) 或 读取 (Read) 权限。网络发现： 确保当前网络连接属性为“专用网络”，并在“网络和共享中心”中开启了“启用网络发现”和“启用文件和打印机共享”。
+
+多端挂载与访问，有了 SMB，家里的所有设备都能极其丝滑地访问 Homelab 里的资源：
+
+|设备端|连接方式|用途|
+|---|---|---|
+|MacBook|Finder -> Cmd + K -> 输入 smb://192.168.xx.xx | 也就是前面提到的“轻负载工作流”，直接挂载远程磁盘剪辑视频或整理照片。
+|iOS / iPad|自带“文件”App -> 连接服务器 或 nPlayer / InfuseiPad | 躺平看片神器，Infuse 配合 SMB 刮削海报墙体验极佳。|
+| 电视/盒子 | Kodi / 这里的 Android TV 播放器 | 直接读取 PC 下载好的 4K 原盘电影，不占电视存储。|
+|远程 NAS (配合 TailScale)|这是该方案的杀手锏。因为我在 Homelab 和 MacBook 上都装了 TailScale，在外网环境下，我只需要将 SMB 地址中的局域网 IP 换成 Homelab 的 TailScale IP，地址示例：smb://100.x.y.z (Tailscale IP)|效果： 即使人在咖啡馆，也能像在局域网一样挂载家里的硬盘，虽然速度受限于上行带宽，但用来存取文档、看非高码率视频完全够用，真正实现了私有云盘。|
+
 ## 💖 健康监控
 让 Homelab 保持“心跳”服务的稳定性至关重要。我使用 **`healthychecks.io`** 配合 **开机自启的 Python 脚本** 来实现心跳检测（Hearbeat）：
 
