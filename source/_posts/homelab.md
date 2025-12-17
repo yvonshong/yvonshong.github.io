@@ -99,20 +99,20 @@ ssh -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa root@192.16
 
 ## 🛰️ 远程访问方案
 
-Homelab 必须有便捷安全的远程访问能力。我的方案结合了 Tailscale 的零配置 VPN 和传统的远程桌面。
+Homelab 必须有便捷安全的远程访问能力。我的方案结合了 TailScale 的零配置 VPN 和传统的远程桌面。
 
 
 ### 🛡️ 核心远程方案
 
-1. **Tailscale 零配置 VPN 远程**：这是我的首选方案，它在所有设备间建立安全、加密的网状网络，无需复杂的端口转发配置。网络内部可以 ssh+FTP，在这一点上就可以拓展出很多很多东西。
-2. **Windows RDP 可视化**：通过 Tailscale 网络，我可以安全地使用 **Windows 远程桌面（RDP）**，获得完整的可视化操作界面。其他系统如 macOS（Windows应用），Ubuntu（Remmina）都有对应的软件，只需要使用 Tailscale 应用里面显示的设备局域网 IP。
+1. **TailScale 零配置 VPN 远程**：这是我的首选方案，它在所有设备间建立安全、加密的网状网络，无需复杂的端口转发配置。网络内部可以 ssh+FTP，在这一点上就可以拓展出很多很多东西。
+2. **Windows RDP 可视化**：通过 TailScale 网络，我可以安全地使用 **Windows 远程桌面（RDP）**，获得完整的可视化操作界面。其他系统如 macOS（Windows应用），Ubuntu（Remmina）都有对应的软件，只需要使用 TailScale 应用里面显示的设备局域网 IP。
 
-### ✈️ Tailscale Exit Node：实现免费版的“穿梭“
+### ✈️ TailScale Exit Node：实现免费版的“穿梭“
 
 使用国内 IP 打开某些政府app网页。
 
-* 在 Homelab 上Tailscale配置 **Exit Node**。
-* 在 **Tailscale Admin Web** 界面授权该 Exit Node。
+* 在 Homelab 上TailScale配置 **Exit Node**。
+* 在 **TailScale Admin Web** 界面授权该 Exit Node。
 * 在随身携带的 **Client 端（如 MacBook）** TailScale 上开启使用该 Exit Node。
 * 这样，我的设备流量就能通过家里的 Homelab 路由，从而实现**穿梭回国**的效果，享受国内网络服务。
 
