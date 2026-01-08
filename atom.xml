@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yvon Shong</title>
+  
+  <subtitle>人生应当如盛夏🔆</subtitle>
+  <link href="http://www.yvonshong.com/atom.xml" rel="self"/>
+  
+  <link href="http://www.yvonshong.com/"/>
+  <updated>2026-01-08T11:40:29.522Z</updated>
+  <id>http://www.yvonshong.com/</id>
+  
+  <author>
+    <name>Yvon Shong</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</title>
+    <link href="http://www.yvonshong.com/2026/01/08/robotruck-ref/"/>
+    <id>http://www.yvonshong.com/2026/01/08/robotruck-ref/</id>
+    <published>2026-01-08T09:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.522Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;【内推】无需日语、可远程！加入日本自动驾驶独角兽候补，定义物流未来&quot;&gt;&lt;a href=&quot;#【内推】无需日语、可远程！加入日本自动驾驶独角兽候补，定义物流未来&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="autopilot" scheme="http://www.yvonshong.com/tags/autopilot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>All-in-One HomeLab 和多设备多系统远程方案</title>
+    <link href="http://www.yvonshong.com/2025/12/16/homelab/"/>
+    <id>http://www.yvonshong.com/2025/12/16/homelab/</id>
+    <published>2025-12-16T23:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.521Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;🏡-打造-All-in-One-智能家庭实验室-Homelab&quot;&gt;&lt;a href=&quot;#🏡-打造-All-in-One-智能家庭实验室-Homelab&quot; class=&quot;headerlink&quot; title=&quot;🏡 打造 All-in-One 智能家庭实验室</summary>
+        
+      
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="homelab" scheme="http://www.yvonshong.com/tags/homelab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>输入法杂谈</title>
+    <link href="http://www.yvonshong.com/2023/06/15/tittle-tattle-about-input-method/"/>
+    <id>http://www.yvonshong.com/2023/06/15/tittle-tattle-about-input-method/</id>
+    <published>2023-06-15T11:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.522Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;关于输入法其实有一连串可以讲的故事和教程，因为它不仅仅是简简单单 26 键输入工具，更是侧面映衬了这些年的变化。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="IME" scheme="http://www.yvonshong.com/tags/IME/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我们把往事的记忆幻化成光影纸质想使之永垂不朽</title>
+    <link href="http://www.yvonshong.com/2023/06/07/what-we-were-talking-about-ten-years-ago/"/>
+    <id>http://www.yvonshong.com/2023/06/07/what-we-were-talking-about-ten-years-ago/</id>
+    <published>2023-06-07T02:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.522Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;十年前我在高中毕业的时候出过一本书，是高中三年来和同学们一起记录的玩笑和日常，书名为《九世呓语》，取名由来是我们高一是十一班，高二后，个别班级被拆分，其后班级序号前移，我们成了九班，书名谐音——九十一语（录）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="essay" scheme="http://www.yvonshong.com/categories/essay/"/>
+    
+    
+    <category term="cdqz" scheme="http://www.yvonshong.com/tags/cdqz/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PDF 文献库解决方案——Zotero</title>
+    <link href="http://www.yvonshong.com/2023/05/29/get-started-with-zotero/"/>
+    <id>http://www.yvonshong.com/2023/05/29/get-started-with-zotero/</id>
+    <published>2023-05-29T09:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.521Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;论工作方式的形成，和效率工具，我言必及我大一开始使用的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;outlook 日历：做日程管理，有时间跨度和排他性的任务；&lt;/li&gt;
+&lt;li&gt;todo：之前是 wunderlist，做任务管理，有 ddl 和优先级的设定；&lt;/li&gt;
+&lt;li&gt;以及我之前最重要的文档工具 OneNote；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但是在存储管理 pdf 文件上，迷糊了很多年。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="onedrive" scheme="http://www.yvonshong.com/tags/onedrive/"/>
+    
+    <category term="zotero" scheme="http://www.yvonshong.com/tags/zotero/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始 NanoPi R2S</title>
+    <link href="http://www.yvonshong.com/2023/05/15/introduction-to-nano-pi-r2s/"/>
+    <id>http://www.yvonshong.com/2023/05/15/introduction-to-nano-pi-r2s/</id>
+    <published>2023-05-15T16:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.522Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;半年前购置了软路由，最近才配置上，全当做个笔记。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="openwrt" scheme="http://www.yvonshong.com/tags/openwrt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聚焦激光雷达（五）——处理器</title>
+    <link href="http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/"/>
+    <id>http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/</id>
+    <published>2023-05-11T11:55:00.000Z</published>
+    <updated>2026-01-08T11:40:29.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="lidar" scheme="http://www.yvonshong.com/tags/lidar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>观星指南</title>
+    <link href="http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/"/>
+    <id>http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/</id>
+    <published>2023-05-07T05:24:00.000Z</published>
+    <updated>2026-01-08T11:40:29.522Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;和朋友们去看过几次夏季银河，陆陆续续也看过几次流星雨，也翻过很多次的车，所以不才想要小结一下我自己的观星指南，方便更多对天文，对摄影感兴趣的朋友们入坑。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="photograph" scheme="http://www.yvonshong.com/tags/photograph/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聚焦激光雷达（四）——光学系统</title>
+    <link href="http://www.yvonshong.com/2023/04/19/focus-on-lidar-4/"/>
+    <id>http://www.yvonshong.com/2023/04/19/focus-on-lidar-4/</id>
+    <published>2023-04-19T00:21:00.000Z</published>
+    <updated>2026-01-08T11:40:29.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;激光雷达从器件来看，最主要的构成要素是扫描器、发射器，接收器，处理器，以及一些内部的光学元件了，激光从发射器中产生，除了要通过扫描器来调整激光方向以外，还需要通过各式各样的光学元件，来调整光斑形状大小，光场的能量分布等等。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="lidar" scheme="http://www.yvonshong.com/tags/lidar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聚焦激光雷达（三）——接收器</title>
+    <link href="http://www.yvonshong.com/2023/04/01/focus-on-lidar-3/"/>
+    <id>http://www.yvonshong.com/2023/04/01/focus-on-lidar-3/</id>
+    <published>2023-04-01T15:30:00.000Z</published>
+    <updated>2026-01-08T11:40:29.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="lidar" scheme="http://www.yvonshong.com/tags/lidar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聚焦激光雷达（二）——激光器</title>
+    <link href="http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/"/>
+    <id>http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/</id>
+    <published>2023-03-28T13:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="lidar" scheme="http://www.yvonshong.com/tags/lidar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>欧拉角、四元数、旋转矩阵、旋转向量的相互转换（C++、python）</title>
+    <link href="http://www.yvonshong.com/2023/03/23/rotation-transformation/"/>
+    <id>http://www.yvonshong.com/2023/03/23/rotation-transformation/</id>
+    <published>2023-03-23T12:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.522Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记录 C++(Eigen), Python(scipy)的旋转表达式之间的转换。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="slam" scheme="http://www.yvonshong.com/tags/slam/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聚焦激光雷达（一）——扫描器</title>
+    <link href="http://www.yvonshong.com/2023/03/12/focus-on-lidar-1/"/>
+    <id>http://www.yvonshong.com/2023/03/12/focus-on-lidar-1/</id>
+    <published>2023-03-12T04:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前撰写过相机硬件的系列文章，从滤镜、镜头、快门、 CMOS 到 ISP 芯片，几年前写过一篇激光雷达入门介绍 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/139350599&quot;&gt;Yvon Shong：走进自动驾驶传感器（一）——激光雷达&lt;/a&gt;，当时只是初步提及了激光雷达的一些基本性质。&lt;/p&gt;
+&lt;p&gt;而这几年激光雷达作为逐渐成熟的自动驾驶/高阶辅助驾驶传感器，价格逐步下降，产品也层出不穷，笔者于去年入职了中国激光雷达第一股，禾赛科技（&lt;a href=&quot;https://zhuanlan.zhihu.com/p/158635281&quot;&gt;内推禾赛科技自动驾驶、光电芯片等岗位&lt;/a&gt;），伴随着制造商和供应链逐渐成熟的进程，激光雷达有了更繁复的分类和功能，所以也想对激光雷达进行一次系统性的大拆解，撰写激光雷达系列文章。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="lidar" scheme="http://www.yvonshong.com/tags/lidar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Get started with Obsidian</title>
+    <link href="http://www.yvonshong.com/2022/01/28/get-started-with-obsidian/"/>
+    <id>http://www.yvonshong.com/2022/01/28/get-started-with-obsidian/</id>
+    <published>2022-01-28T04:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.521Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Obsidian 是根据卢曼卡片盒方法论构建的次世代笔记系统，基于本地 markdown 编辑和双向链接特殊语法。具体使用方式可以参考《卡片盒阅读法》和 Notion。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="obsidian" scheme="http://www.yvonshong.com/tags/obsidian/"/>
+    
+    <category term="onedrive" scheme="http://www.yvonshong.com/tags/onedrive/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>当时的月亮</title>
+    <link href="http://www.yvonshong.com/2021/12/31/the-moon-back-then/"/>
+    <id>http://www.yvonshong.com/2021/12/31/the-moon-back-then/</id>
+    <published>2021-12-31T22:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.521Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;「敬通雅好辞说，而坎壈盛世，显志自序，亦蚌病成珠矣。」&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="essay" scheme="http://www.yvonshong.com/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>键盘摄影（十）——滤镜的种类和作用</title>
+    <link href="http://www.yvonshong.com/2021/09/21/keyboard-photography-10/"/>
+    <id>http://www.yvonshong.com/2021/09/21/keyboard-photography-10/</id>
+    <published>2021-09-21T12:44:00.000Z</published>
+    <updated>2026-01-08T11:40:29.524Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;有一次忽然意识到，如果想要一个长曝光，浅景深，低 iso 的图，需要物理减光，所以滤镜也算是相机曝光要素中的一部分，为此也整理了一下现在的滤镜的种类，和各自的原理作用。以下内容整理自《关于滤镜-这篇就够了 &lt;a href=&quot;https://mp.weixin.qq.com/s/ndremH_--g2XeXZFAuz9BA&quot;&gt;上&lt;/a&gt;/ &lt;a href=&quot;https://mp.weixin.qq.com/s/JrMUSspyGQCmBciy20NtqQ&quot;&gt;下&lt;/a&gt; 》。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="camera" scheme="http://www.yvonshong.com/tags/camera/"/>
+    
+    <category term="photography" scheme="http://www.yvonshong.com/tags/photography/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>走进自动驾驶传感器（三）——卫星导航系统</title>
+    <link href="http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/"/>
+    <id>http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/</id>
+    <published>2021-09-21T07:36:00.000Z</published>
+    <updated>2026-01-08T11:40:29.522Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="gps" scheme="http://www.yvonshong.com/tags/gps/"/>
+    
+    <category term="gnss" scheme="http://www.yvonshong.com/tags/gnss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>与世界连接</title>
+    <link href="http://www.yvonshong.com/2021/02/21/link-to-world/"/>
+    <id>http://www.yvonshong.com/2021/02/21/link-to-world/</id>
+    <published>2021-02-21T10:00:00.000Z</published>
+    <updated>2026-01-08T11:40:29.520Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;时间在记忆中是非线性流逝的，你的少年光景，被压缩成弹指须臾，你正在经历的故事，结束之后空留一地虚无。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="essay" scheme="http://www.yvonshong.com/categories/essay/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>走进自动驾驶传感器（二）——毫米波雷达</title>
+    <link href="http://www.yvonshong.com/2021/01/24/approach-autonomous-driving-sensor-radar/"/>
+    <id>http://www.yvonshong.com/2021/01/24/approach-autonomous-driving-sensor-radar/</id>
+    <published>2021-01-24T05:59:00.000Z</published>
+    <updated>2026-01-08T11:40:29.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在上一篇文章中 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/139350599&quot;&gt;Yvon Shong：走进自动驾驶传感器（一）——激光雷达&lt;/a&gt; ，我们介绍了激光雷达这款传感器的数据和特性，接下来我们要介绍的是目前市面上大部分高级驾驶辅助系统（Advanced Driver Assistance Systems）都搭载了的毫米波雷达。&lt;/p&gt;
+&lt;p&gt;由于最后本文篇幅长达两万字，并且在整理毫米波雷达传感器资料的时候，综合传感器硬件手册，网上相关资料，官网设备资料，信号处理教材，仿佛又重新学了一遍信号处理，所以将关于毫米波雷达性能指标部分&lt;strong&gt;复杂的公式推导&lt;/strong&gt;放置在了文章最后，并且&lt;strong&gt;保证了符号定义的连贯性&lt;/strong&gt;，保证大家可以从信号处理的基础回忆起，&lt;strong&gt;看懂每一个公式&lt;/strong&gt;。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="sensor" scheme="http://www.yvonshong.com/tags/sensor/"/>
+    
+    <category term="radar" scheme="http://www.yvonshong.com/tags/radar/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算摄影——“看得见”的未来</title>
+    <link href="http://www.yvonshong.com/2020/10/18/computational-photography-0/"/>
+    <id>http://www.yvonshong.com/2020/10/18/computational-photography-0/</id>
+    <published>2020-10-18T17:52:00.000Z</published>
+    <updated>2026-01-08T11:40:29.523Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;之前的专栏「自律走行」键盘摄影系列文章中，介绍了作为一名新手，使用相机拍一张照片时需要了解的一些摄影基础知识，当然还要更多关于构图，相机预设的模式等等实际操作时遇到的问题，和拍摄时的经验等等完全没有提及，所以我称之为「键盘摄影」（笑&lt;/p&gt;
+&lt;p&gt;但作为一名搞自动驾驶的算法工程师，怎能止步于在使用相机传感器时知道摄影的基本概念就可以了呢！我当然会疑惑相机是如何对焦的？它又是如何自动曝光的？它的自动白平衡又是怎么做的？当这些关于相机算法的一系列问题从我的脑海中冒出时，我发现，我已经站在了计算摄影的大门口。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech" scheme="http://www.yvonshong.com/categories/tech/"/>
+    
+    
+    <category term="camera" scheme="http://www.yvonshong.com/tags/camera/"/>
+    
+  </entry>
+  
+</feed>

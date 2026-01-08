@@ -1,0 +1,429 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>走进自动驾驶传感器（一）——激光雷达 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="写在前面： 笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。 欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="走进自动驾驶传感器（一）——激光雷达">
+<meta property="og:url" content="http://www.yvonshong.com/2020/05/09/approach-autonomous-driving-sensor-lidar/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="写在前面： 笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。 欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:published_time" content="2020-05-09T13:11:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.522Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="sensor">
+<meta property="article:tag" content="lidar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "走进自动驾驶传感器（一）——激光雷达",
+  "url": "http://www.yvonshong.com/2020/05/09/approach-autonomous-driving-sensor-lidar/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png",
+  "datePublished": "2020-05-09T13:11:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.522Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2020/05/09/approach-autonomous-driving-sensor-lidar/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '走进自动驾驶传感器（一）——激光雷达',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">走进自动驾驶传感器（一）——激光雷达</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">走进自动驾驶传感器（一）——激光雷达</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-05-09T13:11:00.000Z" title="发表于 2020-05-09 21:11:00">2020-05-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.522Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">6.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>19分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2020/05/09/approach-autonomous-driving-sensor-lidar/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div><article class="container post-content" id="article-container"><p>写在前面：</p>
+<p>笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。</p>
+<p>欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）</p>
+<span id="more"></span>
+
+<p>激光雷达，也称光学雷达（LIght Detection And Ranging）是激光探测与测距系统的简称，它通过测定传感器发射器与目标物体之间的传播距离，分析目标物体表面的反射能量大小、反射波谱的幅度、频率和相位等信息，从而呈现出目标物精确的三维结构信息。</p>
+<p>自上世纪 60 年代激光被发明不久，激光雷达就大规模发展起来。目前激光雷达厂商主要使用波长为 905nm 和 1550nm 的激光发射器，波长为 1550nm 的光线不容易在人眼液体中传输，这意味着采用波长为 1550nm 激光的激光雷达的功率可以相当高，而不会造成视网膜损伤。更高的功率，意味着更远的探测距离，更长的波长，意味着更容易穿透粉尘雾霾。但受制于成本原因，生产波长为 1550nm 的激光雷达，要求使用昂贵的砷化镓材料。厂商更多选择使用硅材料制造接近于可见光波长的 905nm 的激光雷达，并严格限制发射器的功率，避免造成眼睛的永久性损伤。</p>
+<p>而测距原理上目前主要以飞行时间（time of flight）法为主，利用发射器发射的脉冲信号和接收器接受到的反射脉冲信号的时间间隔来计算和目标物体的距离。</p>
+<p>也有使用相干法，即为调频连续波（FMCW）激光雷达发射一束连续的光束，频率随时间稳定地发生变化。由于源光束的频率在不断变化，光束传输距离的差异会导致频率的差异，将回波信号与本振信号混频并经低通滤波后，得到的差频信号是光束往返时间的函数。调频连续波激光雷达不会受到其他激光雷达或太阳光的干扰且无测距盲区；还可以利用多普勒频移测量物体的速度和距离。调频延续波 LiDAR 概念并不新颖，但是面对的技术挑战不少，例如发射激光的线宽限制、线性调频脉冲的频率范围、线性脉冲频率变化的线性度，以及单个线性调频脉冲的可复制性等。</p>
+<p>关于 FMCW 的原理，可以阅读本系列的下一篇文章：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/346374177">Yvon Shong：走进自动驾驶传感器（二）——毫米波雷达</a></p>
+<p>调幅连续波（AMCW）激光雷达与基本的飞行时间系统相似的是，调幅连续波激光雷达发射一个信号，测量激光反射回来的时间。但区别在于，时间飞行系统只发射一个脉冲，调幅连续波 LiDAR 通过改变激光二极管中的极电流来调整发射光强度，从而实现调制。</p>
+<p>激光雷达应用于测绘主要有测距、定位以及地表物体的三维绘制；其达作为一种重要的传感器，目前正在自动驾驶领域和无人飞行器领域得到广泛应用。</p>
+<h1 id="LiDAR-的结构"><a href="#LiDAR-的结构" class="headerlink" title="LiDAR 的结构"></a>LiDAR 的结构</h1><p>激光雷达主要包括激光发射、接收、扫描器、透镜天线和信号处理电路组成。激光发射部分主要有两种，一种是激光二极管，通常有硅和砷化镓两种基底材料，再有一种就是目前非常火热的垂直腔面发射（VCSEL）（比如 iPhone 上的 LiDAR），VCSEL 的优点是价格低廉，体积极小，功耗极低，缺点是有效距离比较短，需要多级放大才能达到车用的有效距离。</p>
+<p>激光雷达主要应用了激光测距的原理，而如何制造合适的结构使得传感器能向多个方向发射激光束，如何测量激光往返的时间，这便区分出了不同的激光雷达的结构。</p>
+<h2 id="机械式"><a href="#机械式" class="headerlink" title="机械式"></a>机械式</h2><p>以 Velodyne 2007 年推出了一款激光雷达为例，它把 64 个激光器垂直堆叠在一起，使整个单元每秒旋转许多次。发射系统和接收系统存在物理意义上的转动，也就是通过不断旋转发射器，将激光点变成线，并在竖直方向上排布多束激光发射器形成面，达到 3D 扫描并接收信息的目的。但由于通过复杂的机械结构实现高频准确的的转动，平均的失效时间仅 1000-3000 小时，难以达到车厂最低 13000 小时的要求。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-00f72b4ed9a0500ac19a28b651cdad36_720w.jpg"></p>
+<blockquote>
+<p><em>Velodyne 64 线激光雷达结构示意图</em></p>
+</blockquote>
+<h2 id="固态式-MEMS"><a href="#固态式-MEMS" class="headerlink" title="固态式(MEMS)"></a>固态式(MEMS)</h2><p>利用微电子机械系统的技术驱动旋镜，反射激光束指向不同方向。固态激光雷达的优点包括了：数据采集速度快，分辨率高，对于温度和振动的适应性强；通过波束控制，探测点（点云）可以任意分布，例如在高速公路主要扫描前方远处，对于侧面稀疏扫描但并不完全忽略，在十字路口加强侧面扫描。而只能匀速旋转的机械式激光雷达是无法执行这种精细操作的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-7b4c9293e92b063aaf44dd3a7753b24f_720w.jpg"></p>
+<blockquote>
+<p><em>MEMS 激光雷达模组</em></p>
+</blockquote>
+<h1 id="光学相控阵式-OPA"><a href="#光学相控阵式-OPA" class="headerlink" title="光学相控阵式(OPA)"></a>光学相控阵式(OPA)</h1><p>相控阵发射器由若干发射接收单元组成阵列，通过改变加载在不同单元的电压，进而改变不同单元发射光波特性，实现对每个单元光波的独立控制，通过调节从每个相控单元辐射出的光波之间的相位关系，在设定方向上产生互相加强的干涉从而实现高强度光束，而其他方向上从各个单元射出的光波彼此相消。组成相控阵的各相控单元在程序的控制下可使一束或多束高强度光束按设计指向实现空域扫描。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-7c96426dac8e00557e473d89fb12e88e_720w.jpg"></p>
+<blockquote>
+<p><em>相控阵激光雷达原理示意图</em></p>
+</blockquote>
+<p>但光学相控阵的制造工艺难度较大，这是由于要求阵列单元尺寸必需不大于半个波长，普通目前激光雷达的任务波长均在 1 微米左右，这就意味着阵列单元的尺寸必需不大于 500 纳米。而且阵列数越多，阵列单元的尺寸越小，能量越往主瓣集中，这就对加工精度要求更高。此外，材料选择也是十分关键的要素。</p>
+<h1 id="泛光面阵式（FLASH）"><a href="#泛光面阵式（FLASH）" class="headerlink" title="泛光面阵式（FLASH）"></a>泛光面阵式（FLASH）</h1><p>泛光面阵式是目前全固态激光雷达中最主流的技术，其原理也就是快闪，它不像 MEMS 或 OPA 的方案会去进行扫描，而是短时间直接发射出一大片覆盖探测区域的激光，再以高度灵敏的接收器，来完成对环境周围图像的绘制。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-a6ec6391e9e4fc88fb1e004606ee9982_720w.jpg"></p>
+<blockquote>
+<p><em>LeddarCore flash LiDAR</em></p>
+</blockquote>
+<h1 id="硬件参数"><a href="#硬件参数" class="headerlink" title="硬件参数"></a>硬件参数</h1><p>我们以目前最为成熟的车载 MEMS 式激光雷达为例，讲解其关键的硬件参数。</p>
+<h2 id="视场角与分辨率"><a href="#视场角与分辨率" class="headerlink" title="视场角与分辨率"></a>视场角与分辨率</h2><p>激光雷达视场角分为水平视场角和垂直视场角，水平视场角即为在水平方向上可以观测的角度范围，旋转式激光雷达旋转一周为 360°，所以水平视场角为 360°。垂直视场角为在垂直方向上可以观测的角度，一般为 40°。而它并不是对称均匀分布的，因为我们主要是需要扫描路面上的障碍物，而不是把激光打向天空，为了良好的利用激光，因此激光光束会尽量向下偏置一定的角度。并且为了达到既检测到障碍物，同时把激光束集中到中间感兴趣的部分，来更好的检测车辆，激光雷达的光束不是垂直均匀分布的，而是中间密，两边疏。下图是禾赛 64 线激光雷达的光束示意图，可以看到激光雷达的有一定的偏置，向上的角度为 15°，向下的为 25°，并且激光光束中间密集，两边稀疏。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-58bf229279eb5982976688df35655df7_720w.jpg"></p>
+<blockquote>
+<p><em>禾赛 64 线激光雷达光束分布</em></p>
+</blockquote>
+<h2 id="回波模式"><a href="#回波模式" class="headerlink" title="回波模式"></a>回波模式</h2><p>即周期采集点数，因为激光雷达在旋转扫描，因此水平方向上扫描的点数和激光雷达的扫描频率有一定的关系，扫描越快则点数会相对较少，扫描慢则点数相对较多。一般这个参数也被称为水平分辨率，比如激光雷达的水平分辨率为 0.2°，那么扫描的点数为 360°/0.2°=1800，也就是说水平方向会扫描 1800 次。次。同一轮发光测距的不同回波数据，比如同时包含最强回波和最晚回波。</p>
+<h2 id="点频"><a href="#点频" class="headerlink" title="点频"></a>点频</h2><p>即周期采集点数，因为激光雷达在旋转扫描，因此水平方向上扫描的点数和激光雷达的扫描频率有一定的关系，扫描越快则点数会相对较少，扫描慢则点数相对较多。一般这个参数也被称为水平分辨率，比如激光雷达的水平分辨率为 0.2°，那么扫描的点数为 360°/0.2°=1800，也就是说水平方向会扫描 1800 次。</p>
+<p>那么激光雷达旋转一周，即一个扫描周期内扫描的点数为 1800*64=115200。比如禾赛 64 线激光雷达，扫描频率为 10Hz 的时候水平角分辨率为 0.2°，在扫描频率为 20Hz 的时候角分辨率为 0.4°（扫描快了，分辨率变低了）。输出的点数和计算的也相符合 1152000 pts/s。</p>
+<h2 id="有效检测距离"><a href="#有效检测距离" class="headerlink" title="有效检测距离"></a>有效检测距离</h2><p>激光雷达是一个收发异轴的光学系统（其实所有的机械雷达都是），也就是说，发射出去的激光光路，和返回的激光光路，并不重合。这主要是因为激光发射器和接收器不能做在一起导致的，此方案本身便存在小量的误差。现在很多方案，都是向着共轴努力。</p>
+<p>激光雷达的测距精度，随着距离的变化而变化。有几个原因：</p>
+<ul>
+<li>我们这里说的激光雷达，是指 TOF 激光雷达，TOF 测距，靠的是 TDC 电路提供计时，用光速乘以单向时间得到距离，但限于成本，TDC 一般由 FPGA 的进位链实现，本质上是对一个低频的晶振信号做差值，实现高频的计数。所以，测距的精度，强烈依赖于这个晶振的精度。而晶振随着时间的推移，存在累计误差；</li>
+<li>距离越远，接收信号越弱，雷达自身的寻峰算法越难以定位到最佳接收时刻，这也造成了精度的劣化；</li>
+</ul>
+<p>而由于激光雷达检测障碍物的有效距离和最小垂直分辨率有关系，也就是说角度分辨率越小，则检测的效果越好。如果两个激光光束之间的角度为 0.4°，那么当探测距离为 200m 的时候，两个激光光束之间的距离为 200m*tan0.4°≈1.4m。也就是说在 200m 之后，只能检测到高于 1.4m 的障碍物了。如果需要知道障碍物的类型，那么需要采用的点数就需要更多，距离越远，激光雷达采样的点数就越少，可以很直接的知道，距离越远，点数越少，就越难以识别准确的障碍物类型。</p>
+<hr>
+<h1 id="LiDAR-的数据"><a href="#LiDAR-的数据" class="headerlink" title="LiDAR 的数据"></a>LiDAR 的数据</h1><h2 id="三维点"><a href="#三维点" class="headerlink" title="三维点"></a>三维点</h2><p>对于旋转式激光雷达来说，得到的三维点便是一个很好的极坐标系下的多个点的观测，包含激光发射器的垂直俯仰角，发射器的水平旋转角度，根据激光回波时间计算得到的距离。但 LiDAR 通常会输出笛卡尔坐标系下的观测值，第一是因为 LiDAR 在极坐标系下测量效率高，也只是对于旋转式 LiDAR，目前阵列式 LiDAR 也有很多。第二笛卡尔坐标系更加直观，投影和旋转平移更加简洁，求解法向量，曲率，顶点等特征计算量小，点云的索引及搜索都更加高效。</p>
+<p>对于 MEMS 式激光雷达，由于一次采样周期为一个偏振镜旋转周期，10hz 下采样周期为 0.1 秒，但由于载体本身在进行高速移动时，我们需要对得到的数据进行消除运动畸变，来补偿采样周期内的运动。</p>
+<h2 id="反射强度"><a href="#反射强度" class="headerlink" title="反射强度"></a>反射强度</h2><p>LiDAR 返回的每个数据中，除了根据速度和时间计算出的反射强度其实是指激光点回波功率和发射功率的比值。而激光的反射强度根据现有的光学模型，可以较好的刻画为以下模型。</p>
+<p>$$P_R=\frac{P_E D_R^2 \rho\ cos\ \alpha}{4R^2}\eta_{Sys}\eta_{Atm}$$</p>
+<p>$$回波功率 = \frac{发射功率<em>接受机孔径^2</em>物体表面反射率<em>cos 入射角}{4</em>距离^2}<em>系统传输率</em>大气传输率$$</p>
+<p>我们可以看到，激光点的反射率和距离的平方成反比，和物体的入射角成反比。入射角是入射光线与物体表面法线的夹角。</p>
+<h2 id="时间戳和编码信息"><a href="#时间戳和编码信息" class="headerlink" title="时间戳和编码信息"></a>时间戳和编码信息</h2><p>LiDAR 通常从硬件层面支持授时，即有硬件 trigger 触发 LiDAR 数据，并支持给这一帧数据打上时间戳。通常会提供支持三种时间同步接口，</p>
+<ul>
+<li>IEEE 15882008 同步，遵循精确时间协议，通过以太网对测量以及系统控制实现精确的时钟同步。</li>
+<li>脉冲同步（PPS），脉冲同步通过同步信号线实现数据同步。</li>
+<li>GPS 同步（PPS+UTC），通过同步信号线和 UTC 时间（GPS 时间）实现数据同步。</li>
+</ul>
+<p>然后我们从 LiDAR 硬件得到一串数据包，需要过一次驱动才能将其解析成点云通用的格式，如 ROSMSG 或者 pcl 点云格式，以目前最普遍的旋转式激光雷达的数据为例，其数据为 10hz，即 LiDAR 在 0.1s 时间内转一圈，并将硬件得到的数据按照不同角度切成不同的 packet，以下便是一个 packet 数据包定义示意图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-4c3f4cefa61d32dc34cb00cd866aa3c4_720w.jpg"></p>
+<blockquote>
+<p><em>一帧 LiDAR 数据包定义示意图</em></p>
+</blockquote>
+<p>而每一个 packet 包含了当前扇区所有点的数据，包含每个点的时间戳，每个点的 xyz 数据，每个点的发射强度，每个点来自的激光发射机的 id 等信息。</p>
+<p>而如最新的 Livox Horizon 激光雷达，也包含了多回波信息及噪点信息，格式如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-48187ea1e3a4f6b09c828aa9a9a225fe_720w.jpg"></p>
+<blockquote>
+<p><em>LiDAR 数据包多回波信息定义示意图</em></p>
+</blockquote>
+<p>每个标记信息由 1 字节组成：该字节中 bit7 和 bit6 为第一组，bit5 和 bit4 为第二组，bit3 和 bit2 为第三组，bit1 和 bit0 为第四组。</p>
+<p>第二组表示的是该采样点的回波次序。由于 Livox Horizon 采用同轴光路，即使外部无被测物体，其内部的光学系统也会产生一个回波，该回波记为第 0 个回波。随后，若激光出射方向存在可被探测的物体，则最先返回系统的激光回波记为第 1 个回波，随后为第 2 个回波，以此类推。如果被探测物体距离过近（例如 1.5m），第 1 个回波将会融合到第 0 个回波里,该回波记为第 0 个回波。</p>
+<p>第三组基于回波能量强度判断采样点是否为噪点。通常情况下，激光光束受到类似灰尘、雨雾、雪等干扰产生的噪点的回波能量很小。目前按照回波能量强度大小将噪点置信度分为二档：01 表示回波能量很弱：这类采样点有较高概率为噪点，例如灰尘点；10 表示回波能量中等，该类采样点有中等概率为噪点，例如雨雾噪点。噪点置信度越低，说明该点是噪点的可能性越低。</p>
+<p>第四组基于采样点的空间位置判断是否为噪点。例如：激光探测测距仅在测量前后两个距离十分相近的物体时，两个物体之间可能会产生拉丝状的噪点。目前按照不同的噪点置信度分为三档，噪点置信度越低，说明该点是噪点的可能性越低。</p>
+<h1 id="LiDAR-的作用"><a href="#LiDAR-的作用" class="headerlink" title="LiDAR 的作用"></a>LiDAR 的作用</h1><h2 id="感知"><a href="#感知" class="headerlink" title="感知"></a>感知</h2><p>我们可以根据 LiDAR 能描绘出稀疏的三维世界的特点，而扫描得到的障碍物点云通常又比背景更密集，通过分类聚类的方法可以利用其进行感知障碍物。而随着深度学习带来的检测和分割技术上的突破，LiDAR 已经能做到高效的检测行人和车辆，输出检测框，即 3D bounding box，或者对点云中的每一个点输出 label，更有甚者在尝试使用 LiDAR 检测地面上的车道线。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-904316dfba04b8a8053c5f4f94822b57_720w.jpg"></p>
+<blockquote>
+<p><em>感知 perception</em></p>
+</blockquote>
+<p>在三维目标识别的对象方面，最初研究主要针对立方体、柱体、锥体以及二次曲面等简单形体构成的三维目标。然而，这类形体对现实世界的表达能力有限，绝大部分目标难以用这些形体或其组合来近似。后续研究主要集中于三维自由形态目标的识别，所谓自由形态目标，即表面除了顶点、边缘以及尖拐处之外处处都有良好定义的连续法向量的目标（如飞行器、汽车、轮船、建筑物、雕塑、地表等）。由于现实世界中的大部分物体均可认为是自由形态目标，因此三维自由形态目标识别算法的研究大大扩展了识别系统的适用范围。在过去二十余年间，三维目标识别任务针对的数据量不断增加，识别难度不断上升，而识别率亦不断提高。然而，如何在包含遮挡、背景干扰、噪声、逸出点以及数据分辨率变化等的复杂场景中实现对感兴趣目标的检测识别与分割，仍然是一个富有挑战性的问题。</p>
+<h2 id="配准"><a href="#配准" class="headerlink" title="配准"></a>配准</h2><p>在三维模型重建方面，最初的研究集中于邻接关系和初始姿态均已知时的点云精配准、点云融合以及三维表面重建。在此，邻接关系用以指明哪些点云与给定的某幅点云之间具有一定的重叠区域，该关系通常通过记录每幅点云的扫描顺序得到。而初始姿态则依赖于转台标定、物体表面标记点或者人工选取对应点等方式实现。这类算法需要较多的人工干预，因而自动化程度不高。接着，研究人员转向点云邻接关系已知但初始姿态未知情况下的三维模型重建，常见方法有基于关键点匹配、基于线匹配、以及基于面匹配 等三类算法。在实际应用中，很多时候并不知道点云之间的邻接关系。针对此，研究人员开发了最小张树算法和连接图算法以实现邻接关系的计算。总体而言，三维模型重建算法的发展趋势是自动化程度越来越高，所需人工干预越来越少，且应用面越来越广。然而，现有算法依然存在运算复杂度较高、只能针对单个物体、且对背景干扰敏感等问题。研究具有较低运算复杂度且不依赖于先验知识的全自动三维模型重建算法，是目前的主要难点。</p>
+<p>给定两个来自不同坐标系的三维数据点集，找到两个点集空间的变换关系，使得两个点集能统一到同一坐标系统中，这个过程便称为配准。配准的目标是在全局坐标框架中找到单独获取的视图的相对位置和方向，使得它们之间的相交区域完全重叠。对于从不同视图（views）获取的每一组点云数据，点云数据很有可能是完全不相同的，需要一个能够将它们对齐在一起的单一点云模型，从而可以应用后续处理步骤，如分割和进行模型重建。目前对配准过程最常见的主要是 ICP 及其变种算法，NDT 算法，和基于特征提取的匹配。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-09c30280111915849b899d37f7935fe5_720w.jpg"></p>
+<blockquote>
+<p><em>配准 registration</em></p>
+</blockquote>
+<p>ICP 算法最早由 Chen and Medioni，and Besl and McKay 提出。其算法本质上是基于最小二乘法的最优配准方法。该算法重复进行选择对应关系点对，计算最优刚体变换这一过程，直到根据点对的欧氏距离定义的损失函数满足正确配准的收敛精度要求。ICP 是一个广泛使用的配准算法，主要目的就是找到旋转和平移参数，将两个不同坐标系下的点云，以其中一个点云坐标系为全局坐标系，另一个点云经过旋转和平移后两组点云重合部分完全重叠。</p>
+<p>NDT 算法的基本思想是先根据参考数据（reference scan）来构建多维变量的正态分布，如果变换参数能使得两幅激光数据匹配的很好，那么变换点在参考系中的概率密度将会很大。然后利用优化的方法求出使得概率密度之和最大的变换参数，此时两幅激光点云数据将匹配的最好。由此得到位资变换关系。</p>
+<p>局部特征提取通常包括关键点检测和局部特征描述两个步骤，其构成了三维模型重建与目标识别的基础和关键。在二维图像领域，基于局部特征的算法已在过去十多年间取得了大量成果并在图像检索、目标识别、全景拼接、无人系统导航、图像数据挖掘等领域得到了成功应用。类似的，点云局部特征提取在近年来亦取得了部分进展</p>
+<p>而当三维点较为稠密的时候，可以像视觉一样提取特征点和其周围的描述子，主要通过选择几何属性（如法线和曲率）比较有区分度的点，在计算其局部邻域的几何属性的统计得到关键点的描述子，而当处理目前市面上的激光雷达得到的单帧点云数据时，由于点云较为稀疏，主要依靠每个激光器在扫描时得到的环线根据曲率得到特征点。</p>
+<h1 id="里程计和定位"><a href="#里程计和定位" class="headerlink" title="里程计和定位"></a>里程计和定位</h1><p>而有了两帧点云的数据根据配准得到了相对位姿变换关系后，我们便可以利用激光雷达传感器获得的数据来估计载体物体位姿随时间的变化而改变的关系。比如我们可以利用当前帧和上一帧数据进行匹配，或者当前帧和累计堆叠出来的子地图进行匹配，得到位姿变换关系，从而实现里程计的作用。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-0810f9b55ee8064cfc9654078cf20e40_720w.jpg"></p>
+<blockquote>
+<p><em>odometer and localization</em></p>
+</blockquote>
+<p>而当我们用当前帧和整个点云地图进行匹配的时候，我们便能得到传感器在整个地图中的位姿，从而实现在地图中的定位。</p>
+<hr>
+<h1 id="LiDAR-的趋势"><a href="#LiDAR-的趋势" class="headerlink" title="LiDAR 的趋势"></a>LiDAR 的趋势</h1><h2 id="传感器车规化"><a href="#传感器车规化" class="headerlink" title="传感器车规化"></a>传感器车规化</h2><p>固态激光雷达取消了机械结构，能够击中目前机械旋转式的成本和可靠性的痛点，是激光雷达的发展方向。除了这两大迫切解决的痛点外，目前量产的激光雷达探测距离不足，仅能满足低速场景（如厂区内、校园内等）的应用。日常驾驶、高速驾驶的场景仍在测试过程中。</p>
+<p>当前机械式激光雷达的价格十分昂贵，Velodyne 在售的 64/32/16 线产品的官方定价分别为 8 万/4 万/8 千美元。一方面，机械式激光雷达由发射光源、转镜、接收器、微控马达等精密零部件构成，制造难度大、物料成本较高；另一方面，激光雷达仍未大规模进入量产车、需求量小，研发费用等固定成本难以摊薄。 量产 100 万台 VLP-32 后，那么其售价将会降至 400 美元左右。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-c9263a04448caea32cd3179ef7f8cfeb_720w.jpg"></p>
+<blockquote>
+<p><em>2021 年上海车展热门车型激光雷达配置</em></p>
+</blockquote>
+<h2 id="多传感器融合"><a href="#多传感器融合" class="headerlink" title="多传感器融合"></a>多传感器融合</h2><p>在环境监测传感器中，超声波雷达主要用于倒车雷达以及自动泊车中的近距离障碍监测，摄像头、毫米波雷达和激光雷达则广泛应用于各项 ADAS 功能中。四类传感器的探测距离、分辨率、角分辨率等探测参数各异，对应于物体探测能力、识别分类能力、三维建模、抗恶劣天气等特性优劣势分明。各种传感器能形成良好的优势互补，融合传感器的方案已成为主流的选择。</p>
+<hr>
+<p>欢迎在我的专栏「<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/column/jiritsu-soko">自律走行</a>」中查看更多「走进自动驾驶传感器」系列文章</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/139350599">走进自动驾驶传感器（一）——激光雷达</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/346374177">走进自动驾驶传感器（二）——毫米波雷达</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/157925827">走进自动驾驶传感器（三）——卫星导航系统</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2020/05/09/approach-autonomous-driving-sensor-lidar/">http://www.yvonshong.com/2020/05/09/approach-autonomous-driving-sensor-lidar/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/sensor/">sensor</a><a class="post-meta__tags" href="/tags/lidar/">lidar</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2020/05/10/keyboard-photography-4/" title="键盘摄影（四）——相机成像元件：胶片与彩色暗房"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">键盘摄影（四）——相机成像元件：胶片与彩色暗房</div></div><div class="info-2"><div class="info-item-1">前面我们介绍完了相机的镜头，光圈，快门，接下来便是介绍相机的最后一个核心，成像元件。由于查找资料时发现胶片的成像比较复杂，于是将胶片单立了一篇，后续再讲解数码时代的 CMOS/CCD。   在胶片时代，摄影师想要得到一张纸质照片相比于现在电子打印的普及，是尤其的复杂，需要在胶片拍摄完一卷后，将一卷胶片在暗房中进行显影，定影，得到真正完全成像的胶片，然后再在暗房中利用光学放大机，对可以感光的相纸进行感光，然后放到自动显像机中经过显像，停止化学反应，两道水洗和一道干燥，才能得到一张纸质照片。 胶片的组成胶片基本由两部分组成，一为形成影像的感光乳剂，另一为乳剂的支撑体片基。 乳剂：主要成分为照相明胶和卤化银。卤化银以极微小的颗粒状均匀地分布在明胶之中。卤化银的存在是胶片之所以能感光的根本原因。当光线照射到这些微小的卤化银颗粒时，它就会因感光而起变化，并最终形成影像。卤化银的形状和颗粒大小在很大程度上影响着胶片的照相性能。明胶对卤化银颗粒起保护作用和支撑作用，同时它使整个乳剂层呈现为薄膜状。不同种类的胶片在乳剂层中还含有一些其他的化学成分。 片基：一种透明、柔软而具有一定韧性和强度的塑料...</div></div></div></a><a class="pagination-related" href="/2020/05/09/keyboard-photography-3/" title="键盘摄影（三）——等效焦距和等效光圈"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">键盘摄影（三）——等效焦距和等效光圈</div></div><div class="info-2"><div class="info-item-1">相机传感器的尺寸会影响接收到的光学图像的画幅，不只是镜头，传感器尺寸也会影响相机的视野。如果我们在光学系统中保持其他不变，只改变机身使用不同画幅的传感器，我们就会看到原来大尺寸传感器的图片仿佛被裁切了一样，于是我们引入了剪切系数，来衡量画幅的不同对成像的影响，并介绍等效焦距和等效光圈这样的数学工具来方便我们比较画幅不同时的焦距和光圈的成像效果。   等效焦距所谓等效焦距，是指由于画幅的变化，相机视野的变化而导致焦距的变化。如 4/3 画幅，由于其 CMOS 面积几乎为全画幅的 1/4 ，因此，其可取拍摄面积只是全画幅的1/4。 就相当于焦距为 x 的残幅相机所看到的景色，相当于全幅相机使用 2x 焦距看到的更远更小的景色，也可以理解为全幅的景色直接裁切。 全画幅的概念是直接从胶片时代继承过来的，我们称传感器面积与 35mm 底片相同的相机为全画幅相机。所以焦距为 x 的残幅相机，我们称呼它的 35mm 等效焦距为 2x。  为了计算的方便，我们直接将 35mm 等效焦距记为实际焦距乘以焦距转换率（裁切系数）。典型的裁切系数有尼康、索尼 APS-C 格式是 1.5 ，佳能的 APS...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2023/03/12/focus-on-lidar-1/" title="聚焦激光雷达（一）——扫描器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="info-item-2">聚焦激光雷达（一）——扫描器</div></div><div class="info-2"><div class="info-item-1">之前撰写过相机硬件的系列文章，从滤镜、镜头、快门、 CMOS 到 ISP 芯片，几年前写过一篇激光雷达入门介绍 Yvon Shong：走进自动驾驶传感器（一）——激光雷达，当时只是初步提及了激光雷达的一些基本性质。 而这几年激光雷达作为逐渐成熟的自动驾驶/高阶辅助驾驶传感器，价格逐步下降，产品也层出不穷，笔者于去年入职了中国激光雷达第一股，禾赛科技（内推禾赛科技自动驾驶、光电芯片等岗位），伴随着制造商和供应链逐渐成熟的进程，激光雷达有了更繁复的分类和功能，所以也想对激光雷达进行一次系统性的大拆解，撰写激光雷达系列文章。   本系列文章将从扫描器，发射器，探测器到处理模块，从硬件到软件算法等模块，来介绍激光雷达。欢迎关注本专栏，您的帮助从点赞本文章开始 ヽ(ﾟ▽ﾟ)ノ。  之前的文章 ， 在之前的文章中，我们粗略的提及了激光雷达扫描结构的不同，激光雷达的扫描结构主要分为： 机械式、混合固态（MEMS振镜式、转镜式、棱镜式）、纯固态（FLASH、OPA）。本章节将详细介绍激光雷达细分的扫描结构和原理，以及一些新型的技术。  机械式机械式激光雷达是指其发射系统和接收系统一起随着转轴进行...</div></div></div></a><a class="pagination-related" href="/2023/03/28/focus-on-lidar-2/" title="聚焦激光雷达（二）——激光器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-28</div><div class="info-item-2">聚焦激光雷达（二）——激光器</div></div><div class="info-2"><div class="info-item-1">之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。    激光器原理所有激光器都包含以下三个组件：1、泵浦源；2、受激介质；3、谐振腔。 受激介质位于激光器内部，取决于不同的激光器结构设计，受激介质是一种包含可将激发光的能量转换为激光的原子的物质，可能是气体混合物 、固体晶体棒或玻璃纤维。激光介质在获得泵浦源从外部获得的能量供给时，受激产生能量辐射。 被激发的介质位于谐振腔两端两个镜子的中间位置，其中一个镜子是半透半反镜，受激介质产生的能量辐射在谐振腔内放大，与此同时，只有特定的辐射光能够穿过单向透镜，形成一束辐射光，这一辐射光束即是激光。   激光的原理   泵浦源泵浦源的作用是对增益介质进行激励使其辐射发光。具体而言，泵浦源提供能量激励原子跃迁到高能级，以实现粒子数反转（使高能态粒子数多于低能态粒子数...</div></div></div></a><a class="pagination-related" href="/2023/04/19/focus-on-lidar-4/" title="聚焦激光雷达（四）——光学系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-19</div><div class="info-item-2">聚焦激光雷达（四）——光学系统</div></div><div class="info-2"><div class="info-item-1">激光雷达从器件来看，最主要的构成要素是扫描器、发射器，接收器，处理器，以及一些内部的光学元件了，激光从发射器中产生，除了要通过扫描器来调整激光方向以外，还需要通过各式各样的光学元件，来调整光斑形状大小，光场的能量分布等等。   查阅了很多光学供应链公司的产品和研报，这可能是全网唯一比较全面的介绍激光雷达内部涉及的光学元件的科普文章了，欢迎点赞关注本专栏。 从激光雷达 BOM 成本拆分来看，透镜等光学组件仍是激光雷达的重要组成部分。以法雷奥 Scala 转镜激光雷达为例，目前年产量十万级规模， BOM 成本约 400 美元，其中主控板占 45%，激光发射接收组件占 33%，光学单元占 13%，外罩 8%，马达 1%。而 Livox 的双楔形棱镜式激光雷达的透镜模组占了成本的 54%。可以看到，光学元件是激光雷达成本里重要组成部分。 由于各种激光器发射的激光束并不是绝对平行的，具有光斑形状不规则，发散角度大的问题，因此还需要一套光学系统，对激光器的输出光束进行准直整形，通过改变光束的发散度、波束宽度和截面积，改善输出光束质量。 发射光学系统主要由透镜、反射器件、衍射器件等光学元器件组...</div></div></div></a><a class="pagination-related" href="/2023/04/01/focus-on-lidar-3/" title="聚焦激光雷达（三）——接收器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-01</div><div class="info-item-2">聚焦激光雷达（三）——接收器</div></div><div class="info-2"><div class="info-item-1">接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。   可以看到接收探测器的根本原理是光电效应，目前车载激光雷达中的半导体探测器按照工作原理可以分为：  PIN-PD：是在最基础的光电二极管的基础上扩宽了势垒区，价格低廉，结构简单，响应速度快，但没有增益，灵敏度有限。 APD：在 PIN 光电二极管的基础上，加上一定的反向电压，相当于人为增加了势垒，在外界光电效应的触发下，少量光生载流子引发雪崩效应电流倍增。输出电流与入射光子数量呈线性关系，相当于一个具有增益的光电二极管，这可进一步增大光检测的灵敏度，同时较大反向电压的作用也可进一步提高其响应速度，这就是雪崩光电二极管（APD），APD 已经是光通信技术中用来接收微弱光信号的一种基本器件。 SPAD：APD 工作电压在雪崩电压以上（盖革模式），每个入射的光子都会触发雪崩效应，灵敏度极高，甚至可以探测单个光子，但由于其工作于临界状态，需要配合猝灭电路设计，只能识别有无而无法识别强度，通常采用阵列的方式，利用多个传感器感知到...</div></div></div></a><a class="pagination-related" href="/2023/05/11/focus-on-lidar-5/" title="聚焦激光雷达（五）——处理器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-11</div><div class="info-item-2">聚焦激光雷达（五）——处理器</div></div><div class="info-2"><div class="info-item-1">我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。   激光脉冲驱动控制器通常发射端每个激光器需要链接一个激光器脉冲驱动控制器 LD Driver，它负责在接收到主控芯片的发光指令后，给激光器发送一个控制信号。实现激光的脉冲式发射和编码，通过配置脉冲强度和脉冲宽度，增加编码功能，增强抗干扰能力。 驱动控制器要求控制信号能越快越好，有足够陡峭的上升沿。通常在低速信号电路中，信号从 0(低电平) 变成 1(高电平) 可以看成是瞬间完成的，但在高速电路中， 从 0 跳到 1 的时间消耗就无法忽略了，上升沿指的就是这个从 0 到 1 的过程，反之下降沿就是从 1 到 0 的过程。 之所以对上升沿有较高要求，是因为激光对人眼有加热效应，受到人眼安全约束，但可以通过提高瞬时功率，提高探测距离，缩短发光...</div></div></div></a><a class="pagination-related" href="/2021/09/21/approach-autonomous-driving-sensor-gnss/" title="走进自动驾驶传感器（三）——卫星导航系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-21</div><div class="info-item-2">走进自动驾驶传感器（三）——卫星导航系统</div></div><div class="info-2"><div class="info-item-1">之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）    无人驾驶想要获得全局定位，一定是相对于某一固定坐标系的，而地球上范围最广的坐标系便是地球坐标系，想要获得这么宏达层面上的观测，便必须依靠 GPS 卫星的数据。 如果我们事先知道卫星每一时刻相对于地球的位置（地面监测站监测后告诉卫星，卫星一直广播自身星历），然后观测自身距离多颗卫星的位置（用户接收机接收到多颗卫星的信号，得知相对距离），便能知道自身在地球坐标系的位置。 打个简单的比方，在一条单向高速公路上，前车一直在广播它距离起点的位置（这个是路边监控告诉它的），而我们能够测得距离它的位置，所以我们也就知道了自身距离起点的位置。GPS 中是需要观测到至少四颗卫星，来解算三维坐标和用户设备时间和卫星时间的差异。 这之中涉及到了坐标系和时间标准的统一，所以我们可以用 GNSS 来进行给自身定位，给时间高...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#LiDAR-%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-text">LiDAR 的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%BA%E6%A2%B0%E5%BC%8F"><span class="toc-text">机械式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E6%80%81%E5%BC%8F-MEMS"><span class="toc-text">固态式(MEMS)</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E5%AD%A6%E7%9B%B8%E6%8E%A7%E9%98%B5%E5%BC%8F-OPA"><span class="toc-text">光学相控阵式(OPA)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%9B%E5%85%89%E9%9D%A2%E9%98%B5%E5%BC%8F%EF%BC%88FLASH%EF%BC%89"><span class="toc-text">泛光面阵式（FLASH）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E5%8F%82%E6%95%B0"><span class="toc-text">硬件参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E5%9C%BA%E8%A7%92%E4%B8%8E%E5%88%86%E8%BE%A8%E7%8E%87"><span class="toc-text">视场角与分辨率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9E%E6%B3%A2%E6%A8%A1%E5%BC%8F"><span class="toc-text">回波模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E9%A2%91"><span class="toc-text">点频</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%A3%80%E6%B5%8B%E8%B7%9D%E7%A6%BB"><span class="toc-text">有效检测距离</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LiDAR-%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">LiDAR 的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E7%82%B9"><span class="toc-text">三维点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%BC%BA%E5%BA%A6"><span class="toc-text">反射强度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%88%B3%E5%92%8C%E7%BC%96%E7%A0%81%E4%BF%A1%E6%81%AF"><span class="toc-text">时间戳和编码信息</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LiDAR-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">LiDAR 的作用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%84%9F%E7%9F%A5"><span class="toc-text">感知</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E5%87%86"><span class="toc-text">配准</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8C%E7%A8%8B%E8%AE%A1%E5%92%8C%E5%AE%9A%E4%BD%8D"><span class="toc-text">里程计和定位</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LiDAR-%E7%9A%84%E8%B6%8B%E5%8A%BF"><span class="toc-text">LiDAR 的趋势</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%A0%E6%84%9F%E5%99%A8%E8%BD%A6%E8%A7%84%E5%8C%96"><span class="toc-text">传感器车规化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E4%BC%A0%E6%84%9F%E5%99%A8%E8%9E%8D%E5%90%88"><span class="toc-text">多传感器融合</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2020/05/09/approach-autonomous-driving-sensor-lidar/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2020/05/09/approach-autonomous-driving-sensor-lidar/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '走进自动驾驶传感器（一）——激光雷达'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

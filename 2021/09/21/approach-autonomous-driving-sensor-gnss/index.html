@@ -1,0 +1,545 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>走进自动驾驶传感器（三）——卫星导航系统 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="走进自动驾驶传感器（三）——卫星导航系统">
+<meta property="og:url" content="http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:published_time" content="2021-09-21T07:36:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.522Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="sensor">
+<meta property="article:tag" content="gps">
+<meta property="article:tag" content="gnss">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "走进自动驾驶传感器（三）——卫星导航系统",
+  "url": "http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png",
+  "datePublished": "2021-09-21T07:36:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.522Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '走进自动驾驶传感器（三）——卫星导航系统',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">走进自动驾驶传感器（三）——卫星导航系统</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">走进自动驾驶传感器（三）——卫星导航系统</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-21T07:36:00.000Z" title="发表于 2021-09-21 15:36:00">2021-09-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.522Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">10k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>29分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div><article class="container post-content" id="article-container"><p>之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）</p>
+<span id="more"></span>
+
+
+<p>无人驾驶想要获得全局定位，一定是相对于某一固定坐标系的，而地球上范围最广的坐标系便是地球坐标系，想要获得这么宏达层面上的观测，便必须依靠 GPS 卫星的数据。</p>
+<p>如果我们事先知道卫星每一时刻相对于地球的位置（地面监测站监测后告诉卫星，卫星一直广播自身星历），然后观测自身距离多颗卫星的位置（用户接收机接收到多颗卫星的信号，得知相对距离），便能知道自身在地球坐标系的位置。</p>
+<p>打个简单的比方，在一条单向高速公路上，前车一直在广播它距离起点的位置（这个是路边监控告诉它的），而我们能够测得距离它的位置，所以我们也就知道了自身距离起点的位置。GPS 中是需要观测到至少四颗卫星，来解算三维坐标和用户设备时间和卫星时间的差异。</p>
+<p>这之中涉及到了坐标系和时间标准的统一，所以我们可以用 GNSS 来进行给自身定位，给时间高敏感度的设备进行授时（比如服务器时间）；而如果用户装有双天线，便可同时知道自身的朝向；而同时由于卫星或用户在移动，接收到的电磁波发生了多普勒效应，可以用来测速；而我国的北斗还提供了低成本的短报文服务。</p>
+<p>GPS 可以观测得到空间坐标系的三维坐标值，加上陀螺仪和加速度计，便可以得到在空间中的完整姿态，在此对惯性导航先不赘述，待笔者写完 IMU 传感器后再来详细剖析惯性导航。</p>
+<h1 id="时空参考坐标系"><a href="#时空参考坐标系" class="headerlink" title="时空参考坐标系"></a>时空参考坐标系</h1><p>全球定位系统的基本任务是确定用户在空间的位置，首先需要设立适当的坐标系。</p>
+<h2 id="空间系统"><a href="#空间系统" class="headerlink" title="空间系统"></a>空间系统</h2><h3 id="天球坐标系"><a href="#天球坐标系" class="headerlink" title="天球坐标系"></a>天球坐标系</h3><p>为了确定卫星，宇宙飞船等在宇宙空间的位置和飞行状态，首先需要确定一个在宇宙空间可视为不变的参考系。空间卫星不被地球自转影响，但是观测站和用户都会跟随地球自转。</p>
+<p>假设以地球的质心为球心，半径为无穷大的球（天球）存在于宇宙空间，选天球中心为天球坐标系的原点，而地球绕其极轴自转就像是个大陀螺，由于陀螺的定轴性，地球的极轴在宇宙空间的指向（赤道平面法向量）是稳定不变的，可以选作固定不变的轴来作为天球坐标系的坐标轴。</p>
+<p>而地球绕太阳公转的轨道平面（黄道平面）也是稳定的平面，黄赤交角即为春秋分点，两点和质心的连线可以定义坐标系的另一条轴，然后构成右手坐标系，地心天球坐标系，简称天球坐标系，其不随地球的自转而变化。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-dc8e54bd530dbea91bd302ccb0935877_720w.jpg"></p>
+<blockquote>
+<p><em>天球赤道和黄道</em></p>
+</blockquote>
+<h3 id="岁差和章动"><a href="#岁差和章动" class="headerlink" title="岁差和章动"></a>岁差和章动</h3><p>然而黄赤交角不变是一种理想假设，陀螺仪的自转轴在干扰力矩的作用下存在进动和章动，地球也是一样，存在日月岁差和章动。</p>
+<p>日月岁差是日月行星引力共同作用的结果，使地球自转轴在空间的方向发生周期性变化。在天体上，以这种规律运动的北天极通常称为瞬时平北天极或简称为平北天极，与之相应的天球，赤道和春分点称为瞬时天球，平赤道和瞬时平春分点，简称平天球，平赤道，平春分点。</p>
+<p>北天极除了这种有规律的长周围的运动外，在天体力各种天体力的影响下，还存在有短周期的变化，他叠加在岁差运动上，使得瞬时北天极（真北天极）绕瞬时平北天极（真北天极）旋转，大致行程椭圆轨迹（叠加起来便类似正弦轨迹），称之为章动。</p>
+<p><strong>只考虑岁差为平，考虑章动为真</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-6d0118c59d214d7cadbdda37fbafcefc_720w.jpg"></p>
+<blockquote>
+<p>春分点的漂移方向和章动影响</p>
+</blockquote>
+<p>以上两种天球坐标系都是动坐标系，它们相差一个章动角，并非静止的惯性坐标系。为此需要建立一个指向保持稳定不变的天球坐标系，用它来代表惯性坐标系，这就是人为定义的协议天球坐标系，以 2001 年 1 月 15 日时的指向为标准历元。</p>
+<h3 id="地球坐标系"><a href="#地球坐标系" class="headerlink" title="地球坐标系"></a>地球坐标系</h3><p>然而实际上，由于地球内部存在着复杂的物质运动，地球并非刚体，北地极在地球表面随着时间的变化而不断变化，这种现象称为地球极移（极移）。</p>
+<p>为此在一系列瞬时地球坐标系中人为定义了一个特殊地球坐标系（协议地球坐标系），使其 Z 轴朝向某一固定的基准点，它随地球自转，在地球球体中的指向不再随时间而变化。</p>
+<p>有了地心和极轴，再靠零度经线和赤道的交点定义出另一条轴，则可以建立地心地固坐标系（ECEF），然后根据测定的地球海拔高度的测量，建立世界大地测量系统（WGS-84，或者 更适合各地的 datum，如 IGS，推荐 epsg 网站可以了解更多 datum），球坐标式的表达则是我们熟悉的经纬高（高度的定义也取决于使用的 datum），然后变换到地面某一点为原心则是站心坐标系（ENU / NED）。</p>
+<p>用不同的方式将地球投影到一张平面图上，可得到不同投影展开的平面地图（比如等角正切方位投影，等积斜切方位投影，等距正割圆锥投影，等积正割圆锥投影，等角正割圆锥投影，等角正切圆柱投影 Mercator Projection，等角横切椭圆柱投影， UTM 投影等）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-580373d3f6fa3cd66b016706613ea4e7_720w.jpg"></p>
+<blockquote>
+<p><em>各种常见地图投影方式</em></p>
+</blockquote>
+<p>地心地固坐标系、站心坐标系和墨卡托投影、UTM 地图投影详情可以参考之前写的高精度地图（一）——地理坐标系。</p>
+<h2 id="时间系统"><a href="#时间系统" class="headerlink" title="时间系统"></a>时间系统</h2><p>前述各种天球坐标系和地球坐标系的给定，无不和时间瞬时相关，卫星的位置在过程中是变化的。并且 GPS 定位是通过接收机接收的信号，测定卫星到接收机的信号传播时间，来确定接收机到卫星的距离，进而确定接收机的位置。因此在给定卫星的位置坐标时，必须给出相应的瞬时时刻。</p>
+<p>一般来说时间参考系统的物理实现，必须具有可观测的周期运动，这种周期运动应具备连续性稳定性和复现性，三者缺一不可。在实践中所选择的周期运动现象不同，便产生了不同的时间系统。</p>
+<h3 id="恒星时、平太阳时、世界时"><a href="#恒星时、平太阳时、世界时" class="headerlink" title="恒星时、平太阳时、世界时"></a>恒星时、平太阳时、世界时</h3><p><strong>恒星时</strong>的原点定义为春分点通过本地子午圈的瞬时。而春分点有真春分点，和平春分点之别，相应的也就有了真恒星时和平恒星时之分。</p>
+<p><strong>平太阳时</strong>的原点定义为平太阳通过观察者所在子午圈的瞬时。</p>
+<p>由于平太阳时的地方性，地球上不同经纬圈上的平太阳时各不相同，地球上零经度子午圈（格林尼治子午圈）所对应的平太阳时，且以平子夜为零时起算的时间系统成为<strong>世界时</strong>。</p>
+<h3 id="原子时、协调世界时、GPS-时"><a href="#原子时、协调世界时、GPS-时" class="headerlink" title="原子时、协调世界时、GPS 时"></a>原子时、协调世界时、GPS 时</h3><p>现代物理学发现物质内部原子的跃迁所辐射或吸收的电磁波频率具有极高的稳定性和复现性。所以根据这一物理现象所建立的原子时，便成为了当代所理想的时间系统。</p>
+<p>原子时的秒长比世界时的秒长略短，这就是原子时比世界时每年约快一秒多。两者之差逐年积累，为了避免原子时与世界时之间产生过大的偏差，同时又要使两种时间系统同时并存，就有必要建立一种兼有两种时间系统各自优点的新的时间，这就是从 1972 年起所采用的协调世界时。</p>
+<p>全球定位系统为了满足精密定位与导航的需要，在系统设计与试验之初就建立了自己专用的时间系统 GPS 时，它由 GPS 主控站的高精度原子钟守时与授时。 GPST 属于原子时系统，它的秒长即为原子时秒长，GPS 的原点与国际原子时相差固定秒数。</p>
+<p>实际上 GPS 时由于设备内存问题，会周期性进行重置，时间计数器最多只能向前计数 1024 周，即大约 19.7 年。 经过 1024 周后，此计数器会进行重置，GPS 时间将重新开始向前计数。第一次重置发生在 1999 年 8 月。 第二次重置发生在 2019 年 4 月 6 日。</p>
+<h3 id="Unix-时间戳"><a href="#Unix-时间戳" class="headerlink" title="Unix 时间戳"></a>Unix 时间戳</h3><p>而用户的计算机设备通常也会包含 Unix 时间戳，Unix 时间戳是从 1970 年 1 月 1 日（UTC/GMT 的午夜）开始所经过的秒数，不考虑闰秒。在大多数的 Unix 系统中 Unix 时间戳存储为 32 位，这样会引发 2038 年问题。</p>
+<hr>
+<h1 id="GNSS-介绍"><a href="#GNSS-介绍" class="headerlink" title="GNSS 介绍"></a>GNSS 介绍</h1><h2 id="发展"><a href="#发展" class="headerlink" title="发展"></a>发展</h2><h3 id="GPS"><a href="#GPS" class="headerlink" title="GPS"></a>GPS</h3><p>GPS 是军民合用的系统，但它针对军用和民用提供了不同的定位精度。军用为 3 米，民用信号增加了干扰机制，使精度下降到 100 米。鉴于 GPS 在民用中发挥越来越重要的作用，美国政府 2000 年初取消了 GPS 的干扰机制，使民用信号的精度提高了 10 倍以上，大大方便了民用用户的使用，也为 GPS 的普及奠定了基础。</p>
+<p>为了更好地进行国际间的兼容和 交互操作，实现全球民用卫星导航系统的无缝隙连接，美国第三阶段发射的卫星，附加 GPS 第四个民用信号 L1C，该信号能够与伽利略公开服务信号互操作，并与日本准天顶系统（Qzss）共用。</p>
+<h3 id="Beidou"><a href="#Beidou" class="headerlink" title="Beidou"></a>Beidou</h3><p>第一代北斗系统由三颗卫星提供区域定位服务。从 2000 年开始，该系统主要在中国境内提供导航服务。2012 年 12 月，北斗一号的最后一颗卫星寿命到期，试验系统停止运作。</p>
+<p>北斗二号系统是一个包含 16 颗卫星的全球卫星导航系统，分别为 6 颗静止轨道卫星、6 颗倾斜地球同步轨道卫星、4 颗中地球轨道卫星。</p>
+<p>2012 年 11 月，第二代北斗系统开始在亚太地区为用户提供区域定位服务。由三种不同轨道的卫星组成，包括 24 颗地球中圆轨道卫星（覆盖全球），3 颗倾斜地球同步轨道卫星（覆盖亚太大部分地区）和 3 颗地球静止轨道卫星（覆盖中国）。北斗三号系统于 2020 年 7 月 31 日开通。</p>
+<p>我国的北斗系统采用三频信号向用户广播导航数据。三频信号可以更好地消除高阶电离层延迟影响，提高定位可靠性，增强数据预处理能力，大大提高模糊度的固定效率。而且如果一个频率信号出现问题，可使用传统方法利用另外两个频率进行定位，提高了定位的可靠性和抗干扰能力。</p>
+<p>北斗卫星导航的短报文通信服务 也是一项实用性很强的原创功能。这一特色功能也是有容量限制的，所以并不适合日常通信功能，而是作为紧急情况通信比较合适，作为求救使用。</p>
+<h3 id="Glonass"><a href="#Glonass" class="headerlink" title="Glonass"></a>Glonass</h3><p>俄罗斯的格洛纳斯卫星采用频分多址技术，这是与其他主要导航系统明显的一个区别。所有的格洛纳斯卫星都发射同样的伪随机码，但采用不同的频率发射。具有某些抗干扰和抗互相关的特性，以及更简单的选码判据，可以防止整个卫星导航系统同时被敌方干扰，因而具有更强的抗干扰能力。频分多址技术的缺陷就是用户接收机的体积大而且造价昂贵，应用普及度还远不及 GPS，主要是因为俄罗斯长期以来不够重视开发民用市场。</p>
+<p>格洛纳斯有两种导航电文，S 码电文和 P 码保密电文，两种电文的速率都是 50 位每秒。主要用途是提供卫星星历和频道分配方面的信息。</p>
+<p>格洛纳斯所用的坐标系是 1990 年苏联所制定的 PZ-90 参考坐标系，与 GPS 所用的 WGS-84 也不相同。GPS 系统时与世界标准时间 UTC 相关联，而 GLONASS 则与莫斯科标准时间 UTC+3 相关联，除了存在跳秒外，与 GPS 时间之间还有数十纳秒的差异。</p>
+<h3 id="Galileo"><a href="#Galileo" class="headerlink" title="Galileo"></a>Galileo</h3><p>欧盟的伽利略系统采用了与 GPS 类似的码分多址技术来区别不同的卫星。为了提供更多的服务，伽利略信号结构比 GPS 的民用码信号复杂，其信号传输速率从 50 位每秒到 1000 位每秒不等。伽利略系统提供含有测距码和数据信息的导航信号，测距码由每颗卫星上的高稳定度星钟产生，数据信息则由地面上行注入站向卫星发送。导航电文的内容包括星钟、星历、识别码和状态标识等，以及能使用户预测星钟和星历精度的“空间精度信息”。</p>
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><h3 id="一、地面监控部分"><a href="#一、地面监控部分" class="headerlink" title="一、地面监控部分"></a>一、地面监控部分</h3><p>GPS 地面监控部分主要由分布在全球的 1 个主控站，4 个注入站和 6 个监测站组成。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-97e839070657b228c9942f8e67128e63_720w.jpg"></p>
+<blockquote>
+<p>GPS 地面监控部分的分布</p>
+</blockquote>
+<p>地面监控部分部分数据流动为：卫星运行-&gt; 监测站观测 -&gt; 主控站计算 -&gt; 注入站注入 -&gt; 卫星得知星历（广播给地面接收机）</p>
+<h4 id="地面监测站"><a href="#地面监测站" class="headerlink" title="地面监测站"></a>地面监测站</h4><p>监测站是在主控站控制下的一个数据自动采集中心，其主要装置包括 GPS 双频接收机、高精度原子钟、计算机、环境数据传感器等。</p>
+<p>监测站的主要任务是通过接收机对 GPS 卫星进行连续观测和数据采集，收集积分多普勒观测值、卫星时钟、工作状态数据等数据。同时通过环境传感器采集有关当地的气象数据，传送给主控站。</p>
+<h4 id="主控站"><a href="#主控站" class="headerlink" title="主控站"></a>主控站</h4><p>负责协调和控制地面监控部分的工作，通过接收、处理所有监测站传来的数据，计算卫星星历、时钟修正、状态数据、信号电离层延迟修正等，编算导航电文并传送到注入站，诊断卫星状态，调度卫星。</p>
+<p>坐落于美国科罗拉多州 Falcon 空军基地的主控站是地面监控部分，甚至整个 GPS 的核心。具体实现以下功能：</p>
+<ol>
+<li>采集数据、推算编制导航电文。采集监测站所测的伪距和积分多普勒观测值、气象参数、卫星时钟、卫星工作状态、各监测站工作状态参数、根据搜集的全部数据，推算各个卫星的星历、卫星钟差改正数、状态数据以及大气改正数、传送到注入站注入。</li>
+<li>给定全球定位系统时间基准。计算各个卫星的钟差，以确保各颗卫星的原子钟与主控站的原子钟同步，维护 GPS 的时间基准；</li>
+<li>协调管理所有地面监测站和注入站系统，诊断所有地面支撑系统和天空卫星的健康状况，并加以编码向用户指示。</li>
+<li>调整卫星运动状态，启动备用卫星。根据观测到的卫星轨道参数以及卫星姿态参数，发生偏离时发出调整卫星轨道的控制命令，确保卫星沿预定的轨道和正确姿态运行；监视卫星是否工作正常，并在卫星出现故障、失效的情况下启动备用卫星。</li>
+</ol>
+<h4 id="地面注入站"><a href="#地面注入站" class="headerlink" title="地面注入站"></a>地面注入站</h4><p>导航卫星注入站是指向在轨运行导航卫星注入导航电文和控制指令的地面无线电发射站，是导航卫星系统地面运行控制的组成部分。注入站的主要设备报考一套直径 3.6m 的天线，一台 C 波段发射机和计算机。</p>
+<p>注入站接收主控站送来的导航电文和卫星控制指令，经射频链路上行发送给各导航卫星。</p>
+<p>导航电文通常包括预报的卫星轨道参数（即卫星星历表）、卫星时钟偏差参数以及轨道和钟差的改正参数等。</p>
+<p>卫星控制指令通常包括有效载荷控制指令和卫星平台控制指令。</p>
+<h3 id="二、空间星座部分"><a href="#二、空间星座部分" class="headerlink" title="二、空间星座部分"></a>二、空间星座部分</h3><p>GPS 空间卫星星座，比如保证在地球各处能同时观测到高度角为 15° 以上的至少 4 颗卫星。GPS 全球定位系统的空间星座由 24 颗工作卫星构成，其中 3 颗为备用卫星，部署在 6 个轨道平面，平均高度约为 202002km，运行周期为 11h58min。</p>
+<p>卫星主体呈柱形，星体两侧装有两块双叶向日定向太阳能帆板，全场 5.33m，接收日光面积为 7.2m²，以保证卫星正常工作用电。</p>
+<p>星体底部装有多波束定向天线，其波束方向图能覆盖约半个地球。星体两端面上装有全遥测遥控天线，用于与地面监控网通信，还装有姿态控制系统和轨道控制系统。</p>
+<p>核心设备是高精度铯原子钟（稳定度 10^-14~10^-14），为 GPS 提供高精度的时间标准。</p>
+<p>GPS 卫星采用多种编号识别系统，在导航定位种通常采用 PRN 编号（伪随机噪声码 pseudo random noise code）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-9d0c972fd6d730006df7f0e8097af347_720w.jpg"></p>
+<blockquote>
+<p>卫星星座轨道分布</p>
+</blockquote>
+<h3 id="三、用户设备部分"><a href="#三、用户设备部分" class="headerlink" title="三、用户设备部分"></a>三、用户设备部分</h3><p>GPS 接收机部分主要由接收机硬件（主机、天线、电源）、数据处理软件、微处理机和终端设备组成。</p>
+<p>空间星座部分和地面监控部分为卫星确定了准确位置，然后需要多颗卫星广播给用户自身信息，用户通过 GPS 接收机接收到多颗的卫星轨道信息（相当于用多个卫星建立了一个坐标系）和时间（计算出到各个卫星的距离），于是用户就知道了用户相对于卫星星座的位置，而卫星星座相对于地球的位置是已知的，所以就能知道用户在地球的具体位置。</p>
+<p>信号接收处理单元是 GPS 接收机的核心单元，接收来自天线的信号，经过中频放大，滤波和信号处理，实现对信号的跟踪、锁定、测量，由跟踪环路重建载波解码得广播电文并获得伪距定位信息。根据需要，GPS 接收机可以设计成 1~12 个通道供选择，每一个通道在某一时刻跟踪一颗卫星，当次卫星被锁定时，便占据这一通道。现已广泛采用并行多通道技术或同时相关型通道技术。</p>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>衡量用户使用 GPS 时的性能，主要参考以下指标。</p>
+<p>准确性：准确性用来衡量定位结果与目标的真实相接近的程度，是定位结果与真实位置值的差异，而精度可以理解为重复性。列入对于静态定位而言，若接收机的多次定位结果基本集中于一点，则说定位精度很高，尽管可能偏离真实值一定距离。</p>
+<p>正直性（可靠性、完整性）：定位系统在出现故障时能及时警告用户，以免用户被非正常工作的定位系统所误导。</p>
+<p>连续性：系统在一段时间内能连续地同时满足所规定的准确性和正直性要去的概率。</p>
+<p>有效性：定位系统能同时满足准确性、正直性和连续性要求的时间百分比。</p>
+<p>首次定位所需时间：接收机启动后到获得第一个定位结果所需要经历的时间；</p>
+<p>灵敏度：衡量接收机能接收到多弱的 GPS 信号。</p>
+<p>城市峡谷中的性能：在城市峡谷中时，接收机在一定时段能实现定位的个数与该时段内总的定位历元数之比成为定位有效率。</p>
+<hr>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><h2 id="星历数据"><a href="#星历数据" class="headerlink" title="星历数据"></a>星历数据</h2><p>描述任意时刻卫星在空间的位置的一组参数称为卫星星历。 GPS 卫星在空间的瞬时位置作为已知参数，以星历的方式，在卫星绕地球运行的过程中，连续不断的向地球地面用户播发，用户通过测量对卫星的相对距离，进而确定自己在地球上的位置实现高精度的定位和导航。</p>
+<p>为了理解和运用 GPS 卫星的轨道信息，需要了解有关卫星的运动规律，轨道的描述，以及卫星位置的计算。而卫星的运动规律和轨道描述为天体物理学开普勒三大定律相关的知识，具体可以参考 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/111325516">GPS 定位笔记 4 (轨道理论和星历和历书)</a>， 在此不做展开。</p>
+<p>利用 GPS 进行导航和定位就是根据 GPS 卫星发布的卫星轨迹信息，结合用户的观测资料，通过数据处理来确定用户的位置，速度乃至姿态等参数，所以星历（精确描述轨道的一组参数）是实现精确定位与导航的基础，GPS 卫星星历的提供方式一般有两种，一种是预报星历（广播星历），另一种为后处理星历（精密星历）。</p>
+<p>预报星历是一组这样的数据，它包含相对于某一参考历元的开普勒轨道参数和必要的轨道摄动改正项参数。 GPS 卫星的广播星历更新频率很快，每小时就发布一组最新的星历。</p>
+<p>广播星历一共有 16 个星历参数，其中包含一个参考历元，6 个相应于参考历元的开普勒椭圆轨道参数，和 9 个反应摄动力影响的改正项参数。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-0169db5c8c04c4658acfab8fe7b332c3_720w.jpg"></p>
+<blockquote>
+<p>GPS 卫星轨道参数示意图</p>
+</blockquote>
+<ul>
+<li>参考时刻的平近点角 $M_{so}$</li>
+<li>平均运行速度差 $\Delta n$</li>
+<li>轨道偏心率 $e$</li>
+<li>轨道长半轴的方根 $\sqrt{a_s}$</li>
+<li>参考时刻的升交点赤经度 $\Omega_0$</li>
+<li>参考时刻的轨道倾角 $i_0$</li>
+<li>近地点角距 $\omega$</li>
+<li>升交点赤经变率 $\dot{\Omega}$</li>
+<li>轨道倾角变率 $\dot{i}$</li>
+<li>升交距角的调和改正项振幅 $C_{uc}, C_{us}$</li>
+<li>卫星地心距的调和改正项振幅 $C_{rc}, C_{rs}$</li>
+<li>轨道倾角的调和改正项振幅 $C_{ic}, C_{is}$</li>
+<li>星历参数的参考历元 $t_{oe}$</li>
+<li>星历数据的龄限 $AODE$</li>
+</ul>
+<p>为了满足大地测量学和地球动力学，对高精密度定位的要求，需要精确地刻画某时刻的卫星轨道参数，即后处理星历。后处理星历是一些国家的有关部门根据各自建立的 GPS 卫星跟踪站所获得的 GPS 卫星精密观测资料，采用确定预报星历相似的方法，计算出以前任意观测时刻的卫星星历。它是一种根据观测资料事后计算的时间和星历对应的精密轨道信息库。</p>
+<h2 id="卫星信号"><a href="#卫星信号" class="headerlink" title="卫星信号"></a>卫星信号</h2><p>用户 GPS 接收机接收到的 GPS 卫星广播的信号，测定由卫星到接收机的信号传播时间延迟，或测定卫星载波信号相位在传播路径上变化的周数解算出由接收机到卫星之间的距离（应含误差，而被称为伪距），从而确定 GPS 接收机的位置和时间改正数。</p>
+<p>GPS 卫星播发的信号包含三种成分，即数据码、测距码和载波信号。数据码中包含多种与导航有关的信息，这些信息是卫星的星历，卫星钟差改正数，测距时间标志及大气折射改正参数，以及由 C/A 码捕获 P 码得到的其他导航信息，这些信息为 GPS 导航定位提供数据基础，故又称为导航电文。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-1c3ff84e007910417c2ac299a85c636c_720w.jpg"></p>
+<blockquote>
+<p><em>GPS 卫星信号示意图</em></p>
+</blockquote>
+<p>GPS 卫星信号采用了组合码调制技术，即将编码脉冲（即导航电文或者基带信号）先调制到伪随机码，即经过伪随机码扩频成为组合码，再对 L 波段进行双向调制，然后由 GPS 卫星天线发射出去，使用两个载波频率发射，是为了对大气层效应产生的附加延时进行双频矫正。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-950d78ea639debdb139c18edd8510439_720w.jpg"></p>
+<blockquote>
+<p><em>GPS 发射信号构成原理图</em></p>
+</blockquote>
+<h2 id="导航电文"><a href="#导航电文" class="headerlink" title="导航电文"></a>导航电文</h2><p>导航电文是二进制编码文件，按规定格式组成数据帧，按帧向外播放，每帧电文含有 1500bit，播送速度是每秒 50bit，所以一帧电文的播放时间是 30 秒。</p>
+<p>每帧电文还有 5 个子帧，每个子帧含有 10 个字，每个字为 30bit，所以每一子帧共含有 300bit，按上述比特率 50bit/s 速度播发，每幅子帧需播放 6 秒。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-43e0c9e36341f565bdcb90dd3a8b36c2_720w.jpg"></p>
+<blockquote>
+<p><em>导航电文格式</em></p>
+</blockquote>
+<p>第 1、2、3 子帧中含有该卫星的广播星历和卫星星钟修正参数，每小时更新一次，第 4、5 子帧中存放所有空中 GPS 卫星的历书，信息量比较庞大，故子帧 4、5 各含 25 页。4、5 子帧是空中全部 GPS 卫星的历书，它的内容仅在地面注入站注入新的导航数据后才更新，现也有技术根据设备接入互联网网络获取附近基站拿到过的所有卫星历书。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-774a1f048cf51d94c79c9e3d618e2869_720w.jpg"></p>
+<blockquote>
+<p><em>导航电文的内容</em></p>
+</blockquote>
+<ul>
+<li>遥测字 TeLemetry Word：包含捕获信息的前导，遥测电文（地面监控系统注入数据的状态信息、诊断信息和其他），指示用户是否选用该卫星。</li>
+<li>转换字 How-hand Over Word：提供用于捕获 P 码的 Z 计数（从每周六-周日子夜零时起算的时间计数），可以实时了解观测瞬时在 P 码周期中所处的准确位置，预先确定码的移动量，使本机产生的伪随机码的码元与即将到来的卫星信号 P 码码元相匹配。</li>
+<li>数据块 1：卫星时间计数器 WN，调制码标识（C/A 或 P），卫星测距精度 URA，数据是否正常，电离层延迟改正参数，时钟数据龄期，卫星时钟参数对应的参考时刻，卫星钟改正参数。</li>
+<li>数据块 2：开普勒六参数，轨道摄动九参数，卫星星历参考时刻，广播星历外推时间间隙。</li>
+<li>数据块 3：全部 GPS 卫星星历概略模式，健康状况和 GPS 星期编号，方便用户利用码分址较快的捕获其他合适的卫星信号。</li>
+</ul>
+<h2 id="坐标计算方式"><a href="#坐标计算方式" class="headerlink" title="坐标计算方式"></a>坐标计算方式</h2><p>用户的 GPS 接收机收到轨道信息轨道参数后，计算出卫星在地球坐标系中的位置，然后地球 GPS 接收机通过测码伪码或测相伪距的处理方式，实时测量卫星到用户的距离。由于存在卫星和接收机时间不完全同步，且载波信号受到电离层和对流层的折射影响，所以测得的距离称为伪距。</p>
+<p>于是利用 GPS 进行定位，在几何意义上的解释就显得非常简单清晰，GPS 卫星在地球坐标系中的位置坐标已知。</p>
+<p>比如 $(x_i,y_i, z_i)$ 为卫星 i 在协议地球坐标系中的位置，而我们测得的到卫星 i 的距离为 $\rho_i(\Delta t)= \sqrt{(x-x_i)^2 + (y-y_i)^2 + (z-z_i)^2 }$</p>
+<p>而接收机又收到了四颗卫星便能联立解方程组，解得关于三维坐标和用户钟差的方程。</p>
+<ul>
+<li>测码伪距观测量：测量 GPS 卫星发射的测距码信号到达用户接收机天线的电波传播时间。因此这种观测方法也称为时间延迟测量。</li>
+<li>测相伪距观测量：卫星载波信号由发射到被接收，其间载波信号传播的相位称为载波相位观测量（测相伪距观测量）。由于载波频率高波长短，所以载波相位测量精度高。</li>
+<li>开普勒积分计数伪距差： 卫星相对于地面的 GPS 接收机存在着相对运动，因此接收到的信号中存在着多普勒平移。利用多普勒平移测得相对距离。</li>
+<li>干涉法测量时间延迟：目前广泛采用前两种（码相位观测量和载波相位观测量）进行定位测量，第 3 种多普勒积分计数法静态定位需要数小时的观测时间，一般应用于大地测量之中，在动态应用中多普勒测量，可用来计算测站的运动速度。而用最后一种干涉法测量时所需的设备相当昂贵，数据处理也十分复杂，它的广泛应用上待进一步的研究开发。</li>
+</ul>
+<h2 id="误差影响与消除"><a href="#误差影响与消除" class="headerlink" title="误差影响与消除"></a>误差影响与消除</h2><h3 id="卫星星历误差"><a href="#卫星星历误差" class="headerlink" title="卫星星历误差"></a>卫星星历误差</h3><p>由于卫星在空中运行受到多种摄动力影响，地面监测站难以充分可靠的测定这些摄动力的影响，使得测定的卫星轨道会有误差。</p>
+<p>同时监测系统的质量，如跟踪站的数量及空间分布轨道参数等的数量和精度轨道计算时，所用的轨道模型及定轨软件的完善程度，应会导致星历误差。</p>
+<p>此外用户得到的卫星星历并非是实时的，而是由 GPS 用户接收的导航电文中对应于某一时刻的星历参数而推算出来的，由此也会导致计算卫星位置产生误差。</p>
+<p>为了尽可能削弱星历误差，对定位的影响一般常采用同步观测求差法（卫星星历误差对相距不太远的两个测站的定位影响大致相同，因此采用两个或者多个近距离的观测站对同一个卫星进行同步观测，然后求差）或轨道改进法（在数据处理中引入表示表述卫星轨道偏差的改正数，并假设在短时间内这些改正参数为常量，并将其作为待求解量与其他位置参数一并求解，从而较正星历误差）。</p>
+<h3 id="卫星时钟误差"><a href="#卫星时钟误差" class="headerlink" title="卫星时钟误差"></a>卫星时钟误差</h3><p>卫星上使用高精度的原子钟，但由于这些钟与 GPS 标准时之间会存在着随时间变化的频偏频飘，导致星钟和 GPS 标准时之间的不同步偏差。主要通过接收机对星钟误差，进行二项式拟合求解来进行消除。</p>
+<h3 id="电离层误差"><a href="#电离层误差" class="headerlink" title="电离层误差"></a>电离层误差</h3><p>电离层的折射率与大气电子密度成正比，和穿过的电磁波频率平方成反比，对于频率确定的电磁波而言，电离层折射率仅取决于电子密度。 电离层的电子密度随太阳及其他天体的辐射强度，季节，时间，以及地理位置等因素的变化而变化。</p>
+<p>为了减弱电离层的影响，在 GPS 定位中通常采用以下措施，</p>
+<ol>
+<li>利用双频观测加以修正。</li>
+<li>利用电离层模型加以修正。</li>
+<li>利用同步观测值求差。</li>
+</ol>
+<h3 id="对流层误差"><a href="#对流层误差" class="headerlink" title="对流层误差"></a>对流层误差</h3><p>对流层与地面接触，并从地面得到辐射热能，其温度一般随将，除了与高度变化有关外对流层的折射率与大气压力，湿度和温度密切相关。减少对流程折射，对电磁波延迟影响的措施主要为：</p>
+<ol>
+<li>当基线较短时气象条件稳定，两个测站的气象条件相似，利用基线两端同步观测量求差，可以有效的减弱甚至消除大气层折射影响。</li>
+<li>利用在观测站附近实测的地区气象资料，完善对流层大气改正模型，可以减少对流层对电磁波延迟的影响的 90%。</li>
+</ol>
+<h3 id="多路径"><a href="#多路径" class="headerlink" title="多路径"></a>多路径</h3><p>多路径效应通常也叫做多路径误差，接收机存在接收到卫星发射的信号外，尚可能收到天线周边建筑物或者水面的一次或多次反射的卫星信号，这些信号叠加起来会引起测量参考点位置的变化，从而使观测量发生误差。</p>
+<p>反射波除了存在相位延迟外，信号强度一般也会减小，其原因是一部分能量被反射面所吸收，同时由于反射面会改变波的极化特性，而<strong>接收天线为右旋圆极化天线</strong>对于改变了极化特性的反射波，存在着抑制作用。</p>
+<p>多路径误差取决于反射物距测站的距离和反射系数，以及卫星信号的方向等条件因素，无法建立起准确的误差改正模型，只能改善环境或者选择造型适宜屏蔽良好的天线，或者延长观测时间，改善接收机电路设计。</p>
+<h3 id="接收机噪声"><a href="#接收机噪声" class="headerlink" title="接收机噪声"></a>接收机噪声</h3><p>天线观测误差、接收机钟差、天线相位中心的的位置偏差、载波相位观测整周期未知数、地球自转、相对论效应。</p>
+<h3 id="精度码"><a href="#精度码" class="headerlink" title="精度码"></a>精度码</h3><p>GPS 的精度级别分为两种：</p>
+<ul>
+<li>SPS（Standard Position System 标准定位系统）：最常见的定位系统，水平方向精度为 30 米，使用 C/A 码。</li>
+<li>PPS（Precis Position System 精密定位系统）：过去只提供给军事或国家使用，使用 P 码，精度达水平 15 米，垂直 27.7 米。</li>
+</ul>
+<p>民用通常只是 SPS，使用粗码 （C/A 码），指定单位设备可使用 PPS，更甚至可以接入 RTK 差分服务。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-01d70b1cb758da0130d80f0b66c86baf_720w.jpg"></p>
+<blockquote>
+<p>测码伪距测量误差 (URE)</p>
+</blockquote>
+<h3 id="差分定位-Differential-GPS"><a href="#差分定位-Differential-GPS" class="headerlink" title="差分定位 Differential GPS"></a>差分定位 Differential GPS</h3><p>是首先利用已知精确三维坐标的差分 GPS 基准站，求得伪距修正量或位置修正量，再将这个修正量实时或事后发送给用户，对用户的测量数据进行修正，以提高 GPS 定位准确度。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-ee6705780a39b6e5b6fa398c07df945e_720w.jpg"></p>
+<blockquote>
+<p><em>差分定位示意图：卫星，基准站，移动站</em></p>
+</blockquote>
+<p>根据差分 GPS 基准站发送的信息方式可将差分 GPS 定位分为三类，即：<strong>位置差分、伪距差分和相位差分</strong>。 这三类差分方式的工作原理是相同的，即都是由基准站发送改正数，不同的是，发送改正数的具体内容不一样，其差分定位精度也不同。</p>
+<ol>
+<li>位置差分：</li>
+</ol>
+<p>最简单的差分方法，由于存在着轨道误差、时钟误差、SA 影响、大气影响以及其他误差，接收机解算出的坐标与基准站的已知坐标是不一样的， 存在误差。基准站利用网络将此改正数发送出去，由用户站接收，并且对其解算的用户站坐标进行改正。</p>
+<p>最后用户坐标已消去了基准站和用户站的共同误差，例如卫星轨道误差、 SA 影响、大气影响等，提高定位精度。适用于基准站和用户站观测同一组卫星的情况，用户与基准站间距离在 100km 以内的情况。</p>
+<ol start="2">
+<li>伪距差分：</li>
+</ol>
+<p>伪距差分是用途最广的一种技术。几乎所有的商用差分 GPS 接收机均采用这种技术。基准站的接收机知道自身的精确位置，便可知到卫星的距离，并将此计算出的距离与含有误差的测量值加以比较。然后将所有卫星的测距误差传输给用户，用户用来改正测量的伪距。</p>
+<p>与位置差分相似，伪距差分能将两站公共误差抵消，但随着用户到基准站距离的增加又出现了系统误差，这种误差用任何差分法都是不能消除的。用户和基准站之间的距离对精度有决定性影响。</p>
+<ol start="3">
+<li>相位差分：</li>
+</ol>
+<p>载波相位差分技术又称为 RTK 技术（Real Time Kinematic），是建立在实时处理两个测站的载波相位基础上的。它能实时提供观测点的三维坐标，并达到厘米级的高精度。</p>
+<p>基准站通过网络实时将其载波观测量及站坐标信息一同传送给用户站。用户站接收 GPS 卫星的载波相位与来自基准站的载波相位，并组成相位差分观测值进行实时处理，能实时给出厘米级的定位结果。</p>
+<p>实现载波相位差分 GPS 的方法分为两类：修正法：与伪距差分相同，基准站将载波相位修正量发送给用户站，以改正其载波相位，然后求解坐标。差分法：将基准站采集的载波相位发送给用户台进行求差解算坐标。前者为准 RTK 技术，后者为真正的 RTK 技术。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>以上内容参考自</p>
+<ul>
+<li>《GPS 原理与接收机设计》-谢钢-电子工业出版社</li>
+<li>《GPS 导航原理与应用》-王惠南-科学出版社</li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="http://fancyerii.github.io/2020/04/06/gps/">GPS 定位技术 - 李理的博客</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/111325516">知乎专栏文章：GPS 定位笔记 4 (轨道理论和星历和历书)</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://my.oschina.net/lzugis15/blog/4799507">牛老师的集思空间：地图投影介绍</a></li>
+</ul>
+<hr>
+<p>欢迎在我的专栏「<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/column/jiritsu-soko">自律走行</a>」中查看更多「走进自动驾驶传感器」系列文章</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/139350599">走进自动驾驶传感器（一）——激光雷达</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/346374177">走进自动驾驶传感器（二）——毫米波雷达</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/157925827">走进自动驾驶传感器（三）——卫星导航系统</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/">http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/sensor/">sensor</a><a class="post-meta__tags" href="/tags/gps/">gps</a><a class="post-meta__tags" href="/tags/gnss/">gnss</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2021/09/21/keyboard-photography-10/" title="键盘摄影（十）——滤镜的种类和作用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">键盘摄影（十）——滤镜的种类和作用</div></div><div class="info-2"><div class="info-item-1">有一次忽然意识到，如果想要一个长曝光，浅景深，低 iso 的图，需要物理减光，所以滤镜也算是相机曝光要素中的一部分，为此也整理了一下现在的滤镜的种类，和各自的原理作用。以下内容整理自《关于滤镜-这篇就够了 上/ 下 》。   UV 镜 Ultra Violet通常为无色透明的，不过有些因为加了增透膜的关系，在某些角度下观看会呈现紫色或紫红色。UV 镜滤光片的主要功能是用于吸收波长在 400nm 以下的紫外线，而对其他可见/不可见光线均无过滤作用。它之所以能够过滤紫外线是因为镜片中含有铅。 在胶片年代，由于胶片的化学特性，其对阳光中的紫外线尤其敏感，在紫外线强的地方，使用胶片拍摄出来的照片普遍偏蓝、泛白。严重影响了照片品质。在镜头前加一块 UV 镜，可以有效过滤掉紫外线提高照片的清晰度。 到了数码时代，由于数码机的核心显像部件不再像胶片那样对紫外线过于敏感，因此已无需再对紫外线进行过滤了，所以主要起保护镜片之用。 偏光镜 Polarizers偏光镜对拍摄风景照片有着十分重要的作用。它的主要用途是消除不同表面的反光，令蓝天更蓝、树木更绿；此外，它也可以减少水面及橱窗的倒影。 要理解偏...</div></div></div></a><a class="pagination-related" href="/2021/02/21/link-to-world/" title="与世界连接"><img class="cover" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">与世界连接</div></div><div class="info-2"><div class="info-item-1">时间在记忆中是非线性流逝的，你的少年光景，被压缩成弹指须臾，你正在经历的故事，结束之后空留一地虚无。   这或许是时间，也或许是大脑造成的影响，举个例子，是我们对近几个月的记忆是最清晰的，越往前越是模糊，像是几年前的故事会慢慢只记得零星片段；   其实是因为没有新鲜体验，一天重复了一年，大脑为了解决存储和检索问题就压缩删除了重复文件。如果想要对抗时间带来的此般副作用：  去拥有更多不一样的体验，跳出舒适圈，去做没有做过的事情。 整理构建自己的检索系统，包括但不限定于定期反思记录，整理照片文件。  可这也只能让记忆变得清晰，但仍没有赋予意义。这其间安置我的怅然若失，给人生历程留下记忆锚点的，是仪式感。会习惯性收集拍立得，机票火车票，纪念品徽章，然后将它们挂在卧室墙上，成为了我的意义容器，使得曾经的某一刻变得不一样。 仪式感是什么呢？《小王子》里那只等爱的狐狸会说:  比如，你下午四点来，那么从三点起，我就开始感到幸福。时间越临近，我就越感到幸福。我就发现了幸福的价值 「是设定一个时刻，然后开始期待那个时刻的过程。它使某一天与其他日子不同，使某一时刻与其他时刻不同。」  「仪式感」和...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2020/05/09/approach-autonomous-driving-sensor-lidar/" title="走进自动驾驶传感器（一）——激光雷达"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-09</div><div class="info-item-2">走进自动驾驶传感器（一）——激光雷达</div></div><div class="info-2"><div class="info-item-1">写在前面： 笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。 欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）   激光雷达，也称光学雷达（LIght Detection And Ranging）是激光探测与测距系统的简称，它通过测定传感器发射器与目标物体之间的传播距离，分析目标物体表面的反射能量大小、反射波谱的幅度、频率和相位等信息，从而呈现出目标物精确的三维结构信息。 自上世纪 60 年代激光被发明不久，激光雷达就大规模发展起来。目前激光雷达厂商主要使用波长为 905nm 和 1550nm 的激光发射器，波长为 1550nm 的光线不容易在人眼液体中传输，这意味着采用波长为 1550nm 激光的激光雷达的功率可以相当高，而不会造成视网膜损伤。更高的功率，意味着更远的探测距离，更长的波长，意味着更容易穿透粉尘雾霾。但受制...</div></div></div></a><a class="pagination-related" href="/2021/01/24/approach-autonomous-driving-sensor-radar/" title="走进自动驾驶传感器（二）——毫米波雷达"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-01-24</div><div class="info-item-2">走进自动驾驶传感器（二）——毫米波雷达</div></div><div class="info-2"><div class="info-item-1">在上一篇文章中 Yvon Shong：走进自动驾驶传感器（一）——激光雷达 ，我们介绍了激光雷达这款传感器的数据和特性，接下来我们要介绍的是目前市面上大部分高级驾驶辅助系统（Advanced Driver Assistance Systems）都搭载了的毫米波雷达。 由于最后本文篇幅长达两万字，并且在整理毫米波雷达传感器资料的时候，综合传感器硬件手册，网上相关资料，官网设备资料，信号处理教材，仿佛又重新学了一遍信号处理，所以将关于毫米波雷达性能指标部分复杂的公式推导放置在了文章最后，并且保证了符号定义的连贯性，保证大家可以从信号处理的基础回忆起，看懂每一个公式。   值得注意的是，本文中涉及到的 FMCW 毫米波雷达，其原理和 FMCW 激光雷达 完全相同，若您对 FMCW 激光雷达感兴趣，可阅读文章中公式推导部分。 欢迎大家点赞关注收藏（点赞求求了 Orz，上一篇收藏数远大于点赞），如需转载请私信联系。欢迎关注本专栏！以下为大纲，方便后续查阅：  毫米波雷达介绍 分类 频段 硬件结构 结构 参数指标 数据 特点 应用 市场   信号处理基础知识 FMCW 雷达原理 距离估算 速...</div></div></div></a><a class="pagination-related" href="/2023/03/12/focus-on-lidar-1/" title="聚焦激光雷达（一）——扫描器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="info-item-2">聚焦激光雷达（一）——扫描器</div></div><div class="info-2"><div class="info-item-1">之前撰写过相机硬件的系列文章，从滤镜、镜头、快门、 CMOS 到 ISP 芯片，几年前写过一篇激光雷达入门介绍 Yvon Shong：走进自动驾驶传感器（一）——激光雷达，当时只是初步提及了激光雷达的一些基本性质。 而这几年激光雷达作为逐渐成熟的自动驾驶/高阶辅助驾驶传感器，价格逐步下降，产品也层出不穷，笔者于去年入职了中国激光雷达第一股，禾赛科技（内推禾赛科技自动驾驶、光电芯片等岗位），伴随着制造商和供应链逐渐成熟的进程，激光雷达有了更繁复的分类和功能，所以也想对激光雷达进行一次系统性的大拆解，撰写激光雷达系列文章。   本系列文章将从扫描器，发射器，探测器到处理模块，从硬件到软件算法等模块，来介绍激光雷达。欢迎关注本专栏，您的帮助从点赞本文章开始 ヽ(ﾟ▽ﾟ)ノ。  之前的文章 ， 在之前的文章中，我们粗略的提及了激光雷达扫描结构的不同，激光雷达的扫描结构主要分为： 机械式、混合固态（MEMS振镜式、转镜式、棱镜式）、纯固态（FLASH、OPA）。本章节将详细介绍激光雷达细分的扫描结构和原理，以及一些新型的技术。  机械式机械式激光雷达是指其发射系统和接收系统一起随着转轴进行...</div></div></div></a><a class="pagination-related" href="/2023/03/28/focus-on-lidar-2/" title="聚焦激光雷达（二）——激光器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-28</div><div class="info-item-2">聚焦激光雷达（二）——激光器</div></div><div class="info-2"><div class="info-item-1">之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。    激光器原理所有激光器都包含以下三个组件：1、泵浦源；2、受激介质；3、谐振腔。 受激介质位于激光器内部，取决于不同的激光器结构设计，受激介质是一种包含可将激发光的能量转换为激光的原子的物质，可能是气体混合物 、固体晶体棒或玻璃纤维。激光介质在获得泵浦源从外部获得的能量供给时，受激产生能量辐射。 被激发的介质位于谐振腔两端两个镜子的中间位置，其中一个镜子是半透半反镜，受激介质产生的能量辐射在谐振腔内放大，与此同时，只有特定的辐射光能够穿过单向透镜，形成一束辐射光，这一辐射光束即是激光。   激光的原理   泵浦源泵浦源的作用是对增益介质进行激励使其辐射发光。具体而言，泵浦源提供能量激励原子跃迁到高能级，以实现粒子数反转（使高能态粒子数多于低能态粒子数...</div></div></div></a><a class="pagination-related" href="/2023/04/19/focus-on-lidar-4/" title="聚焦激光雷达（四）——光学系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-19</div><div class="info-item-2">聚焦激光雷达（四）——光学系统</div></div><div class="info-2"><div class="info-item-1">激光雷达从器件来看，最主要的构成要素是扫描器、发射器，接收器，处理器，以及一些内部的光学元件了，激光从发射器中产生，除了要通过扫描器来调整激光方向以外，还需要通过各式各样的光学元件，来调整光斑形状大小，光场的能量分布等等。   查阅了很多光学供应链公司的产品和研报，这可能是全网唯一比较全面的介绍激光雷达内部涉及的光学元件的科普文章了，欢迎点赞关注本专栏。 从激光雷达 BOM 成本拆分来看，透镜等光学组件仍是激光雷达的重要组成部分。以法雷奥 Scala 转镜激光雷达为例，目前年产量十万级规模， BOM 成本约 400 美元，其中主控板占 45%，激光发射接收组件占 33%，光学单元占 13%，外罩 8%，马达 1%。而 Livox 的双楔形棱镜式激光雷达的透镜模组占了成本的 54%。可以看到，光学元件是激光雷达成本里重要组成部分。 由于各种激光器发射的激光束并不是绝对平行的，具有光斑形状不规则，发散角度大的问题，因此还需要一套光学系统，对激光器的输出光束进行准直整形，通过改变光束的发散度、波束宽度和截面积，改善输出光束质量。 发射光学系统主要由透镜、反射器件、衍射器件等光学元器件组...</div></div></div></a><a class="pagination-related" href="/2023/04/01/focus-on-lidar-3/" title="聚焦激光雷达（三）——接收器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-01</div><div class="info-item-2">聚焦激光雷达（三）——接收器</div></div><div class="info-2"><div class="info-item-1">接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。   可以看到接收探测器的根本原理是光电效应，目前车载激光雷达中的半导体探测器按照工作原理可以分为：  PIN-PD：是在最基础的光电二极管的基础上扩宽了势垒区，价格低廉，结构简单，响应速度快，但没有增益，灵敏度有限。 APD：在 PIN 光电二极管的基础上，加上一定的反向电压，相当于人为增加了势垒，在外界光电效应的触发下，少量光生载流子引发雪崩效应电流倍增。输出电流与入射光子数量呈线性关系，相当于一个具有增益的光电二极管，这可进一步增大光检测的灵敏度，同时较大反向电压的作用也可进一步提高其响应速度，这就是雪崩光电二极管（APD），APD 已经是光通信技术中用来接收微弱光信号的一种基本器件。 SPAD：APD 工作电压在雪崩电压以上（盖革模式），每个入射的光子都会触发雪崩效应，灵敏度极高，甚至可以探测单个光子，但由于其工作于临界状态，需要配合猝灭电路设计，只能识别有无而无法识别强度，通常采用阵列的方式，利用多个传感器感知到...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E7%A9%BA%E5%8F%82%E8%80%83%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">时空参考坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E7%B3%BB%E7%BB%9F"><span class="toc-text">空间系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A9%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">天球坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B2%81%E5%B7%AE%E5%92%8C%E7%AB%A0%E5%8A%A8"><span class="toc-text">岁差和章动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">地球坐标系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%B3%BB%E7%BB%9F"><span class="toc-text">时间系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%92%E6%98%9F%E6%97%B6%E3%80%81%E5%B9%B3%E5%A4%AA%E9%98%B3%E6%97%B6%E3%80%81%E4%B8%96%E7%95%8C%E6%97%B6"><span class="toc-text">恒星时、平太阳时、世界时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E6%97%B6%E3%80%81%E5%8D%8F%E8%B0%83%E4%B8%96%E7%95%8C%E6%97%B6%E3%80%81GPS-%E6%97%B6"><span class="toc-text">原子时、协调世界时、GPS 时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unix-%E6%97%B6%E9%97%B4%E6%88%B3"><span class="toc-text">Unix 时间戳</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#GNSS-%E4%BB%8B%E7%BB%8D"><span class="toc-text">GNSS 介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E5%B1%95"><span class="toc-text">发展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GPS"><span class="toc-text">GPS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Beidou"><span class="toc-text">Beidou</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Glonass"><span class="toc-text">Glonass</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Galileo"><span class="toc-text">Galileo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E6%88%90"><span class="toc-text">组成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9C%B0%E9%9D%A2%E7%9B%91%E6%8E%A7%E9%83%A8%E5%88%86"><span class="toc-text">一、地面监控部分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E9%9D%A2%E7%9B%91%E6%B5%8B%E7%AB%99"><span class="toc-text">地面监测站</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E6%8E%A7%E7%AB%99"><span class="toc-text">主控站</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%B0%E9%9D%A2%E6%B3%A8%E5%85%A5%E7%AB%99"><span class="toc-text">地面注入站</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E7%A9%BA%E9%97%B4%E6%98%9F%E5%BA%A7%E9%83%A8%E5%88%86"><span class="toc-text">二、空间星座部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%94%A8%E6%88%B7%E8%AE%BE%E5%A4%87%E9%83%A8%E5%88%86"><span class="toc-text">三、用户设备部分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD"><span class="toc-text">性能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%9F%E5%8E%86%E6%95%B0%E6%8D%AE"><span class="toc-text">星历数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%AB%E6%98%9F%E4%BF%A1%E5%8F%B7"><span class="toc-text">卫星信号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA%E7%94%B5%E6%96%87"><span class="toc-text">导航电文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E8%AE%A1%E7%AE%97%E6%96%B9%E5%BC%8F"><span class="toc-text">坐标计算方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AF%E5%B7%AE%E5%BD%B1%E5%93%8D%E4%B8%8E%E6%B6%88%E9%99%A4"><span class="toc-text">误差影响与消除</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%AB%E6%98%9F%E6%98%9F%E5%8E%86%E8%AF%AF%E5%B7%AE"><span class="toc-text">卫星星历误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%AB%E6%98%9F%E6%97%B6%E9%92%9F%E8%AF%AF%E5%B7%AE"><span class="toc-text">卫星时钟误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E7%A6%BB%E5%B1%82%E8%AF%AF%E5%B7%AE"><span class="toc-text">电离层误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%B5%81%E5%B1%82%E8%AF%AF%E5%B7%AE"><span class="toc-text">对流层误差</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%BE%84"><span class="toc-text">多路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E6%9C%BA%E5%99%AA%E5%A3%B0"><span class="toc-text">接收机噪声</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%BE%E5%BA%A6%E7%A0%81"><span class="toc-text">精度码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E5%AE%9A%E4%BD%8D-Differential-GPS"><span class="toc-text">差分定位 Differential GPS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2021/09/21/approach-autonomous-driving-sensor-gnss/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2021/09/21/approach-autonomous-driving-sensor-gnss/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '走进自动驾驶传感器（三）——卫星导航系统'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

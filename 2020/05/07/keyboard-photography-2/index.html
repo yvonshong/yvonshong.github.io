@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>键盘摄影（二）——曝光三要素 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在前文 键盘摄影（一）——相机成像基本元件 中，我们提到了光圈和快门时，其实就已经出现了很多倍数关系带来的曝光量的变化，而摄影其实包含光的学问，今天我们要介绍的便是影响曝光的三要素。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="键盘摄影（二）——曝光三要素">
+<meta property="og:url" content="http://www.yvonshong.com/2020/05/07/keyboard-photography-2/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="在前文 键盘摄影（一）——相机成像基本元件 中，我们提到了光圈和快门时，其实就已经出现了很多倍数关系带来的曝光量的变化，而摄影其实包含光的学问，今天我们要介绍的便是影响曝光的三要素。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:published_time" content="2020-05-07T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.524Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="sensor">
+<meta property="article:tag" content="camera">
+<meta property="article:tag" content="photography">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "键盘摄影（二）——曝光三要素",
+  "url": "http://www.yvonshong.com/2020/05/07/keyboard-photography-2/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png",
+  "datePublished": "2020-05-07T04:00:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.524Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2020/05/07/keyboard-photography-2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '键盘摄影（二）——曝光三要素',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">键盘摄影（二）——曝光三要素</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">键盘摄影（二）——曝光三要素</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-05-07T04:00:00.000Z" title="发表于 2020-05-07 12:00:00">2020-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.524Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2020/05/07/keyboard-photography-2/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div><article class="container post-content" id="article-container"><p>在前文 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/93481287">键盘摄影（一）——相机成像基本元件</a> 中，我们提到了光圈和快门时，其实就已经出现了很多倍数关系带来的曝光量的变化，而摄影其实包含光的学问，今天我们要介绍的便是影响曝光的三要素。</p>
+<span id="more"></span>
+
+<h1 id="ISO"><a href="#ISO" class="headerlink" title="ISO"></a>ISO</h1><p>除了光圈（曝光孔径大小），快门（曝光时间），还有一个是成像元件的感光度，ISO为感光度的国际标准，在摄影中我们便用 ISO 指代感光度。为了介绍 ISO，我们完全可以先来熟悉下光学中的相关物理概念。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-e1345246e5802e4dbb4cf832b3b44083_720w.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-f12000d1eeeda82b7fc7c5560b8d975f_720w.jpg"></p>
+<h2 id="胶片的-ISO"><a href="#胶片的-ISO" class="headerlink" title="胶片的 ISO"></a>胶片的 ISO</h2><p>感光度ISO代表感光速度的标准，代表胶卷使用的颗粒，CCD或者CMOS感光元件的感光速度，数值越高就说明该感光材料的感光能力越强。从公式我们可以看出，感光度越高，对曝光量，光的积分通量的要求就越少。</p>
+<p>通俗一点就是衡量胶卷需要多少光线才能完成准确曝光的数值。胶卷上标的100、200、400，数字表示的就是感光度。数值增大，胶卷对光线的敏感程度也越大，ISO 200的胶卷的感光速度是ISO 100的两倍，换句话说在其他条件相同的情况下，ISO 200胶卷所需要的曝光时间是ISO 100胶卷的一半。而使用高ISO的颗粒噪声带来的噪点也相对的大。</p>
+<h2 id="数码的-ISO"><a href="#数码的-ISO" class="headerlink" title="数码的 ISO"></a>数码的 ISO</h2><p>数码相机的感光器件是使用了CCD或者CMOS，对曝光多少也有相应要求，也就有感光灵敏度高低的问题。</p>
+<p>而数码相机的本质其实是一个光电反应，光电反应本身具有逸出功（最小激活能量），光通过镜头打在CMOS/CCD传感器上，ISO描述了最小需要多少的曝光量，才能使得该传感器颗粒被激活，然后通过AD转换，把光电反应的模拟信号转换成数字信号成像。</p>
+<p>这也就相当于胶片具有一定的感光度一样，数码相机厂家为了方便数码相机使用者理解，一般将数码相机的CCD/CMOS的感光度（或对光线的灵敏度）等效转换为传统胶卷的感光度值，因而数字照相机也就有了感光度的说法。胶片相机只能通关替换不同颗粒材质的胶片来改变ISO，而数码相机的感光元件是不变的，而数码相机是如何实现调节ISO的呢？</p>
+<p><strong>数码相机的ISO本质上就是模拟信号的增益</strong>，如今的数码相机普遍采用了电子信号放大增益技术，与ISO数值相对应的是模拟信号放大增益值，比如设定在标准值时（无增益）提供等同ISO100（原生ISO）的增益幅度。数码相机的感光元件属于主动元件，存在暗电流，普通模式下设置了截止电流，并不会使用到存在噪声干扰的部分，当环境光线黯淡时，CCD/CMOS的输出电平较低，使用高感光度模式，放大器也按相应的ISO数值加大增益幅度，噪声也相应放大，而传感器在工作中一定受到不同程度的周边电路和本身像素间的光电磁干扰，这些背景噪声和干扰反映到图像上就是随机的杂点。</p>
+<p>个别厂商提供了另一种解决方案，即对两个像素的感光信号进行叠加，便可获得原来两倍的感光度。但这种工作方式也有其缺陷，只适合较小的影像模式，因为像素数在处理中减半了。在获得高ISO的同时与成像相关的像素数也会成倍缩减，为了保证成像尺寸原本的影像信息会被扩大，噪点就这样产生了。</p>
+<p>还有另一种高ISO数值的解决方案是合并像素后感光，采用把数个像素点当成1个像素点来进行感光的方式，多个像素点有更多曝光量，从而提高感光速度。该工作方式对高像素机型较有优势，但噪点的产生比前两种来的更为明显。因为减少了感光像素，所以在白平衡过程中只有进行像素插值才能得到完整的影像。</p>
+<p>虽然高ISO在噪点方面还是令我们有这样那样的担忧，但为了获得更高的快门速度和更明亮的画面，这也算是一种不增加成本的折中解决方法。低ISO值适合营造清晰、柔和的图片，而高的ISO值却可以补偿灯光不足的环境。</p>
+<h1 id="曝光三要素"><a href="#曝光三要素" class="headerlink" title="曝光三要素"></a>曝光三要素</h1><p>而相机的传感器是怎么互相影响曝光和成像的呢？这就是摄影中最重要的曝光三要素。</p>
+<p>光圈，快门，ISO。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-6a010158968f084e500bdda89f5ecdb3_720w.jpg"></p>
+<p>光圈与快门对曝光的控制光圈和快门是调整和控制曝光量的装置，它们是倍增或是倍减的关系，<strong>这种关系可以通过不同的组合来得到相同的曝光量</strong>。例如说，光圈F8、1/30秒为正确曝光值时，如果用光圈f5.6、1/60秒，或是f11、1/15秒来组合，它们所得到的曝光量也是一样的。而ISO也是呈倍数关系，来控制曝光量。这样，摄影师可以根据自己的目的来选择光圈，快门速度和 ISO。</p>
+<p>虽然他们都能控制曝光量，但是各自有不同的特点。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-ca92e3338af012e0f6706e60803b84b5_720w.jpg"></p>
+<p>光圈越大，进光口径越大，进光量越多，景深越小。</p>
+<p>快门越慢，进光时间越长，进光量越多，运动的景物越容易糊；</p>
+<p>感光度越高，对光线的感应能力越强（对信号的放大程度越高），噪点越多。</p>
+<p>了解了曝光三要素，我们便可以开始键盘摄影了（大雾）：</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://camerasim.com/camerasim-free-web-app/">camerasim.com</a><br>​</p>
+<p>这是一个 camera sim 网页，可以在上面调节光圈，iso，快门，物距，焦距，白平衡等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-77d6785454e77628e7aed3b3730dded3_720w.jpg"></p>
+<hr>
+<p>欢迎在我的专栏「<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/column/jiritsu-soko">自律走行</a>」中查看更多「键盘摄影」系列文章</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/93481287">键盘摄影（一）——相机成像基本元件</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/138585113">键盘摄影（二）——曝光三要素</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/138585371">键盘摄影（三）——等效焦距和等效光圈</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/139384545">键盘摄影（四）——相机成像元件：胶片与彩色暗房</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/139394687">键盘摄影（五）——相机成像元件：CMOS/CCD</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/138585667">键盘摄影（六）——相机成像模型</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/139432684">键盘摄影（七）——深入理解图像信号处理器 ISP</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/263018344">键盘摄影（八）——相机结构和卡口</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/263867036">键盘摄影（九）——光学像差</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/412506198">键盘摄影（十）——滤镜的种类和作用</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2020/05/07/keyboard-photography-2/">http://www.yvonshong.com/2020/05/07/keyboard-photography-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/sensor/">sensor</a><a class="post-meta__tags" href="/tags/camera/">camera</a><a class="post-meta__tags" href="/tags/photography/">photography</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2020/05/09/keyboard-photography-3/" title="键盘摄影（三）——等效焦距和等效光圈"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">键盘摄影（三）——等效焦距和等效光圈</div></div><div class="info-2"><div class="info-item-1">相机传感器的尺寸会影响接收到的光学图像的画幅，不只是镜头，传感器尺寸也会影响相机的视野。如果我们在光学系统中保持其他不变，只改变机身使用不同画幅的传感器，我们就会看到原来大尺寸传感器的图片仿佛被裁切了一样，于是我们引入了剪切系数，来衡量画幅的不同对成像的影响，并介绍等效焦距和等效光圈这样的数学工具来方便我们比较画幅不同时的焦距和光圈的成像效果。   等效焦距所谓等效焦距，是指由于画幅的变化，相机视野的变化而导致焦距的变化。如 4/3 画幅，由于其 CMOS 面积几乎为全画幅的 1/4 ，因此，其可取拍摄面积只是全画幅的1/4。 就相当于焦距为 x 的残幅相机所看到的景色，相当于全幅相机使用 2x 焦距看到的更远更小的景色，也可以理解为全幅的景色直接裁切。 全画幅的概念是直接从胶片时代继承过来的，我们称传感器面积与 35mm 底片相同的相机为全画幅相机。所以焦距为 x 的残幅相机，我们称呼它的 35mm 等效焦距为 2x。  为了计算的方便，我们直接将 35mm 等效焦距记为实际焦距乘以焦距转换率（裁切系数）。典型的裁切系数有尼康、索尼 APS-C 格式是 1.5 ，佳能的 APS...</div></div></div></a><a class="pagination-related" href="/2020/05/06/keyboard-photography-1/" title="键盘摄影（一）——相机成像基本元件"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">键盘摄影（一）——相机成像基本元件</div></div><div class="info-2"><div class="info-item-1">笔者在就读本科期间，开始接触计算机视觉领域，主要包括传统的图像处理，研究生期间开始了解深度学习，三维重建和SLAM（同时定位和建图）。可是对于其中使用到的最重要的传感器，相机，它的成像原理知之甚少，照片是怎么成像的？有幸在工作之余玩起了胶片相机，学习了一些摄影知识，在此和大家分享相关知识，欢迎友好地指正和勘误，轻喷。   随着器件的发展，目前的相机类型丰富，我们可以从基本的元件讲起，主要涉及到胶片相机和以单反为例的数码相机。为了便于理解，我们首先来过一遍相机的组成结构，后续会针对性进行讲解。   按下快门按钮前的状态    按下快门按钮后的状态  上图是单反相机的结构示意图，包含镜头组组成的镜头，45 度角倾斜放置的反光板，能获得正像且放缩到取景器大小的五棱镜，焦平面快门，和成像元件。 按下快门按钮前，光线通过镜头组和反光板（单反即意味着单个反光板），垂直入射到五棱镜的一面，然后由于五棱镜的特殊结构，光线再次垂直射出五棱镜的另一面，通过取景器到达人眼。 按下快门按钮后，反光板抬起，焦平面快门卷起，光线通过镜头组照射到成像元件（CMOS）而成像，这就是单反相机的一次成像过程。 我们...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2020/05/06/keyboard-photography-1/" title="键盘摄影（一）——相机成像基本元件"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-06</div><div class="info-item-2">键盘摄影（一）——相机成像基本元件</div></div><div class="info-2"><div class="info-item-1">笔者在就读本科期间，开始接触计算机视觉领域，主要包括传统的图像处理，研究生期间开始了解深度学习，三维重建和SLAM（同时定位和建图）。可是对于其中使用到的最重要的传感器，相机，它的成像原理知之甚少，照片是怎么成像的？有幸在工作之余玩起了胶片相机，学习了一些摄影知识，在此和大家分享相关知识，欢迎友好地指正和勘误，轻喷。   随着器件的发展，目前的相机类型丰富，我们可以从基本的元件讲起，主要涉及到胶片相机和以单反为例的数码相机。为了便于理解，我们首先来过一遍相机的组成结构，后续会针对性进行讲解。   按下快门按钮前的状态    按下快门按钮后的状态  上图是单反相机的结构示意图，包含镜头组组成的镜头，45 度角倾斜放置的反光板，能获得正像且放缩到取景器大小的五棱镜，焦平面快门，和成像元件。 按下快门按钮前，光线通过镜头组和反光板（单反即意味着单个反光板），垂直入射到五棱镜的一面，然后由于五棱镜的特殊结构，光线再次垂直射出五棱镜的另一面，通过取景器到达人眼。 按下快门按钮后，反光板抬起，焦平面快门卷起，光线通过镜头组照射到成像元件（CMOS）而成像，这就是单反相机的一次成像过程。 我们...</div></div></div></a><a class="pagination-related" href="/2021/09/21/keyboard-photography-10/" title="键盘摄影（十）——滤镜的种类和作用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-21</div><div class="info-item-2">键盘摄影（十）——滤镜的种类和作用</div></div><div class="info-2"><div class="info-item-1">有一次忽然意识到，如果想要一个长曝光，浅景深，低 iso 的图，需要物理减光，所以滤镜也算是相机曝光要素中的一部分，为此也整理了一下现在的滤镜的种类，和各自的原理作用。以下内容整理自《关于滤镜-这篇就够了 上/ 下 》。   UV 镜 Ultra Violet通常为无色透明的，不过有些因为加了增透膜的关系，在某些角度下观看会呈现紫色或紫红色。UV 镜滤光片的主要功能是用于吸收波长在 400nm 以下的紫外线，而对其他可见/不可见光线均无过滤作用。它之所以能够过滤紫外线是因为镜片中含有铅。 在胶片年代，由于胶片的化学特性，其对阳光中的紫外线尤其敏感，在紫外线强的地方，使用胶片拍摄出来的照片普遍偏蓝、泛白。严重影响了照片品质。在镜头前加一块 UV 镜，可以有效过滤掉紫外线提高照片的清晰度。 到了数码时代，由于数码机的核心显像部件不再像胶片那样对紫外线过于敏感，因此已无需再对紫外线进行过滤了，所以主要起保护镜片之用。 偏光镜 Polarizers偏光镜对拍摄风景照片有着十分重要的作用。它的主要用途是消除不同表面的反光，令蓝天更蓝、树木更绿；此外，它也可以减少水面及橱窗的倒影。 要理解偏...</div></div></div></a><a class="pagination-related" href="/2020/05/09/keyboard-photography-3/" title="键盘摄影（三）——等效焦距和等效光圈"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-09</div><div class="info-item-2">键盘摄影（三）——等效焦距和等效光圈</div></div><div class="info-2"><div class="info-item-1">相机传感器的尺寸会影响接收到的光学图像的画幅，不只是镜头，传感器尺寸也会影响相机的视野。如果我们在光学系统中保持其他不变，只改变机身使用不同画幅的传感器，我们就会看到原来大尺寸传感器的图片仿佛被裁切了一样，于是我们引入了剪切系数，来衡量画幅的不同对成像的影响，并介绍等效焦距和等效光圈这样的数学工具来方便我们比较画幅不同时的焦距和光圈的成像效果。   等效焦距所谓等效焦距，是指由于画幅的变化，相机视野的变化而导致焦距的变化。如 4/3 画幅，由于其 CMOS 面积几乎为全画幅的 1/4 ，因此，其可取拍摄面积只是全画幅的1/4。 就相当于焦距为 x 的残幅相机所看到的景色，相当于全幅相机使用 2x 焦距看到的更远更小的景色，也可以理解为全幅的景色直接裁切。 全画幅的概念是直接从胶片时代继承过来的，我们称传感器面积与 35mm 底片相同的相机为全画幅相机。所以焦距为 x 的残幅相机，我们称呼它的 35mm 等效焦距为 2x。  为了计算的方便，我们直接将 35mm 等效焦距记为实际焦距乘以焦距转换率（裁切系数）。典型的裁切系数有尼康、索尼 APS-C 格式是 1.5 ，佳能的 APS...</div></div></div></a><a class="pagination-related" href="/2020/05/10/keyboard-photography-4/" title="键盘摄影（四）——相机成像元件：胶片与彩色暗房"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-10</div><div class="info-item-2">键盘摄影（四）——相机成像元件：胶片与彩色暗房</div></div><div class="info-2"><div class="info-item-1">前面我们介绍完了相机的镜头，光圈，快门，接下来便是介绍相机的最后一个核心，成像元件。由于查找资料时发现胶片的成像比较复杂，于是将胶片单立了一篇，后续再讲解数码时代的 CMOS/CCD。   在胶片时代，摄影师想要得到一张纸质照片相比于现在电子打印的普及，是尤其的复杂，需要在胶片拍摄完一卷后，将一卷胶片在暗房中进行显影，定影，得到真正完全成像的胶片，然后再在暗房中利用光学放大机，对可以感光的相纸进行感光，然后放到自动显像机中经过显像，停止化学反应，两道水洗和一道干燥，才能得到一张纸质照片。 胶片的组成胶片基本由两部分组成，一为形成影像的感光乳剂，另一为乳剂的支撑体片基。 乳剂：主要成分为照相明胶和卤化银。卤化银以极微小的颗粒状均匀地分布在明胶之中。卤化银的存在是胶片之所以能感光的根本原因。当光线照射到这些微小的卤化银颗粒时，它就会因感光而起变化，并最终形成影像。卤化银的形状和颗粒大小在很大程度上影响着胶片的照相性能。明胶对卤化银颗粒起保护作用和支撑作用，同时它使整个乳剂层呈现为薄膜状。不同种类的胶片在乳剂层中还含有一些其他的化学成分。 片基：一种透明、柔软而具有一定韧性和强度的塑料...</div></div></div></a><a class="pagination-related" href="/2020/05/12/keyboard-photography-5/" title="键盘摄影（五）——相机成像元件：CMOS&#x2F;CCD"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-12</div><div class="info-item-2">键盘摄影（五）——相机成像元件：CMOS&#x2F;CCD</div></div><div class="info-2"><div class="info-item-1">上一篇文章 键盘摄影（四）——相机成像元件：胶片与彩色暗房，我们从原理上讲解了胶片时代的黑白胶片/彩色负片/彩色反转片是怎么通过拍摄，冲洗，放大，扫描成为一张纸质照片的，随着科技的进步，柯达公司自己人是第一个使用数码时代的图像传感器进行成像，却不料革了自己的命。 我们也迈进了数码时代一起来了解一下数码时代的图像传感器，它将通过镜头组的光学影像转换成电子信号，再经过模数转换器（ADC）转换为数字图像信号，送到图像信号处理器（ISP）进行处理，便可以通过应用处理器（AP）连接的显示设备查看图像。      外置 ISP 架构  ISP 的过程后续会再单独开坑（![键盘摄影（七）——深入理解图像信号处理器 ISP](https://zhuanlan.zhihu.com/p/139432684），我们首先来了解一下靠 PD 光电二极管进行感光的图像传感器，它分为 CMOS/CCD 两种工艺，主要差异在像素单元和传感器周边电路上。 CCDCharge-coupled Device，电荷耦合器件，它的工作方式是通过镜头的光线使得每一个光电二极管的电容积累一定的电荷，而电荷的数量则正比于该处的...</div></div></div></a><a class="pagination-related" href="/2020/05/21/keyboard-photography-6/" title="键盘摄影（六）——相机成像模型"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-22</div><div class="info-item-2">键盘摄影（六）——相机成像模型</div></div><div class="info-2"><div class="info-item-1">本篇文章更多的是计算机视觉的基本知识，讲解真实的 3D 世界投影到相机的 2D 图像的这个过程。   坐标变换首先需要介绍的是我们如何用数学工具来表示物体在坐标中位姿（位置+姿态）的变换。 我们线性代数学习的矩阵*向量的乘法，其本质是对向量进行变换，如下述的旋转过程，v 向量变换到 v’ 向量，可以用矩阵来表示为   旋转  $$\begin{bmatrix}  x’ \ y’  \end{bmatrix} =  \begin{bmatrix}  cos\theta &amp;&amp; -sin\theta\ sub\theta &amp;&amp; cos \theta  \end{bmatrix}*\begin{bmatrix}  x \ y  \end{bmatrix}$$ 平移可以表示为   平移  $$\begin{bmatrix}  x’ \ y’  \end{bmatrix}= \begin{bmatrix}  x \ y  \end{bmatrix} + \begin{bmatrix}  t_x \ t_y  \end{bmatrix}$$ 整理起来 $$\be...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ISO"><span class="toc-text">ISO</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%B6%E7%89%87%E7%9A%84-ISO"><span class="toc-text">胶片的 ISO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%A0%81%E7%9A%84-ISO"><span class="toc-text">数码的 ISO</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%9D%E5%85%89%E4%B8%89%E8%A6%81%E7%B4%A0"><span class="toc-text">曝光三要素</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2020/05/07/keyboard-photography-2/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2020/05/07/keyboard-photography-2/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '键盘摄影（二）——曝光三要素'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

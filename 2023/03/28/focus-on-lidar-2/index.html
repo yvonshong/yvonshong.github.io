@@ -1,0 +1,512 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>聚焦激光雷达（二）——激光器 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聚焦激光雷达（二）——激光器">
+<meta property="og:url" content="http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:published_time" content="2023-03-28T13:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.523Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="sensor">
+<meta property="article:tag" content="lidar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "聚焦激光雷达（二）——激光器",
+  "url": "http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png",
+  "datePublished": "2023-03-28T13:00:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.523Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '聚焦激光雷达（二）——激光器',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">聚焦激光雷达（二）——激光器</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">聚焦激光雷达（二）——激光器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-28T13:00:00.000Z" title="发表于 2023-03-28 21:00:00">2023-03-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.523Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">9.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>29分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div><article class="container post-content" id="article-container"><p>之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。</p>
+<span id="more"></span>
+
+
+<h1 id="激光器原理"><a href="#激光器原理" class="headerlink" title="激光器原理"></a>激光器原理</h1><p>所有激光器都包含以下三个组件：1、泵浦源；2、受激介质；3、谐振腔。</p>
+<p>受激介质位于激光器内部，取决于不同的激光器结构设计，受激介质是一种包含可将激发光的能量转换为激光的原子的物质，可能是气体混合物 、固体晶体棒或玻璃纤维。激光介质在获得泵浦源从外部获得的能量供给时，受激产生能量辐射。</p>
+<p>被激发的介质位于谐振腔两端两个镜子的中间位置，其中一个镜子是半透半反镜，受激介质产生的能量辐射在谐振腔内放大，与此同时，只有特定的辐射光能够穿过单向透镜，形成一束辐射光，这一辐射光束即是激光。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-7f61cfedc95f473941c343bbcf1043de_1440w.webp"></p>
+<blockquote>
+<p>激光的原理</p>
+</blockquote>
+<hr>
+<h1 id="泵浦源"><a href="#泵浦源" class="headerlink" title="泵浦源"></a>泵浦源</h1><p>泵浦源的作用是对增益介质进行激励使其辐射发光。具体而言，泵浦源提供能量激励原子跃迁到高能级，以实现粒子数反转（使高能态粒子数多于低能态粒子数），被激发的粒子会自发对外辐射激光从而由高能级向下跃迁，回到稳定形态。</p>
+<p>激光的产生应满足两个基本条件：有较好的发光效率；泵浦源的光谱分布与激光增益介质的吸收光谱相匹配。常见的有以下 4 种:光学激励(光泵浦)、气体放电激励、化学激励、核能激励。</p>
+<ul>
+<li>光学激励：利用外界光源发出的光来辐照激光工作物质以实现粒子数反转的，整个激励装置，通常是由气体放电光源(如氙灯、氨灯)和聚光器组成。如固体激光器等。</li>
+<li>放电激励：对于气体激光工作物质，通常是将气体密封在细玻璃管内,在其两端加电压,通过气体放电的方法来进行激励，整个激励装置通常由放电电极和放电电源组成。如惰性气体放电灯（灯内充入氙、氪等惰性气体）、金属蒸气灯（灯内充入汞、钠、铒等金属蒸气）、卤化物灯（碘钨灯、镊钨灯、半导体激光器等。</li>
+<li>化学激励：化学激励是利用在激光工作物质内部发生的化学反应过程来实现粒子数反转的，通常要求有适当的化学反应物和相应的引发措施。</li>
+<li>核能激励：核能激励是利用小型核裂变反应所产生的裂变碎片、高能粒子或放射线来激励激光工作物质并实现粒子数反转的。</li>
+</ul>
+<p>半导体泵浦源单元器件的主要封装形式包括单管（单发射腔）、bar 条。单元器件的综合特性决定了最终泵浦源模块的输出光功率、转换效率以及体积等。单管只有一个发光区，是将激光芯片封装后形成的发光单元，通常在 3~300μm。 bar 条可以看做是多个半导体单管并排在同一衬底上形成的激光器单条，通常 1cm 长，泵浦功率更高。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-7c79b8c51677b9ee01c9571addbf78c0_1440w.webp"></p>
+<p>通过光束整形和传输，耦合成具有各种不同泵浦光功率密度、光束传输模式、光斑形状和光强分布的泵浦源，进一步，bar 条按排列形式，耦合成具有各种不同泵浦光功率密度、光束传输模式、光斑形状和光强分布的泵浦源。</p>
+<p>由于半导体激光器叠阵工作时会产生大量的废热，因此必须采用冷却手段降低器件温度，防止温度过高导致激光器失效和使用寿命缩短。目前主要有两种冷却方式：帕尔贴形开放式制冷以及水等高效载冷剂方式。具体采用哪种散热制冷方式应该根据器件的输出功率、工作环境和应用方式确定。</p>
+<p>提高半导体激光泵浦源单元器件输出功率和转换效率的方法主要从芯片结构上采用大光腔外延结构、宽条形结构、腔面钝化、增加腔长等措施，同时提高激光器的材料生长质量和优化散热封装技术也是关键。</p>
+<hr>
+<h1 id="媒质"><a href="#媒质" class="headerlink" title="媒质"></a>媒质</h1><p>被泵浦源激发，然后发光的物质，其物理特性会影响所产生激光的波长等特性。</p>
+<h2 id="气体激光"><a href="#气体激光" class="headerlink" title="气体激光"></a>气体激光</h2><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-a0d3f5030f07da3b7f3d697d165a3778_1440w.webp"></p>
+<p>$CO_2$ 激光是以 $CO_2$ 气体为媒质的激光。在填充有 $CO_2$ 气体的管内，配置电极板，以产生放电。电极板连接外部电源，使其可投入高频率电力作为激发源。因电极间放电而在气体中产生等离子体， $CO_2$ 分子会变换为激发态，该数量增加后开始受激辐射。此外，为了让光往返而产生振荡，相对设置一对镜面，则构成了谐振腔。光会在全反射镜和输出镜之间往返，放大后输出为激光。振荡波长一般为 10.6μm。气体成分构成为 $CO_2$ 在 10% 以下、氮 $N_2$ 在 30% 左右、氙 $Xe$ 在百分之几、其余为氦 $He$ 。各气体有其各自的功能，根据构造和激光的特性不同而改变成分。</p>
+<h2 id="固体激光"><a href="#固体激光" class="headerlink" title="固体激光"></a>固体激光</h2><p>固体激光器基本上都是由工作物质、泵浦系统、谐振腔和冷却、滤光系统构成的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-9e2ac31a03174fc370772f575c138d56_1440w.webp"></p>
+<p>固体激光工作物质是绝缘晶体，一般都采用光泵浦激励。目前的泵浦光源多为工作于弧光放电状态的惰性气体放电灯，泵浦灯在空间的辐射都是全方位的，因而固体工作物质一般都加工成圆柱棒形状，所以为了将泵浦灯发出的光能完全聚到工作物质上，必须采用聚光腔。固体激光器的泵浦系统还要冷却和滤光，也有使用激光二极管作为光泵浦的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-71076b30e992a561c19e979b080ea101_1440w.webp"></p>
+<blockquote>
+<p>YAG 激光器和 YVO4 激光器</p>
+</blockquote>
+<h2 id="半导体激光"><a href="#半导体激光" class="headerlink" title="半导体激光"></a>半导体激光</h2><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-d065ce0c890c7b79b5cc827e48661e8b_1440w.webp"></p>
+<blockquote>
+<p>半导体激光器的典型 EEL 结构</p>
+</blockquote>
+<p>可以看到，它是一个半导体 PN 结二极管。因此半导体激光器也被称为激光二极管 （Laser Diode, LD）。有源区 Active Region 是一层薄的光波导芯层 ，厚度通常小于 1μm。上下两侧为折射率较低的波导包层 Cladding，分别为 P 型和 N 型半导体。激活区左右两侧为掩埋层 Burying，其作用是限制激活区的条宽 ，以降低工作电流。通常基横模 LD 的条宽仅为 2<del>5ｍｍ。经典的 FP 型激光器反射镜面由半导体晶体的解理面构成，典型腔长仅为 0.5mm ，芯片典型宽度仅为 0.3</del>0.5mm。芯片两面制备了减小接触电阻的金属层，即欧姆接触层 Ω Contact 。当电流从 P 面注入二极管时，就可以从它的解理腔面中发出激光 。可见，半导体激光器具有体积小、重量轻的突出优点。</p>
+<p>半导体激光器增益谱很宽，FP 腔没有纵模选择的功能，因而普通的 FP-LD 难以实现单纵模工作。众所周知，光栅的衍射具有优越的选频特性 。人们利用半导体工艺将光栅与半导体激光器的有源区结合在一起 ，研制成功以分布反馈 （Distributed Feedback，DFB）激光器、分布布拉格反射 （Distributed Bragg Reflector, DBR）激光器为代表的单片集成单频激光器 。DFB 激光器具有极好的单纵模工作特性；DBR 激光器在保持单模工作的同时 ，具有大范围的可调谐特性 。 这两种器件在技术上和产品化方面都取得了成功 。根据多层介质膜滤波器的原理和半导体异质结生长技术，人们又研制成功垂直腔面发射激光器 （Vertical Cavity Surface Emitting Laser, VCSEL ）。它不仅具有优越的单频运转特性 ，而且大大改善了输出光束的方向性和调制响应 。</p>
+<h1 id="光纤激光"><a href="#光纤激光" class="headerlink" title="光纤激光"></a>光纤激光</h1><p>光纤激光 Fiber Laser 使用掺杂稀土元素的光纤为媒质，通常以半导体激光器作为能量泵浦源，是长距离通信的中断放大技术发展为高功率输出激光的产物。光纤由中心传输光的核心和以同心圆状包覆核心的金属包层构成。光纤激光以该核心为激光媒质放大光。发射的光不能被硅吸收，因此需要使用铟镓砷 InGaAs 为衬底的接收器。摻杂不同稀土元素的光纤接受泵浦的波长和发射的波长存在差异。</p>
+<p>由于光纤激光器的增益介质形状特殊且具有典型的技术和产业优势，行业中一般将其与其他激光器分开进行研究。使用光纤激光器的激光雷达具备优异的探测性能，但由于产业链尚未成熟且制造原材料价格昂贵，在大规模上车前仍需实现大幅降本。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-9db9c07de84b6915b90c4152a51ce63b_1440w.webp"></p>
+<blockquote>
+<p>光纤激光结构示意图</p>
+</blockquote>
+<p>光纤激光通过激光二级管（Seed LD）产生的脉冲光作为种子光源（Seed Light），然后通过多个光纤放大器进行放大。各 LD 为低功率输出，因此具有热负荷较小的优点，实现了长寿命。此外，该 LD 数量越多，越可实现高功率输出的激光。</p>
+<p>采用光纤光栅作为谐振腔反射镜，消除了腔镜与光纤介质之间耦合的消耗，实现了激光器核心部件的全光纤集成，提高了激光器的效率及稳定性。同时，光纤光栅可以改变反射性质选择特定频率进行输出，适用性更广泛。</p>
+<p>光纤合束器主要作用是进行光束合成增大输出功率。光纤合束器可以分为功率合束器和泵浦合束器。功率合束器将多路单模激光合束到一根光线中输出，以提高激光的输出功率；泵浦合束器主要是将多路泵浦光合束到一根光线中输出，主要用来提高泵浦功率。</p>
+<p>光纤激光器种类很多，从光纤结构上可分为单包层光纤激光器、双包层光纤激光器、光子晶体光纤激光器和特种光纤激光器。 从增益介质上可分为塑料光纤激光器、稀土类掺杂光纤激光器、非线性光学型光纤激光器、光纤受激拉曼散射激光器和晶体光纤激光器。 从输出激光特性上可分为连续光纤激光器和脉冲光纤激光器。</p>
+<p>具体来看，光纤激光器的优点包括</p>
+<ol>
+<li><strong>轻量化及高灵活柔绕性</strong>：光纤体积小且可以弯曲，因此集成时可以通过光纤运输光束以实现灵活安装；</li>
+<li><strong>可实现大功率</strong>：光纤的几何形状具有很大的“表面积/体积”比，散热快，可以在更高功率的情况下工作，有效探测距离及精度均会提高；</li>
+<li><strong>光束质量高</strong>：光纤的波导结构决定了光纤激光器易于获得单横模输出，且受外界因素影响很小。激光介质本身就是导波介质所以耦合效率高；利于光纤通信系统的应用，同时可借助光纤方向耦合器构成各种柔性谐振腔，使激光器的结构更加紧凑、稳定；光纤还具有相当多的可调谐参数和选择性，能获得相当宽的调谐范围和相当好的色散性和稳定性。</li>
+</ol>
+<p>缺点方面，相较于半导体激光器仅需要电激励即可实现直接的电光转换，光纤不能够直接实现电光转换，需要使用半导体激光器作为光泵浦，因此光纤激光器的电光转换效率天然低于半导体激光器。此外，光纤激光器还需要配套使用铟镓砷探测器，这将提升激光雷达的制造成本。</p>
+<hr>
+<h1 id="谐振腔"><a href="#谐振腔" class="headerlink" title="谐振腔"></a>谐振腔</h1><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-ee44ef09ffc82edef1d626626261bdfa_1440w.webp"></p>
+<blockquote>
+<p>谐振腔原理示意图</p>
+</blockquote>
+<p>谐振腔的作用是筛选一定方向光子并进行放大。介质被泵浦源激活后会产生不同方向的光子，传播方向与谐振腔横轴线不同的光子将逃逸出腔体，沿横轴线运动的光子将在腔内往返产生振荡，为把激光引出腔外，其中一面反射光栅为部分反射，透射部分成为发出的激光。反射部分留在腔体内继续振荡，与受激发粒子相遇后发生辐射，不断增殖最终形成传播方向一致、频率和相位相同的发射激光。</p>
+<h2 id="内腔光反馈法"><a href="#内腔光反馈法" class="headerlink" title="内腔光反馈法"></a>内腔光反馈法</h2><p>具有紧凑结构的高功率窄线宽半导体激光器是目前各国研究人员的关注热点，其中 DFB 半导体激光器和 DBR 半导体激光器是实现窄线宽半导体激光器的重要手段。</p>
+<h3 id="法布里-珀罗型-Fabry-Perot-激光器"><a href="#法布里-珀罗型-Fabry-Perot-激光器" class="headerlink" title="法布里-珀罗型 Fabry-Perot 激光器"></a>法布里-珀罗型 Fabry-Perot 激光器</h3><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-0df04e472856cfeeef64da9d77f75ede_1440w.webp"></p>
+<blockquote>
+<p>FP 激光器示意图</p>
+</blockquote>
+<p>法布里-珀罗激光器（FP-LD）是最常见、最普通的半导体激光器，它的谐振腔由半导体材料的两个解理面构成。其反射镜只是激光芯片末端的平面裂开表面，发出多纵模相干光的半导体发光器件，目前光纤通信上采用的 FP-LD 的制作技术已经相当成熟。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-f529d7a2a3626c31ec850053e97e58b4_1440w.webp"></p>
+<blockquote>
+<p>FP 激光器 3D 结构示意图</p>
+</blockquote>
+<p>FP-LD 的结构和制作工艺最简单，成本最低，主要适用于 1310/1550nm 波段下的低速率短距离通信，传输距离一般在 20km 以内，存在损耗大、传输距离短的问题。</p>
+<h3 id="分布反馈式-DFB-激光器"><a href="#分布反馈式-DFB-激光器" class="headerlink" title="分布反馈式 DFB 激光器"></a>分布反馈式 DFB 激光器</h3><p>实现动态单纵模工作的最有效的方法之一就是在 FP 激光器的基础上，在半导体内部建立一个光栅滤光器件（布拉格光栅是一种周期性，作为波长选择镜的微结构，光源被注入到光纤后，只有布拉格波长的光会被光栅反射）。DFB 激光器的特点在于光栅分布在整个谐振腔中，光波在反馈的同时获得增益，因此其单色性优于一般的 FP-LD。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-e12fbb13435f0fc3c8f82c88525ef66d_1440w.webp"></p>
+<blockquote>
+<p>DFB 激光器示意图</p>
+</blockquote>
+<p>分布反馈激光器通常将布拉格光栅结构分布于整个谐振腔中，其主要起到光反馈选模及增益的作用。主要用于高速中长距离传输。这种激光器具有优越的光谱特性和可高速调制特性等优点，使其广泛应用于高精度探测、光通信等领域。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-abda8402d1c3b96d02c21f3b809a3654_1440w.webp"></p>
+<blockquote>
+<p>DFB 激光器 3D 结构示意图</p>
+</blockquote>
+<p>目前 DFB 半导体激光器主要研究在有源区附件构建光栅的二次外延分布反馈(Re-Grown DFB, RG-DFB)激光器，以及在外延芯片 P 面光波导表面或者侧壁直接刻蚀光栅，形成表面光栅分布反馈(Surface Grating DFB, SG-DFB)激光器这两种结构。这两种结构的共同点都是将布拉格光栅结构分布于整个谐振腔中，其主要起到光反馈选模及增益的作用。</p>
+<h3 id="二次外延分布反馈半导体激光器-RG-DFB"><a href="#二次外延分布反馈半导体激光器-RG-DFB" class="headerlink" title="二次外延分布反馈半导体激光器 RG-DFB"></a>二次外延分布反馈半导体激光器 RG-DFB</h3><p>二次外延分布反馈激光器 RG-DFB 激光器通常采用二次外延技术在 N 型或 P 型波导层生长完成后，采用光刻和刻蚀的手段在其 N 型或 P 型波导层上构建一组低折射率光栅结构，之后将芯片放入外延设备中继续完成生长工艺。这种二次外延光栅分布在有源区附近，有利于光栅与光模式场的高效耦合，可有效降低散射损耗，提高耦合效率，实现频率选择和线宽压缩，但是二次外延技术可能引入芯片结构缺陷，影响芯片的可靠性和成品率。</p>
+<h3 id="表面光栅分布反馈半导体激光器-SG-DFB"><a href="#表面光栅分布反馈半导体激光器-SG-DFB" class="headerlink" title="表面光栅分布反馈半导体激光器 SG-DFB"></a>表面光栅分布反馈半导体激光器 SG-DFB</h3><p>SG-DFB 激光器是在外延芯片 P 面光波导表面 (BA-DFB) 或者侧壁 (LC-DFB) 直接刻蚀光栅，形成表面光栅分布反馈半导体激光器，可保证波导内的光模式场与光栅充分耦合反馈，利用散射效应抑制高阶模式，实现波导中单模振荡，SG-DFB 的研制难点是光栅结构的设计与制备，要充分考虑光栅基本参数对激光器性能的影响。</p>
+<h3 id="分布布拉格反射-DBR-激光器"><a href="#分布布拉格反射-DBR-激光器" class="headerlink" title="分布布拉格反射 DBR 激光器"></a>分布布拉格反射 DBR 激光器</h3><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-7195119eb3e2f32db95d398e474b7ec7_1440w.webp"></p>
+<p>分布布拉格反射激光器的谐振腔由集成于端面的反射光栅结构和增益区构成，其与法布里-珀罗(F-P)腔类似，在增益区的一端或两端构建布拉格光栅，代替 F-P 激光器的一端或者两端腔面反射镜，光栅只相当于一个反射率随波长变化的反射镜，由于光栅结构对满足布拉格条件的光模式具有极强的反射作用，因此可以通过对光栅区的耦合系数进行优化，获得理想的最大反射率和反射谱宽度，实现 DBR 激光器的单纵模、窄线宽工作。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-a8dd1b0ba4e5bb5d28fcbb9cc947f815_1440w.webp"></p>
+<blockquote>
+<p>DBR 激光器 3D 结构示意图</p>
+</blockquote>
+<p>目前窄线宽分布布拉格反射半导体激光器主要采用表面布拉格光栅结构作为反射镜实现频率选择作用，通过合理设计光栅结构参数，获得理想的光栅反射率、反射率半宽和光栅中光波相位变化等光电特性，实现窄线宽输出的 DBR 半导体激光器。这种表面 DBR 激光器相比于传统的多次外延 DBR 激光器的优势就是避免了不同区位波导间耦合效率低下的问题，降低了制备工艺复杂程度，提高了 DBR 激光器的应用价值。</p>
+<h2 id="外腔半导体激光器"><a href="#外腔半导体激光器" class="headerlink" title="外腔半导体激光器"></a>外腔半导体激光器</h2><p>基于外腔光反馈技术的窄线宽半导体激光器 (External Cavity Laser，ECL)，是一种采用外部光学元件对半导体激光芯片的出射光进行反馈和选频，增加谐振腔有效长度，提高激光器谐振腔的品质因子 Q 值，降低激光线宽，又因其采用无源光学元件进行频率选择和光反馈，更容易实现低相位噪声和高温度稳定性，是空间相干通信、相干探测、高精度传感等应用领域的理想光源。</p>
+<p>ECL 可有效避免内腔集成光栅的光波衍射与散射损耗，但是其对外部光学选频元件耦合光路与工作环境的稳定性要求较高，其中外部光学选频元件作为 ECL 的核心装置，主要包括: 1、采用激光全息技术在特殊光敏玻璃中制作的体全息光栅、体布拉格光栅等衍射光栅元件；2、低损耗 F-P 波导、镀膜反射镜及采用飞秒激光技术加工的光纤光栅波导等波导型反馈元件。</p>
+<p>以下两种外腔反馈激光器都是采用外部光反馈元件实现激光频率的选择和线宽的压缩，线宽水平都能达到 kHz 量级。而外腔光栅反馈半导体激光器的优势就是通过调整光栅位置就能实现波长调谐，有效降低半导体激光器线宽，并获得低噪声光谱特性，同时由于光路耦合效率高，更易于实现高功率输出，应用前景更加广阔。</p>
+<h3 id="外腔光栅反馈半导体激光器"><a href="#外腔光栅反馈半导体激光器" class="headerlink" title="外腔光栅反馈半导体激光器"></a>外腔光栅反馈半导体激光器</h3><p>选用衍射光栅作为反馈元件的外腔激光器通常会采用 Littrow 或 Littman 结构，这两种结构外腔激光器的谐振腔通常由半导体激光芯片、光学透镜或反射镜、闪耀光栅或者全息光栅等光学元件构成。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-483d9b22d1eadd43a7badd5af3eb1460_1440w.webp"></p>
+<blockquote>
+<p>Littrow 结构和 Littman 结构 外腔半导体激光器结构示意图</p>
+</blockquote>
+<p>Littrow 结构 ECL 通常由半导体芯片、光学透镜和衍射光栅构成，通过改变光栅角度 θ，使某一特定波长光波反馈回半导体激光芯片，大幅提高其余波长光波的衍射损耗，同时改变谐振腔整体长度，实现波长稳定的窄线宽激光输出。在获得窄线宽输出的同时，可获得相对较高的输出功率。除此结构，还有直接采用体(全息/布拉格)光栅作为光反馈元件的外腔激光器。</p>
+<p>Littman 结构 ECL 通常由半导体芯片、光学透镜、衍射光栅和<strong>反射镜</strong>构成，其中反射镜起到调谐器作用，光栅固定不动，通过改变反射镜角度，将入射光沿入射光路返回，光波经过光栅二次衍射后，边模抑制比大幅提高，激光线宽进一步窄化，但其结构比 Littrow 结构 ECL 复杂，导致功率损耗大，不易于实现高功率输出。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-bdf70b8a808b05f6bba0da44b50e75a4_1440w.webp"></p>
+<blockquote>
+<p>Littrow 结构和 Littman 结构 外腔半导体激光器 3D 结构示意图</p>
+</blockquote>
+<h3 id="外腔波导反馈半导体激光器"><a href="#外腔波导反馈半导体激光器" class="headerlink" title="外腔波导反馈半导体激光器"></a>外腔波导反馈半导体激光器</h3><p>基于外腔波导反馈技术的窄线宽激光器，主要通过耦合外部低损耗波导或光纤光栅波导，增加激光器谐振腔的长度，提高激光器谐振腔的品质因子 Q 值，达到降低激光器线宽的目的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-6d99e653e43e4ea5ad9dcce645582c5f_1440w.webp"></p>
+<blockquote>
+<p>外腔波导反馈半导体激光器 3D 结构示意图</p>
+</blockquote>
+<h2 id="垂直腔面发射激光器"><a href="#垂直腔面发射激光器" class="headerlink" title="垂直腔面发射激光器"></a>垂直腔面发射激光器</h2><p>图为其典型结构图，其上下分别为分布布拉格反射（DBR）介质反射镜，中间（InGaAsN）为量子阱有源区，氧化层有助于形成良好的电流及光场限制结构，电流由 P、N 电极注入，光由箭头方向发出。其激光垂直于顶面射出，与激光由边缘射出的边射型激光有所不同。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-3d8aa8d37904915e21b915d7eba4e077_1440w.webp"></p>
+<blockquote>
+<p>VCSEL 结构示意图</p>
+</blockquote>
+<p>它是在由高、低折射率介质材料交替生长成的分布布拉格反射器（DBR）之间连续生长单个或多个量子阱有源区所构成。 典型的量子阱数目为 3~5 个，它们被置于驻波场的最大处附近，以便获得最大的受激辐射效率而进入振荡场。 在底部还镀有金属层以加强下面 DBR 的光反馈作用，激光束从顶部透明窗口输出。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-700b6b91c71cd0201fc04c5579368aab_1440w.webp"></p>
+<blockquote>
+<p>VCSEL 3D 结构示意图</p>
+</blockquote>
+<p>因此相较于边射型激光器，VCSEL 激光器具有低阈值电流、稳定单波长工作、可高频调制、容易二维集成、没有腔面阈值损伤等优点，在半导体激光器中占有很重要的地位。</p>
+<hr>
+<h1 id="波长"><a href="#波长" class="headerlink" title="波长"></a>波长</h1><p>激光发射器影响激光雷达产品的核心性能。激光器的原理是增益介质（工作物质）通过吸收激励源（泵浦源）的能量而产生光子，通过光学谐振腔的放大形成激光光束。增益介质和光学谐振腔共同决定了所发出激光的波长。对于激光雷达激光器而言，性能上希望激光器实现较高的发射功率密度、较低的温升、较小的温漂系数、以及较高的光束质量等指标，成本上希望本身激光器的加工以及后续的配套都能实现低成本化。</p>
+<ul>
+<li><strong>功率密度</strong>：功率密度决定同样尺寸的器件能发出多强的激光。目前供应商均致力于通过多节方案，即将半导体激光器内的多个有源区通过隧道结串联起来，来成倍提升功率，同时大幅提高器件发光效率。</li>
+<li><strong>温漂系数</strong>：半导体均存在一定的光热效应，不同温度下，激光器发出激光的波长会有微小的漂移，漂移的幅度被称为温漂系数。实际应用中，激光雷达前端的滤波片亦需要将这部分“漂移”的波长范围考虑在内，被迫提升滤波宽度，影响激光雷达的信噪比。因此激光器厂商们致力于通过各种方式降低激光器的温漂系数。</li>
+<li><strong>光束质量</strong>：即光斑的形状和能量分布，最好是规整圆形以方便测距使用。</li>
+<li><strong>光谱宽度</strong>：又称为激光线宽，即激光的色彩纯度。激光雷达接收端会用滤波片将其他波长的光过滤掉，探测激光的线宽越窄意味着抗干扰性越强，信噪比越高。</li>
+</ul>
+<p>根据激光波长分类，适用于汽车激光雷达系统的激光器主要可以分为 850nm、905nm 以及 1550nm 三种方案，不同波长方案的选择主要需要从涉及到安全性、性能及成本的多个维度考量。</p>
+<ul>
+<li><strong>功率问题</strong>：通常由其对人眼的安全性决定；外界光的干扰情况；激光器本身的制备难度和成本问题等。</li>
+<li><strong>人眼安全</strong>： 905nm 及以下波长的激光接近可见光，不能被人眼晶状体和角膜吸收，可穿透人眼的透明部分直达视网膜，这期间人眼屈光介质能将入射光束汇聚成极小的光斑，灼伤风险大。人眼安全峰值功率为 6W。探测距离一般为 150m~200m。而 1550nm 激光在经过人眼角膜等部分就被大量吸收，不会触及视网膜。在同等人眼安全要求下，可以采用比 905nm 激光雷达高 40 倍以上的发射功率，进而大幅提升探测距离，通常在 200 米以上。</li>
+<li><strong>抗干扰性</strong>：850nm 方案为主流技术路径中水汽穿透性最好的方案，因此最大功率有限，导致产品探测距离较近。受限于安全功率，850nm 方案的有效探测距离较近。但因为波长更短，850nm 激光更难被空气中的水汽吸收，这有助于提高在潮湿场景下的自动驾驶可靠性。1550nm 所在的波段太阳辐射强度相对较弱，面临的光干扰更小，可获得更好的探测效果。</li>
+<li><strong>硅光芯片适配度</strong>：1550nm 激光可在硅基介质中传播，是光通信中最常见的一种波长，可完美的与硅光产品配合，更容易实现芯片化。</li>
+<li><strong>成本和生产效率</strong>：相比 905nm 激光器可直接采用半导体激光芯片耦合封装制备，1550nm 须采用光纤激光器来提升光束质量和功率，光纤激光器结构复杂。</li>
+<li><strong>发射和接收所用半导体材料</strong>：波长在 800-1000nm 范围的接收端可以用半导体材料，发射端用砷化镓；而 1000nm 以上波长的光由于发射端用磷化铟 InP 的 EEL，由于硅基光电探测器在 1000nm 以上波长工作时的光敏感性极低，接收端需要用锗或者铟砷镓 等材料的探测器，且供应链成熟度仍然不高，产品良率也仍需提升，导致其整体成本远高于 905nm 激光器。</li>
+</ul>
+<hr>
+<h1 id="发光方向"><a href="#发光方向" class="headerlink" title="发光方向"></a>发光方向</h1><p>通常 905nm 波长激光可选择半导体激光器。能够被硅吸收，可使用以硅为衬底的探测器。半导体激光器相较于前辈如固体、气体、液体激光器等有体积小、重量轻、功耗低、可靠性高、寿命长等特点。根据半导体激光器的发光方向可以分为出光方向平行于衬底平面的边发射激光器 (EEL) 和垂直于衬底平面的垂直腔面发射激光器(VCSEL）。这其中，EEL 激光器凭借其成熟的产品和供应链体系，极高的功率密度，成为目前主流的激光器形式。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-52b0fa01cccfcf31f4a837ed5e900f0f_1440w.webp"></p>
+<blockquote>
+<p>边发射激光器 EEL 和面发射激光器 VCSEL</p>
+</blockquote>
+<h2 id="EEL"><a href="#EEL" class="headerlink" title="EEL"></a>EEL</h2><p>边发射激光器中就包含 FP、DFB、DBR、双异质结，量子阱等激光器。EEL 的光斑是椭圆的，特点是功率高——光电效率高、照度高（峰值功率 125W），但是激光的光谱稍宽。技术成熟且具备高发光功率密度， 950nm 的 EEL 方案是当下激光雷达厂商的主流选择。</p>
+<p>成本上，生产成本方面， EEL 激光器由于激光从侧面发射，使用过程中需要进行切割、翻转、镀膜、再切割的工艺步骤，需要单颗一一贴装，人工成本较高。</p>
+<p>配套成本方面，由于 EEL 发射的光斑为椭圆形，整形难度较高，并且需要分立的光学器件进行光束整形，依赖产线工人的手工装调，成本高一致性难以保障。</p>
+<h2 id="VCSEL"><a href="#VCSEL" class="headerlink" title="VCSEL"></a>VCSEL</h2><p>无论是常规的 FP 腔半导体激光器 ，还是高性能的 DFB、EBR 激光器，激光振荡的方向都与生长的 PN 结有源区平行，激光都从半导体材料的解理面输出 。 这样的结构充分利用了有源区的增益 ，具有效率高、输出功率大的优点 。但是也有缺点，一是发光区为一个小的长方形 ，输出光束发散角大 ，且呈长椭圆形 。在许多应用中，无论是与光纤耦合，还是用透镜准直 、聚焦，都希望圆形光束 ，这就需要在外部做复杂的光束整形。二是在激光器生产中必须采用解理工艺 ，批量生产时难以机械化和自动化，工艺复杂，成本高。因此，从芯片表面发射激光的激光器成为一个重要的研究课题。</p>
+<p>VCSEL 全称（Vertical-Cavity Surface-Emitting Laser），是垂直腔面发射激光器。它与边发射激光器最大的不同点是：出射光垂直于器件的外延表面，即平行于外延生长的方向。最初用于光通信领域，比如光模块中，后来开始应用于消费电子领域的 3D 感测方面，比如人脸识别，2017 年苹果将其用在 iPhone 人脸识别模组，VCSEL 也开始受到消费电子领域的大规模关注。目前来看国外在 VCSEL 芯片方面还是较为领先，近些年国内多家厂商发展迅速，并且开始逐渐小批量或者批量生产，多家 VCSEL 芯片也得到了资本的较多关注。</p>
+<p>VCSEL 技术的许多优点可以总结如下：</p>
+<ol>
+<li>波长稳定性：VCSEL 中的激光波长非常稳定，因为它由很薄的（1~1.5个波长厚的）F-P 腔固定。与边射型激光器不同，VCSEL 仅能以单个纵向模式运行。</li>
+<li>波长均匀性和光谱宽度：生长技术的改进使得 VCSEL 3 英寸晶圆的腔波长标准偏差小于 2nm。这使得 VCSEL 2-D 阵列的制造可以使得阵列元素之间的波长差异很小（全宽半峰值光谱宽度 &lt;1nm）。相比之下，边射型激光器的条形阵列由于缺乏内在的稳定波长机制，从一个条到另一个条存在明显的波长变化，导致光谱宽度较宽（全宽半峰值光谱宽度为 3~5nm）。</li>
+<li>波长对温度的敏感性：VCSEL 的发射波长比边射型激光器对温度变化的敏感度低约 5 倍。原因是在 VCSEL 中，激光波长由单个纵向模式腔的光学厚度定义，而这个光学厚度的温度依赖性很小（腔的折射率和物理厚度对温度具有较弱的依赖性）。另一方面，边射型激光器中的激光波长由增益峰波长定义，其温度依赖性要强得多。因此，高功率阵列（发热大）的光谱线宽在 VCSEL 阵列中比在边射型激光器阵列中窄得多。此外，相对于 20°C 的温度变化，VCSEL 的发射波长变化小于 1.4nm（边射型激光器为约 7nm）。</li>
+<li>高温运行（泵浦系统无需冷却）：VCSEL 器件可以在没有冷却的情况下运行，因为它们可以在 80℃ 的温度下运行，这种方法使得冷却系统变得非常小巧、坚固和便携。</li>
+<li>单位面积输出功率更高：边发射激光器的最大功率密度约为 0.5kW/cm2，因为必须保持激光器之间的间隙以便冷却流动，而 VCSEL 现在可以提供约 1.2kW/cm2 的功率密度，未来可能提供 2-4kW/cm2 的功率密度。</li>
+<li>光束质量更好：VCSEL 发射圆形光束。通过适当的腔体设计，VCSEL 也可以发射单横模（圆高斯型）光束。与边发射激光器相比，这种简单的光束结构大大降低了耦合/光束成形光学器件的复杂性和成本，并提高了到光纤或泵浦介质的耦合效率，这是 VCSEL 技术在低功率市场上的一个关键卖点。</li>
+<li>可靠性更高：由于 VCSEL 不容易受到灾难性光学损伤（COD）的影响，因此它们的可靠性比边发射激光器高得多。</li>
+<li>制造可行性和良率：VCSEL 的制造可行性一直是该技术的一个关键卖点。由于边发射激光器具有制造过程复杂和灾难性光学损伤相关的可靠性问题，因此其良率较低（从 2 英寸晶圆中能获得约 500 个边发射 980nm 泵浦芯片）。另一方面，VCSEL 的良率超过 90％（从 2 英寸晶圆中获得约 5000 个 VCSEL 芯片）。事实上，由于其平面属性，VCSEL 制造与芯片加工相同。</li>
+<li>可扩展性：对于高功率应用，VCSEL 的一个关键优势是它们可以直接加工成单片 2D 阵列，而边发射激光器则不可能（只有 1D 单片阵列）。此外，需要复杂且热效率低下的安装方案才能将边发射器条堆叠在一起。</li>
+<li>封装和散热：将大型高功率 VCSEL 二维阵列以“junction-down”配置安装很简单（类似于微处理器封装），使热移除过程非常高效，因为热量只需穿过几微米的 AlGaAs 材料。</li>
+<li>成本：由于简单的加工和散热技术，封装二维 VCSEL 阵列比等效的边缘发射器条形堆栈更容易。现有的硅行业散热技术可以用于高功率阵列的热移除，这将显著降低高功率模块的成本。</li>
+<li>而 VCSEL 十分方便量产，且可在制造过程中的各个阶段进行测试，生成良率可控，降低制造成本。VCSEL 易于和面上工艺的硅材料微型透镜整合，成本较低。除功率密度较 EEL 低外，在线宽、温漂系数、光束形状等指标上均优于 EEL，随着自动驾驶技术的快速发展以及激光雷达成本的下探，VCSEL 方案的能量密度及发光效率都将逐年提升，未来 VCSEL 方案将替代 EEL 成为行业主流。目前禾赛科技和 Lumentum 合作已经在 AT128 转镜式激光雷达上搭载了 VCSEL 激光器。</li>
+</ol>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li>方祖捷. 单频半导体激光器原理、技术和应用[M]. 上海交通大学出版社, 2015.</li>
+<li>马鹏阁. 多脉冲激光雷达[M]. 国防工业出版社, 2017.</li>
+<li>陈良惠, 杨国文, 刘育衔. 半导体激光器研究进展[J]. 中国激光, 2020, 47(5):19.</li>
+<li>马骁宇, 张娜玲, 仲莉,等. 高功率半导体激光泵浦源研究进展[J]. 强激光与粒子束, 2020(012):032.</li>
+<li>郎兴凯, 贾鹏, 陈泳屹,等. 窄线宽半导体激光器研究进展[J]. 中国科学F辑, 2019.</li>
+<li>孙国玉, 杨君婷, 包明冉,等. 高功率光纤激光的发展现状与应用[J]. 现代物理, 2020.</li>
+<li>杜悦宁, 陈超, 秦莉,等. 硅光子芯片外腔窄线宽半导体激光器[J]. 中国光学, 2019(2):13.</li>
+<li><a href="https://link.zhihu.com/?target=https://en.wikipedia.org/wiki/Laser_pumping" rel="external nofollow noreferrer">wikipedia: laser pumping</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.newmetals.co.jp/pdf/234.pdf" rel="external nofollow noreferrer">Princeton Optronics: Vertical-Cavity Surface-Emitting Laser Technology</a></li>
+<li><a href="https://link.zhihu.com/?target=https://uk.insight.com/content/dam/insight-web/en_GB/Buy/shops/prolabs/White-Paper-Laser-Sources-For-Optical-Transceivers.pdf" rel="external nofollow noreferrer">ProLabs: Laser Sources For Optical Transceivers White Paper</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiKqdyM8-_9AhUPJUQIHU0KBAkQFnoECAgQAQ&amp;url=http%253A%252F%252Fhome.ustc.edu.cn%252F~cruishan%252F%2525D7%2525CA%2525C1%2525CF%2525BA%2525CDPPT%252F%2525CA%2525AE%2525D2%2525BB%2525D5%2525C2%2525B0%2525EB%2525B5%2525BC%2525CC%2525E5%2525B7%2525A2%2525B9%2525E2%2525C6%2525F7%2525BC%2525FE.pdf&amp;usg=AOvVaw13yoZT2w2yZPG9kxjiNBV1" rel="external nofollow noreferrer">中国科学技术大学课件：半导体发光器件发光器</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.zgbk.com/ecph/words?SiteID=1&amp;ID=121509&amp;Type=bkzyb" rel="external nofollow noreferrer">中国大百科全书：泵浦源</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/338970148">知乎专栏：第十一章-半导体激光器</a></li>
+<li><a href="https://link.zhihu.com/?target=http://pdf.dfcfw.com/pdf/H3_AP201807221168905277_1.pdf" rel="external nofollow noreferrer">华泰证券： 解构激光器核心元器件，国产化破冰而立</a></li>
+<li><a href="https://link.zhihu.com/?target=https://new.qq.com/rain/a/20220812A01UUU00" rel="external nofollow noreferrer">激光雷达行业深度报告：技术路线逐渐清晰、国产激光雷达占得先机</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.oeshow.cn/informationdetail/12783" rel="external nofollow noreferrer">光电汇：3分钟了解窄线宽激光技术——“单色性”趋于极致的激光器</a></li>
+<li><a href="https://link.zhihu.com/?target=http://www.semiinsights.com/s/electronic_components/23/37850.shtml" rel="external nofollow noreferrer">半导体行业观察：VCSEL激光器技术科普！</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.sohu.com/a/433315058_100034932" rel="external nofollow noreferrer">长三角激光联盟：干货，垂直腔面发射激光器最全科普！</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.sohu.com/a/321740399_744047" rel="external nofollow noreferrer">自动驾驶欲“抛弃”激光雷达？窄线宽半导体激光器来救场</a></li>
+</ul>
+<hr>
+<p>欢迎在我的专栏「<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/column/jiritsu-soko">自律走行</a>」中查看更多「聚焦激光雷达」系列文章</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/611852342">聚焦激光雷达（一）——扫描器</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/616243016/">聚焦激光雷达（二）——激光器</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/618634684">聚焦激光雷达（三）——接收器</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/622652543">聚焦激光雷达（四）——光学元件</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/628148718">聚焦激光雷达（五）——处理器</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/">http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/sensor/">sensor</a><a class="post-meta__tags" href="/tags/lidar/">lidar</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/04/01/focus-on-lidar-3/" title="聚焦激光雷达（三）——接收器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">聚焦激光雷达（三）——接收器</div></div><div class="info-2"><div class="info-item-1">接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。   可以看到接收探测器的根本原理是光电效应，目前车载激光雷达中的半导体探测器按照工作原理可以分为：  PIN-PD：是在最基础的光电二极管的基础上扩宽了势垒区，价格低廉，结构简单，响应速度快，但没有增益，灵敏度有限。 APD：在 PIN 光电二极管的基础上，加上一定的反向电压，相当于人为增加了势垒，在外界光电效应的触发下，少量光生载流子引发雪崩效应电流倍增。输出电流与入射光子数量呈线性关系，相当于一个具有增益的光电二极管，这可进一步增大光检测的灵敏度，同时较大反向电压的作用也可进一步提高其响应速度，这就是雪崩光电二极管（APD），APD 已经是光通信技术中用来接收微弱光信号的一种基本器件。 SPAD：APD 工作电压在雪崩电压以上（盖革模式），每个入射的光子都会触发雪崩效应，灵敏度极高，甚至可以探测单个光子，但由于其工作于临界状态，需要配合猝灭电路设计，只能识别有无而无法识别强度，通常采用阵列的方式，利用多个传感器感知到...</div></div></div></a><a class="pagination-related" href="/2023/03/23/rotation-transformation/" title="欧拉角、四元数、旋转矩阵、旋转向量的相互转换（C++、python）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">欧拉角、四元数、旋转矩阵、旋转向量的相互转换（C++、python）</div></div><div class="info-2"><div class="info-item-1">记录 C++(Eigen), Python(scipy)的旋转表达式之间的转换。  C++ Eigen欧拉角转其他123456789101112131415// 初始化欧拉角Eigen::Vector3d&nbsp;eulerAngle(roll,pitch,yaw);// 欧拉角转旋转向量Eigen::AngleAxisd rollAngle(roll, Eigen::Vector3d::UnitX()); Eigen::AngleAxisd pitchAngle(pitch, Eigen::Vector3d::UnitY()); Eigen::AngleAxisd yawAngle(yaw, Eigen::Vector3d::UnitZ()); Eigen::AngleAxisd&nbsp;rotation_vector = yawAngle * pitchAngle * rollAngle;// 欧拉角转四元数Eigen::Quaterniond q = yawAngle * pitchAngle * rollAngle;// 欧拉角转旋转矩阵Eigen::Matrix3d...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2020/05/09/approach-autonomous-driving-sensor-lidar/" title="走进自动驾驶传感器（一）——激光雷达"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-09</div><div class="info-item-2">走进自动驾驶传感器（一）——激光雷达</div></div><div class="info-2"><div class="info-item-1">写在前面： 笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。 欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）   激光雷达，也称光学雷达（LIght Detection And Ranging）是激光探测与测距系统的简称，它通过测定传感器发射器与目标物体之间的传播距离，分析目标物体表面的反射能量大小、反射波谱的幅度、频率和相位等信息，从而呈现出目标物精确的三维结构信息。 自上世纪 60 年代激光被发明不久，激光雷达就大规模发展起来。目前激光雷达厂商主要使用波长为 905nm 和 1550nm 的激光发射器，波长为 1550nm 的光线不容易在人眼液体中传输，这意味着采用波长为 1550nm 激光的激光雷达的功率可以相当高，而不会造成视网膜损伤。更高的功率，意味着更远的探测距离，更长的波长，意味着更容易穿透粉尘雾霾。但受制...</div></div></div></a><a class="pagination-related" href="/2023/03/12/focus-on-lidar-1/" title="聚焦激光雷达（一）——扫描器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="info-item-2">聚焦激光雷达（一）——扫描器</div></div><div class="info-2"><div class="info-item-1">之前撰写过相机硬件的系列文章，从滤镜、镜头、快门、 CMOS 到 ISP 芯片，几年前写过一篇激光雷达入门介绍 Yvon Shong：走进自动驾驶传感器（一）——激光雷达，当时只是初步提及了激光雷达的一些基本性质。 而这几年激光雷达作为逐渐成熟的自动驾驶/高阶辅助驾驶传感器，价格逐步下降，产品也层出不穷，笔者于去年入职了中国激光雷达第一股，禾赛科技（内推禾赛科技自动驾驶、光电芯片等岗位），伴随着制造商和供应链逐渐成熟的进程，激光雷达有了更繁复的分类和功能，所以也想对激光雷达进行一次系统性的大拆解，撰写激光雷达系列文章。   本系列文章将从扫描器，发射器，探测器到处理模块，从硬件到软件算法等模块，来介绍激光雷达。欢迎关注本专栏，您的帮助从点赞本文章开始 ヽ(ﾟ▽ﾟ)ノ。  之前的文章 ， 在之前的文章中，我们粗略的提及了激光雷达扫描结构的不同，激光雷达的扫描结构主要分为： 机械式、混合固态（MEMS振镜式、转镜式、棱镜式）、纯固态（FLASH、OPA）。本章节将详细介绍激光雷达细分的扫描结构和原理，以及一些新型的技术。  机械式机械式激光雷达是指其发射系统和接收系统一起随着转轴进行...</div></div></div></a><a class="pagination-related" href="/2023/04/19/focus-on-lidar-4/" title="聚焦激光雷达（四）——光学系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-19</div><div class="info-item-2">聚焦激光雷达（四）——光学系统</div></div><div class="info-2"><div class="info-item-1">激光雷达从器件来看，最主要的构成要素是扫描器、发射器，接收器，处理器，以及一些内部的光学元件了，激光从发射器中产生，除了要通过扫描器来调整激光方向以外，还需要通过各式各样的光学元件，来调整光斑形状大小，光场的能量分布等等。   查阅了很多光学供应链公司的产品和研报，这可能是全网唯一比较全面的介绍激光雷达内部涉及的光学元件的科普文章了，欢迎点赞关注本专栏。 从激光雷达 BOM 成本拆分来看，透镜等光学组件仍是激光雷达的重要组成部分。以法雷奥 Scala 转镜激光雷达为例，目前年产量十万级规模， BOM 成本约 400 美元，其中主控板占 45%，激光发射接收组件占 33%，光学单元占 13%，外罩 8%，马达 1%。而 Livox 的双楔形棱镜式激光雷达的透镜模组占了成本的 54%。可以看到，光学元件是激光雷达成本里重要组成部分。 由于各种激光器发射的激光束并不是绝对平行的，具有光斑形状不规则，发散角度大的问题，因此还需要一套光学系统，对激光器的输出光束进行准直整形，通过改变光束的发散度、波束宽度和截面积，改善输出光束质量。 发射光学系统主要由透镜、反射器件、衍射器件等光学元器件组...</div></div></div></a><a class="pagination-related" href="/2023/04/01/focus-on-lidar-3/" title="聚焦激光雷达（三）——接收器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-01</div><div class="info-item-2">聚焦激光雷达（三）——接收器</div></div><div class="info-2"><div class="info-item-1">接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。   可以看到接收探测器的根本原理是光电效应，目前车载激光雷达中的半导体探测器按照工作原理可以分为：  PIN-PD：是在最基础的光电二极管的基础上扩宽了势垒区，价格低廉，结构简单，响应速度快，但没有增益，灵敏度有限。 APD：在 PIN 光电二极管的基础上，加上一定的反向电压，相当于人为增加了势垒，在外界光电效应的触发下，少量光生载流子引发雪崩效应电流倍增。输出电流与入射光子数量呈线性关系，相当于一个具有增益的光电二极管，这可进一步增大光检测的灵敏度，同时较大反向电压的作用也可进一步提高其响应速度，这就是雪崩光电二极管（APD），APD 已经是光通信技术中用来接收微弱光信号的一种基本器件。 SPAD：APD 工作电压在雪崩电压以上（盖革模式），每个入射的光子都会触发雪崩效应，灵敏度极高，甚至可以探测单个光子，但由于其工作于临界状态，需要配合猝灭电路设计，只能识别有无而无法识别强度，通常采用阵列的方式，利用多个传感器感知到...</div></div></div></a><a class="pagination-related" href="/2023/05/11/focus-on-lidar-5/" title="聚焦激光雷达（五）——处理器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-11</div><div class="info-item-2">聚焦激光雷达（五）——处理器</div></div><div class="info-2"><div class="info-item-1">我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。   激光脉冲驱动控制器通常发射端每个激光器需要链接一个激光器脉冲驱动控制器 LD Driver，它负责在接收到主控芯片的发光指令后，给激光器发送一个控制信号。实现激光的脉冲式发射和编码，通过配置脉冲强度和脉冲宽度，增加编码功能，增强抗干扰能力。 驱动控制器要求控制信号能越快越好，有足够陡峭的上升沿。通常在低速信号电路中，信号从 0(低电平) 变成 1(高电平) 可以看成是瞬间完成的，但在高速电路中， 从 0 跳到 1 的时间消耗就无法忽略了，上升沿指的就是这个从 0 到 1 的过程，反之下降沿就是从 1 到 0 的过程。 之所以对上升沿有较高要求，是因为激光对人眼有加热效应，受到人眼安全约束，但可以通过提高瞬时功率，提高探测距离，缩短发光...</div></div></div></a><a class="pagination-related" href="/2021/09/21/approach-autonomous-driving-sensor-gnss/" title="走进自动驾驶传感器（三）——卫星导航系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-21</div><div class="info-item-2">走进自动驾驶传感器（三）——卫星导航系统</div></div><div class="info-2"><div class="info-item-1">之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）    无人驾驶想要获得全局定位，一定是相对于某一固定坐标系的，而地球上范围最广的坐标系便是地球坐标系，想要获得这么宏达层面上的观测，便必须依靠 GPS 卫星的数据。 如果我们事先知道卫星每一时刻相对于地球的位置（地面监测站监测后告诉卫星，卫星一直广播自身星历），然后观测自身距离多颗卫星的位置（用户接收机接收到多颗卫星的信号，得知相对距离），便能知道自身在地球坐标系的位置。 打个简单的比方，在一条单向高速公路上，前车一直在广播它距离起点的位置（这个是路边监控告诉它的），而我们能够测得距离它的位置，所以我们也就知道了自身距离起点的位置。GPS 中是需要观测到至少四颗卫星，来解算三维坐标和用户设备时间和卫星时间的差异。 这之中涉及到了坐标系和时间标准的统一，所以我们可以用 GNSS 来进行给自身定位，给时间高...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BF%80%E5%85%89%E5%99%A8%E5%8E%9F%E7%90%86"><span class="toc-text">激光器原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%B5%E6%B5%A6%E6%BA%90"><span class="toc-text">泵浦源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AA%92%E8%B4%A8"><span class="toc-text">媒质</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%94%E4%BD%93%E6%BF%80%E5%85%89"><span class="toc-text">气体激光</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E4%BD%93%E6%BF%80%E5%85%89"><span class="toc-text">固体激光</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%BF%80%E5%85%89"><span class="toc-text">半导体激光</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%89%E7%BA%A4%E6%BF%80%E5%85%89"><span class="toc-text">光纤激光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%90%E6%8C%AF%E8%85%94"><span class="toc-text">谐振腔</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E8%85%94%E5%85%89%E5%8F%8D%E9%A6%88%E6%B3%95"><span class="toc-text">内腔光反馈法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E5%B8%83%E9%87%8C-%E7%8F%80%E7%BD%97%E5%9E%8B-Fabry-Perot-%E6%BF%80%E5%85%89%E5%99%A8"><span class="toc-text">法布里-珀罗型 Fabry-Perot 激光器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%8F%8D%E9%A6%88%E5%BC%8F-DFB-%E6%BF%80%E5%85%89%E5%99%A8"><span class="toc-text">分布反馈式 DFB 激光器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E5%A4%96%E5%BB%B6%E5%88%86%E5%B8%83%E5%8F%8D%E9%A6%88%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%BF%80%E5%85%89%E5%99%A8-RG-DFB"><span class="toc-text">二次外延分布反馈半导体激光器 RG-DFB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E9%9D%A2%E5%85%89%E6%A0%85%E5%88%86%E5%B8%83%E5%8F%8D%E9%A6%88%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%BF%80%E5%85%89%E5%99%A8-SG-DFB"><span class="toc-text">表面光栅分布反馈半导体激光器 SG-DFB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%B8%83%E6%8B%89%E6%A0%BC%E5%8F%8D%E5%B0%84-DBR-%E6%BF%80%E5%85%89%E5%99%A8"><span class="toc-text">分布布拉格反射 DBR 激光器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E8%85%94%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%BF%80%E5%85%89%E5%99%A8"><span class="toc-text">外腔半导体激光器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E8%85%94%E5%85%89%E6%A0%85%E5%8F%8D%E9%A6%88%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%BF%80%E5%85%89%E5%99%A8"><span class="toc-text">外腔光栅反馈半导体激光器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E8%85%94%E6%B3%A2%E5%AF%BC%E5%8F%8D%E9%A6%88%E5%8D%8A%E5%AF%BC%E4%BD%93%E6%BF%80%E5%85%89%E5%99%A8"><span class="toc-text">外腔波导反馈半导体激光器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9E%82%E7%9B%B4%E8%85%94%E9%9D%A2%E5%8F%91%E5%B0%84%E6%BF%80%E5%85%89%E5%99%A8"><span class="toc-text">垂直腔面发射激光器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A2%E9%95%BF"><span class="toc-text">波长</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%91%E5%85%89%E6%96%B9%E5%90%91"><span class="toc-text">发光方向</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EEL"><span class="toc-text">EEL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VCSEL"><span class="toc-text">VCSEL</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2023/03/28/focus-on-lidar-2/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2023/03/28/focus-on-lidar-2/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '聚焦激光雷达（二）——激光器'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

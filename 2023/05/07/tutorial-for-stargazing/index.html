@@ -1,0 +1,379 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>观星指南 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="和朋友们去看过几次夏季银河，陆陆续续也看过几次流星雨，也翻过很多次的车，所以不才想要小结一下我自己的观星指南，方便更多对天文，对摄影感兴趣的朋友们入坑。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="观星指南">
+<meta property="og:url" content="http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="和朋友们去看过几次夏季银河，陆陆续续也看过几次流星雨，也翻过很多次的车，所以不才想要小结一下我自己的观星指南，方便更多对天文，对摄影感兴趣的朋友们入坑。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:published_time" content="2023-05-07T05:24:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.522Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="photograph">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "观星指南",
+  "url": "http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png",
+  "datePublished": "2023-05-07T05:24:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.522Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '观星指南',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">观星指南</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">观星指南</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-07T05:24:00.000Z" title="发表于 2023-05-07 13:24:00">2023-05-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.522Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div><article class="container post-content" id="article-container"><p>和朋友们去看过几次夏季银河，陆陆续续也看过几次流星雨，也翻过很多次的车，所以不才想要小结一下我自己的观星指南，方便更多对天文，对摄影感兴趣的朋友们入坑。</p>
+<span id="more"></span>
+
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-9e360e91c823cf48f9744c45cc2eab66_720w.webp"></p>
+<blockquote>
+<p>2019 年 9 月 于河北张家口冰山梁 这辈子第一次看的银河</p>
+</blockquote>
+<h2 id="地点"><a href="#地点" class="headerlink" title="地点"></a>地点</h2><p>观星者最需要确定自己要在哪里看，以及能在哪里看！这个是最重要的，因为地点决定了后续所有的因素。它决定了光污染程度，从而决定了你看到的银河/星星的效果。它决定了当地的天气，经纬度决定了当地的月出月落时间。所以观星第一步，确定你要在哪里观星！</p>
+<p>首先需要通过光污染地图，来查看或者确认当地的光害指数。建议选择<strong>光害三级以下</strong>的地点。</p>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https://darkmap.cn/" rel="external nofollow noreferrer">天文通 - 全球光污染地图</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.lightpollutionmap.info/" rel="external nofollow noreferrer">Light pollution map</a></li>
+</ul>
+<p>京郊附近到张家口或者东灵山，光污染便比较低了，上海附近的话得到浙西大峡谷。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-5377026cdc37ea4090086d4daa333d92_720w.webp"></p>
+<blockquote>
+<p>2020 年 8 月 于浙江宁波渔山列岛，光害较高，银河比较黯淡</p>
+</blockquote>
+<h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><p>确定了地点，需要查看计划前往日期的月相，因为月亮一出来，星星的光芒都会看不见了。月亮这个时候就成了很大的光污染，而唯一的办法，就是等<strong>月落后或者月出前</strong>。春秋季还需要关心银心升起落下时间，因为银心是最美最亮的！</p>
+<p>日出日落月相</p>
+<ul>
+<li>iOS:&nbsp;<a href="https://link.zhihu.com/?target=https://apps.apple.com/cn/app/%25E6%2597%25A5%25E5%2587%25BA%25E6%2597%25A5%25E8%2590%25BD%25E6%259C%2588%25E7%259B%25B8/id1468244490" rel="external nofollow noreferrer">日出日落月相</a></li>
+<li>Android:&nbsp;<a href="https://link.zhihu.com/?target=https://sj.qq.com/appdetail/com.xueping.solunar" rel="external nofollow noreferrer">日出日落月相官方新版本-安卓iOS版下载-应用宝官网</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-838495b10373c1096e06e6309eb835a3_720w.webp"></p>
+<p>举个例子，比如这个情况，整晚月亮不落，观星条件就很差</p>
+<p>巧摄</p>
+<ul>
+<li><a href="https://link.zhihu.com/?target=https://apps.apple.com/cn/app/planit%25E5%25B7%25A7%25E6%2591%2584%25E7%258E%25B0%25E5%259C%25BA%25E7%2589%2588-%25E6%2591%2584%25E5%25BD%25B1%25E7%258E%25B0%25E5%259C%25BA%25E5%2588%25A9%25E5%2599%25A8/id1455712879" rel="external nofollow noreferrer">iOS: Planit巧摄现场版：摄影现场利器</a>(免费，不能调整到预设地点，只能看当前位置)</li>
+<li><a href="https://link.zhihu.com/?target=https://apps.apple.com/us/app/planit%25E5%25B7%25A7%25E6%2591%2584%25E4%25B8%2593%25E4%25B8%259A%25E7%2589%2588-%25E6%2591%2584%25E5%25BD%25B1%25E8%25AE%25A1%25E5%2588%2592%25E7%25A5%259E%25E5%2599%25A8/id898876435?l=zh" rel="external nofollow noreferrer">iOS: ‎Planit巧摄专业版：摄影计划神器</a>(收费)</li>
+<li>巧摄还有个用处是有地景数据，能辅助构图，比如想要月亮穿过某个楼尖，比如想要根据地形构图。</li>
+</ul>
+<p>天文通</p>
+<ul>
+<li>这款小程序/app几乎可以满足所有观星需求</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-5aae08b5b5466403ed711b5a64726ff9_720w.webp"></p>
+<h2 id="天气"><a href="#天气" class="headerlink" title="天气"></a>天气</h2><p>偏远地区排除了城市光污染，没有月亮的晚上排除了月亮的光污染，下一步是确定当地天气，如果是下雨或多云的话，就几乎看不到了。</p>
+<p>天气预报一直是一个很头疼的问题，因为还是不够准。目前使用的 app 有：莉景天气，彩云天气，windy。</p>
+<p>莉景天气能够看到一些朝霞晚霞预报。彩云天气能够看到比较准确的当前的云图，windy能够协助查看几天后的云图。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-997ad8e210dcd4b152caed0148b0b644_720w.webp"></p>
+<p>理想的情况是不下雨，万里无云。</p>
+<h2 id="拍摄"><a href="#拍摄" class="headerlink" title="拍摄"></a>拍摄</h2><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-bc17adeee9eaf7b8501fc902dd8230c8_720w.webp"></p>
+<blockquote>
+<p>2021 年 8 月 于河北张家口阳原县</p>
+</blockquote>
+<p>铺垫了这么多前提条件，终于才能看到星星了。。</p>
+<p>想要拍银河的话其实比较简单</p>
+<ol>
+<li>构图，地球在转，银河是会动的，如果想要拍延时的话，需要预先用app估计好银河的运动轨迹（巧摄）。</li>
+<li>必备三脚架，如果你是索尼A7S3或者ZV-E1的话当我没说（。）其他的需要长曝光，所以必须要有三脚架作为支撑点（并且建议三脚架下面挂上配重，两升装的矿泉水之类的，风大会吹倒三脚架，说多是泪。）</li>
+<li>调整焦距构图，因为直怼银河拍多了会腻，有不同的地景效果会截然不同。如果想要拍摄流星雨的话，会需要找一找流星雨辐射点。</li>
+<li>对焦！这里需要手动对焦，因为太黑了不能指望自动对焦。这种场景下对焦的方法是把 ISO 拉到最大，然后对准远处一颗很亮的星星，调整焦距，让这颗星星从弥散圆模糊的状态，调整成一颗星点（所以也并不是把焦距直接设置到无穷远）。</li>
+<li>根据焦距估计可最长曝光的时长，因为地球在转，如果曝光太久的话，星星会拖线变成星轨。通常是400法则 最长可曝光秒数 = 400 / 等效焦距。</li>
+<li>这时候就可以拍摄了，拍摄单张的时候分享个小技巧，设置2s的延时拍摄，不然你摁快门的时候会晃动机身。</li>
+</ol>
+<p>我通常都懒得算了，银河大部分时间拍广角，直接光圈最大（提高进光量），曝光时间30s（提高进光量），ISO 从6400开始往下压， ISO 是亮度的增益，越低的话噪点就能够越少。其实不用完全遵循 400 法则，只需要现场多试几张就知道了，光圈开最大，曝光只要不拖线就最长，ISO 从高往低尝试。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-7486d77f7c616ca5f912d29881023989_720w.webp"></p>
+<blockquote>
+<p>2023 年 5 月 于浙江杭州临安浙西大峡谷</p>
+</blockquote>
+<p>流星雨的观赏体验其实比较讲究，建议只去看ZHR值超过100时的北半球三大流星雨（1月的象限仪座流星雨、8月的英仙座流星雨、12月的双子座流星雨），然后带个地垫躺在草坪上~</p>
+<p>我还没拍过银河拱桥，等我拍过了再更新。。。</p>
+<h2 id="彗星"><a href="#彗星" class="headerlink" title="彗星"></a>彗星</h2><p>虽然一直没去拍过彗星，但做了很多次攻略。。。 需要用到 Stellarium，来查询当地的最大高度角和升起落下时间。以 C/2021 A1 新智彗星为例，步骤如下：</p>
+<p>打开 Stellarium&gt;&gt;设置&gt;&gt;脚本&gt;&gt;太阳系编辑器&gt;&gt;设置&gt;&gt;太阳系&gt;&gt;导入MPC格式的轨道参数&gt;&gt;选择天体类型[彗星]，从互联网下载天体列表，选择书签[MPC’s lists of observable comets]&gt;&gt;获取轨道信息&gt;&gt;下载完便可搜索 C/2021 A1 添加，便可以搜到该彗星了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-13a8e18e8996ee955bcf2803376c498d_720w.webp"></p>
+<p>讲得比较零零碎碎，因为涉及的方面比较多，可能还会有住宿问题，导致需要露营，大晚上还需要保暖，还需要考虑电源，考虑露水等等。也还没入深空摄影的坑，暂时先写这么多吧。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/">http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/photograph/">photograph</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/05/11/focus-on-lidar-5/" title="聚焦激光雷达（五）——处理器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">聚焦激光雷达（五）——处理器</div></div><div class="info-2"><div class="info-item-1">我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。   激光脉冲驱动控制器通常发射端每个激光器需要链接一个激光器脉冲驱动控制器 LD Driver，它负责在接收到主控芯片的发光指令后，给激光器发送一个控制信号。实现激光的脉冲式发射和编码，通过配置脉冲强度和脉冲宽度，增加编码功能，增强抗干扰能力。 驱动控制器要求控制信号能越快越好，有足够陡峭的上升沿。通常在低速信号电路中，信号从 0(低电平) 变成 1(高电平) 可以看成是瞬间完成的，但在高速电路中， 从 0 跳到 1 的时间消耗就无法忽略了，上升沿指的就是这个从 0 到 1 的过程，反之下降沿就是从 1 到 0 的过程。 之所以对上升沿有较高要求，是因为激光对人眼有加热效应，受到人眼安全约束，但可以通过提高瞬时功率，提高探测距离，缩短发光...</div></div></div></a><a class="pagination-related" href="/2023/04/19/focus-on-lidar-4/" title="聚焦激光雷达（四）——光学系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">聚焦激光雷达（四）——光学系统</div></div><div class="info-2"><div class="info-item-1">激光雷达从器件来看，最主要的构成要素是扫描器、发射器，接收器，处理器，以及一些内部的光学元件了，激光从发射器中产生，除了要通过扫描器来调整激光方向以外，还需要通过各式各样的光学元件，来调整光斑形状大小，光场的能量分布等等。   查阅了很多光学供应链公司的产品和研报，这可能是全网唯一比较全面的介绍激光雷达内部涉及的光学元件的科普文章了，欢迎点赞关注本专栏。 从激光雷达 BOM 成本拆分来看，透镜等光学组件仍是激光雷达的重要组成部分。以法雷奥 Scala 转镜激光雷达为例，目前年产量十万级规模， BOM 成本约 400 美元，其中主控板占 45%，激光发射接收组件占 33%，光学单元占 13%，外罩 8%，马达 1%。而 Livox 的双楔形棱镜式激光雷达的透镜模组占了成本的 54%。可以看到，光学元件是激光雷达成本里重要组成部分。 由于各种激光器发射的激光束并不是绝对平行的，具有光斑形状不规则，发散角度大的问题，因此还需要一套光学系统，对激光器的输出光束进行准直整形，通过改变光束的发散度、波束宽度和截面积，改善输出光束质量。 发射光学系统主要由透镜、反射器件、衍射器件等光学元器件组...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E7%82%B9"><span class="toc-text">地点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4"><span class="toc-text">时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A9%E6%B0%94"><span class="toc-text">天气</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%8D%E6%91%84"><span class="toc-text">拍摄</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%97%E6%98%9F"><span class="toc-text">彗星</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2023/05/07/tutorial-for-stargazing/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2023/05/07/tutorial-for-stargazing/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '观星指南'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

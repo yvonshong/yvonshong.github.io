@@ -1,0 +1,385 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo 利用 AppVeyor 持续集成 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在第一天尝试了 hexo 之后，觉得这个静态博客远比不上 wordpress 托管到主机上的博客方便，因为太依赖本机环境，需要 nodejs 和 git，每次更新后需要自己生成静态页面（虽然也就两行代码的事情），这一点都不 cool！并且有一大弊端，当你转移电脑的时候，你需要转移你根目录下很多配置文件和之前的 md 文件，（图片等资源文件我是利用插件同步到了七牛的，所以资源文件不用担心），这也需要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 利用 AppVeyor 持续集成">
+<meta property="og:url" content="http://www.yvonshong.com/2017/02/19/hexo-ci/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="在第一天尝试了 hexo 之后，觉得这个静态博客远比不上 wordpress 托管到主机上的博客方便，因为太依赖本机环境，需要 nodejs 和 git，每次更新后需要自己生成静态页面（虽然也就两行代码的事情），这一点都不 cool！并且有一大弊端，当你转移电脑的时候，你需要转移你根目录下很多配置文件和之前的 md 文件，（图片等资源文件我是利用插件同步到了七牛的，所以资源文件不用担心），这也需要">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:published_time" content="2017-02-19T18:18:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.521Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hexo 利用 AppVeyor 持续集成",
+  "url": "http://www.yvonshong.com/2017/02/19/hexo-ci/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png",
+  "datePublished": "2017-02-19T18:18:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.521Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2017/02/19/hexo-ci/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo 利用 AppVeyor 持续集成',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">Hexo 利用 AppVeyor 持续集成</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Hexo 利用 AppVeyor 持续集成</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2017-02-19T18:18:00.000Z" title="发表于 2017-02-20 02:18:00">2017-02-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.521Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2017/02/19/hexo-ci/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div><article class="container post-content" id="article-container"><p>在第一天尝试了 hexo 之后，觉得这个静态博客远比不上 wordpress 托管到主机上的博客方便，因为太依赖本机环境，需要 nodejs 和 git，每次更新后需要自己生成静态页面（虽然也就两行代码的事情），这一点都不 cool！<br>并且有一大弊端，当你转移电脑的时候，你需要转移你根目录下很多配置文件和之前的 md 文件，（图片等资源文件我是利用插件同步到了七牛的，所以资源文件不用担心），这也需要备份！（这个时候我想到了利用我 Github Pages 的同一个仓库，通过建不同的分支来实现，比如我是 <code>username.github.io</code> 仓库，master 分支为 <code>hexo</code> 生成同步的 web 展示页分支，我新建一个 <code>hexo</code> 分支，就是包含了我根目录下的 <code>themes/</code>, <code>source/</code>, <code>_config.yml</code>,<code>package.json</code> 然后就能在其他环境下重新搭建 hexo）</p>
+<p>为了达到自动更新和在线编辑的目的，我遍寻方法。<br>【2020 更新： <a target="_blank" rel="noopener external nofollow noreferrer" href="https://juejin.im/post/6844903961435045902">最新请直接使用 Github Action</a>】                                 </p>
+<span id="more"></span>
+
+<ul>
+<li>ide.coding.net</li>
+</ul>
+<blockquote>
+<p>Coding WebIDE 是 Coding 自主研发的在线集成开发环境。用户可以通过 WebIDE 创建项目的工作空间，进行在线开发，调试等操作。与此同时，WebIDE 还提供了可分享的开发环境功能，用户可以保存当前的 Terminal 环境，分享给团队的其他成员。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://garth.im/2015/04/hexo-on-coding-net-webide/">利用 coding WebIDE 远程 hexo 教程</a></p>
+<ul>
+<li>绿色版本的 git 和 hexo</li>
+</ul>
+<p>好吧这依旧不酷。。。。就是拷进 U 盘而已</p>
+<ul>
+<li>百度云/Dropbox 同步</li>
+</ul>
+<p>没差，没有运行环境，也需要重新配置。</p>
+<ul>
+<li>利用<a href="www.appveyor.com">AppVeyor</a>远端<strong>持续集成</strong>！</li>
+</ul>
+<p>上一次接触到持续集成这个概念，还是暑假我实习的时候，当时是我们利用公司自己搭的 gitlab，利用 git 提交代码到服务器主机，也有 ftp，然后主机自己会把汇集在一起的代码进行检测，检测通过后发布。（当时去学了下持续集成，持续发布等的概念。。。也算是学到的知识吧）</p>
+<p>现在！我们也可以利用持续集成，通过 push md 文档到 git，远端自己 pull，然后自己构建 hexo，然后 push 到我的 github pages 的仓库。（这里我依旧利用了两个分支，master 分支发布，hexo 分支编辑。）</p>
+<p>当时主要是看到了<a target="_blank" rel="noopener external nofollow noreferrer" href="https://formulahendry.github.io/2016/12/04/hexo-ci/">这篇文章</a>，介绍了 <a href="www.appveyor.com">AppVeyor</a>，当然后面也有查阅到<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.jianshu.com/p/fff7b3384f46">使用 Travis 自动部署 Hexo</a>，而且 AppVeyor 是唯一支持 Windows 的服务商。。（虽然 hexo 也并没有必须 Windows）</p>
+<p>下面介绍我使用 AppVeyor 趟的坑</p>
+<ol>
+<li>注册登陆 AppVeyor</li>
+</ol>
+<p>free for opensource project</p>
+<ol start="2">
+<li>AppVeyor 新建 Project</li>
+</ol>
+<p>Github 授权，关联相关 repo（更新文档的 repo）（我都是在<a target="_blank" rel="noopener" href="http://github.com/yvonshong/blog">/blog</a> ）<br>设置项目</p>
+<ul>
+<li>setting-general</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5hpfrsej20k40i0gm6.jpg"></p>
+<ul>
+<li>setting-env</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5hpebl2j20ps0cdgm4.jpg"></p>
+<ol>
+<li>配置 <code>appveyor.yml</code> 到文档 repo</li>
+</ol>
+<p>需要利用 <code>GitHub Access Token</code>，这玩意儿相当于你的 git 的密钥，<a target="_blank" rel="noopener external nofollow noreferrer" href="https://help.github.com/articles/creating-an-access-token-for-command-line-use/">GitHub 上生成 token 的相关官方文档</a></p>
+<p>然后由于你 <code>.yml</code> 是在 <code>Github</code> 上公开的，所以你的 token 必须利用 AppVeyor 的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://ci.appveyor.com/tools/encrypt">加密工具进行加密</a></p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">clone_depth:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="attr">access_token:</span></span><br><span class="line">    <span class="attr">secure:</span> </span><br><span class="line">    <span class="string">【替换成自己加密后的</span> <span class="string">GitHub</span> <span class="string">Access</span> <span class="string">Token】</span></span><br><span class="line"></span><br><span class="line"><span class="attr">install:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">node</span> <span class="string">--version</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">npm</span> <span class="string">--version</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">npm</span> <span class="string">install</span> <span class="string">hexo-cli</span> <span class="string">-g</span></span><br><span class="line"><span class="attr">build_script:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line"></span><br><span class="line"><span class="attr">artifacts:</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">path:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">on_success:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">credential.helper</span> <span class="string">store</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">ps:</span> <span class="string">Add-Content</span> <span class="string">"$env:USERPROFILE\.git-credentials"</span> <span class="string">"https://$($env:access_token):x-oauth-basic@github.com`n"</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.email</span> <span class="string">"%GIT_USER_EMAIL%"</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">user.name</span> <span class="string">"%GIT_USER_NAME%"</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">clone</span> <span class="string">--depth</span> <span class="number">5</span> <span class="string">-q</span> <span class="string">--branch=%TARGET_BRANCH%</span> <span class="string">%STATIC_SITE_REPO%</span> <span class="string">%TEMP%\static-site</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">cd</span> <span class="string">%TEMP%\static-site</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">del</span> <span class="string">*</span> <span class="string">/f</span> <span class="string">/q</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">for</span> <span class="string">/d</span> <span class="string">%%p</span> <span class="string">IN</span> <span class="string">(*)</span> <span class="string">do</span> <span class="string">rmdir</span> <span class="string">"%%p"</span> <span class="string">/s</span> <span class="string">/q</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">SETLOCAL</span> <span class="string">EnableDelayedExpansion</span> <span class="string">&amp;</span> <span class="string">robocopy</span> <span class="string">"%APPVEYOR_BUILD_FOLDER%\public"</span> <span class="string">"%TEMP%\static-site"</span> <span class="string">/e</span> <span class="string">&amp;</span> <span class="string">IF</span> <span class="type">!ERRORLEVEL</span><span class="string">!</span> <span class="string">EQU</span> <span class="number">1</span> <span class="string">(exit</span> <span class="number">0</span><span class="string">)</span> <span class="string">ELSE</span> <span class="string">(IF</span> <span class="type">!ERRORLEVEL</span><span class="string">!</span> <span class="string">EQU</span> <span class="number">3</span> <span class="string">(exit</span> <span class="number">0</span><span class="string">)</span> <span class="string">ELSE</span> <span class="string">(exit</span> <span class="number">1</span><span class="string">))</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">add</span> <span class="string">-A</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">if</span> <span class="string">"%APPVEYOR_REPO_BRANCH%"</span><span class="string">=="master"</span> <span class="string">if</span> <span class="string">not</span> <span class="string">defined</span> <span class="string">APPVEYOR_PULL_REQUEST_NUMBER</span> <span class="string">(git</span> <span class="string">diff</span> <span class="string">--quiet</span> <span class="string">--exit-code</span> <span class="string">--cached</span> <span class="string">||</span> <span class="string">git</span> <span class="string">commit</span> <span class="string">-m</span> <span class="string">"Update Static Site"</span> <span class="string">&amp;&amp;</span> <span class="string">git</span> <span class="string">push</span> <span class="string">origin</span> <span class="string">%TARGET_BRANCH%</span> <span class="string">&amp;&amp;</span> <span class="string">appveyor</span> <span class="string">AddMessage</span> <span class="string">"Static Site Updated"</span><span class="string">)</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>这是我第二次接触到 yml，yml 可以转换成 json，语法严格，连冒号后空格都要限制必须只能一个。。。</p>
+<p><code>.yml</code> 仔细一看，都是 bash 操作啊！</p>
+<ol start="4">
+<li>基本完成！</li>
+</ol>
+<p>好吧这是网上的博主。。。我是又遇到 bug 了（配置什么的，最烦了！）当时已经在 appveyor 上 build 了，遇到无数次报错！</p>
+<ul>
+<li><p>拉取失败过<br>项目配置的 branch 有误，更新文档的 repo 的 branch 才有 yml </p>
+</li>
+<li><p>hexo generate 成功了<br>然后毫无反应。。。。我也不知道为什么</p>
+</li>
+<li><p>仔细查看 yml<br>我查看 yml，发现</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">build_script:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">hexo</span> <span class="string">generate</span></span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<p>欸只有 generate 呢？我就擅自加了个 hexo deploy<br>然后遇到了权限报错，回想了一下 hexo 在部署的时候，我是需要手动输入 git 的密钥的。。。<br>看来是 git 上有问题，可是我明明有 token 啊？<br>我在查阅相关 key 配置时，发现有个东西叫 credential？？诶 yml 文档里面也有这个欸！</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">config</span> <span class="string">--global</span> <span class="string">credential.helper</span> <span class="string">store</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">ps:</span> <span class="string">Add-Content</span> <span class="string">"$env:USERPROFILE\.git-credentials"</span> <span class="string">"https://$($env:access_token):x-oauth-basic@github.com`n"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>这里 yml 将环境变量，我传进去的 <code>access_token</code> 用到了，这里应该就是配置 ssh 免密。<br>于是我想通了，不应该用 hexo 自带的部署，直接用 git bash 命令上传，于是我把后面部分修改成</p>
+<figure class="highlight yml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">add</span> <span class="string">-A</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">commit</span> <span class="string">-m</span> <span class="string">"Update Static Site"</span> </span><br><span class="line"><span class="bullet">-</span> <span class="string">git</span> <span class="string">push</span> <span class="string">origin</span> <span class="string">%TARGET_BRANCH%</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">appveyor</span> <span class="string">AddMessage</span> <span class="string">"Static Site Updated"</span></span><br></pre></td></tr></tbody></table></figure>
+<p>这里又回顾了一波 git bash 命令（通常都用 sourcetree 的我。。。）</p>
+<p>然后终于成功了！！！<br><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo5hpgj8sj211y0kgmzv.jpg"></p>
+<p>至此，接下来只需要深入了解 AppVeyor 的自动集成周期等更详细的信息就行了。<br>AppVeyor 还可以根据你 git 更新打的 tag 来触发！欢迎尝试！</p>
+<p>（凌晨一点终于搞完 hexo 持续集成，然后又花了一个小时写博客。。。）</p>
+<p><strong>最新</strong>：用 GitHub Actions 自动化发布 Hexo 网站到 GitHub Pages <a target="_blank" rel="noopener external nofollow noreferrer" href="https://juejin.im/post/6844903961435045902">https://juejin.im/post/6844903961435045902</a>
+                                              </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2017/02/19/hexo-ci/">http://www.yvonshong.com/2017/02/19/hexo-ci/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/hexo/">hexo</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2017/02/20/hexo-advanced/" title="Hexo 进阶与优化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Hexo 进阶与优化</div></div><div class="info-2"><div class="info-item-1">在经过申请域名到搭建hexo，以及利用 Appveyor 实现持续集成，hexo 已经实现了基本的编辑模式，就是我 push 文章的 md 文档，然后会自动发布 hexo 生成的静态网页，只需要 git 环境。接下来我们对博客进行优化，尝试各种插件。    qiniu sync  同步资源文件到七牛，能加速一些资源。  SEO 搜索引擎优化  我们发现百度和谷歌并没有收录到此博客，于是我们去提交我们的站点 Google搜索引擎提交入口 百度搜索引擎入口  提供三种验证方式：文件验证、html标签验证、CNAME验证。 1.文件验证：您需要下载验证文件，将文件上传至您的服务器，放置于域名根目录下。 2.html标签验证：将html标签添加至网站首页html代码的标签与标签之间。 3.CNAME验证：您需要登录域名提供商或托管服务提供商的网站，添加新的DNS记录。 验证完成后，我们将会认为您是网站的拥有者。为使您的网站一直保持验证通过的状态，请保留验证的文件、html标签或CNAME记录，我们会去定期检查验证记录。  建议先使用文件验证，只需要从网上下载验证的html，然后同步到gi...</div></div></div></a><a class="pagination-related" href="/2017/02/17/hello-world-on-hexo/" title="Hello world on Hexo, my new personal blog."><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hello world on Hexo, my new personal blog.</div></div><div class="info-2"><div class="info-item-1">利用 Hexo 在 Github Pages 上搭建个人博客  之前在腾讯云校园活动里购买了个一年 .cn 域名，于是用上了一阵子的腾讯云，用 wordpress 搭了个博客，可是腾讯云经常宕机需要跑到后台去重启（是的我就是那么简单粗暴😂），一年到头也没宣传也没分享没更什么文章，前几天觉得 Github 能直接给每个仓库开 Github Pages，觉得太有用了，脑子一热，又打算重新搭博客了。挑来挑去，最后买了 shong.win 十年域名，win 可以理解为微软粉嘛，这篇文章主要分享下搭博客的过程。   域名在这里根据续费查询域名商以及挑选后缀在这里找到续费域名最便宜的域名商最后选择了在西部数码 子域名在域名管理处增加 url 跳转，比如 blog.shong.win 跳转到 www.shong.win/blog 这样就实现了子域名。 邮箱有了域名就可以作邮箱， .win 域名由于不太常见，腾讯企业邮箱不支持(2020年注：目前已支持)，所幸的是网易域名邮箱支持163域名邮箱。并在域名管理处增加 MX 记录，起效后便能使用邮箱了。 Github PageGithub Page...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2017/02/17/hello-world-on-hexo/" title="Hello world on Hexo, my new personal blog."><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2017-02-18</div><div class="info-item-2">Hello world on Hexo, my new personal blog.</div></div><div class="info-2"><div class="info-item-1">利用 Hexo 在 Github Pages 上搭建个人博客  之前在腾讯云校园活动里购买了个一年 .cn 域名，于是用上了一阵子的腾讯云，用 wordpress 搭了个博客，可是腾讯云经常宕机需要跑到后台去重启（是的我就是那么简单粗暴😂），一年到头也没宣传也没分享没更什么文章，前几天觉得 Github 能直接给每个仓库开 Github Pages，觉得太有用了，脑子一热，又打算重新搭博客了。挑来挑去，最后买了 shong.win 十年域名，win 可以理解为微软粉嘛，这篇文章主要分享下搭博客的过程。   域名在这里根据续费查询域名商以及挑选后缀在这里找到续费域名最便宜的域名商最后选择了在西部数码 子域名在域名管理处增加 url 跳转，比如 blog.shong.win 跳转到 www.shong.win/blog 这样就实现了子域名。 邮箱有了域名就可以作邮箱， .win 域名由于不太常见，腾讯企业邮箱不支持(2020年注：目前已支持)，所幸的是网易域名邮箱支持163域名邮箱。并在域名管理处增加 MX 记录，起效后便能使用邮箱了。 Github PageGithub Page...</div></div></div></a><a class="pagination-related" href="/2017/02/20/hexo-advanced/" title="Hexo 进阶与优化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2017-02-20</div><div class="info-item-2">Hexo 进阶与优化</div></div><div class="info-2"><div class="info-item-1">在经过申请域名到搭建hexo，以及利用 Appveyor 实现持续集成，hexo 已经实现了基本的编辑模式，就是我 push 文章的 md 文档，然后会自动发布 hexo 生成的静态网页，只需要 git 环境。接下来我们对博客进行优化，尝试各种插件。    qiniu sync  同步资源文件到七牛，能加速一些资源。  SEO 搜索引擎优化  我们发现百度和谷歌并没有收录到此博客，于是我们去提交我们的站点 Google搜索引擎提交入口 百度搜索引擎入口  提供三种验证方式：文件验证、html标签验证、CNAME验证。 1.文件验证：您需要下载验证文件，将文件上传至您的服务器，放置于域名根目录下。 2.html标签验证：将html标签添加至网站首页html代码的标签与标签之间。 3.CNAME验证：您需要登录域名提供商或托管服务提供商的网站，添加新的DNS记录。 验证完成后，我们将会认为您是网站的拥有者。为使您的网站一直保持验证通过的状态，请保留验证的文件、html标签或CNAME记录，我们会去定期检查验证记录。  建议先使用文件验证，只需要从网上下载验证的html，然后同步到gi...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2017/02/19/hexo-ci/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2017/02/19/hexo-ci/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = 'Hexo 利用 AppVeyor 持续集成'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

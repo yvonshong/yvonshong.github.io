@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Yvon Shong - 人生应当如盛夏🔆</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="人生应当如盛夏🔆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yvon Shong">
+<meta property="og:url" content="http://www.yvonshong.com/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="人生应当如盛夏🔆">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:author" content="Yvon Shong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Yvon Shong",
+  "alternateName": [
+    "人生应当如盛夏🔆",
+    "www.yvonshong.com"
+  ],
+  "url": "http://www.yvonshong.com/"
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Yvon Shong',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/v2-ebb9c94260c5a90f3c459cc2949c3b00_r.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Yvon Shong</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">【内推】无需日语、可远程！加入日本自动驾驶独角兽候补，定义物流未来 想在日本科技圈工作，却担心日语障碍？身怀自动驾驶绝技，渴望参与从0到1的 L4 级落地？  株式会社ロボトラック RoboTruck 正在寻找志同道合的技术伙伴。我们刚刚完成 Pre-Series A 轮融资（16.5 亿日元），正处于业务爆发期。如果你希望用代码解决日本“物流危机”，这绝对是你不能错过的舞台。  🚀 关于 RoboTruck我们是一家致力于通过自动驾驶卡车的研究开发与商业化，创造物流未来的科技公司。我们的核心使命是利用 L4 级自动驾驶技术，解决日本日益严重的司机短缺和社会基础设施痛点。 🌟 为什么选择这里？ 资本青睐： 累计融资 16.5 亿日元，背靠 JIC（产业革新投资机构）系基金、SMBC 风险投资等顶级机构，资金充足。 准独角兽潜力： 处于极具爆发力的 Pre-Series A 阶段，现在加入是获取期权的最佳时机。 薪资竞争力： 提供市场上具有竞争力的 Offer（包括对比中国市场薪资）。 技术硬核： 专注于感知算法、整车线控改装到实车测试的全栈研发。 国际化团队： 团队成员背景多...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">🏡 打造 All-in-One 智能家庭实验室 (Homelab)之前一直用自己的笔记本电脑跑脚本，总是受掣于电脑关机，ip，网络等等问题，于是就会想要有一台自己的服务器，搞过一段时间GCP，还是因为需求不高放弃了服务器方案，用我之前一台闲置的零刻 Mini 主机为核心，结合家里的软路由，构建了HomeLab的体系，来实现了一些我（创造出来）的需求。  智能控制： 沿用之前给mini主机的 小米智能开关，来实现远程的开关上下电，出问题可以硬断电重启。 关键配置： BIOS 设置了 “上电自启”，确保断电恢复后无需手动干预。同时，加装一个USB底部风扇散热，来保证长期运行。  💻 系统方案与核心功能栈用 Windows 系统 作为 Homelab 的基础操作系统。虽然很多服务在 Linux 上更原生，但 Windows 提供了便利的远程可视化桌面（RDP），容器化部署的基础环境 DockerHub Desktop，以及我可以用Windows Subsystem Linux，WSL2, 则可以既要又要还要，还很方便使用 smb 构建家庭轻量 NAS。  对于一些自己开了发的浏览器...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">关于输入法其实有一连串可以讲的故事和教程，因为它不仅仅是简简单单 26 键输入工具，更是侧面映衬了这些年的变化。   常见拼音输入法从小学开始学打字开始，就是使用智能 ABC 输入法，那时候还流行金山打字，警察抓小偷，可惜我一直学不会十指键位，可能到现在还是二指禅流，后来推出了搜狗输入法，我再也不用记自己姓名在智能 ABC 输入法的第几页第几行候选字了，到后来自己购入了 NOKIA，用九键打字打得飞起，高中甚至靠手机打了大半本书《九世呓语》的内容。 现在想来，九键的好处是减少了按键，结合搜狗输入法的词库功能减少了重码，再加上那时候手机的实体键盘的按键反馈，可谓是良好的打字体验。    1 2 3     abc def   4 5 6   ghi jkl mno   7 8 9   pqrs tuv wxyz   上了大学后开始用触屏手机，按键反馈靠振动，当时输入法最花里胡哨的功能是滑动输入，可是中文的同音字词太多，滑动输入到体验远没有英文的好。其中手机输入体验最好的是谷歌的 Gboard 输入法，但由于几乎两个月固定偶发 bug，不得不弃用，目前使用的是讯飞输入法。 注音输入法...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"></a></div><div class="recent-post-info"><a class="article-title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">十年前我在高中毕业的时候出过一本书，是高中三年来和同学们一起记录的玩笑和日常，书名为《九世呓语》，取名由来是我们高一是十一班，高二后，个别班级被拆分，其后班级序号前移，我们成了九班，书名谐音——九十一语（录）。   首先献上这次做的网页：九世呓语 主页 www.yvonshong.com/911/ 是的，如今提到高中，得说是十(几)年前了，那三年间，我们一起记录，Rich 制作了电子相册，我攒下了很多照片和视频。我还记得高考出成绩的那天晚上，我下午还在忙着语录印书的事情。   暑期来校的高一新生夏令营里，还制作了海报趁机贩卖。    贩卖后净收入一千余，事后请大家一起吃了顿大餐，给参与书籍排班的同学们送了纪念礼物。 如今趁着十年之际，现发布了书籍的电子版。 以及其中包含的系列内容：  Three years 系列视频 - Bilibili 毕业去向统计 - 飞书文档 访问密码请联系 Yvon PDF 下载链接 - 《九世呓语》下载 在线阅读网页 - 《九世呓语》在线阅读  也分享一下我在其中写的 急 部分，没办法，年少时中二用序破急来命名书的章节。。。 我还翻到了我当时在夏令营上...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">论工作方式的形成，和效率工具，我言必及我大一开始使用的：  outlook 日历：做日程管理，有时间跨度和排他性的任务； todo：之前是 wunderlist，做任务管理，有 ddl 和优先级的设定； 以及我之前最重要的文档工具 OneNote；  但是在存储管理 pdf 文件上，迷糊了很多年。   有时候会追求在 pdf 上手写笔记，有时候又追求键盘输入的可搜索性。先后尝试过：  把 PDF 文件保存进 OneNote，在里面做批注。最后发现 OneNote 根本就不是做这个的，OneNote 会变得巨大打开变得巨慢，阅读体验也很差。 还原到本质，用文件夹进行管理，Surface 上做批注。缺点是文件夹的层级会十分犹豫，因为论文类型的 PDF 更适合多 tag 的描述，当然其实在足够优秀的搜索效果面前，tag 也是可以忽略的。 把 PDF 保存在 Notebility，在里面做批注。软件实现了 OneDrive 的保存，但是不跨平台，只支持 Mac + iPad 平台，Windows 用户震怒。 尝试过 Mendeley，是专门的文献管理软件，虽然文献信息可上传至云端备份，但...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/15/introduction-to-nano-pi-r2s/" title="从零开始 NanoPi R2S">从零开始 NanoPi R2S</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-15T16:00:00.000Z" title="发表于 2023-05-16 00:00:00">2023-05-16</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">半年前购置了软路由，最近才配置上，全当做个笔记。   硬件 NanoPi R2S TF 卡（8G 以上就够了， Class 10 以上标准，更好的可以上 Industrial ） Type-C 电源线（无需支持快充标准） 10W 以上充电头   刷系统刷机工具win32diskimager 固件无需忍受百度云小水管： 官方固件 Google Drive 下载链接 在 Windows 下以管理员身份运行 win32diskimager，在界面上选择你的 TF 卡盘符，选择解压后的固件文件，点击 Write 按钮烧写到 TF 卡。 刷机完成后将 TF 卡插入，接电，会自动启动系统。此时 NanoPi 正面 SYS 灯红灯闪烁。 连线电脑直连 modem-router-nanopi-pc 接线方式：原家庭路由和光猫的接线方式不变，R2S 的 WAN 口连接原家庭主路由的 LAN 口，R2S 无需设置，R2S 的 LAN 口连接电脑网口； 验证方法：电脑网卡设置成“自动获得 IP 地址”就可正常上网。 此方法可快速检测 R2S 是否存在硬件故障，用命令 ping www.baidu.co...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/11/focus-on-lidar-5/" title="聚焦激光雷达（五）——处理器">聚焦激光雷达（五）——处理器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-11T11:55:00.000Z" title="发表于 2023-05-11 19:55:00">2023-05-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。   激光脉冲驱动控制器通常发射端每个激光器需要链接一个激光器脉冲驱动控制器 LD Driver，它负责在接收到主控芯片的发光指令后，给激光器发送一个控制信号。实现激光的脉冲式发射和编码，通过配置脉冲强度和脉冲宽度，增加编码功能，增强抗干扰能力。 驱动控制器要求控制信号能越快越好，有足够陡峭的上升沿。通常在低速信号电路中，信号从 0(低电平) 变成 1(高电平) 可以看成是瞬间完成的，但在高速电路中， 从 0 跳到 1 的时间消耗就无法忽略了，上升沿指的就是这个从 0 到 1 的过程，反之下降沿就是从 1 到 0 的过程。 之所以对上升沿有较高要求，是因为激光对人眼有加热效应，受到人眼安全约束，但可以通过提高瞬时功率，提高探测距离，缩短发光...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/05/07/tutorial-for-stargazing/" title="观星指南">观星指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-05-07T05:24:00.000Z" title="发表于 2023-05-07 13:24:00">2023-05-07</time></span></div><div class="content">和朋友们去看过几次夏季银河，陆陆续续也看过几次流星雨，也翻过很多次的车，所以不才想要小结一下我自己的观星指南，方便更多对天文，对摄影感兴趣的朋友们入坑。     2019 年 9 月 于河北张家口冰山梁 这辈子第一次看的银河  地点观星者最需要确定自己要在哪里看，以及能在哪里看！这个是最重要的，因为地点决定了后续所有的因素。它决定了光污染程度，从而决定了你看到的银河/星星的效果。它决定了当地的天气，经纬度决定了当地的月出月落时间。所以观星第一步，确定你要在哪里观星！ 首先需要通过光污染地图，来查看或者确认当地的光害指数。建议选择光害三级以下的地点。  天文通 - 全球光污染地图 Light pollution map  京郊附近到张家口或者东灵山，光污染便比较低了，上海附近的话得到浙西大峡谷。   2020 年 8 月 于浙江宁波渔山列岛，光害较高，银河比较黯淡  时间确定了地点，需要查看计划前往日期的月相，因为月亮一出来，星星的光芒都会看不见了。月亮这个时候就成了很大的光污染，而唯一的办法，就是等月落后或者月出前。春秋季还需要关心银心升起落下时间，因为银心是最美最亮的！ 日出日...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/04/19/focus-on-lidar-4/" title="聚焦激光雷达（四）——光学系统">聚焦激光雷达（四）——光学系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-19T00:21:00.000Z" title="发表于 2023-04-19 08:21:00">2023-04-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">激光雷达从器件来看，最主要的构成要素是扫描器、发射器，接收器，处理器，以及一些内部的光学元件了，激光从发射器中产生，除了要通过扫描器来调整激光方向以外，还需要通过各式各样的光学元件，来调整光斑形状大小，光场的能量分布等等。   查阅了很多光学供应链公司的产品和研报，这可能是全网唯一比较全面的介绍激光雷达内部涉及的光学元件的科普文章了，欢迎点赞关注本专栏。 从激光雷达 BOM 成本拆分来看，透镜等光学组件仍是激光雷达的重要组成部分。以法雷奥 Scala 转镜激光雷达为例，目前年产量十万级规模， BOM 成本约 400 美元，其中主控板占 45%，激光发射接收组件占 33%，光学单元占 13%，外罩 8%，马达 1%。而 Livox 的双楔形棱镜式激光雷达的透镜模组占了成本的 54%。可以看到，光学元件是激光雷达成本里重要组成部分。 由于各种激光器发射的激光束并不是绝对平行的，具有光斑形状不规则，发散角度大的问题，因此还需要一套光学系统，对激光器的输出光束进行准直整形，通过改变光束的发散度、波束宽度和截面积，改善输出光束质量。 发射光学系统主要由透镜、反射器件、衍射器件等光学元器件组...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/04/01/focus-on-lidar-3/" title="聚焦激光雷达（三）——接收器">聚焦激光雷达（三）——接收器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-04-01T15:30:00.000Z" title="发表于 2023-04-01 23:30:00">2023-04-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。   可以看到接收探测器的根本原理是光电效应，目前车载激光雷达中的半导体探测器按照工作原理可以分为：  PIN-PD：是在最基础的光电二极管的基础上扩宽了势垒区，价格低廉，结构简单，响应速度快，但没有增益，灵敏度有限。 APD：在 PIN 光电二极管的基础上，加上一定的反向电压，相当于人为增加了势垒，在外界光电效应的触发下，少量光生载流子引发雪崩效应电流倍增。输出电流与入射光子数量呈线性关系，相当于一个具有增益的光电二极管，这可进一步增大光检测的灵敏度，同时较大反向电压的作用也可进一步提高其响应速度，这就是雪崩光电二极管（APD），APD 已经是光通信技术中用来接收微弱光信号的一种基本器件。 SPAD：APD 工作电压在雪崩电压以上（盖革模式），每个入射的光子都会触发雪崩效应，灵敏度极高，甚至可以探测单个光子，但由于其工作于临界状态，需要配合猝灭电路设计，只能识别有无而无法识别强度，通常采用阵列的方式，利用多个传感器感知到...</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#content-inner">7</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/essay/"><span class="card-category-list-name">essay</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/lyric/"><span class="card-category-list-name">lyric</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tech/"><span class="card-category-list-name">tech</span><span class="card-category-list-count">33</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/cdqz/" style="font-size: 1.1em; color: #999">cdqz</a> <a href="/tags/openwrt/" style="font-size: 1.1em; color: #999">openwrt</a> <a href="/tags/radar/" style="font-size: 1.1em; color: #999">radar</a> <a href="/tags/sensor/" style="font-size: 1.5em; color: #99a9bf">sensor</a> <a href="/tags/homelab/" style="font-size: 1.1em; color: #999">homelab</a> <a href="/tags/photograph/" style="font-size: 1.1em; color: #999">photograph</a> <a href="/tags/lidar/" style="font-size: 1.3em; color: #99a1ac">lidar</a> <a href="/tags/obsidian/" style="font-size: 1.1em; color: #999">obsidian</a> <a href="/tags/zotero/" style="font-size: 1.1em; color: #999">zotero</a> <a href="/tags/gps/" style="font-size: 1.1em; color: #999">gps</a> <a href="/tags/IME/" style="font-size: 1.1em; color: #999">IME</a> <a href="/tags/gnss/" style="font-size: 1.1em; color: #999">gnss</a> <a href="/tags/autopilot/" style="font-size: 1.1em; color: #999">autopilot</a> <a href="/tags/camera/" style="font-size: 1.43em; color: #99a6b9">camera</a> <a href="/tags/web/" style="font-size: 1.1em; color: #999">web</a> <a href="/tags/onedrive/" style="font-size: 1.17em; color: #999c9f">onedrive</a> <a href="/tags/hexo/" style="font-size: 1.23em; color: #999ea6">hexo</a> <a href="/tags/photography/" style="font-size: 1.37em; color: #99a4b2">photography</a> <a href="/tags/slam/" style="font-size: 1.1em; color: #999">slam</a> <a href="/tags/matlab/" style="font-size: 1.23em; color: #999ea6">matlab</a> <a href="/tags/event/" style="font-size: 1.1em; color: #999">event</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">62</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">179.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-01-08T11:41:03.446Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

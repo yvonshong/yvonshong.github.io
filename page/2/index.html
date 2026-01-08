@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Yvon Shong - 人生应当如盛夏🔆</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="人生应当如盛夏🔆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yvon Shong">
+<meta property="og:url" content="http://www.yvonshong.com/page/2/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="人生应当如盛夏🔆">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:author" content="Yvon Shong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Yvon Shong',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/v2-ebb9c94260c5a90f3c459cc2949c3b00_r.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Yvon Shong</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/28/focus-on-lidar-2/" title="聚焦激光雷达（二）——激光器">聚焦激光雷达（二）——激光器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-28T13:00:00.000Z" title="发表于 2023-03-28 21:00:00">2023-03-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。    激光器原理所有激光器都包含以下三个组件：1、泵浦源；2、受激介质；3、谐振腔。 受激介质位于激光器内部，取决于不同的激光器结构设计，受激介质是一种包含可将激发光的能量转换为激光的原子的物质，可能是气体混合物 、固体晶体棒或玻璃纤维。激光介质在获得泵浦源从外部获得的能量供给时，受激产生能量辐射。 被激发的介质位于谐振腔两端两个镜子的中间位置，其中一个镜子是半透半反镜，受激介质产生的能量辐射在谐振腔内放大，与此同时，只有特定的辐射光能够穿过单向透镜，形成一束辐射光，这一辐射光束即是激光。   激光的原理   泵浦源泵浦源的作用是对增益介质进行激励使其辐射发光。具体而言，泵浦源提供能量激励原子跃迁到高能级，以实现粒子数反转（使高能态粒子数多于低能态粒子数...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/23/rotation-transformation/" title="欧拉角、四元数、旋转矩阵、旋转向量的相互转换（C++、python）">欧拉角、四元数、旋转矩阵、旋转向量的相互转换（C++、python）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-23T12:00:00.000Z" title="发表于 2023-03-23 20:00:00">2023-03-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">记录 C++(Eigen), Python(scipy)的旋转表达式之间的转换。  C++ Eigen欧拉角转其他123456789101112131415// 初始化欧拉角Eigen::Vector3d&nbsp;eulerAngle(roll,pitch,yaw);// 欧拉角转旋转向量Eigen::AngleAxisd rollAngle(roll, Eigen::Vector3d::UnitX()); Eigen::AngleAxisd pitchAngle(pitch, Eigen::Vector3d::UnitY()); Eigen::AngleAxisd yawAngle(yaw, Eigen::Vector3d::UnitZ()); Eigen::AngleAxisd&nbsp;rotation_vector = yawAngle * pitchAngle * rollAngle;// 欧拉角转四元数Eigen::Quaterniond q = yawAngle * pitchAngle * rollAngle;// 欧拉角转旋转矩阵Eigen::Matrix3d...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/03/12/focus-on-lidar-1/" title="聚焦激光雷达（一）——扫描器">聚焦激光雷达（一）——扫描器</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-12T04:00:00.000Z" title="发表于 2023-03-12 12:00:00">2023-03-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">之前撰写过相机硬件的系列文章，从滤镜、镜头、快门、 CMOS 到 ISP 芯片，几年前写过一篇激光雷达入门介绍 Yvon Shong：走进自动驾驶传感器（一）——激光雷达，当时只是初步提及了激光雷达的一些基本性质。 而这几年激光雷达作为逐渐成熟的自动驾驶/高阶辅助驾驶传感器，价格逐步下降，产品也层出不穷，笔者于去年入职了中国激光雷达第一股，禾赛科技（内推禾赛科技自动驾驶、光电芯片等岗位），伴随着制造商和供应链逐渐成熟的进程，激光雷达有了更繁复的分类和功能，所以也想对激光雷达进行一次系统性的大拆解，撰写激光雷达系列文章。   本系列文章将从扫描器，发射器，探测器到处理模块，从硬件到软件算法等模块，来介绍激光雷达。欢迎关注本专栏，您的帮助从点赞本文章开始 ヽ(ﾟ▽ﾟ)ノ。  之前的文章 ， 在之前的文章中，我们粗略的提及了激光雷达扫描结构的不同，激光雷达的扫描结构主要分为： 机械式、混合固态（MEMS振镜式、转镜式、棱镜式）、纯固态（FLASH、OPA）。本章节将详细介绍激光雷达细分的扫描结构和原理，以及一些新型的技术。  机械式机械式激光雷达是指其发射系统和接收系统一起随着转轴进行...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2022/01/28/get-started-with-obsidian/" title="Get started with Obsidian">Get started with Obsidian</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-01-28T04:00:00.000Z" title="发表于 2022-01-28 12:00:00">2022-01-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">Obsidian 是根据卢曼卡片盒方法论构建的次世代笔记系统，基于本地 markdown 编辑和双向链接特殊语法。具体使用方式可以参考《卡片盒阅读法》和 Notion。   官网 obsidian.md ，目前支持 Windows, macOS, Linux, iOS, iPadOS, Android.同步支持 Obsidian 应用内付费同步， 苹果生态支持 iCloud 同步，可自建其他云盘同步和 Git 同步。 我个人的使用方案是： Windows, Linux(Ubuntu 20.04), macOS, 都使用 Onedrive 同步； 手机上不使用。 安装官网 obsidian.md 启动 Launch可以直接在 https://obsidian.md/download 下载 deb。 Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，而不是点击图标，所以可以自制 launch 文件。  icon: 首先下载好 Obsidian 的图标;  新建 Obsidian.desktop 文件:  123456[Desktop Entry]N...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2021/12/31/the-moon-back-then/" title="当时的月亮"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/qKYvjPJsGXumrDL.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="当时的月亮"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/12/31/the-moon-back-then/" title="当时的月亮">当时的月亮</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-12-31T22:00:00.000Z" title="发表于 2022-01-01 06:00:00">2022-01-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">「敬通雅好辞说，而坎壈盛世，显志自序，亦蚌病成珠矣。」     又是一年的结束，如果说这一年最有印象的，便不得不提随心飞，从 2020 年 6 月底飞到 2021 年 6 月底的东航周末随心飞，借此去拜访过数个古都的博物馆，也曾数谒两广大快朵颐，看了北国雪下的碧瓦飞檐，看了南国海上的彩色浮标。还有春寒料峭的生日时，在中俄边境荒芜的草原公路上，独自开车狂飙三天。关于随心飞的故事，希望后续有机会能剪出一个合辑的视频。   2021.04.11 呼伦贝尔 | 额尔古纳独自前往黑山头 了无人烟的黄昏之时  一年的随心飞结束后，我把以前自 2013 年高中毕业旅行时起，攒过的机票，船票，火车票，装裱到了画框里。   2021.10.23 上海 | 画框装裱着过往的机票船票火车票  回看往昔的时候，我时常会想，那些票据，那些影像，成为了我生活真实感的连接附着物，记录着我走过了很长的路，途经了很多的不知道是否名为客居的城市，才终于真真切切地来到了你面前。那一天的夕阳，在我挂满拍立得的墙上渲染出金黄，在徽章墙上熠熠生辉。   2021.10.23 上海 | 去博物馆、展馆、活动等各种纪念徽章  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/21/keyboard-photography-10/" title="键盘摄影（十）——滤镜的种类和作用">键盘摄影（十）——滤镜的种类和作用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-21T12:44:00.000Z" title="发表于 2021-09-21 20:44:00">2021-09-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">有一次忽然意识到，如果想要一个长曝光，浅景深，低 iso 的图，需要物理减光，所以滤镜也算是相机曝光要素中的一部分，为此也整理了一下现在的滤镜的种类，和各自的原理作用。以下内容整理自《关于滤镜-这篇就够了 上/ 下 》。   UV 镜 Ultra Violet通常为无色透明的，不过有些因为加了增透膜的关系，在某些角度下观看会呈现紫色或紫红色。UV 镜滤光片的主要功能是用于吸收波长在 400nm 以下的紫外线，而对其他可见/不可见光线均无过滤作用。它之所以能够过滤紫外线是因为镜片中含有铅。 在胶片年代，由于胶片的化学特性，其对阳光中的紫外线尤其敏感，在紫外线强的地方，使用胶片拍摄出来的照片普遍偏蓝、泛白。严重影响了照片品质。在镜头前加一块 UV 镜，可以有效过滤掉紫外线提高照片的清晰度。 到了数码时代，由于数码机的核心显像部件不再像胶片那样对紫外线过于敏感，因此已无需再对紫外线进行过滤了，所以主要起保护镜片之用。 偏光镜 Polarizers偏光镜对拍摄风景照片有着十分重要的作用。它的主要用途是消除不同表面的反光，令蓝天更蓝、树木更绿；此外，它也可以减少水面及橱窗的倒影。 要理解偏...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/09/21/approach-autonomous-driving-sensor-gnss/" title="走进自动驾驶传感器（三）——卫星导航系统">走进自动驾驶传感器（三）——卫星导航系统</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-09-21T07:36:00.000Z" title="发表于 2021-09-21 15:36:00">2021-09-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）    无人驾驶想要获得全局定位，一定是相对于某一固定坐标系的，而地球上范围最广的坐标系便是地球坐标系，想要获得这么宏达层面上的观测，便必须依靠 GPS 卫星的数据。 如果我们事先知道卫星每一时刻相对于地球的位置（地面监测站监测后告诉卫星，卫星一直广播自身星历），然后观测自身距离多颗卫星的位置（用户接收机接收到多颗卫星的信号，得知相对距离），便能知道自身在地球坐标系的位置。 打个简单的比方，在一条单向高速公路上，前车一直在广播它距离起点的位置（这个是路边监控告诉它的），而我们能够测得距离它的位置，所以我们也就知道了自身距离起点的位置。GPS 中是需要观测到至少四颗卫星，来解算三维坐标和用户设备时间和卫星时间的差异。 这之中涉及到了坐标系和时间标准的统一，所以我们可以用 GNSS 来进行给自身定位，给时间高...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2021/02/21/link-to-world/" title="与世界连接"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="与世界连接"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/02/21/link-to-world/" title="与世界连接">与世界连接</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-02-21T10:00:00.000Z" title="发表于 2021-02-21 18:00:00">2021-02-21</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">时间在记忆中是非线性流逝的，你的少年光景，被压缩成弹指须臾，你正在经历的故事，结束之后空留一地虚无。   这或许是时间，也或许是大脑造成的影响，举个例子，是我们对近几个月的记忆是最清晰的，越往前越是模糊，像是几年前的故事会慢慢只记得零星片段；   其实是因为没有新鲜体验，一天重复了一年，大脑为了解决存储和检索问题就压缩删除了重复文件。如果想要对抗时间带来的此般副作用：  去拥有更多不一样的体验，跳出舒适圈，去做没有做过的事情。 整理构建自己的检索系统，包括但不限定于定期反思记录，整理照片文件。  可这也只能让记忆变得清晰，但仍没有赋予意义。这其间安置我的怅然若失，给人生历程留下记忆锚点的，是仪式感。会习惯性收集拍立得，机票火车票，纪念品徽章，然后将它们挂在卧室墙上，成为了我的意义容器，使得曾经的某一刻变得不一样。 仪式感是什么呢？《小王子》里那只等爱的狐狸会说:  比如，你下午四点来，那么从三点起，我就开始感到幸福。时间越临近，我就越感到幸福。我就发现了幸福的价值 「是设定一个时刻，然后开始期待那个时刻的过程。它使某一天与其他日子不同，使某一时刻与其他时刻不同。」  「仪式感」和...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2021/01/24/approach-autonomous-driving-sensor-radar/" title="走进自动驾驶传感器（二）——毫米波雷达">走进自动驾驶传感器（二）——毫米波雷达</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-01-24T05:59:00.000Z" title="发表于 2021-01-24 13:59:00">2021-01-24</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">在上一篇文章中 Yvon Shong：走进自动驾驶传感器（一）——激光雷达 ，我们介绍了激光雷达这款传感器的数据和特性，接下来我们要介绍的是目前市面上大部分高级驾驶辅助系统（Advanced Driver Assistance Systems）都搭载了的毫米波雷达。 由于最后本文篇幅长达两万字，并且在整理毫米波雷达传感器资料的时候，综合传感器硬件手册，网上相关资料，官网设备资料，信号处理教材，仿佛又重新学了一遍信号处理，所以将关于毫米波雷达性能指标部分复杂的公式推导放置在了文章最后，并且保证了符号定义的连贯性，保证大家可以从信号处理的基础回忆起，看懂每一个公式。   值得注意的是，本文中涉及到的 FMCW 毫米波雷达，其原理和 FMCW 激光雷达 完全相同，若您对 FMCW 激光雷达感兴趣，可阅读文章中公式推导部分。 欢迎大家点赞关注收藏（点赞求求了 Orz，上一篇收藏数远大于点赞），如需转载请私信联系。欢迎关注本专栏！以下为大纲，方便后续查阅：  毫米波雷达介绍 分类 频段 硬件结构 结构 参数指标 数据 特点 应用 市场   信号处理基础知识 FMCW 雷达原理 距离估算 速...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/10/18/computational-photography-0/" title="计算摄影——“看得见”的未来">计算摄影——“看得见”的未来</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-18T17:52:00.000Z" title="发表于 2020-10-19 01:52:00">2020-10-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">之前的专栏「自律走行」键盘摄影系列文章中，介绍了作为一名新手，使用相机拍一张照片时需要了解的一些摄影基础知识，当然还要更多关于构图，相机预设的模式等等实际操作时遇到的问题，和拍摄时的经验等等完全没有提及，所以我称之为「键盘摄影」（笑 但作为一名搞自动驾驶的算法工程师，怎能止步于在使用相机传感器时知道摄影的基本概念就可以了呢！我当然会疑惑相机是如何对焦的？它又是如何自动曝光的？它的自动白平衡又是怎么做的？当这些关于相机算法的一系列问题从我的脑海中冒出时，我发现，我已经站在了计算摄影的大门口。   戳&gt;&gt;「键盘摄影」系列文章，后续想到了什么会再更新！  键盘摄影（一）——相机成像基本元件 键盘摄影（二）——曝光三要素 键盘摄影（三）——等效焦距和等效光圈 键盘摄影（四）——相机成像元件：胶片与彩色暗房 键盘摄影（五）——相机成像元件：CMOS/CCD 键盘摄影（六）——相机成像模型 键盘摄影（七）——深入理解图像信号处理器 ISP 键盘摄影（八）——相机结构和卡口 键盘摄影（九）——光学像差 键盘摄影（十）——滤镜的种类和作用  苹果 iPhone 11 发布会上，苹果高...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#content-inner">7</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/essay/"><span class="card-category-list-name">essay</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/lyric/"><span class="card-category-list-name">lyric</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tech/"><span class="card-category-list-name">tech</span><span class="card-category-list-count">33</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/cdqz/" style="font-size: 1.1em; color: #999">cdqz</a> <a href="/tags/openwrt/" style="font-size: 1.1em; color: #999">openwrt</a> <a href="/tags/radar/" style="font-size: 1.1em; color: #999">radar</a> <a href="/tags/sensor/" style="font-size: 1.5em; color: #99a9bf">sensor</a> <a href="/tags/homelab/" style="font-size: 1.1em; color: #999">homelab</a> <a href="/tags/photograph/" style="font-size: 1.1em; color: #999">photograph</a> <a href="/tags/lidar/" style="font-size: 1.3em; color: #99a1ac">lidar</a> <a href="/tags/obsidian/" style="font-size: 1.1em; color: #999">obsidian</a> <a href="/tags/zotero/" style="font-size: 1.1em; color: #999">zotero</a> <a href="/tags/gps/" style="font-size: 1.1em; color: #999">gps</a> <a href="/tags/IME/" style="font-size: 1.1em; color: #999">IME</a> <a href="/tags/gnss/" style="font-size: 1.1em; color: #999">gnss</a> <a href="/tags/autopilot/" style="font-size: 1.1em; color: #999">autopilot</a> <a href="/tags/camera/" style="font-size: 1.43em; color: #99a6b9">camera</a> <a href="/tags/web/" style="font-size: 1.1em; color: #999">web</a> <a href="/tags/onedrive/" style="font-size: 1.17em; color: #999c9f">onedrive</a> <a href="/tags/hexo/" style="font-size: 1.23em; color: #999ea6">hexo</a> <a href="/tags/photography/" style="font-size: 1.37em; color: #99a4b2">photography</a> <a href="/tags/slam/" style="font-size: 1.1em; color: #999">slam</a> <a href="/tags/matlab/" style="font-size: 1.23em; color: #999ea6">matlab</a> <a href="/tags/event/" style="font-size: 1.1em; color: #999">event</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">62</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">179.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-01-08T11:41:03.446Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

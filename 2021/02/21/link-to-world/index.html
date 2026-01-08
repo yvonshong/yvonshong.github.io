@@ -1,0 +1,413 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>与世界连接 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="时间在记忆中是非线性流逝的，你的少年光景，被压缩成弹指须臾，你正在经历的故事，结束之后空留一地虚无。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="与世界连接">
+<meta property="og:url" content="http://www.yvonshong.com/2021/02/21/link-to-world/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="时间在记忆中是非线性流逝的，你的少年光景，被压缩成弹指须臾，你正在经历的故事，结束之后空留一地虚无。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png">
+<meta property="article:published_time" content="2021-02-21T10:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.520Z">
+<meta property="article:author" content="Yvon Shong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "与世界连接",
+  "url": "http://www.yvonshong.com/2021/02/21/link-to-world/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png",
+  "datePublished": "2021-02-21T10:00:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.520Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2021/02/21/link-to-world/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '与世界连接',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">与世界连接</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">与世界连接</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-21T10:00:00.000Z" title="发表于 2021-02-21 18:00:00">2021-02-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.520Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/essay/">essay</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>16分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2021/02/21/link-to-world/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>时间在记忆中是非线性流逝的，你的少年光景，被压缩成弹指须臾，你正在经历的故事，结束之后空留一地虚无。</p>
+<span id="more"></span>
+
+<p>这或许是时间，也或许是大脑造成的影响，举个例子，是我们对近几个月的记忆是最清晰的，越往前越是模糊，像是几年前的故事会慢慢只记得零星片段；</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=1806127860&amp;auto=1&amp;height=66"></iframe>
+
+<p>其实是因为没有新鲜体验，一天重复了一年，大脑为了解决存储和检索问题就压缩删除了重复文件。如果想要对抗时间带来的此般副作用：</p>
+<ol>
+<li>去拥有更多不一样的体验，跳出舒适圈，去做没有做过的事情。</li>
+<li>整理构建自己的检索系统，包括但不限定于定期反思记录，整理照片文件。</li>
+</ol>
+<p>可这也只能让记忆变得清晰，但仍没有赋予意义。这其间安置我的怅然若失，给人生历程留下记忆锚点的，是仪式感。会习惯性收集拍立得，机票火车票，纪念品徽章，然后将它们挂在卧室墙上，成为了我的意义容器，使得曾经的某一刻变得不一样。</p>
+<p>仪式感是什么呢？《小王子》里那只等爱的狐狸会说:</p>
+<blockquote>
+<p>比如，你下午四点来，那么从三点起，我就开始感到幸福。时间越临近，我就越感到幸福。我就发现了幸福的价值</p>
+<p>「是设定一个时刻，然后开始期待那个时刻的过程。它使某一天与其他日子不同，使某一时刻与其他时刻不同。」</p>
+</blockquote>
+<p>「<strong>仪式感</strong>」和「<strong>年度总结</strong>」是我这几年感受到的，最有效的，抵抗时间流逝的武器，它们帮我重新构建了光阴在脑海里的数据结构，把带有艾宾浩斯遗忘曲线性质的非线性的记忆，拉直到了和里程碑一样的均匀，时间在我的年度总结里均匀地流逝，线性化成了每年一篇总结，线性化了我的双月目标，线性化成了每一次期待那个时刻的过程记录，线性化成了我每年整理我的照片，然后清空手机从头开始，整个记忆在脑海里有了按年或者是按仪式来索引的主键，毕竟，数据结构教会我们，树是远比遍历来得有序高效。</p>
+<p>而计划与总结是从高中就开始养成的习惯，只是花了一些时间来探索将其应用到工作后的日子里。以往是会制定年度计划，然后年终再回看各个项目的完成情况，可是后来发现，一年的时间仍然还是太漫长了，比如 2020 年，就充满了无数的变数。所幸的是公司内一直在推双月 OKR, objective key results, 两个月制定一次接下来两个月的计划，并区分优先级重要性和产出形式，双月结束后对结果产出进行 review。应用在生活的时候，我发现 review 时不仅要对完成度进行评估，也要超脱这件事情，从更形而上学的层面进行理论的分析。以前一直在犯错误，总结时会堆砌太多故事情节型的回忆，可是这只能丰富我讲故事的人生素材，还需要多做因果推理型的反思，跳出当事人的角度，以元认知的方法，对自己当时的感知、记忆、思维等各种认知活动本身，进行再感知、再记忆、再思维。简单的来说，是思考我当时为什么会有这样的情绪，为什么会做出这样的决定。</p>
+<p>我们经历的事情丰富了我们的故事素材，但也还要努力学会如何去讲故事，把握讲故事的节奏。我发现自己缺乏能够张弛有度跌宕起伏的讲述故事的能力，做研究写报告如是，剪 vlog 亦如是。所以才会对 Tim 的 Rhythm 如此有共鸣，HKRR，H，happiness，快乐，能给人带来快乐的视频会有天然的传播性。K，knowledge，知识，有足够的知识才能让视频变得有价值，给人留下印象。R，resonance，共鸣，打动人心，优秀作品普遍具有的特质，和观众产生共鸣，才能传达情感。R，Rhythm，节奏，万物都有它的节奏，当你感受到它的时候，你能将一切，都连接到一起。</p>
+<p>接下来请听一听，我这一年里的故事。</p>
+<hr>
+<p>2020 年，是我人生轨迹变化的一年，自己实现了近年来最大的阶段性目标，实现了毕业时的愿望，我终于来到了自己喜欢的城市，在看得见城市地标的地方工作生活。也曾去过很多地方，无论是曾经在日本独自去过的旅行还是在国内玩，如今每次回上海从舷窗看下这中国最大的都市圈，有了更多关于生活在喜欢的城市的感受。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/cCTi6k5DS1lRfUj.png"></p>
+<blockquote>
+<p><em>2020.09.16 上海 | 不同时分的切片</em></p>
+</blockquote>
+<p>关于为什么想来上海，其实是一个很漫长的故事，2013 年第一次来上海，从此这座城市给我留下了更多关于人的回忆。</p>
+<blockquote>
+<p>今年暑假的时候去上海找同学玩，夜也要深了的时候，我搭着伙伴逛校园，我在前面像是在独白一样讲我的一些心事。</p>
+<p>“我觉得上海是中国最好的城市诶，这么多年了你喜欢它么？”</p>
+<p>“我觉得我挺喜欢南京的。”</p>
+<p>“可是我前一段时间读一本散文集啊，卡尔维诺的《看不见的城市》，他说，其实城市和城市都是相似的，每个城市都会有它的地标，公园，学校等等等等。就像我喜欢成都，很多原因是因为我在那个城市发生了很多的故事遇见了很多的人。所以大概我喜欢南京也是因为，我爱那些在这座城市遇到的人吧。”</p>
+<p>——2016.09.19 《<a href="https://www.yvonshong.com/2016/09/19/start-on-a-journey-to-japan/">那么多的人，你要去哪里</a>》</p>
+</blockquote>
+<p>2017 年的时候去了两次东京，对城市有了新的感受。</p>
+<blockquote>
+<p>我还是想要在大城市生活啊，既然城市都是一样的，那为什么不去一个更好的更大的城市呢？</p>
+<p>——2018.06.17 《<a href="https://www.yvonshong.com/2018/06/17/world-is-tender/">充实人生的常态是成长的阵痛</a> 》</p>
+</blockquote>
+<p>那时候的我在想，我以后会生活在哪一个城市呢，自己的房间有一面墙不仅要贴满拍立得，也要贴满收到的明信片。会继续练习做饭，嗯已经开始期待起来了呢，我一定会成为一个对待生活温柔的人吧。</p>
+<p>还好算是去过一些城市，它们从方方面面刻画出了我理想的城市，最后在临近毕业必须得做选择的时候，算是了然，上海是我心中综合意义上最好的城市，包括政治，经济，文化，气候等等因素。且不说它的经济中心，无数的展子，更不用说熟悉的南方的气候，还常能看见蓝天。单是走在干净的街道上，便足以令我心生愉悦。</p>
+<p>说起来这一年能来上海，并搞定了落户，也是托了很多人的福，两年前和伙伴去若松的 JR 上，当时我拿了 TuSimple 的 offer，他找到了 Horizon Robot 的工作，两个公司都在北京，但听说他司在上海安亭注册新公司了，我忽然灵机一动，说是不是可以把合同和社保都挂在上海，人先在北京上班，这样就能有上海留学生落户资格了？于是就这样操作了，交了远超半年的社保，一直没有机会常驻。而今年疫情期间，老板觉得远程工作，线上会议同步，其实影响也不大，终于允许了派我过来。得到应允后的第二周我便动身，在 25 岁生日的第二天，来到了上海。然后三个月内搞定了落户拿到了新身份证。</p>
+<p>算上这一次搬家，大概是第十一次来上海了，朋友送我的生日礼物是个烤箱，比我还先到我的住处，第一次抱着常驻的心理，更或者说会努力想在此定居？开始了在这里真正意义上的生活。卧室的窗户可以远远的看到陆家嘴三件套，配合远处复旦的一排排树林，总有一种当年路过新宿御苑的感觉。 ​​​​</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/d2119969.jpg"></p>
+<blockquote>
+<p><em>东京新宿御苑</em></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2vwh7VtPLJrnCHW.png"></p>
+<blockquote>
+<p><em>2020.12.30 上海 | 阳光打在一墙的拍立得上 我做到了关于生活的设想</em></p>
+</blockquote>
+<p>可其实我也说过，从一开始，城市是关于和人的回忆的现代载体，结果是上海太容易让人难过了，好几年在这里的见面都充满了太多阶段性告别的意味 ​​​。人都是会有去留的，为什么会留下那么多难过的回忆，如今却只剩下我独自面对了呢。</p>
+<hr>
+<p>由于在上海 Office 上班，经常会需要回北京和同事进行一些进展的同步。某一次回京，碰巧认识几年的网友们组织线下聚会，其中有多年未曾见过面的社群组织者，也有一起玩过好几次的伙伴。伙伴还在清华读研，次年才毕业，和我聊起时说，很少看见毕业工作那么久后还过得很开心的人。当时的我不以为然，我觉得我一直在扮演着情绪稳定的成年人，虽然偶尔会跳出日常，但其实是那种，每次有人跟我吐槽身边的糟心狗血的事情时，我心里也会有“我已经很久没有此般波澜起伏”的感慨。过后我却开始在反思，为什么会是这样，是的，我终于有了从方法论上的领悟和进步，从元认知的角度分析自己。</p>
+<p>为什么会一直维持情绪稳定，上一次情绪崩溃又是多久呢？</p>
+<p>可是当这样进行反思的时候，自己也难免不会陷入到了负面的情绪里面，会追忆起上一次的失望与挫败等等故事细节，凝视深渊的时候深渊也在凝视着你。可见情绪稳定也并不是必然的，只是大部分事情并没有产生刺激。</p>
+<p>而我为什么会想去认知自我，是因为当年经历过这样的痛苦，独自与自我进行博弈，然后迷失在了过程中。所以能与一些人感同身受，并且事后反思我有发现克服的正确方法，见过黑暗也才能不害怕黑暗，所以才能对负面情绪免疫；而当我看到朋友有类似遭遇的时候，我的内心想法是想要帮助他们。因为不仅要学会如何避开情绪的陷阱，也要学会如何从情绪的陷阱里面爬出来。</p>
+<p>25 岁生日，正是前往上海的前一天，在北京生活的最后一天，我独自去王小波墓前扫墓，朋友问我生日约了谁玩呢，我很郑重其事的回答说：「约了我自己」。也正是因为我能直面当时的我，终于学会了接纳自己，接纳包括自己在内的很多事物的不完美，接纳当时内心受尽挫折的自己，才能和当下的自己愉快地相处，也才会一直秉承生活不仅是需要有工作学习朋友家人，也需要有与自我相处时间的信念。并在这个过程中，持续地向内寻求力量，而不靠外界的评价来建立对自我的肯定，或是从中获得满足。其间当然也要能够修正自我的认知，比如不是为了吸引人而去变得更好，而是觉得变成那样好像很不错，才能够在心中指引方向，然后不撞南墙不回头，为此骄傲，为此我才是我。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png"></p>
+<blockquote>
+<p><em>2020.04.11 北京 | 王小波墓前</em></p>
+</blockquote>
+<p>年末的时候，我看见之前实习时的老板分享他的感悟，人生的三个基本功，爱，韧，纳。初级阶段时是</p>
+<ol>
+<li>真诚的「爱」自己的家人、朋友和组织</li>
+<li>靠毅力「对抗」挫折</li>
+<li>接纳包括自己在内的很多事物的不完美</li>
+</ol>
+<p>终级阶段是</p>
+<ol>
+<li>领悟人类共同体</li>
+<li>挫折是进化的必经之路，欣喜而好奇的看待每一次挫折</li>
+<li>接纳死亡</li>
+</ol>
+<p>我觉得从中二时期的我，已经基本完成了对自我的建树，虽然有很多问题仍然会困扰我很久，但我今年更清楚明了了，人生的下一个阶段是与世界产生连接，认知事物的运作逻辑，重视人与人之间的关系。</p>
+<p>也会经常自我探索，我喜欢什么样的人，想要和什么样的人建立怎样的连接。之前朋友说我要求太高，总是追求心动的 moment，现在想来我觉得应该仍是曲解了自己。</p>
+<p>北卡罗来纳大学教堂山分校的 Barbara Fredrickson，在十几年的时间里持续研究“爱”这种感情和身体关系之间的关系。在这个过程中，她偶然发现在我们感受到“爱”这种情感的时候，我们会有一些神经和荷尔蒙的变化，而这些变化是短暂的。因此，她对“爱”这种感情提出了自己的研究成果：所谓“爱着一个人”的感受，并不是持续不断被我们体会着的。持续不断的爱是不存在的，只存在一瞬间一瞬间的爱。&nbsp; 这位心理学家把爱定义为一个个“发生了积极共鸣的微小瞬间”（micro-moment of positivity resonance）。在这些非常微小、转瞬即逝的时刻，两个人之间发生了美好的、令人产生正面感受的共振、回音，是在那些时刻里，我们把自己的感受称为“爱”。</p>
+<p>moment 是神启，是点亮花火的瞬间，可是瞬间是并不能永恒的。需要的是彼此共同进步，维持或者继续创造吸引对方的品质，包括但不限定于过去曾经经历过的事情拥有了足够丰富的模型，对待事物有自己的看法，对未来有跳出舒适圈的勇气，敢于去冒险。有了持续的吸引，才能去持续创造那些瞬间，拥有共同的记忆。</p>
+<blockquote>
+<p>这也就意味着，即便我们在说“我爱你”的时候，我们认为这是一种“持续的状态”，但事实上，我们体会到这种情感的方式仍然只能是通过一个一个的瞬间。</p>
+<p>即便是最美好的一段关系，我们也不可能无时无刻体会到“爱”的存在。爱的本质，可能就是不连续的、断裂的、前后不一致的。</p>
+<p>——《<a href="%E2%80%8B%E2%80%8B%E2%80%8B%E2%80%8Bhttps://mp.weixin.qq.com/s/hk29maMyo_KhvWq-kE16Tw">持续不断的爱是不存在的，爱是一个个不连续的微小瞬间。| KY 研究：持续相爱的秘密</a>》</p>
+</blockquote>
+<p>可是这一年在和朋友的关系上感慨良多，或许是有与好朋友渐行渐远的草蛇灰线，无论因果，会开始有大家目的不趋同而产生的拉扯感，是一种节奏上的不一致，这种节奏不是指学习就业成家等人生阶段上的节奏，可能会是再具化到拟定目标完成目标的节奏，设定时限的长短和行动实现上的张驰，这一点我想得还不是很清楚？但我认为好朋友间的渐行渐远只是彼此之间的舒适距离在变大而已，但重要的是，我们需要达到舒适距离的共识，而不是放任自流，觉得一切随缘。一段良好的关系并不是说彼此频率一直一致，而是愿意去阐释，共同面对分歧达成共识。毕竟，任何关系都是需要维护的嘛。如果不认真对待一个朋友觉得随意可以失去，那么你就会失去所有朋友。</p>
+<p>工作上开始学会界定问题，审视流程。在毕业入职两周年的时候，我反思这两年，工作上很多东西并不是说一定要按照做题一样标准解法去做的，工作更结果导向，我工作有一段时间一直被捶还有点原因是我一直就毫无岔路的想死胡同走到底。而人生还有很多问题是没有解的。从认知到我的方法有问题，再上一层，是明白事物方法论的重要性，不管是学习新东西，还是做研究做项目，掌握方法论加以练习，都能解决很多事情。</p>
+<p>毕业之后的人生和在学校时的生活完全不同的点在于，学生时代，是靠累积时间和经验来获得升级，就算不付出太多，也能从大一升到大二；毕业之后，人生是靠无数挑战组织而成的，是面对无数闯关打怪，同时开多个副本，比如找工作、落户、结婚、买房、装修、买车等等等，并且有些只有打过了这一关你才能去往下一关；而当我意识到我现在就是在一关面前卡了很久，而时间的累积并不能帮我解决这个问题，那时，我终于毕业了。</p>
+<p>开始明白人生的阶段性，开始意识到生活是由无数挑战支撑起来的，开始意识到树立短周期目标和 review 的重要性，开始明白方法论。开始区分相关性和因果性，也开始区分手段和目的，比如说我们在不同阶段面临的不同挑战便是手段而不是目的，我们并不是为了去完成关卡达成挑战而活的。就像皮克斯的电影《心灵奇旅》，twenty-two 坐在路边台阶，仿佛升格般看着生活日常时，我太感同身受了，我就是为了去拥有那些无数瞬间，去进入我管它叫做 inner peace 的状态。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/mvXB9SGaQ1IHoWP.png"></p>
+<blockquote>
+<p><em>2020.8.30 西藏林芝 | 南迦巴瓦峰前坐了六个小时</em></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/oAUh3d4ROBQLq6D.png"></p>
+<blockquote>
+<p><em>2020.8.15 浙江宁波 | 渔山岛民宿，狭长的走廊，窗外是一幅大海</em></p>
+</blockquote>
+<p>那些，就是我的 moments 。</p>
+<p>虽然上一个阶段的我做得还不够好，可是我终于觉得我毕业了，不会再局限于学生思维，不会再有靠年龄增长，便能自动升入高年级的幻想。</p>
+<p>在无数次旅行中也开始沉淀我看待世界的方式，比如《<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.bilibili.com/video/BV1WT4y1N7Y8">VLOG#14 北欧 | 彩云易散琉璃脆</a> 》中我明白了物哀，幽玄和诧寂。比如八月份英仙座流星雨的时候，去渔山岛看银河的旅程，我却是感悟到了和「时令」不太一样的东西。以前我写过一篇文章，讲自己独行，或者约会，或者组织集体活动时我会玩什么，《<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/59767231">当我们约会时我们会玩什么</a>》。当时我的核心观点是「时令限定」，而这次，讲一件具体的事情的话，当时我们躺在草坪里看银河，等待流星的划过，朋友说怎么能多看到几颗星星，我说，不要玩手机就行了。</p>
+<p>宇宙从不屈服于任何意志，你只能遵循它的节奏，流星雨时你只能躺在草地上，听着音响放着 bgm，对着天空聊天就行了。万事万物都有它的频率，或者说是节奏，所以你会在一年里依次看过春夏秋冬，我们需要做的，是知晓它们的节奏，然后去适应，踩准它的频率，才能在旅途上获得与万物的共鸣。</p>
+<p>能够了解自己的内心，能够与他人产生连接，能够对世间万事万物的运作规律感到好奇；但是人世间并不是只有自然科学，也有人与人之间的复杂连接产生的人文科学，比如之前一直喜欢看《观察者网》的王骁，他直言方法论，“看国际政治，要看体系怎么运作，基本权力结构是什么，主导意识是什么，有哪些利益集团，各个集团动机是什么”。比如又怎样才能像沈逸老师一样用长难句清晰的描述出人与社会之间的冲突矛盾，可能是我接下来五年十年想要去解决的问题。<br>解决了和自我的相处的问题，需要去解决和人连接的问题。自己能和世界产生连接，和意识到自己能产生连接，是完全不同的，所以此间的方法论与归因才会如此困惑我。要如何才能发现它们的节奏，与世界共鸣，这就是我想要的连接。</p>
+<p>2021 年，我知道我选择了一条 hard 模式的道路，可我是否依然会甘之如饴地不撞南墙不回头，我不知道，但我会为此坚持我的选择，并在这个过程中享受属于我的那些伟大时分。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2021/02/21/link-to-world/">http://www.yvonshong.com/2021/02/21/link-to-world/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2021/09/21/approach-autonomous-driving-sensor-gnss/" title="走进自动驾驶传感器（三）——卫星导航系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">走进自动驾驶传感器（三）——卫星导航系统</div></div><div class="info-2"><div class="info-item-1">之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）    无人驾驶想要获得全局定位，一定是相对于某一固定坐标系的，而地球上范围最广的坐标系便是地球坐标系，想要获得这么宏达层面上的观测，便必须依靠 GPS 卫星的数据。 如果我们事先知道卫星每一时刻相对于地球的位置（地面监测站监测后告诉卫星，卫星一直广播自身星历），然后观测自身距离多颗卫星的位置（用户接收机接收到多颗卫星的信号，得知相对距离），便能知道自身在地球坐标系的位置。 打个简单的比方，在一条单向高速公路上，前车一直在广播它距离起点的位置（这个是路边监控告诉它的），而我们能够测得距离它的位置，所以我们也就知道了自身距离起点的位置。GPS 中是需要观测到至少四颗卫星，来解算三维坐标和用户设备时间和卫星时间的差异。 这之中涉及到了坐标系和时间标准的统一，所以我们可以用 GNSS 来进行给自身定位，给时间高...</div></div></div></a><a class="pagination-related" href="/2021/01/24/approach-autonomous-driving-sensor-radar/" title="走进自动驾驶传感器（二）——毫米波雷达"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">走进自动驾驶传感器（二）——毫米波雷达</div></div><div class="info-2"><div class="info-item-1">在上一篇文章中 Yvon Shong：走进自动驾驶传感器（一）——激光雷达 ，我们介绍了激光雷达这款传感器的数据和特性，接下来我们要介绍的是目前市面上大部分高级驾驶辅助系统（Advanced Driver Assistance Systems）都搭载了的毫米波雷达。 由于最后本文篇幅长达两万字，并且在整理毫米波雷达传感器资料的时候，综合传感器硬件手册，网上相关资料，官网设备资料，信号处理教材，仿佛又重新学了一遍信号处理，所以将关于毫米波雷达性能指标部分复杂的公式推导放置在了文章最后，并且保证了符号定义的连贯性，保证大家可以从信号处理的基础回忆起，看懂每一个公式。   值得注意的是，本文中涉及到的 FMCW 毫米波雷达，其原理和 FMCW 激光雷达 完全相同，若您对 FMCW 激光雷达感兴趣，可阅读文章中公式推导部分。 欢迎大家点赞关注收藏（点赞求求了 Orz，上一篇收藏数远大于点赞），如需转载请私信联系。欢迎关注本专栏！以下为大纲，方便后续查阅：  毫米波雷达介绍 分类 频段 硬件结构 结构 参数指标 数据 特点 应用 市场   信号处理基础知识 FMCW 雷达原理 距离估算 速...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2021/02/21/link-to-world/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2021/02/21/link-to-world/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '与世界连接'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

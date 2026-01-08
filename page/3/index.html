@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Yvon Shong - 人生应当如盛夏🔆</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="人生应当如盛夏🔆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yvon Shong">
+<meta property="og:url" content="http://www.yvonshong.com/page/3/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="人生应当如盛夏🔆">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:author" content="Yvon Shong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Yvon Shong',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/v2-ebb9c94260c5a90f3c459cc2949c3b00_r.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Yvon Shong</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/10/09/keyboard-photography-9/" title="键盘摄影（九）——光学像差">键盘摄影（九）——光学像差</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-09T15:21:00.000Z" title="发表于 2020-10-09 23:21:00">2020-10-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">我们在 键盘摄影（七）——深入理解图像信号处理器 ISP 中提到 Chroma Shading， 色差，其实镜头带来的像差（Aberration）不只是色差，1857 年，菲利普·路德维希·冯·赛德尔 描述了五种类型的镜头像差：球差，彗差，像散，场曲和畸变。这五个像差描述的是单色光穿过镜头时发生的与理想情况下的差异，而当存在多色光时，不同颜色的光会出现不同的轴向/横向的色差。镜头本身的设计就会导致像差，就更不用说加工时精度，镜片结构和材质导致的成像质量的误差了。 我们接下来主要关心像差产生的原理和如何在光学系统设计时进行矫正。    球差 Spherical Aberration由主轴上某一物点向光学系统发出的单色圆锥形光束，经光学系统折射后，如果不能交于主轴上的同一位置（比如穿过球面透镜边缘传播的光线会比穿过球面透镜中心传播的光线聚焦得更强烈），在主轴上的理想像平面处，形成一弥散光斑，则此光学系统的成像误差称为球差。  由于单负透镜产生正球差，而单正透镜，边缘光线的偏向角比近轴光线的偏向角小，产生负球差。因此单透镜本身很难校正球差，对称使用正负透镜组合则可以校正球差。 慧差 C...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/10/08/keyboard-photography-8/" title="键盘摄影（八）——相机结构和卡口">键盘摄影（八）——相机结构和卡口</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-10-08T01:02:00.000Z" title="发表于 2020-10-08 09:02:00">2020-10-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">在前面的文章中，我们讲述了相机的基本成像元件，但相机随着历史进程和技术的发展，有着不同的结构类型，在此我们逐个来了解相机有哪些不同的类型，内部结构的细节，以及和与镜头连接的卡口又有怎样的讲究。如有问题敬请不吝指正。   旁轴 Rangefinder Camera旁轴取景式相机，由于取景光轴位于镜头成像光轴旁边，与之平行，因而取名“旁轴”相机。不同于单单反拍摄的“所见即所得”，旁轴相机的实际拍摄的画面和观察的画面，会有偏差。   旁轴没有反光镜，这样相机较薄，机震较轻。 旁轴相机由于对焦基线的原因和没有反光镜的限制，一般广角镜头可以做得非常贴近底片，结构和成像也比单反的要好。所以广角和标准焦距是它的强项，旁轴最长焦极限是 135mm。   徕卡的联动测距系统则是其 M 系列旁轴相机的精髓所在。这实际上是一种通过模拟人眼（两条光线汇聚在一起后合焦）的测距技术。   入射光被一排栅栏以一定角度反射到框线窗（刻有框线的平板玻璃）上，玻璃中间矩形的小孔用来投影成叠影对焦的光斑。与此同时，从右侧的棱镜组也将折射一束光线并通过一个小孔投影在这块平板玻璃上，只有当对焦正确的的时候，两束光线才能以...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/06/10/keyboard-photography-7/" title="键盘摄影（七）——深入理解图像信号处理器 ISP">键盘摄影（七）——深入理解图像信号处理器 ISP</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-06-10T19:13:00.000Z" title="发表于 2020-06-11 03:13:00">2020-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">写在前面，本文为笔者参考了很多篇博客，传感器手册，芯片手册，汇总了 ISP 可能涉及到的步骤流程，整理所得万字长文，并针对 ISP 芯片流程图总结画出了题图的 ISP 流程图，如有错误轻喷。      主要包含：内部结构/控制方式 / ISP 架构方案 / ISP 工作流程 / 图像接入 ISP 的方式 / 黑电平校正 / 镜头阴影校正 / 坏点校正 / 绿平衡 / 降噪 / 颜色插值 / 色温 / 自动白平衡 / 颜色校正 / 伽马校正 / 颜色空间变换 / 宽动态范围 / 锐化 / 自动曝光 / 自动对焦 / 串扰 / 去假彩 / 耀斑补偿 / 自动光圈 / 其他 ISP(Image Signal Process），在相机成像的整个环节中，它负责接收感光元件（Sensor）的原始信号数据，可以理解为整个相机拍照、录像的第一步处理流程，用于处理图像信号传感器输出的图像信号。它在相机系统中占有核心主导的地位，是构成相机的重要设备。 主要作用是对前端图像传感器输出的信号做后期处理，主要功能有线性纠正、噪声去除、坏点去除、内插、白平衡、自动曝光控制等，依赖于 ISP 才能在不同的光学...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/21/keyboard-photography-6/" title="键盘摄影（六）——相机成像模型">键盘摄影（六）——相机成像模型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-21T16:19:00.000Z" title="发表于 2020-05-22 00:19:00">2020-05-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">本篇文章更多的是计算机视觉的基本知识，讲解真实的 3D 世界投影到相机的 2D 图像的这个过程。   坐标变换首先需要介绍的是我们如何用数学工具来表示物体在坐标中位姿（位置+姿态）的变换。 我们线性代数学习的矩阵*向量的乘法，其本质是对向量进行变换，如下述的旋转过程，v 向量变换到 v’ 向量，可以用矩阵来表示为   旋转  $$\begin{bmatrix}  x’ \ y’  \end{bmatrix} =  \begin{bmatrix}  cos\theta &amp;&amp; -sin\theta\ sub\theta &amp;&amp; cos \theta  \end{bmatrix}*\begin{bmatrix}  x \ y  \end{bmatrix}$$ 平移可以表示为   平移  $$\begin{bmatrix}  x’ \ y’  \end{bmatrix}= \begin{bmatrix}  x \ y  \end{bmatrix} + \begin{bmatrix}  t_x \ t_y  \end{bmatrix}$$ 整理起来 $$\be...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/12/keyboard-photography-5/" title="键盘摄影（五）——相机成像元件：CMOS/CCD">键盘摄影（五）——相机成像元件：CMOS/CCD</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-12T15:35:00.000Z" title="发表于 2020-05-12 23:35:00">2020-05-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">上一篇文章 键盘摄影（四）——相机成像元件：胶片与彩色暗房，我们从原理上讲解了胶片时代的黑白胶片/彩色负片/彩色反转片是怎么通过拍摄，冲洗，放大，扫描成为一张纸质照片的，随着科技的进步，柯达公司自己人是第一个使用数码时代的图像传感器进行成像，却不料革了自己的命。 我们也迈进了数码时代一起来了解一下数码时代的图像传感器，它将通过镜头组的光学影像转换成电子信号，再经过模数转换器（ADC）转换为数字图像信号，送到图像信号处理器（ISP）进行处理，便可以通过应用处理器（AP）连接的显示设备查看图像。      外置 ISP 架构  ISP 的过程后续会再单独开坑（![键盘摄影（七）——深入理解图像信号处理器 ISP](https://zhuanlan.zhihu.com/p/139432684），我们首先来了解一下靠 PD 光电二极管进行感光的图像传感器，它分为 CMOS/CCD 两种工艺，主要差异在像素单元和传感器周边电路上。 CCDCharge-coupled Device，电荷耦合器件，它的工作方式是通过镜头的光线使得每一个光电二极管的电容积累一定的电荷，而电荷的数量则正比于该处的...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/10/keyboard-photography-4/" title="键盘摄影（四）——相机成像元件：胶片与彩色暗房">键盘摄影（四）——相机成像元件：胶片与彩色暗房</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-10T04:00:00.000Z" title="发表于 2020-05-10 12:00:00">2020-05-10</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">前面我们介绍完了相机的镜头，光圈，快门，接下来便是介绍相机的最后一个核心，成像元件。由于查找资料时发现胶片的成像比较复杂，于是将胶片单立了一篇，后续再讲解数码时代的 CMOS/CCD。   在胶片时代，摄影师想要得到一张纸质照片相比于现在电子打印的普及，是尤其的复杂，需要在胶片拍摄完一卷后，将一卷胶片在暗房中进行显影，定影，得到真正完全成像的胶片，然后再在暗房中利用光学放大机，对可以感光的相纸进行感光，然后放到自动显像机中经过显像，停止化学反应，两道水洗和一道干燥，才能得到一张纸质照片。 胶片的组成胶片基本由两部分组成，一为形成影像的感光乳剂，另一为乳剂的支撑体片基。 乳剂：主要成分为照相明胶和卤化银。卤化银以极微小的颗粒状均匀地分布在明胶之中。卤化银的存在是胶片之所以能感光的根本原因。当光线照射到这些微小的卤化银颗粒时，它就会因感光而起变化，并最终形成影像。卤化银的形状和颗粒大小在很大程度上影响着胶片的照相性能。明胶对卤化银颗粒起保护作用和支撑作用，同时它使整个乳剂层呈现为薄膜状。不同种类的胶片在乳剂层中还含有一些其他的化学成分。 片基：一种透明、柔软而具有一定韧性和强度的塑料...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/09/approach-autonomous-driving-sensor-lidar/" title="走进自动驾驶传感器（一）——激光雷达">走进自动驾驶传感器（一）——激光雷达</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-09T13:11:00.000Z" title="发表于 2020-05-09 21:11:00">2020-05-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">写在前面： 笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。 欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）   激光雷达，也称光学雷达（LIght Detection And Ranging）是激光探测与测距系统的简称，它通过测定传感器发射器与目标物体之间的传播距离，分析目标物体表面的反射能量大小、反射波谱的幅度、频率和相位等信息，从而呈现出目标物精确的三维结构信息。 自上世纪 60 年代激光被发明不久，激光雷达就大规模发展起来。目前激光雷达厂商主要使用波长为 905nm 和 1550nm 的激光发射器，波长为 1550nm 的光线不容易在人眼液体中传输，这意味着采用波长为 1550nm 激光的激光雷达的功率可以相当高，而不会造成视网膜损伤。更高的功率，意味着更远的探测距离，更长的波长，意味着更容易穿透粉尘雾霾。但受制...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/09/keyboard-photography-3/" title="键盘摄影（三）——等效焦距和等效光圈">键盘摄影（三）——等效焦距和等效光圈</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-09T04:00:00.000Z" title="发表于 2020-05-09 12:00:00">2020-05-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">相机传感器的尺寸会影响接收到的光学图像的画幅，不只是镜头，传感器尺寸也会影响相机的视野。如果我们在光学系统中保持其他不变，只改变机身使用不同画幅的传感器，我们就会看到原来大尺寸传感器的图片仿佛被裁切了一样，于是我们引入了剪切系数，来衡量画幅的不同对成像的影响，并介绍等效焦距和等效光圈这样的数学工具来方便我们比较画幅不同时的焦距和光圈的成像效果。   等效焦距所谓等效焦距，是指由于画幅的变化，相机视野的变化而导致焦距的变化。如 4/3 画幅，由于其 CMOS 面积几乎为全画幅的 1/4 ，因此，其可取拍摄面积只是全画幅的1/4。 就相当于焦距为 x 的残幅相机所看到的景色，相当于全幅相机使用 2x 焦距看到的更远更小的景色，也可以理解为全幅的景色直接裁切。 全画幅的概念是直接从胶片时代继承过来的，我们称传感器面积与 35mm 底片相同的相机为全画幅相机。所以焦距为 x 的残幅相机，我们称呼它的 35mm 等效焦距为 2x。  为了计算的方便，我们直接将 35mm 等效焦距记为实际焦距乘以焦距转换率（裁切系数）。典型的裁切系数有尼康、索尼 APS-C 格式是 1.5 ，佳能的 APS...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/07/keyboard-photography-2/" title="键盘摄影（二）——曝光三要素">键盘摄影（二）——曝光三要素</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-07T04:00:00.000Z" title="发表于 2020-05-07 12:00:00">2020-05-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">在前文 键盘摄影（一）——相机成像基本元件 中，我们提到了光圈和快门时，其实就已经出现了很多倍数关系带来的曝光量的变化，而摄影其实包含光的学问，今天我们要介绍的便是影响曝光的三要素。   ISO除了光圈（曝光孔径大小），快门（曝光时间），还有一个是成像元件的感光度，ISO为感光度的国际标准，在摄影中我们便用 ISO 指代感光度。为了介绍 ISO，我们完全可以先来熟悉下光学中的相关物理概念。   胶片的 ISO感光度ISO代表感光速度的标准，代表胶卷使用的颗粒，CCD或者CMOS感光元件的感光速度，数值越高就说明该感光材料的感光能力越强。从公式我们可以看出，感光度越高，对曝光量，光的积分通量的要求就越少。 通俗一点就是衡量胶卷需要多少光线才能完成准确曝光的数值。胶卷上标的100、200、400，数字表示的就是感光度。数值增大，胶卷对光线的敏感程度也越大，ISO 200的胶卷的感光速度是ISO 100的两倍，换句话说在其他条件相同的情况下，ISO 200胶卷所需要的曝光时间是ISO 100胶卷的一半。而使用高ISO的颗粒噪声带来的噪点也相对的大。 数码的 ISO数码相机的感光器件是使...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2020/05/06/keyboard-photography-1/" title="键盘摄影（一）——相机成像基本元件">键盘摄影（一）——相机成像基本元件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2020-05-06T04:00:00.000Z" title="发表于 2020-05-06 12:00:00">2020-05-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">笔者在就读本科期间，开始接触计算机视觉领域，主要包括传统的图像处理，研究生期间开始了解深度学习，三维重建和SLAM（同时定位和建图）。可是对于其中使用到的最重要的传感器，相机，它的成像原理知之甚少，照片是怎么成像的？有幸在工作之余玩起了胶片相机，学习了一些摄影知识，在此和大家分享相关知识，欢迎友好地指正和勘误，轻喷。   随着器件的发展，目前的相机类型丰富，我们可以从基本的元件讲起，主要涉及到胶片相机和以单反为例的数码相机。为了便于理解，我们首先来过一遍相机的组成结构，后续会针对性进行讲解。   按下快门按钮前的状态    按下快门按钮后的状态  上图是单反相机的结构示意图，包含镜头组组成的镜头，45 度角倾斜放置的反光板，能获得正像且放缩到取景器大小的五棱镜，焦平面快门，和成像元件。 按下快门按钮前，光线通过镜头组和反光板（单反即意味着单个反光板），垂直入射到五棱镜的一面，然后由于五棱镜的特殊结构，光线再次垂直射出五棱镜的另一面，通过取景器到达人眼。 按下快门按钮后，反光板抬起，焦平面快门卷起，光线通过镜头组照射到成像元件（CMOS）而成像，这就是单反相机的一次成像过程。 我们...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/#content-inner">7</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/essay/"><span class="card-category-list-name">essay</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/lyric/"><span class="card-category-list-name">lyric</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tech/"><span class="card-category-list-name">tech</span><span class="card-category-list-count">33</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/cdqz/" style="font-size: 1.1em; color: #999">cdqz</a> <a href="/tags/openwrt/" style="font-size: 1.1em; color: #999">openwrt</a> <a href="/tags/radar/" style="font-size: 1.1em; color: #999">radar</a> <a href="/tags/sensor/" style="font-size: 1.5em; color: #99a9bf">sensor</a> <a href="/tags/homelab/" style="font-size: 1.1em; color: #999">homelab</a> <a href="/tags/photograph/" style="font-size: 1.1em; color: #999">photograph</a> <a href="/tags/lidar/" style="font-size: 1.3em; color: #99a1ac">lidar</a> <a href="/tags/obsidian/" style="font-size: 1.1em; color: #999">obsidian</a> <a href="/tags/zotero/" style="font-size: 1.1em; color: #999">zotero</a> <a href="/tags/gps/" style="font-size: 1.1em; color: #999">gps</a> <a href="/tags/IME/" style="font-size: 1.1em; color: #999">IME</a> <a href="/tags/gnss/" style="font-size: 1.1em; color: #999">gnss</a> <a href="/tags/autopilot/" style="font-size: 1.1em; color: #999">autopilot</a> <a href="/tags/camera/" style="font-size: 1.43em; color: #99a6b9">camera</a> <a href="/tags/web/" style="font-size: 1.1em; color: #999">web</a> <a href="/tags/onedrive/" style="font-size: 1.17em; color: #999c9f">onedrive</a> <a href="/tags/hexo/" style="font-size: 1.23em; color: #999ea6">hexo</a> <a href="/tags/photography/" style="font-size: 1.37em; color: #99a4b2">photography</a> <a href="/tags/slam/" style="font-size: 1.1em; color: #999">slam</a> <a href="/tags/matlab/" style="font-size: 1.23em; color: #999ea6">matlab</a> <a href="/tags/event/" style="font-size: 1.1em; color: #999">event</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">62</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">179.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-01-08T11:41:03.446Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

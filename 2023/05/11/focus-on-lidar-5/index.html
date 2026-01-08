@@ -1,0 +1,528 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>聚焦激光雷达（五）——处理器 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聚焦激光雷达（五）——处理器">
+<meta property="og:url" content="http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:published_time" content="2023-05-11T11:55:00.000Z">
+<meta property="article:modified_time" content="2026-01-08T11:40:29.523Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="sensor">
+<meta property="article:tag" content="lidar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "聚焦激光雷达（五）——处理器",
+  "url": "http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/",
+  "image": "https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png",
+  "datePublished": "2023-05-11T11:55:00.000Z",
+  "dateModified": "2026-01-08T11:40:29.523Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "http://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '聚焦激光雷达（五）——处理器',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">聚焦激光雷达（五）——处理器</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">聚焦激光雷达（五）——处理器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-11T11:55:00.000Z" title="发表于 2023-05-11 19:55:00">2023-05-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-01-08T11:40:29.523Z" title="更新于 2026-01-08 19:40:29">2026-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a class="disqus-comment-count" href="http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/#post-comment"><i class="fa-solid fa-spinner fa-spin"></i></a></span></div></div></div><article class="container post-content" id="article-container"><p>我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。</p>
+<span id="more"></span>
+
+<h1 id="激光脉冲驱动控制器"><a href="#激光脉冲驱动控制器" class="headerlink" title="激光脉冲驱动控制器"></a>激光脉冲驱动控制器</h1><p>通常发射端每个激光器需要链接一个激光器脉冲驱动控制器 LD Driver，它负责在接收到主控芯片的发光指令后，给激光器发送一个控制信号。实现激光的脉冲式发射和编码，通过配置脉冲强度和脉冲宽度，增加编码功能，增强抗干扰能力。</p>
+<p>驱动控制器要求控制信号能越快越好，有足够陡峭的上升沿。通常在低速信号电路中，信号从 0(低电平) 变成 1(高电平) 可以看成是瞬间完成的，但在高速电路中， 从 0 跳到 1 的时间消耗就无法忽略了，上升沿指的就是这个从 0 到 1 的过程，反之下降沿就是从 1 到 0 的过程。 之所以对上升沿有较高要求，是因为激光对人眼有加热效应，受到人眼安全约束，但可以通过提高瞬时功率，提高探测距离，缩短发光时间，降低发热效应（<strong>关于人眼安全，后期将会单独撰写一篇文章</strong>）。同时，缩短发光脉冲时间对于提高激光器点频也有所帮助。因此， 尽可能缩短上升沿和下降沿时间也成了必要。</p>
+<p>同时激光器要达到高功率短脉冲，不仅需要快速的激光脉冲驱动，还需要一个能够快速响应 LD 驱动的大功率电流源，常见的是 TI 的 GaN FET。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-261b8cf7d1c458a6e510ef36ed50405f_720w.webp"></p>
+<p>大电流窄脉冲驱动能力能够实现驱动 GaN 产生脉冲宽度小于 3 ns、峰值电流超过 30 A 的电流脉冲， 控制激光器产生高峰值功率窄脉宽的光脉冲信号，有利于提升激光雷达产品的测远能力和测距精度。</p>
+<h1 id="扫描器驱动和编码器"><a href="#扫描器驱动和编码器" class="headerlink" title="扫描器驱动和编码器"></a>扫描器驱动和编码器</h1><p>我们在前文 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/611852342">Yvon Shong：聚焦激光雷达（一）——扫描器</a> 提到，一些类型的激光雷达，存在机械/微机电扫描结构，比如需要电机转动反射棱镜，或者是电磁驱动振镜。所以在主控芯片发出发光指令时，也会向扫描器驱动发射控制指令，控制电机或振镜的转动。</p>
+<p>编码器可分为：电阻类、电感类、电容类和光电类，其功能是将位置和旋转等物理量转换为数字或模拟电信号。最常见的应用是在电动机的运动控制中提供反馈。大多数应用都使用光学编码器，因为光学编码器除了有准确性，还不需要任何单独的电子设备来提供位置或精确位置。</p>
+<ul>
+<li>光学式编码器</li>
+</ul>
+<p>光学式编码器轴带动光栅盘旋转时，经发光元件发出的光被光栅盘狭缝切割成断续光线，并被接收元件接收产生初始信号。该信号经后继电路处理后,输出脉冲信号。光栅实际上是一个刻有规则透光和不透光线条的圆盘，光敏元件接收的光通量随透光线条同步变化，光敏元件输出波形经整形后，变为脉冲信号，每转一圈，输出一个脉冲。根据脉冲的变化，可以精确测量和控制设备位移量。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-6f3a046c3a455c04a9e2460f53c5e66e_720w.webp"></p>
+<blockquote>
+<p>透射型旋转编码器</p>
+</blockquote>
+<p>反射型将来自光源的光束，反射到由柱面透镜和棱镜组成的转盘上，并将其作为受光元件进行检测，从而易于实现产品的小型化。 这些光学元件的特点是精度高、分辨率高，不易受磁场影响。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-3bd8b3a1bbe10d03ef22838757e50d38_720w.webp"></p>
+<blockquote>
+<p>反射型旋转编码器</p>
+</blockquote>
+<ul>
+<li>磁性编码器</li>
+</ul>
+<p>磁性编码器通过磁阻元件检测，在外圆周上交替排列的磁化 N 极和 S 极的旋转圆盘的磁极变化，将其转换为电信号，并以方波形式输出。 其特点是体积小、重量轻，而且由于没有发光元件，因此功耗比光学式低。但磁性容易受到外界影响。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-c4e988b1cef94579b617fc47a54b4804_720w.webp"></p>
+<blockquote>
+<p>磁性编码器</p>
+</blockquote>
+<h1 id="接收器驱动和读出电路"><a href="#接收器驱动和读出电路" class="headerlink" title="接收器驱动和读出电路"></a>接收器驱动和读出电路</h1><p>我们在 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/618634684">Yvon Shong：聚焦激光雷达（三）——接收器</a> 中有详细介绍，接收器需要电路控制来放大光生电信号， 并且 SPAD 需要配合猝灭电路来进行重置，所以接收器链接着处理器中驱动和读出电路。</p>
+<h1 id="跨阻放大器"><a href="#跨阻放大器" class="headerlink" title="跨阻放大器"></a>跨阻放大器</h1><p>在接收端，APD 或 SiPM 接收到光子后产生电流，理论上通过这个电流即可获知光强， 然而实际上尽管反射光信号已经经过了 SiPM 或 APD 的放大，却仍然较小，信号过于微弱，满足不了系统载噪比要求，通常需要在前端要采用低噪声放大器进行放大，以提高信噪比。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-2e4c434ed7f895aa440166b35c5e603c_720w.webp"></p>
+<blockquote>
+<p>速腾 M1 接收端的 TIA</p>
+</blockquote>
+<p>而且光电传感器输出的是电流信号，不利于与数字电路相融合，会将其转化为电压信号，一方面方便数字电路处理，另一方面也能够减小功耗。完成放大和电流转成较大电压任务的就是跨阻放大器 TIA（Trans-Impedance Amplifier，TIA），属于高速运算放大器的一种。</p>
+<h1 id="数字转换"><a href="#数字转换" class="headerlink" title="数字转换"></a>数字转换</h1><p>由于探测器的光电反应信号，通过跨阻放大器输出电压信号，往往需要将其转化成采样后的数字信号才便于核心处理器进行处理及运行后续的算法。</p>
+<h2 id="时间数字转换器-TDC"><a href="#时间数字转换器-TDC" class="headerlink" title="时间数字转换器 TDC"></a>时间数字转换器 TDC</h2><p>TDC，Time-to-Digital Converter 时间数字转换器，精确测量电信号时间间隔，主要发挥计时器功能，通常用于低功耗、低成本、环境简单的系统，此时只 TDC 需要连接到主控芯片和光接收器之间，当主控芯片发出发光信号时，也同步给 TDC 一个开始计时的信号，随后反射回来的光经过 TIA 转换成放大的电压，再经过比较器与参考电压比较，判断是否有光入射，TDC 则将比较器的输出当做结束信号，完成计时，并将时间信息送回主控芯片。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-3ef6a975dc5f6539e6f7848cf77a3da5_720w.webp"></p>
+<blockquote>
+<p>TDC 的波形处理：通过时钟来读出前沿和脉宽，无峰值</p>
+</blockquote>
+<p>TDC 功耗低、成本低、集成度高，但是采集到的信息量较少，难以做波形处理，适合低成本场景。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-f531075fe487faf38bbe233ce4aca8fb_720w.webp"></p>
+<blockquote>
+<p>TI 基于 TDC 的 ToF 方案</p>
+</blockquote>
+<h2 id="模拟数字转换器-ADC"><a href="#模拟数字转换器-ADC" class="headerlink" title="模拟数字转换器 ADC"></a>模拟数字转换器 ADC</h2><p>ADC，Analog-to-Digital Converter，模数转换器，将连续变化的电信号，转换为离散的数字量。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-be14341103ebddc6a4b566d9f9c478d8_720w.webp"></p>
+<blockquote>
+<p>ADC 的波形处理：边沿检测得到上升沿时间、脉宽、峰值</p>
+</blockquote>
+<p>ADC 通常用于更复杂的系统，ADC 对反射光信号进行持续采样，转换成数字信号，并由控制芯片进行波形处理、计时等工作。</p>
+<p>ADC 能够采集到完整的波形，信息丰富，易应用波形处理算法（处理拖点、雨雾等）。但功耗高、成本高、集成度低。它适合更精密测量需求。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic2.zhimg.com/80/v2-969538423a128cb565b4e157dcebedfd_720w.webp"></p>
+<blockquote>
+<p>TI 基于 ADC 的 ToF 方案</p>
+</blockquote>
+<h1 id="主控芯片"><a href="#主控芯片" class="headerlink" title="主控芯片"></a>主控芯片</h1><p>主控芯片需要控制发射系统发射激光脉冲，并处理电路返回的观测数据，计算开始信号和停止信号的时间间隔。FPGA 芯片通常被用作激光雷达的主控芯片，完成光电的处理进而输出点云信号，国外主流的供应商有 AMD 收购的 Xilinx（赛灵思），Intel 收购的 Altera，还有 Lattice 等规模稍小的厂商，国内主要的供应商有紫光国芯、西安智多晶等公司。</p>
+<p>不过 FPGA 不是激光雷达主控芯片的唯一选择，也可以选用高性能单片机 （Microcontroller Unit，MCU）、数字信号处理单元（Digital Signal Processor，DSP） 代替。MCU 的国际主流供应商有 Renesas（瑞萨）、Infineon（英飞凌）等，DSP 的主流供应商有 TI（德州仪器）、ADI（亚德诺半导体）等。</p>
+<p>为什么不采用 CPU 作为主控？因为激光雷达需要进行大量的信号处理、电机时序控制等，CPU 虽然也能做，但如果采用专用的算法以及为算法专门优化设计的电路，其效率会高得多。而激光雷达作为汽车领域的新生事物，从 2007 年 Velodyne 激光雷达首次被用于 DARPA 挑战赛至今，其上车的历史也不过十五年，还有许多硬件/算法设计尚处在探索阶段，因此采用 FPGA 有利于反复迭代修改，同时还满足了专用电路的高效性。</p>
+<p>比如，仅仅反射波的波形处理就需要消耗大量算力，而且每一个激光器的反射光都需要进行处理，使用 CPU 既难以满足算力需求，又浪费 CPU 的通用能力，因此往往需要专门的电路进行处理。并且实际中波形的处理比理论中复杂许多，虽然发射端发射的是一个短促的脉冲，但由于光束的扩散，飞行过程中会遇到多个障碍物，产生多个反射波，判断反射光的返回时间，以及反射率将变得十分复杂，更不遑说对激光脉冲进行编码解码的处理。</p>
+<p>关于 FPGA 的科普可以查看 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/347799990">FPGA 技术江湖：简谈 CPU、MCU、FPGA、SoC 芯片异同之处</a></p>
+<p>而以下是 TI 的 机械旋转式 LiDAR 的电路模块图 <a href="https://link.zhihu.com/?target=https://www.ti.com/solution/automotive-mechanically-scanning-lidar?variantid=34407&amp;subsystemid=20812%23block-diagram" rel="external nofollow noreferrer">Mechanically scanning LIDAR</a>，可以看到通常还会有一些温度传感器和相应的温度控制，来避免激光雷达电路板处在极端温度环境。还包含整个系统的电源相关驱动模块。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-630c1fb5bee03fbcda7e0d20f3205377_720w.webp"></p>
+<blockquote>
+<p>LiDAR 各模块控制信号链路，以及电源，接口，时钟，监测和诊断模块</p>
+</blockquote>
+<h1 id="System-on-Chip"><a href="#System-on-Chip" class="headerlink" title="System on Chip"></a>System on Chip</h1><p>模拟前端电路（Analog Front End，AFE）处理的对象是信号源给出的模拟信号，接收器的感生信号具有动态范围大，脉宽窄，幅度弱的特点，为了解决这些问题，处理数据，模拟前端通常包含传感器接口、模拟信号调理（Conditioning，包括阻抗变换、程控增益放大、滤波和极性转换等）电路、模拟多路开关、采样保持器、ADC、数据缓存以及控制逻辑等部件的存以及控制逻辑等部件的集成组件。</p>
+<p>但由于激光雷达模拟芯片技术难度相对有限，且厂商之间尚无统一的设计标准，因此考虑到适用性和降本需求，众多激光雷达厂商开始自研 ASIC 或 SOC 芯片将以上功能集成到单个芯片中。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-11c58befc88a644e1d394dce3d3b5537_720w.webp"></p>
+<blockquote>
+<p>激光雷达专用芯片及功能模块示意图</p>
+</blockquote>
+<p>处理器目前逐步向企业自研专用片上集成芯片（System on Chip， SoC）迁移发展，TIA、ADC 等也可能集成到 SoC 中，随着 VCSEL 发射器和 SPAD 接收器的芯片化，实现更强的运算能力、更低的功耗和更高的集成度。进一步的集成有多方面好处，第一是继续降低成本；第二是缩短距离，避免电路板层面以及外界的其他干扰；第三是减少元器件数量，提高可制造性，适合大规模量产；第四是缩小体积，更高的可制造性和更低的干扰有利于通过车规，而更小的体积和更低的成本对于汽车应用十分重要。</p>
+<h1 id="拆解案例"><a href="#拆解案例" class="headerlink" title="拆解案例"></a>拆解案例</h1><h2 id="Scale-Gen-2"><a href="#Scale-Gen-2" class="headerlink" title="Scale Gen 2"></a>Scale Gen 2</h2><p>可以查看 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/582053195">朱玉龙：技术讨论｜Valeo Lidar Scala Gen 2 拆解</a></p>
+<h2 id="Velodyne-VLP-16"><a href="#Velodyne-VLP-16" class="headerlink" title="Velodyne VLP 16"></a>Velodyne VLP 16</h2><p>Velodyne 16 线激光雷达的主板是该设备的核心，具有许多控制器，RF 组件和开关。包括 Intel，Microchip，ADI 和 TI 的组件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-3e69fde8179be553884c7382a8bef0b4_720w.webp"></p>
+<blockquote>
+<p>VLP 16 主板</p>
+</blockquote>
+<ul>
+<li>TI：微控制器，逆变器，调节器和接收器，温度传感器；</li>
+<li>ADI：放大器，ADC 驱动器和开关多路复用器；</li>
+<li>Microchip：稳压器；</li>
+<li>英特尔： Cyclone III FPGA，8 MB 闪存（主板背面）</li>
+<li>英飞凌：双 MOSFET 驱动器（主板背面）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-a64d40dc552c87566fe16ee8cc4e11d0_720w.webp"></p>
+<blockquote>
+<p>VLP 16 电源板</p>
+</blockquote>
+<ul>
+<li>英特尔：第二个 Cyclone III FPGA ，并行的 128 MB NOR 闪存；</li>
+<li>ISSI： 32 MB SDRAM 内存；</li>
+<li>意法半导体：调节器；</li>
+<li>Microchip： ADC 和 MOSFET 驱动器；</li>
+<li>Broadcom：双通道光耦，光学编码器（电源板背面）；</li>
+<li>Allegro Microsystems：霍尔效应传感器；</li>
+<li>凌力尔特：降压转换器（电源板背面）；</li>
+<li>TI：以太网收发器（电源板背面），温度传感器（电源板背面）；</li>
+</ul>
+<h2 id="Ouster-OS1"><a href="#Ouster-OS1" class="headerlink" title="Ouster OS1"></a>Ouster OS1</h2><p>Ouster OS1 激光雷达传感器的主板上的组件包括：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-56fa05fd0c999208031bf031a35290c3_720w.webp"></p>
+<blockquote>
+<p>Ouster OS1 主板</p>
+</blockquote>
+<ul>
+<li>Maxim：12 位模数转换器和限幅放大器</li>
+<li>Marvell Semiconductor：千兆以太网收发器</li>
+<li>美光多：芯片内存 8GB MLC NAND 闪存、内存控制器和 DDR3L SDRAM 内存</li>
+<li>TI：DDR 终端稳压器和可调节的 slap-down 转换器</li>
+<li>Analog Devices：射频功率检测器</li>
+<li>Macronix：串行 NOR 闪存 16MB</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-e0b633bc93580c885f95e4191b55b6b7_720w.webp"></p>
+<blockquote>
+<p>Ouster 内部转子板</p>
+</blockquote>
+<p>内部的转动子板用作 Ouster OS1 内部的控制单元，其中包含：</p>
+<ul>
+<li>Microchip： 125 MHz MEMS 振荡器</li>
+<li>Xilinx：Artiz-7 FPGA</li>
+<li>Nexperia：双电源转换收发器</li>
+<li>Maxim： 12 位 ADC</li>
+<li>TI：电流分流监视器芯片</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-b981d90046a26f7f71cca97598023aec_720w.webp"></p>
+<blockquote>
+<p>Ouster 电机板</p>
+</blockquote>
+<p>电机板包含内存和其他芯片，用于车辆和 LiDAR 的通信：</p>
+<ul>
+<li>包括与车辆通信的芯片</li>
+<li>Microchip ：串行 EEPROM 存储器 2KB</li>
+<li>TI ：补偿器、电流分流芯片和功率 MOSFET</li>
+<li>ON Semi： MOSFET 驱动器</li>
+</ul>
+<h2 id="Livox-HAP"><a href="#Livox-HAP" class="headerlink" title="Livox HAP"></a>Livox HAP</h2><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-5ef8b9fdda2ac0a3c2daf3cbf488599f_720w.webp"></p>
+<blockquote>
+<p>大疆 Livox HAP 主控板以及两大控制芯片</p>
+</blockquote>
+<ul>
+<li>英飞凌：ARM Cortex M4 FPGA</li>
+<li>Xilinx：Xilinx：Zynq Ultra Scale+ MPSoC</li>
+</ul>
+<h2 id="RoboSense-Helios"><a href="#RoboSense-Helios" class="headerlink" title="RoboSense Helios"></a>RoboSense Helios</h2><p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic3.zhimg.com/80/v2-498ea5eddde66583994a71c76d79ff26_720w.webp"></p>
+<blockquote>
+<p>RS Helios 主控板</p>
+</blockquote>
+<ul>
+<li>赛灵思：ZYNQ ARM 双核 Cortex-A0 FPGA；</li>
+<li>美光：512MB SDRAM 内存；</li>
+<li>TI：DDR 终端稳压器、LDO 稳压器、半桥栅极驱动器、降压电源块和功率 MOSFET；</li>
+<li>Broadcom：汽车以太网收发器；</li>
+<li>Winbond：串行闪存；</li>
+<li>Diodes Incorporated：ESD 保护；</li>
+<li>Maxim：Step-down DC-DC 转换器</li>
+</ul>
+<p>在激光雷达里面还有一个数字适配器板，主要包含包含</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic4.zhimg.com/80/v2-52eee3cf900c8270e6dc3476941ebb93_720w.webp"></p>
+<blockquote>
+<p>RS Helios 数字转接板</p>
+</blockquote>
+<ul>
+<li>ST Microelectronics：ARM 32 位 Cortex-M3 微控制器 MCU（用作激光雷达的连接和电源管理）</li>
+<li>On Semiconductor：稳压器</li>
+<li>Diodes Incorporated：功率 MOSFET</li>
+<li>Broadcom：以太网收发器；</li>
+</ul>
+<p>另一块辅助板：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://pic1.zhimg.com/80/v2-1f3ba1d685d0107a1b45f5bb1e893f40_720w.webp"></p>
+<blockquote>
+<p>RS Helios 激光雷达辅助板</p>
+</blockquote>
+<ul>
+<li>Xilinx： Spartan-7 FPGA（用于控制激光雷达传感器内部的传感器、连接和电源管理）</li>
+<li>Analog Devices：VCO</li>
+<li>TI：LDO、差分放大器、step-down 转换器和温度传感器</li>
+<li>Maxim：DC-DC 转换器</li>
+<li>Diodes Incorporated：ESD 保护</li>
+<li>IDT：时钟缓冲器</li>
+<li>NXP Semiconductors：双 USB 2.0 开关</li>
+<li>Vishay：功率 MOSFET</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li>马鹏阁. 多脉冲激光雷达[M]. 国防工业出版社, 2017.</li>
+<li>王颖麟, 廖进昆, 晏思平,等. 基于FPGA和MCU的激光成像雷达信号处理系统[J]. 兵器装备工程学报, 2009, 030(011):60-62.</li>
+<li><a href="https://link.zhihu.com/?target=http://static.sse.com.cn/stock/information/c/202101/e999c0661a644c928d259e4fb47e358b.pdf" rel="external nofollow noreferrer">上海证券交易所：禾赛科技 2021 年科创板招股书</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.ti.com.cn/cn/lit/pdf/zhcaa62" rel="external nofollow noreferrer">TI：飞行时间和激光雷达 - 光学前端设计</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.eefocus.com/article/317489.html" rel="external nofollow noreferrer">与非网：模拟前端（AFE）原理及选型指南</a></li>
+<li><a href="https://link.zhihu.com/?target=http://www.kiaic.com/article/detail/2146.html" rel="external nofollow noreferrer">可易亚半导体 KIA：集成电路-专用集成电路（ASIC）简介、优缺点等知识</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.eet-china.com/mp/a39484.html" rel="external nofollow noreferrer">面包板社区：FPGA与ASIC对比，优缺点一目了然！</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/347799990">FPGA技术江湖：简谈CPU、MCU、FPGA、SoC 芯片异同之处</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/454125523">车东西：看懂这颗激光雷达芯片，就看懂了索尼汽车</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.ctfiot.com/77494.html" rel="external nofollow noreferrer">中信证券：拆解5款车载激光雷达带你了解里面的元器件</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/582053195">汽车电子设计：技术讨论｜Valeo Lidar Scala Gen 2 拆解</a></li>
+<li><a href="https://link.zhihu.com/?target=https://new.qq.com/rain/a/20220322A05F2C00" rel="external nofollow noreferrer">芝能汽车：激光雷达 Ouster 公司情况和 Ouster OS1-64 拆解</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.smartautoclub.com/p/34362/" rel="external nofollow noreferrer">智能汽车俱乐部：拆解分析｜速腾RS Helios激光雷达的拆解</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.vision-systems-china.com/deinews.asp?id=4820" rel="external nofollow noreferrer">燃云汽车：Velodyne 激光雷达 Puck VLP-16 拆解</a></li>
+<li><a href="https://link.zhihu.com/?target=https://electronics360.globalspec.com/article/16089/teardown-velodyne-lidar-puck-vlp-16-sensor" rel="external nofollow noreferrer">Teardown: Velodyne Lidar Puck VLP-16 sensor</a></li>
+<li><a href="https://link.zhihu.com/?target=https://cloud.kepuchina.cn/newSearch/imgText?from=1&amp;id=6775895315027607552" rel="external nofollow noreferrer">科普中国：激光干涉光栅编码器——走进精密运动控制的世界</a></li>
+<li><a href="https://link.zhihu.com/?target=https://www.nidec-components.com/cn/featuring/encoder/" rel="external nofollow noreferrer">尼得科科智博电子：编码器特集</a></li>
+</ul>
+<hr>
+<p>欢迎在我的专栏「<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhihu.com/column/jiritsu-soko">自律走行</a>」中查看更多「聚焦激光雷达」系列文章</p>
+<ul>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/611852342">聚焦激光雷达（一）——扫描器</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/616243016/">聚焦激光雷达（二）——激光器</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/618634684">聚焦激光雷达（三）——接收器</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/622652543">聚焦激光雷达（四）——光学元件</a></li>
+<li><a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/628148718">聚焦激光雷达（五）——处理器</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/">http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://www.yvonshong.com" target="_blank">Yvon Shong</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/sensor/">sensor</a><a class="post-meta__tags" href="/tags/lidar/">lidar</a></div><div class="post-share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/05/15/introduction-to-nano-pi-r2s/" title="从零开始 NanoPi R2S"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">从零开始 NanoPi R2S</div></div><div class="info-2"><div class="info-item-1">半年前购置了软路由，最近才配置上，全当做个笔记。   硬件 NanoPi R2S TF 卡（8G 以上就够了， Class 10 以上标准，更好的可以上 Industrial ） Type-C 电源线（无需支持快充标准） 10W 以上充电头   刷系统刷机工具win32diskimager 固件无需忍受百度云小水管： 官方固件 Google Drive 下载链接 在 Windows 下以管理员身份运行 win32diskimager，在界面上选择你的 TF 卡盘符，选择解压后的固件文件，点击 Write 按钮烧写到 TF 卡。 刷机完成后将 TF 卡插入，接电，会自动启动系统。此时 NanoPi 正面 SYS 灯红灯闪烁。 连线电脑直连 modem-router-nanopi-pc 接线方式：原家庭路由和光猫的接线方式不变，R2S 的 WAN 口连接原家庭主路由的 LAN 口，R2S 无需设置，R2S 的 LAN 口连接电脑网口； 验证方法：电脑网卡设置成“自动获得 IP 地址”就可正常上网。 此方法可快速检测 R2S 是否存在硬件故障，用命令 ping www.baidu.co...</div></div></div></a><a class="pagination-related" href="/2023/05/07/tutorial-for-stargazing/" title="观星指南"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">观星指南</div></div><div class="info-2"><div class="info-item-1">和朋友们去看过几次夏季银河，陆陆续续也看过几次流星雨，也翻过很多次的车，所以不才想要小结一下我自己的观星指南，方便更多对天文，对摄影感兴趣的朋友们入坑。     2019 年 9 月 于河北张家口冰山梁 这辈子第一次看的银河  地点观星者最需要确定自己要在哪里看，以及能在哪里看！这个是最重要的，因为地点决定了后续所有的因素。它决定了光污染程度，从而决定了你看到的银河/星星的效果。它决定了当地的天气，经纬度决定了当地的月出月落时间。所以观星第一步，确定你要在哪里观星！ 首先需要通过光污染地图，来查看或者确认当地的光害指数。建议选择光害三级以下的地点。  天文通 - 全球光污染地图 Light pollution map  京郊附近到张家口或者东灵山，光污染便比较低了，上海附近的话得到浙西大峡谷。   2020 年 8 月 于浙江宁波渔山列岛，光害较高，银河比较黯淡  时间确定了地点，需要查看计划前往日期的月相，因为月亮一出来，星星的光芒都会看不见了。月亮这个时候就成了很大的光污染，而唯一的办法，就是等月落后或者月出前。春秋季还需要关心银心升起落下时间，因为银心是最美最亮的！ 日出日...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2020/05/09/approach-autonomous-driving-sensor-lidar/" title="走进自动驾驶传感器（一）——激光雷达"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-09</div><div class="info-item-2">走进自动驾驶传感器（一）——激光雷达</div></div><div class="info-2"><div class="info-item-1">写在前面： 笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。 欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）   激光雷达，也称光学雷达（LIght Detection And Ranging）是激光探测与测距系统的简称，它通过测定传感器发射器与目标物体之间的传播距离，分析目标物体表面的反射能量大小、反射波谱的幅度、频率和相位等信息，从而呈现出目标物精确的三维结构信息。 自上世纪 60 年代激光被发明不久，激光雷达就大规模发展起来。目前激光雷达厂商主要使用波长为 905nm 和 1550nm 的激光发射器，波长为 1550nm 的光线不容易在人眼液体中传输，这意味着采用波长为 1550nm 激光的激光雷达的功率可以相当高，而不会造成视网膜损伤。更高的功率，意味着更远的探测距离，更长的波长，意味着更容易穿透粉尘雾霾。但受制...</div></div></div></a><a class="pagination-related" href="/2023/03/12/focus-on-lidar-1/" title="聚焦激光雷达（一）——扫描器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="info-item-2">聚焦激光雷达（一）——扫描器</div></div><div class="info-2"><div class="info-item-1">之前撰写过相机硬件的系列文章，从滤镜、镜头、快门、 CMOS 到 ISP 芯片，几年前写过一篇激光雷达入门介绍 Yvon Shong：走进自动驾驶传感器（一）——激光雷达，当时只是初步提及了激光雷达的一些基本性质。 而这几年激光雷达作为逐渐成熟的自动驾驶/高阶辅助驾驶传感器，价格逐步下降，产品也层出不穷，笔者于去年入职了中国激光雷达第一股，禾赛科技（内推禾赛科技自动驾驶、光电芯片等岗位），伴随着制造商和供应链逐渐成熟的进程，激光雷达有了更繁复的分类和功能，所以也想对激光雷达进行一次系统性的大拆解，撰写激光雷达系列文章。   本系列文章将从扫描器，发射器，探测器到处理模块，从硬件到软件算法等模块，来介绍激光雷达。欢迎关注本专栏，您的帮助从点赞本文章开始 ヽ(ﾟ▽ﾟ)ノ。  之前的文章 ， 在之前的文章中，我们粗略的提及了激光雷达扫描结构的不同，激光雷达的扫描结构主要分为： 机械式、混合固态（MEMS振镜式、转镜式、棱镜式）、纯固态（FLASH、OPA）。本章节将详细介绍激光雷达细分的扫描结构和原理，以及一些新型的技术。  机械式机械式激光雷达是指其发射系统和接收系统一起随着转轴进行...</div></div></div></a><a class="pagination-related" href="/2023/03/28/focus-on-lidar-2/" title="聚焦激光雷达（二）——激光器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-28</div><div class="info-item-2">聚焦激光雷达（二）——激光器</div></div><div class="info-2"><div class="info-item-1">之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。    激光器原理所有激光器都包含以下三个组件：1、泵浦源；2、受激介质；3、谐振腔。 受激介质位于激光器内部，取决于不同的激光器结构设计，受激介质是一种包含可将激发光的能量转换为激光的原子的物质，可能是气体混合物 、固体晶体棒或玻璃纤维。激光介质在获得泵浦源从外部获得的能量供给时，受激产生能量辐射。 被激发的介质位于谐振腔两端两个镜子的中间位置，其中一个镜子是半透半反镜，受激介质产生的能量辐射在谐振腔内放大，与此同时，只有特定的辐射光能够穿过单向透镜，形成一束辐射光，这一辐射光束即是激光。   激光的原理   泵浦源泵浦源的作用是对增益介质进行激励使其辐射发光。具体而言，泵浦源提供能量激励原子跃迁到高能级，以实现粒子数反转（使高能态粒子数多于低能态粒子数...</div></div></div></a><a class="pagination-related" href="/2023/04/19/focus-on-lidar-4/" title="聚焦激光雷达（四）——光学系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-19</div><div class="info-item-2">聚焦激光雷达（四）——光学系统</div></div><div class="info-2"><div class="info-item-1">激光雷达从器件来看，最主要的构成要素是扫描器、发射器，接收器，处理器，以及一些内部的光学元件了，激光从发射器中产生，除了要通过扫描器来调整激光方向以外，还需要通过各式各样的光学元件，来调整光斑形状大小，光场的能量分布等等。   查阅了很多光学供应链公司的产品和研报，这可能是全网唯一比较全面的介绍激光雷达内部涉及的光学元件的科普文章了，欢迎点赞关注本专栏。 从激光雷达 BOM 成本拆分来看，透镜等光学组件仍是激光雷达的重要组成部分。以法雷奥 Scala 转镜激光雷达为例，目前年产量十万级规模， BOM 成本约 400 美元，其中主控板占 45%，激光发射接收组件占 33%，光学单元占 13%，外罩 8%，马达 1%。而 Livox 的双楔形棱镜式激光雷达的透镜模组占了成本的 54%。可以看到，光学元件是激光雷达成本里重要组成部分。 由于各种激光器发射的激光束并不是绝对平行的，具有光斑形状不规则，发散角度大的问题，因此还需要一套光学系统，对激光器的输出光束进行准直整形，通过改变光束的发散度、波束宽度和截面积，改善输出光束质量。 发射光学系统主要由透镜、反射器件、衍射器件等光学元器件组...</div></div></div></a><a class="pagination-related" href="/2023/04/01/focus-on-lidar-3/" title="聚焦激光雷达（三）——接收器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-01</div><div class="info-item-2">聚焦激光雷达（三）——接收器</div></div><div class="info-2"><div class="info-item-1">接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。   可以看到接收探测器的根本原理是光电效应，目前车载激光雷达中的半导体探测器按照工作原理可以分为：  PIN-PD：是在最基础的光电二极管的基础上扩宽了势垒区，价格低廉，结构简单，响应速度快，但没有增益，灵敏度有限。 APD：在 PIN 光电二极管的基础上，加上一定的反向电压，相当于人为增加了势垒，在外界光电效应的触发下，少量光生载流子引发雪崩效应电流倍增。输出电流与入射光子数量呈线性关系，相当于一个具有增益的光电二极管，这可进一步增大光检测的灵敏度，同时较大反向电压的作用也可进一步提高其响应速度，这就是雪崩光电二极管（APD），APD 已经是光通信技术中用来接收微弱光信号的一种基本器件。 SPAD：APD 工作电压在雪崩电压以上（盖革模式），每个入射的光子都会触发雪崩效应，灵敏度极高，甚至可以探测单个光子，但由于其工作于临界状态，需要配合猝灭电路设计，只能识别有无而无法识别强度，通常采用阵列的方式，利用多个传感器感知到...</div></div></div></a><a class="pagination-related" href="/2021/09/21/approach-autonomous-driving-sensor-gnss/" title="走进自动驾驶传感器（三）——卫星导航系统"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-21</div><div class="info-item-2">走进自动驾驶传感器（三）——卫星导航系统</div></div><div class="info-2"><div class="info-item-1">之前写了自动驾驶用到的相机传感器、激光雷达、毫米波雷达，现在终于写，大学需要专门开一门课写一本书难度的传感器——GNSS 。在此期间阅读了几本 GPS 教科书，理清了 GPS 的整个数据流，以及涉及到的相关技术，如有错漏恳请不吝指正。（也求个点赞不要只收藏(╯‵□′)╯︵┻━┻）    无人驾驶想要获得全局定位，一定是相对于某一固定坐标系的，而地球上范围最广的坐标系便是地球坐标系，想要获得这么宏达层面上的观测，便必须依靠 GPS 卫星的数据。 如果我们事先知道卫星每一时刻相对于地球的位置（地面监测站监测后告诉卫星，卫星一直广播自身星历），然后观测自身距离多颗卫星的位置（用户接收机接收到多颗卫星的信号，得知相对距离），便能知道自身在地球坐标系的位置。 打个简单的比方，在一条单向高速公路上，前车一直在广播它距离起点的位置（这个是路边监控告诉它的），而我们能够测得距离它的位置，所以我们也就知道了自身距离起点的位置。GPS 中是需要观测到至少四颗卫星，来解算三维坐标和用户设备时间和卫星时间的差异。 这之中涉及到了坐标系和时间标准的统一，所以我们可以用 GNSS 来进行给自身定位，给时间高...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BF%80%E5%85%89%E8%84%89%E5%86%B2%E9%A9%B1%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-text">激光脉冲驱动控制器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%AB%E6%8F%8F%E5%99%A8%E9%A9%B1%E5%8A%A8%E5%92%8C%E7%BC%96%E7%A0%81%E5%99%A8"><span class="toc-text">扫描器驱动和编码器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E5%99%A8%E9%A9%B1%E5%8A%A8%E5%92%8C%E8%AF%BB%E5%87%BA%E7%94%B5%E8%B7%AF"><span class="toc-text">接收器驱动和读出电路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B7%A8%E9%98%BB%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="toc-text">跨阻放大器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2"><span class="toc-text">数字转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E5%99%A8-TDC"><span class="toc-text">时间数字转换器 TDC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E5%99%A8-ADC"><span class="toc-text">模拟数字转换器 ADC</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E6%8E%A7%E8%8A%AF%E7%89%87"><span class="toc-text">主控芯片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#System-on-Chip"><span class="toc-text">System on Chip</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8B%86%E8%A7%A3%E6%A1%88%E4%BE%8B"><span class="toc-text">拆解案例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Scale-Gen-2"><span class="toc-text">Scale Gen 2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Velodyne-VLP-16"><span class="toc-text">Velodyne VLP 16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ouster-OS1"><span class="toc-text">Ouster OS1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Livox-HAP"><span class="toc-text">Livox HAP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RoboSense-Helios"><span class="toc-text">RoboSense Helios</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2023/05/11/focus-on-lidar-5/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'http://www.yvonshong.com/2023/05/11/focus-on-lidar-5/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '聚焦激光雷达（五）——处理器'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      GLOBAL_CONFIG_SITE.pageType === 'post' && getCount()
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

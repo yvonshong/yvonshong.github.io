@@ -1,0 +1,273 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Yvon Shong - 人生应当如盛夏🔆</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="人生应当如盛夏🔆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yvon Shong">
+<meta property="og:url" content="http://www.yvonshong.com/page/5/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="人生应当如盛夏🔆">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png">
+<meta property="article:author" content="Yvon Shong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png"><script type="application/ld+json"></script><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png"><link rel="canonical" href="http://www.yvonshong.com/page/5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Yvon Shong',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'home'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/v2-ebb9c94260c5a90f3c459cc2949c3b00_r.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="site-info"><h1 id="site-title">Yvon Shong</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="post_cover left"><a href="/2016/09/19/start-on-a-journey-to-japan/" title="那么多的人，你要去哪里"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo55t16xqj20qy0fm76s.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="那么多的人，你要去哪里"></a></div><div class="recent-post-info"><a class="article-title" href="/2016/09/19/start-on-a-journey-to-japan/" title="那么多的人，你要去哪里">那么多的人，你要去哪里</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-09-19T13:00:00.000Z" title="发表于 2016-09-19 21:00:00">2016-09-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">一下子在九龙湖这个地方呆了三年，当我知道我过了 Waseda 的时候，很开心的跟伙伴打电话分享，那天阳光很好，我骑着单车飞驰在回寝室路上，那时候还是春天，却忽然意识到，那我是不是要说再见了。 在不断的毕业的离别里，我学会了隐忍与释怀。我知道离开也终究是不过如此，哪来那么多一生一世。  我试着去回顾这些年里自己的成长，却发现自己疏于表达自己的内心，很难再拥有去讲故事的能力。   读大学的时候，我毅然决定要出川，我知道路途遥远，却是我现在和别人回想起来，这是我最不后悔的一件事情。有很多东西都是你选择之后才会知道是怎样的发展，离开了故乡才会知道自己会思念她。来到东南的那年，军训的时候，我某次回头看过人群去，我发现穿着迷彩服的人们，人是那么的多，又是那么的相像，我开始产生了恐惧，是不是终将平庸在了人群里。 可是我知道我现在最大的问题的知与行。 今年暑假的时候去上海找同学玩，夜也要深了的时候，我搭着伙伴逛校园，我在前面像是在独白一样讲我的一些心事。 “我觉得上海是中国最好的城市诶，这么多年了你喜欢它么？” “我觉得我挺喜欢南京的。” “可是我前一段时间读一本散文集啊，卡尔维诺的《看不见的城...</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2016/08/25/temporary-separation/" title="窗外日光弹指过·席间花影坐前移"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo4teq4jxj20hs0dcwew.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="窗外日光弹指过·席间花影坐前移"></a></div><div class="recent-post-info"><a class="article-title" href="/2016/08/25/temporary-separation/" title="窗外日光弹指过·席间花影坐前移">窗外日光弹指过·席间花影坐前移</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-08-25T13:03:50.000Z" title="发表于 2016-08-25 21:03:50">2016-08-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">我也不知道该如何给这组照片取名 可能只是要比较长时间的离开这个地方罢了 再见·东南大学                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/08/01/hospital-website/" title="Hospital Website based on VUE.js+PHP+MySQL">Hospital Website based on VUE.js+PHP+MySQL</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-08-01T11:05:39.000Z" title="发表于 2016-08-01 19:05:39">2016-08-01</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">2016.8.1 在 #265 个 issue, #380 次 merge request 后，阶段性的完成了我们的橙灵诊所管理系统 在入职培训期间，我们实习生组成了一个 team，大家分模块完成一个项目，项目的内容是一家医院的在线诊所管理系统，从医生工作站，护士工作站，前台工作站，到预约-登记-分诊-接诊-医生门诊-检查-治疗-药房-收费全流程，还有系统设置，病人库，排班，统计报表等内容的前后端。   其中我负责的是系统设置里的诊疗费管理 medicalFees.vue 的前后端，接诊页面的 reception.vue 的前端，和其中的报告 report.vue 的前后端，和实验室检查 inspect.vue 的前后端。并在其中两个模块的开发过程中作为 项目的技术选型为前端使用 vue.js+bootstrap，后端使用 PHP+Apache，MySQL 数据库。 在开发的过程中，我有一些如下的感悟： 技术经验的积累PHP 的 CodeIgniter 框架的使用 前端 vue.js 的使用 vue 的理念是数据驱动，利用数据修改样式和样式的内容。 我们的 vue 的开发过程，大...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/06/11/matlablens/" title="MatlabLens">MatlabLens</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-06-11T11:05:39.000Z" title="发表于 2016-06-11 19:05:39">2016-06-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">本程序是基于 MATLAB 的 GUI 界面的类 Office Lens 应用，还有很多待提高  其中主要功能有  GUI 界面，方便快捷的操作 文件选择功能 透视变换 图像手动剪切 图像降噪 调节对比度 图像二值化 无限撤销功能 保存图像    详细说明 GUI 界面这次是简单的尝试了下 matlab 自带的 VB 似的 GUI 界面，异常的好用，连监听啊什么的都不用自己写。 文件选择功能利用 uioutfile 函数，调用 Windows 熟悉的文件选择    透视变换透视变换时本程序效率最低，大概需要跑 2min 的功能，利用 MIT 的算法，从左到右从上到下选择要进行透视变换的四个点，这四个点之间的图像将被处理变换为矩形，其原理是将这四个点的坐标，转换为矩形定点，联立求解四元四次方程组，得到透视变换矩阵，将透视变换矩阵作用到四个点中间的其他坐标进行变换。效率最低的地方应该就是解方程的步骤。    图像手动剪切利用 imcrop 函数，本想在透视变换后直接利用顶点坐标进行裁剪，但其实透视变换后，处理后的图像会对变换后没有像素的地方进行黑色填补，导致顶点坐标发生变化。    ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/04/13/convolution/" title="深入理解卷积">深入理解卷积</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-04-13T11:05:39.000Z" title="发表于 2016-04-13 19:05:39">2016-04-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">卷积相关知识的梳理   内积(a1,b1,c1)·(a2,b2,c2)=a1*a2+b1*b2+c1*c2 相关有一个和卷积很容易混淆的概念，叫做相关 首先我们来比较一下：  自相关函数	   R(x)=∫f(t)f(t-x)dt    移-积-和 卷积          g(x)=∫f(x)f(t-x)dt    褶-移-积-和  相关和卷积只差一个反转的过程 相关描述的是：把一个信号 平移一段后，与原函数的相似程度 具体怎么个【褶-移-积-和】后面再讲 相关的物理意义相关最早是用来概率论中描述随机变量之间关系的概念，如相关系数。 实际上信号一般是一个随机过程，为了实现信号的检测、识别与提取，经常要了解两个信号的相似性，或一个信号经过一段延迟后自身的相似性。但相关系数有缺陷。 因为分子是两个信号的内积，如sinx和cosx,从波形上看只是相位不同，而相关系数为零（因为正弦和余弦正交），因此引进相关函数，将原来两函数直接内积改为一个函数和另一个函数的延迟作内积。 其实二者从概念没有任何联系。由于相关函数第一个函数和第二个函数的延迟作内积（内积就是乘积累加），所以相关函数不满足交换...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/04/09/fft/" title="深入理解快速傅里叶变换">深入理解快速傅里叶变换</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-04-09T11:05:39.000Z" title="发表于 2016-04-09 19:05:39">2016-04-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/tech/">tech</a></span></div><div class="content">傅里叶变换相关知识的梳理   傅里叶变换的物理意义: 时间域 &lt;-&gt; 频域的转换傅立叶原理表明：任何连续测量的时序或信号，都可以表示为不同频率的正弦波信号的无限叠加 推荐一篇关于傅里叶变换的文章 - 掐死傅里叶教程 傅里叶变换示意图  时域-相位  时域-频域-相位  傅里叶变换的种类   变换 时间 频率    连续傅里叶变换 连续，非周期性 连续，非周期性   傅里叶级数 连续，周期性 离散，非周期性   离散时间傅里叶变换 离散，非周期性 连续，周期性   离散傅里叶变换 离散，周期性 离散，周期性   mapping  时间的连续     &lt;–&gt;频率的非周期性 时间的离散     &lt;–&gt;频率的周期性 时间的非周期性  &lt;–&gt;频率的连续 时间的周期性   &lt;–&gt;频率的离散  FFT是DFT(离散傅里叶变换的快速实现) 快在哪里？DFT：按定义求值需要O(N^2)次运算 FFT：利用库利-图基算法，以分治法为策略递归地将长度为N=N1*N2的DFT分解为长度为N1的N2个较短序列的DFT 通过许多小的更加容易进行的变...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2016/02/24/vicissitudes/" title="兰因絮果">兰因絮果</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2016-02-24T18:10:00.000Z" title="发表于 2016-02-25 02:10:00">2016-02-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">最近脑海里一直回荡着一句「好多年好多年以后」。   你只是学着令狐冲感慨，在一个地方待得太久，就容易忘记时间。所以你才忽然又开始想逃离，想不顾一切，又甚至想抛弃所有。 你在别人 20 岁生日的时候告诉她，说愿有往事可回首，可是在自己寒假回高中那天，跟老师聊天，说道高三那段时间的好。究其原因，竟是今不如昔，所以下了决定不再回头。恍惚间大学学生生涯已经要到了最后，会懊悔会顿挫会逃避么，不不不以上都不是你的性格所幸也就并没有这么做。你终于学会了将所有愧疚坦然，学会了将所有秘密释然。 你仍自诩是少年，也偏偏做着年少妄知妄为的事，终究是不懂感情。以前你总是纠结，那个困扰了你多年的“爱自己”的问题。原来时间终究是最好的老师，给了你圆满且逻辑自洽的答案。只不过最后，都化成了在合适的时间，无声的倾诉。 「后来我终于知道，它并不是我的花，我只是恰好 途经了它的盛放。」 可什么是爱？什么又是孤独呢？ 茕茕孑孑二十年，依旧是不懂爱也不懂情。 想起哪一次和远洋的基友视频，聊完他人近日的状况后问道：  “你还有什么想问的么？” “恩。 你最近过得好不好。 你太孤独啦。”  高中的时候，一直都是和基友吃饭，...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2015/08/30/summer-in-chongqing/" title="随轻轨呼啸而过的夏天 -- 记重庆社会实践之消失的棒棒">随轻轨呼啸而过的夏天 -- 记重庆社会实践之消失的棒棒</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2015-08-30T18:02:36.000Z" title="发表于 2015-08-31 02:02:36">2015-08-31</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">在开学一周内，我敲下了这篇感悟，在开学前的十天里，我们六人，前往了山城重庆，去调查那即将消失的棒棒。 我是一名四川人，自然对重庆有着特殊的印象，无论是巴蜀人特爱的辣椒，夏天也要吃出满头大汗的火锅，还是川渝地区的美女。巴与蜀，1997 年，重庆从四川省分出作直辖，自然我是年幼无感，这次却是我记事以来第一次踏上这片土地。   论说重庆和四川的差别，自然是重庆这依山而建的城市，轻轨在山体与楼房之间穿梭，嘉陵江汇流，这几天下来，对重庆的感觉颇为微妙。巴蜀因湿寒而特爱火锅，以此祛除体内的寒气，火锅当然是麻油加酸，成都会加耗油，绝非江浙地区的花生酱等佐料。重庆的火锅与成都的火锅又不太相同，他强调的是辣，而特辣的级别却并不会另我难以接受（可能是成都人练出来的？我伙伴都挺难以承受这辣的，甚至得将食材在锅里煮后得在白水里涮一番褪去表面的辣油），而成都更偏重于麻，火锅里的花椒有时挑出来能放满一碗，辣在舌后，麻在唇口。一说到川菜，人们就会想到大把的花椒和辣椒。说到两地到底哪边的饮食更美味，其实也是一个非常纠结的问题。重庆代表认为，大菜当然是重庆江湖菜取胜，麻辣鲜香俱全，而成都方面在小吃上做得更好，口感...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2014/08/29/lonely/" title="一个人活"><img class="post-bg" src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/psbtw.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一个人活"></a></div><div class="recent-post-info"><a class="article-title" href="/2014/08/29/lonely/" title="一个人活">一个人活</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-08-29T16:39:00.000Z" title="发表于 2014-08-30 00:39:00">2014-08-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">故事 大概要从两个月前出发的一个人的旅行 开始说起 2014 年 7 月 4 日前往厦门 于 7 月 9 日金门中转飞往台湾 后顺时针独自环岛 经台中 彰化 台北 花莲 垦丁 7 月 16 日于高雄佛光山参加禅学营 5 天后随营前往台南 嘉义 新北 台北 后独自回上海 于 7 月 27 日返回南京   关于厦门 在鼓浪屿上住了两天 晨起沿着海边能趁游人还未来时感受下小岛的静谧 鼓浪屿论旅游算是极佳之处 沙滩下海游泳 在厦门本岛环岛路沿着海边骑了一下午的自行车 因为心中一直有着对海咸湿的梦 然后去了台湾 很多人觉得一个人说走的旅行很酷 可是大概不然 那 24 天的旅行里 其实也没多少人能完全忍受孤独 我到达台湾的第一天 没有开漫游电话也没有翻网墙来预订住宿 什么都没有准备 就这样一个人拖着行李先找住宿 甚至想不至于第一天就流浪街头吧 不过我倒是知道要做什么 我准备好了各个青旅的资料 然后先直接去买电话卡 再一个一个拨就好 主要看当天是否有空房 其实感触还真的蛮大的 台湾更多的是中華文化 像是传承了真正的传统 初到彰化 一个人拉着行李 路上的阿姨关心我是哪家小孩要去哪 我说我是大陆的...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2014/07/30/foguangshan-in-taiwan/" title="我所领略的禅与佛光因缘">我所领略的禅与佛光因缘</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2014-07-30T11:47:26.000Z" title="发表于 2014-07-30 19:47:26">2014-07-30</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/essay/">essay</a></span></div><div class="content">2014 年夏天，7 月 24 日，从台湾回来，回想这七天的禅学营生活，已经要把自己归为佛光人了。唯识学里讲种子的起现行和回熏的轮回，佛光山的那颗种子，必定结于今年和南京雨花精舍的相识。那时无神论与怀疑论者的我正对宗教哲学挠有兴趣，同学引荐而与雨花精舍相识，经一系列手续之后，于 7 月飞往了宝岛台湾。期间那个种子正在酝酿，慢慢生根发芽。   7 月 16 日，拉着行李，上了佛光山，参加“2014 国际青年生命禅学营”。所见绝非仅有佛光山寺的宏大与庄严，回首山门时“回头是岸”的会心谶语，而是选佛场上法师们的夹道欢迎，不同肤色不同地区的人们的面孔和室友温馨的结缘。 妙光法师的高超翻译能力，小威老师相见欢时的互动，令禅学营更添生色，大家开始融入小组，融入这个集体，融入佛光山。而后教授我们佛门礼仪，开始体验佛门生活，享清规戒律，静心思禅。也有在佛陀纪念馆的大觉堂内感受梵呗和佛光青年歌咏，那时我便震撼于佛光青年为信仰而以歌弘法重新组建人间音缘歌唱团。 其实，我上山感受最深的是星云大师的“包容”，他包容五大洲不同肤色不同地区的人们，甚至不会介意来自新西兰的慧峰法师外国人身份而予其当代理住持；...</div></div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/4/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#content-inner">6</a><a class="page-number" href="/page/7/#content-inner">7</a><a class="extend next" rel="next" href="/page/6/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/08/robotruck-ref/" title="【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来">【内推】无需日语、可远程！加入日本自动驾驶新星 RoboTruck，定义物流未来</a><time datetime="2026-01-08T09:00:00.000Z" title="发表于 2026-01-08 17:00:00">2026-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png" data-lazy-src="https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/05/29/get-started-with-zotero/" title="PDF 文献库解决方案——Zotero">PDF 文献库解决方案——Zotero</a><time datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/essay/"><span class="card-category-list-name">essay</span><span class="card-category-list-count">25</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/lyric/"><span class="card-category-list-name">lyric</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/tech/"><span class="card-category-list-name">tech</span><span class="card-category-list-count">33</span></a></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/cdqz/" style="font-size: 1.1em; color: #999">cdqz</a> <a href="/tags/openwrt/" style="font-size: 1.1em; color: #999">openwrt</a> <a href="/tags/radar/" style="font-size: 1.1em; color: #999">radar</a> <a href="/tags/sensor/" style="font-size: 1.5em; color: #99a9bf">sensor</a> <a href="/tags/homelab/" style="font-size: 1.1em; color: #999">homelab</a> <a href="/tags/photograph/" style="font-size: 1.1em; color: #999">photograph</a> <a href="/tags/lidar/" style="font-size: 1.3em; color: #99a1ac">lidar</a> <a href="/tags/obsidian/" style="font-size: 1.1em; color: #999">obsidian</a> <a href="/tags/zotero/" style="font-size: 1.1em; color: #999">zotero</a> <a href="/tags/gps/" style="font-size: 1.1em; color: #999">gps</a> <a href="/tags/IME/" style="font-size: 1.1em; color: #999">IME</a> <a href="/tags/gnss/" style="font-size: 1.1em; color: #999">gnss</a> <a href="/tags/autopilot/" style="font-size: 1.1em; color: #999">autopilot</a> <a href="/tags/camera/" style="font-size: 1.43em; color: #99a6b9">camera</a> <a href="/tags/web/" style="font-size: 1.1em; color: #999">web</a> <a href="/tags/onedrive/" style="font-size: 1.17em; color: #999c9f">onedrive</a> <a href="/tags/hexo/" style="font-size: 1.23em; color: #999ea6">hexo</a> <a href="/tags/photography/" style="font-size: 1.37em; color: #99a4b2">photography</a> <a href="/tags/slam/" style="font-size: 1.1em; color: #999">slam</a> <a href="/tags/matlab/" style="font-size: 1.23em; color: #999ea6">matlab</a> <a href="/tags/event/" style="font-size: 1.1em; color: #999">event</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">62</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">179.8k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总浏览量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2026-01-08T11:41:03.446Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: str => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: subtitleType => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        btf.getScript('https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  },
+  processSubtitle: (content, extraContents = []) => {
+    if (true) {
+      const sub = ["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"].slice()
+
+      if (extraContents.length > 0) {
+        sub.unshift(...extraContents)
+      }
+
+      if (typeof content === 'string') {
+        sub.unshift(content)
+      } else if (Array.isArray(content)) {
+        sub.unshift(...content)
+      }
+
+      sub.length > 0 && typedJSFn.init(sub)
+    } else {
+      document.getElementById('subtitle').textContent = typeof content === 'string' ? content :
+        (Array.isArray(content) && content.length > 0 ? content[0] : '')
+    }
+  }
+}
+btf.addGlobalFn('pjaxSendOnce', () => { typed.destroy() }, 'typedDestroy')
+</script><script>function subtitleType () {
+  typedJSFn.processSubtitle(["人生应当如盛夏🔆","自动驾驶从业者🚚 | RoboTruck.jp","早稻田修士🌸 | Waseda University","vlogger🎥 | B站id yvonshong"])
+}
+typedJSFn.run(subtitleType)</script></div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
