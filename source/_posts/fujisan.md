@@ -11,7 +11,7 @@ toc: false
 
 <!-- more -->
 <!-- 春夏秋冬 - 荒木毬菜 -->
-<iframe referrerpolicy="no-referrer" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34187525&auto=1&height=66"></iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34187525&auto=1&height=66"></iframe>
 
 |        富士山下        |        爱情转移        |            春夏秋冬            |        日语翻译        |
 | :--------------------: | :--------------------: | :----------------------------: | :--------------------: |

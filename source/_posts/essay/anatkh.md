@@ -11,7 +11,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2019/nxR98pPTtkWMOwU.
 <!-- more -->
 
 <!-- オレンジ - seven oops -->
-<iframe referrerpolicy="no-referrer" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30569513&auto=1&height=66"></iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=30569513&auto=1&height=66"></iframe>
 
 二十一世纪一十年代过去了，我很想它。
 

@@ -11,7 +11,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo7rdb603
 <!-- more -->
 
 <!-- さよなら。ありがとう。（再见了。谢谢你。） - 瀬戸麻沙美等 -->
-<iframe referrerpolicy="no-referrer" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=448916487&auto=1&height=66"></iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=448916487&auto=1&height=66"></iframe>
 
 梦里有我对日本的所有记忆，关于日本的四季，关于学校和研究室，关于铁道 JR，关于打工和便利店，关于从北到南走过的全境四岛。
 
