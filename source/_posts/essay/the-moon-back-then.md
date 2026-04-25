@@ -10,7 +10,8 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/qKYvjPJsGXumrDL.jpg
 
 <!-- more -->
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1897139127&auto=1&height=66"></iframe>
+<!-- 东京人寿 - 容祖儿 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/
 
 又是一年的结束，如果说这一年最有印象的，便不得不提随心飞，从 2020 年 6 月底飞到 2021 年 6 月底的东航周末随心飞，借此去拜访过数个古都的博物馆，也曾数谒两广大快朵颐，看了北国雪下的碧瓦飞檐，看了南国海上的彩色浮标。还有春寒料峭的生日时，在中俄边境荒芜的草原公路上，独自开车狂飙三天。关于随心飞的故事，希望后续有机会能剪出一个合辑的视频。
 
