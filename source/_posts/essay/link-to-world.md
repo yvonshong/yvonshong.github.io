@@ -13,7 +13,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/aHom9jb7A6dUCeN.png
 这或许是时间，也或许是大脑造成的影响，举个例子，是我们对近几个月的记忆是最清晰的，越往前越是模糊，像是几年前的故事会慢慢只记得零星片段；
 
 <!-- Afterglow - Ed Sheeran -->
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1824311819&auto=1&height=66"></iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1824311819&auto=1&height=66"></iframe>
 
 其实是因为没有新鲜体验，一天重复了一年，大脑为了解决存储和检索问题就压缩删除了重复文件。如果想要对抗时间带来的此般副作用：
 

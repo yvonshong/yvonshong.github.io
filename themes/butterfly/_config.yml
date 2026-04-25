@@ -91,11 +91,10 @@ comments:
   use: Disqus  # 启用 Disqus
   text: true
   lazyload: false # Disqus 建议关闭懒加载以确保加载稳定
-  count: true
+  count: false
 
 disqus:
   shortname: shong # 你的 Disqus Shortname
-  apikey: 
 
 # ==============================================================================
 # 页面功能与样式 (Features & Style)

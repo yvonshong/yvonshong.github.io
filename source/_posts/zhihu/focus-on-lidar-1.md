@@ -90,7 +90,7 @@ AEye 公司采用双 MEMS 振镜扫描，发射与接收光路分离设计。
 
 激光发射和接收装置固定，仍有旋转模块但比较小，可以减少产品体积，并且降低成本；旋转模块只有反射镜，重量轻，电机轴承的负荷小，系统运行起来更稳定，寿命更长，符合车规。
 
-<iframe src="//https://vdn6.vzuu.com/SD/2f39c89e-f213-11ec-9334-f670d0338db0.mp4?pkey=AAW8lViwnW-dsRat7DWFdwKn1kKlyW7JS3zy-rU43CKWbNeOTa4DXtzKcwZcQs1xMMgI8MNecD6V7EIRP9CkRl9J&c=avc.1.1&f=mp4&pu=078babd7&bu=078babd7&expiration=1678683214&v=ks6" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" src="//https://vdn6.vzuu.com/SD/2f39c89e-f213-11ec-9334-f670d0338db0.mp4?pkey=AAW8lViwnW-dsRat7DWFdwKn1kKlyW7JS3zy-rU43CKWbNeOTa4DXtzKcwZcQs1xMMgI8MNecD6V7EIRP9CkRl9J&c=avc.1.1&f=mp4&pu=078babd7&bu=078babd7&expiration=1678683214&v=ks6" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
 > AT128 内部构造
 

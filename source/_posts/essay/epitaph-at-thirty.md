@@ -13,7 +13,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250726_1022210
 <!-- more -->
 
 <!-- たぶん yoasobi -->
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1471795224&auto=1&height=66"></iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1471795224&auto=1&height=66"></iframe>
 
 
 2022 年我辞去了硕士毕业后加入的第一家公司，谈了对象，有了更多未曾有过的生活体验，也面临了人生未曾有过的心境，而在去年又选择了不一样的路，也分了手。
@@ -34,7 +34,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250726_1022210
 
 所以面对剧场版的结局，我的感受更多是欣慰，痞子终于能够面对自己的父母，和过去的自己释怀，给所有的粉丝们补完，甚至eva 30周年，发布了属于明日香的补完。
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=116193998406048&bvid=BV1MvNGz1Esy&cid=36555655376&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" src="//player.bilibili.com/player.html?isOutside=true&aid=116193998406048&bvid=BV1MvNGz1Esy&cid=36555655376&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 > *EVA30周年纪念活动“EVANGELION:30+;”限定放映的短篇动画公开！*
 
@@ -92,7 +92,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250726_1022210
 
 2022年4月，我辞掉了毕业后的第一份工作，那时候跟公司提离职，就像是谈了一场长跑恋爱，最后要提分手，在 TuSimple 呆了四年，都又度过了一个大学的时长，可是我终究是要毕业的呀。
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=298958658&bvid=BV1PF41177kW&cid=718039109&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" src="//player.bilibili.com/player.html?isOutside=true&aid=298958658&bvid=BV1PF41177kW&cid=718039109&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 > *《[Farewell TuSimple vlog | 当从事无人驾驶时我们在想什么](https://www.bilibili.com/video/BV1PF41177kW/?spm_id_from=333.1387.0.0)》*
 
