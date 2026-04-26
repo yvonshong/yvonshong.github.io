@@ -1,6 +1,6 @@
 ---
 title: 键盘摄影（五）——相机成像元件：CMOS/CCD
-date: 2020-05-12 23:35:00 +08:00
+date: 2020-05-12 23:35:00
 categories: tech
 tags: 
 - photography

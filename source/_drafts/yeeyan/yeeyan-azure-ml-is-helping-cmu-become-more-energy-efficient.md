@@ -1,6 +1,6 @@
 ---
 title: yeeyan:Azure ML is Helping CMU Become More Energy Efficient
-date: 2015-03-02 18:16:21 +08:00
+date: 2015-03-02 18:16:21
 toc: false
 ---
 

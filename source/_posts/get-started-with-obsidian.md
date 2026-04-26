@@ -1,6 +1,6 @@
 ---
 title: Get started with Obsidian
-date: 2022-01-28 12:00:00 +08:00
+date: 2022-01-28 12:00:00
 categories: tech
 toc: true
 tags:

@@ -1,6 +1,6 @@
 ---
 title: 在世界中心呼唤爱的野兽
-date: 2017-01-02 22:00:00 +08:00
+date: 2017-01-02 22:00:00
 categories: essay
 toc: false
 cover: https://pic.shong.win/6b2f6355ly1fyo56cz5mfj20hs0630sx.webp

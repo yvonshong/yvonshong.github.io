@@ -1,6 +1,6 @@
 ---
 title: ORB SLAM 2
-date: 2021-12-28 12:00:00 +08:00
+date: 2021-12-28 12:00:00
 categories: tech
 tags: slam
 toc: true

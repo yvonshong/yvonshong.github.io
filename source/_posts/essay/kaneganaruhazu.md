@@ -1,6 +1,6 @@
 ---
 title: 见过花火
-date: 2019-02-08 08:38:00 +08:00
+date: 2019-02-08 08:38:00
 categories: essay
 toc: false
 cover: https://pic.shong.win/6b2f6355ly1fyo7rdb603j21fq0o2x6p.webp

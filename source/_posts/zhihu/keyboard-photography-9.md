@@ -1,6 +1,6 @@
 ---
 title: 键盘摄影（九）——光学像差
-date: 2020-10-09 23:21:00 +08:00
+date: 2020-10-09 23:21:00
 categories: tech
 tags: 
 - photography

@@ -1,6 +1,6 @@
 ---
 title: 走进自动驾驶传感器（三）——卫星导航系统
-date: 2021-09-21 15:36:00 +08:00
+date: 2021-09-21 15:36:00
 categories: tech
 tags: 
 - sensor

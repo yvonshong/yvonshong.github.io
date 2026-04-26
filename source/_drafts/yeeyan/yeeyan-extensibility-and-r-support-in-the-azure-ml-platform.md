@@ -1,6 +1,6 @@
 ---
 title: yeeyan:Extensibility and R Support in the Azure ML Platform
-date: 2015-03-03 14:04:58 +08:00
+date: 2015-03-03 14:04:58
 toc: false
 ---
 

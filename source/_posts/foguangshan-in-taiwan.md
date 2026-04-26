@@ -1,6 +1,6 @@
 ---
 title: 我所领略的禅与佛光因缘
-date: 2014-07-30 19:47:26 +08:00
+date: 2014-07-30 19:47:26
 categories: essay
 toc: false
 ---

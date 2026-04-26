@@ -1,6 +1,6 @@
 ---
 title: 与世界连接
-date: 2021-02-21 18:00:00 +08:00
+date: 2021-02-21 18:00:00
 categories: essay
 toc: false
 cover: https://pic.shong.win/aHom9jb7A6dUCeN.webp

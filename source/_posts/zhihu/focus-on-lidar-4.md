@@ -1,6 +1,6 @@
 ---
 title: 聚焦激光雷达（四）——光学系统
-date: 2023-04-19 08:21:00 +08:00
+date: 2023-04-19 08:21:00
 categories: tech
 tags: 
 - lidar

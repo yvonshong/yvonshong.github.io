@@ -1,6 +1,6 @@
 ---
 title: 却是因为爱太轻
-date: 2011-08-29 20:21:00 +08:00
+date: 2011-08-29 20:21:00
 categories: essay
 toc: false
 ---

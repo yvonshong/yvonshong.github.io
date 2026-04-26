@@ -1,6 +1,6 @@
 ---
 title: Hello world on Hexo, my new personal blog.
-date: 2017-02-18 00:00:00 +08:00
+date: 2017-02-18 00:00:00
 categories: tech
 toc: true
 tags:

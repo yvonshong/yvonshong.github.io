@@ -1,6 +1,6 @@
 ---
 title: 后高考时代
-date: 2013-10-13 14:41:22 +08:00
+date: 2013-10-13 14:41:22
 categories: essay
 toc: true
 ---

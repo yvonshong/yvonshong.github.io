@@ -1,6 +1,6 @@
 ---
 title: 三十岁的墓志铭
-date: 2026-04-10 22:00:00 +08:00
+date: 2026-04-10 22:00:00
 categories: essay
 toc: true
 cover: https://pic.shong.win/2026/20250823_114403000_iOS.webp

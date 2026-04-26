@@ -1,6 +1,6 @@
 ---
 title: 像不变星空陪着我
-date: 2011-12-31 23:39:00 +08:00
+date: 2011-12-31 23:39:00
 categories: essay
 toc: false
 ---
