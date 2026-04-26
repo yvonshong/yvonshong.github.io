@@ -21,7 +21,7 @@
 
 📖 **完整文檔**: [中文文檔](https://butterfly.js.org/posts/21cfbf15/) | [English Docs](https://butterfly.js.org/en/posts/butterfly-docs-en-get-started/)
 
-![Butterfly 主題預覽](https://cdn.jsdelivr.net/gh/jerryc127/CDN@m2/img/theme-butterfly-readme.png)
+![Butterfly 主題預覽](https://gcore.jsdelivr.net/gh/jerryc127/CDN@m2/img/theme-butterfly-readme.png)
 
 </div>
 
@@ -139,13 +139,13 @@ npm install hexo-renderer-pug hexo-renderer-stylus --save
 
 <div align="center">
 
-![主題展示](https://cdn.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-1.jpg)
+![主題展示](https://gcore.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-1.jpg)
 
-![主題展示](https://cdn.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-2.jpg)
+![主題展示](https://gcore.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-2.jpg)
 
-![主題展示](https://cdn.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-3.jpg)
+![主題展示](https://gcore.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-3.jpg)
 
-![主題展示](https://cdn.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-4.jpg)
+![主題展示](https://gcore.jsdelivr.net/gh/jerryc127/CDN@m2/img/butterfly-readme-screenshots-4.jpg)
 
 </div>
 

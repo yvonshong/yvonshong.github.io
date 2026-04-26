@@ -35,7 +35,7 @@ theme_color:
 
 disable_top_img: false
 
-index_img: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/v2-ebb9c94260c5a90f3c459cc2949c3b00_r.jpg
+index_img: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/v2-ebb9c94260c5a90f3c459cc2949c3b00_r.webp
 
 default_top_img: false
 archive_img: false
@@ -48,7 +48,7 @@ category_per_img: false
 # ==============================================================================
 # 对应 Yilia 的 avatar
 avatar:
-  img: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.png
+  img: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/HAbatdcnuM37PKf.webp
   effect: false
 
 # 对应 Yilia 的 aboutme
@@ -100,7 +100,7 @@ disqus:
 # 页面功能与样式 (Features & Style)
 # ==============================================================================
 # 网站图标
-favicon: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png
+favicon: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.webp
 
 # 代码块
 code:
@@ -141,7 +141,7 @@ darkmode:
 reward:
   enable: true
   QR_code:
-     - img: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.png
+     - img: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/It31kXcofTA9UB2.webp
        link:
        text: Wechat
 
@@ -183,7 +183,7 @@ search:
 lazyload:
   enable: true
   field: site
-  placeholder: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.png
+  placeholder: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/screenshot-20251210-230924.webp
 
 # 底部信息
 footer:
