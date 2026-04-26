@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/:match*",
-      "destination": "https://yvonshong.github.io/:match*"
+      "source": "/:path*",
+      "destination": "https://yvonshong.github.io/:path*"
     }
   ]
 }
