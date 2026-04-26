@@ -1,6 +1,6 @@
 ---
 title: 青春荒唐我不负你
-date: 2013-06-11 04:01:00
+date: 2013-06-11 08:01:00
 categories: essay
 toc: false
 cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.png

@@ -1,6 +1,6 @@
 ---
 title: 当时的月亮
-date: 2022-01-01 06:00:00 +08:00
+date: 2022-01-01 09:00:00 +08:00
 categories: essay
 toc: true
 cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/qKYvjPJsGXumrDL.jpg
@@ -9,6 +9,10 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/qKYvjPJsGXumrDL.jpg
 「敬通雅好辞说，而坎壈盛世，显志自序，亦蚌病成珠矣。」
 
 <!-- more -->
+
+<!-- 东京人寿 -->
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://i.y.qq.com/n2/m/outchain/player/index.html?songid=338061533&songtype=0"></iframe>
 
 
 又是一年的结束，如果说这一年最有印象的，便不得不提随心飞，从 2020 年 6 月底飞到 2021 年 6 月底的东航周末随心飞，借此去拜访过数个古都的博物馆，也曾数谒两广大快朵颐，看了北国雪下的碧瓦飞檐，看了南国海上的彩色浮标。还有春寒料峭的生日时，在中俄边境荒芜的草原公路上，独自开车狂飙三天。关于随心飞的故事，希望后续有机会能剪出一个合辑的视频。
