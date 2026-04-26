@@ -1,6 +1,6 @@
 ---
 title: 输入法杂谈
-date: 2023-06-15 19:00:00
+date: 2023-06-15 19:00:00 +08:00
 categories: tech
 tags:
   - IME

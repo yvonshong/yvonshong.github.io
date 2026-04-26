@@ -1,6 +1,6 @@
 ---
 title: 写在前路未知时·爱在心口难开
-date: 2014-05-24 18:26:00
+date: 2014-05-24 18:26:00 +08:00
 categories: essay
 toc: false
 cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/AZjLBpGWvN2oKOq.png

@@ -1,6 +1,6 @@
 ---
 title: 键盘摄影（二）——曝光三要素
-date: 2020-05-07 12:00:00
+date: 2020-05-07 12:00:00 +08:00
 categories: tech
 tags: 
 - photography

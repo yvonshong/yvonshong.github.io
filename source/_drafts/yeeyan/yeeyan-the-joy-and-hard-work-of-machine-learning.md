@@ -1,6 +1,6 @@
 ---
 title: yeeyan:The Joy and Hard Work of Machine Learning
-date: 2015-02-05 16:05:39
+date: 2015-02-05 16:05:39 +08:00
 toc: false
 ---
 

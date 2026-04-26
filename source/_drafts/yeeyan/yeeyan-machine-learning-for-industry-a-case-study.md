@@ -1,6 +1,6 @@
 ---
 title: yeeyan:Machine Learning for Industry - A Case Study
-date: 2015-02-23 15:49:12
+date: 2015-02-23 15:49:12 +08:00
 toc: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Hexo 利用 AppVeyor 持续集成
-date: 2017-02-20 02:18:00
+date: 2017-02-20 02:18:00 +08:00
 categories: tech
 toc: true
 tags:

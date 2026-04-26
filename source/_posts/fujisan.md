@@ -1,6 +1,6 @@
 ---
 title: 富士山下/爱情转移/春夏秋冬
-date: 2017-03-12 12:00:00
+date: 2017-03-12 12:00:00 +08:00
 categories: lyric
 toc: false
 ---

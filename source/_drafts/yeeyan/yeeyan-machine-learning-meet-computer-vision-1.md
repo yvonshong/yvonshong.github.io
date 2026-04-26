@@ -1,6 +1,6 @@
 ---
 title: yeeyan:Machine Learning, meet Computer Vision - Part 1
-date: 2015-02-07 00:33:01
+date: 2015-02-07 00:33:01 +08:00
 toc: false
 ---
 

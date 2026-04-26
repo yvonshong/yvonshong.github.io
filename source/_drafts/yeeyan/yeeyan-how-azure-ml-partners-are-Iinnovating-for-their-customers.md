@@ -1,6 +1,6 @@
 ---
 title: yeeyan:How Azure ML Partners are Innovating for their Customers
-date: 2015-02-24 02:14:39
+date: 2015-02-24 02:14:39 +08:00
 toc: false
 ---
 

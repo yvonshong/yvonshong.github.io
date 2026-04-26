@@ -1,6 +1,6 @@
 ---
 title: 2016 年 MSP 的创新之旅
-date: 2017-01-24 00:00:00
+date: 2017-01-24 00:00:00 +08:00
 # categories: microsoft
 toc: false
 ---

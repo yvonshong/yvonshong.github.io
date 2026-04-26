@@ -1,6 +1,6 @@
 ---
 title: 键盘摄影（六）——相机成像模型
-date: 2020-05-22 00:19:00
+date: 2020-05-22 00:19:00 +08:00
 categories: tech
 tags: 
 - photography

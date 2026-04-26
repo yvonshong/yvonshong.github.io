@@ -1,6 +1,6 @@
 ---
 title: 从零开始 NanoPi R2S
-date: 2023-05-16 00:00:00
+date: 2023-05-16 00:00:00 +08:00
 categories: tech
 tags:
   - openwrt

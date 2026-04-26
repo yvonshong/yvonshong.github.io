@@ -1,6 +1,6 @@
 ---
 title: 深入理解线性代数
-date: 2017-02-21 00:25:00
+date: 2017-02-21 00:25:00 +08:00
 ---
 本文为台交大周志成教授[ccjou.wordpress.com/](https://ccjou.wordpress.com/) 的阅读笔记和总结，感谢周志成教授。
 

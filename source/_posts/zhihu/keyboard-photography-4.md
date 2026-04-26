@@ -1,6 +1,6 @@
 ---
 title: 键盘摄影（四）——相机成像元件：胶片与彩色暗房
-date: 2020-05-10 12:00:00
+date: 2020-05-10 12:00:00 +08:00
 categories: tech
 tags: 
 - photography

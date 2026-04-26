@@ -1,6 +1,6 @@
 ---
 title: 那么多的人，你要去哪里
-date: 2016-09-19 21:00:00
+date: 2016-09-19 21:00:00 +08:00
 categories: essay
 toc: false
 cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/6b2f6355ly1fyo55t16xqj20qy0fm76s.jpg

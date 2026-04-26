@@ -1,6 +1,6 @@
 ---
 title: 深入理解卷积
-date: 2016-04-13 19:05:39
+date: 2016-04-13 19:05:39 +08:00
 categories: tech
 tags: 
 - matlab
