@@ -111,7 +111,8 @@ cover: https://pic.shong.win/6b2f6355ly1fyo4l7r7amj23402c0npd.webp
 
 其实也有和伙伴夏天穿浴衣逛京都，冬天穿短袖游台湾。无锡的毕业旅行，上海的夜里游街，玩到精疲力竭的大阪环球影城，在开往关西机场特急 JR 前的告别，时隔半年在花莲的石砾滩上看火花，在九份围桌夜聊，平溪天灯淡水落日，还有在台北的客居日常。那天从台大回来，路上买了个给阿姨准备的生日蛋糕，一路拎回来，当时居然有一丝在这个城市生活的错觉。这些所有一切，除去故事进行时反反复复的破除羁绊，然后就是强烈的不真实感，真的是大学时代最好的朋友了，以及结束后的落寞。
 
-<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" src="//player.bilibili.com/player.html?aid=31058518&cid=54244906&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<!-- 
+<iframe allow="autoplay; encrypted-media; fullscreen; picture-in-picture" src="//player.bilibili.com/player.html?aid=31058518&cid=54244906&page=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe> -->
 
 在今年 23 岁前，随性去了四国爱媛，松山和伊予，去看了莉香和完治分别的车站，梅津寺站，在松山站看到一张伊予下滩站的照片吸引住，是因为真的太漂亮了，于是第二天前往，才知道原来是青春十八宣传海报名景。 
 
