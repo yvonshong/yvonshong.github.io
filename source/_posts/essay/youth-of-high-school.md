@@ -3,7 +3,7 @@ title: 青春荒唐我不负你
 date: 2013-06-11 08:01:00
 categories: essay
 toc: false
-cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.png
+cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.webp
 ---
 
 高考倒计时 10 天，高考倒计时 1 天，高考，高考完的那个晚上，毕业典礼，谢师宴。也就在恍惚之间，高考并没有想象中的那么轰轰烈烈，仿佛是想要凭此事刻下自己来过的痕迹。
@@ -149,23 +149,23 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.png
 也有在毕业离校那天搜刮教室里面的东西留下的照片无数，谢老给我的班上的奖状，班旗【真当我收破烂的班助队长啊= = 】
 话不多说直接上图
 
-![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/SWUlCu8edBKncwt.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/SWUlCu8edBKncwt.webp)
 
 > _大概是三次换组照的小组照吧_
 
-![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.webp)
 
 > _毕业留念做出来的东西_
 
 那个 成长与离别 的光碟鉴于经费不够只刻了 5 张，我留有一张，其他的让家长给老师去了= =
 
-![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/5FM3Rm7u9dNXzhJ.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/5FM3Rm7u9dNXzhJ.webp)
 
 > _三年里我到底买了多少明信片_
 
 剩下了多少明信片 oh shit= =
 
-![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/KulPUY9X3psoW5f.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/KulPUY9X3psoW5f.webp)
 
 > _这大概就是三年里收到的信件吧_
 
@@ -174,7 +174,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/uBYzl6RNHq3mQUw.png
 【你们能找到各自的么~ 】
 这些信大概就封存在家里了吧，不带去大学，
 
-![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/dzH5qmEePL4ZAh9.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/dzH5qmEePL4ZAh9.webp)
 
 > _这是歌歌的大作！！！_
 

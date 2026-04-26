@@ -203,3 +203,9 @@ busuanzi:
   site_pv: true  # 统计本站总访问量 (点击次)
   page_pv: true  # 统计单篇文章阅读量
 
+# CDN 配置
+CDN:
+  internal_provider: local
+  third_party_provider: custom
+  custom_format: "https://cdn.bootcdn.net/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}"
+
