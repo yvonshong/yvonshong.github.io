@@ -207,5 +207,5 @@ busuanzi:
 CDN:
   internal_provider: local
   third_party_provider: custom
-  custom_format: "https://cdn.bootcdn.net/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}"
+  custom_format: "https://gcore.jsdelivr.net/npm/${name}@${version}/${min_file}"
 
