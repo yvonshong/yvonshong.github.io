@@ -147,7 +147,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_1144030
 而人生的体验就是建立回忆的过程，20 岁长途旅行建立的回忆，能从 20 岁开始支撑自己经历低谷，早建立早享受美好回忆的益处。人临终回顾自己的一生，极少有人会额外记得自己买新手机、新车、新房子时的幸福感，那种偏向物质拥有感的快乐会很快衰退，但上学时花光积蓄去看一次海峡对岸独自环游台湾，生日时去我国的最东边看第一缕阳光，人生中有一段时间一直在租房搬家旅居。这些偏建立回忆的消费，带来的幸福感能停留更长的时间。
 
 
-![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20241124_175100000_iOS.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20241124_175100000_iOS.jpg)
 
 > *2024.11.24 希腊雅典帕特农神庙*
 
@@ -160,7 +160,7 @@ cover: https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_1144030
 我们要认识自我，不能坐在房子里坐井观天，往往需要在不完美的探索中认识自己，有痛苦，有欢乐，于痛苦中发现自己活着，于欢乐中发现自己还很平庸，在这个过程中，才逐渐知道自己热爱什么样的生活，跟什么样的世界联系在一起，这就是所谓青春的激情。
 
 
-![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20241231_225958278_iOS.png)
+![](https://cdn.jsdelivr.net/gh/yvonshong/picbed@master/2026/20241231_225958278_iOS.jpg)
 
 > *2025.01.01 意大利罗马斗兽场新年烟花*
 
