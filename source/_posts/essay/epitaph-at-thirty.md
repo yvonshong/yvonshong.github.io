@@ -3,7 +3,7 @@ title: 三十岁的墓志铭
 date: 2026-04-10 22:00:00 +08:00
 categories: essay
 toc: true
-cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_114403000_iOS.webp
+cover: https://pic.shong.win/2026/20250823_114403000_iOS.webp
 ---
 
 从三年前就开始撰写墓志铭式总结，拖到而立之年仍觉得自己写得磕磕绊绊，总觉得差了点什么。我仍然时常会重新拾起四年前写的年度总结《[当时的月亮](https://www.yvonshong.com/2021/12/31/the-moon-back-then/)》，字字句句，肺腑之言。但是如今敲键盘打字时，总觉得憋着一股气，这些年的人生感悟在胸口郁结，觉得自己没有梳理清楚，事情没有尘埃落定，我无法对这些事情拥有盖棺定论的最终解释权。
@@ -102,7 +102,7 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 
 可我仍然记得啊，我当时加入图森的时候，是怀着驶向星辰大海的目标，觉得少年时幻想的科幻，想要改变世界的勇气，都会在这里实现。We choose to go to the moon, not because it‘s easy, but because it’s hard.
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20180923_103549511_iOS.webp)
+![](https://pic.shong.win/2026/20180923_103549511_iOS.webp)
 
 > *2018.09.23 河北唐山曹妃甸港*
 
@@ -127,11 +127,11 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 工作之余我需要有能给我进行充电的活动，同事说很羡慕我每年都会请假出去玩，我依然会开车去棕榈岛上看日落，会面向马特洪峰时畅想什么时候我也会去攀岩，这几乎是我少有的能够抗拒身心疲惫的方式了。
 
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20231125_081834000_iOS.webp)
+![](https://pic.shong.win/2026/20231125_081834000_iOS.webp)
 
 > *2023.11.25 阿联酋迪拜朱美拉棕榈岛*
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20241228_081946000_iOS.webp)
+![](https://pic.shong.win/2026/20241228_081946000_iOS.webp)
 
 > *2024.12.28 瑞士采尔玛特马特洪峰*
 
@@ -147,7 +147,7 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 而人生的体验就是建立回忆的过程，20 岁长途旅行建立的回忆，能从 20 岁开始支撑自己经历低谷，早建立早享受美好回忆的益处。人临终回顾自己的一生，极少有人会额外记得自己买新手机、新车、新房子时的幸福感，那种偏向物质拥有感的快乐会很快衰退，但上学时花光积蓄去看一次海峡对岸独自环游台湾，生日时去我国的最东边看第一缕阳光，人生中有一段时间一直在租房搬家旅居。这些偏建立回忆的消费，带来的幸福感能停留更长的时间。
 
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20241124_175100000_iOS.webp)
+![](https://pic.shong.win/2026/20241124_175100000_iOS.webp)
 
 > *2024.11.24 希腊雅典帕特农神庙*
 
@@ -160,7 +160,7 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 我们要认识自我，不能坐在房子里坐井观天，往往需要在不完美的探索中认识自己，有痛苦，有欢乐，于痛苦中发现自己活着，于欢乐中发现自己还很平庸，在这个过程中，才逐渐知道自己热爱什么样的生活，跟什么样的世界联系在一起，这就是所谓青春的激情。
 
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20241231_225958278_iOS.webp)
+![](https://pic.shong.win/2026/20241231_225958278_iOS.webp)
 
 > *2025.01.01 意大利罗马斗兽场新年烟花*
 
@@ -219,7 +219,7 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 
 但我在德国出差的那段时间，我是切真的感受到，人生是旷野，世界是真的浩瀚。我们又为何要自我设限。
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20240824_155629000_iOS.webp)
+![](https://pic.shong.win/2026/20240824_155629000_iOS.webp)
 
 > *2024.08.24 瑞士卢塞恩瑞吉*
 
@@ -240,7 +240,7 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 
 靠着这些，从二十七岁生日，在上海封城期间谈上的恋爱，然后就是杭州异地恋，熬过搬到上海无尽的争吵，撑到开启异国。那些异地恋时期攒下的高铁票，如今成了对抗卢梭式虚伪的物证——真正的伦理选择不在孤儿院的捐款箱前，而在拒绝把爱人符号化的日常里。
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20220411_111738783_iOS.webp)
+![](https://pic.shong.win/2026/20220411_111738783_iOS.webp)
 
 > *2022.04.11 上海 封城期间 我攒了很多天的生日物资*
 
@@ -269,7 +269,7 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 真正的恋爱，是两个人借由对方共同打开生活，并在对方的映射里看见自己深爱的那一种状态。然而，生活不是天上掉下来的，必须由双方亲手创造。但我越来越多地感受到，横亘在这条创造之路当中的问题，往往是“成熟度的差异”。两人亟待解决的，通常不是浅层的沟通问题，而是更深层次的利益与自我边界的融合。
 
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250808_100443000_iOS.webp)
+![](https://pic.shong.win/2026/20250808_100443000_iOS.webp)
 
 > *2025.08.08 日本神奈川县镰仓江之岛海岸*
 
@@ -299,13 +299,13 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250823_11440
 
 有个周末去参观东京地下神殿，参与活动的人里有几位中国人。大家顺理成章地结伴聊天、互相帮忙拍照。散场后需要步行半个小时去车站，一路上伴随着窸窸窣窣的交谈声，聊到了各自的年纪。我说我三十岁了，那位伙伴笑着对我说：“真好，人生才刚刚开始。”
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250802_071249000_iOS.webp)
+![](https://pic.shong.win/2026/20250802_071249000_iOS.webp)
 
 > *2025.08.02 日本埼玉县春日部市 龙族里面的东京地下神殿，来拯救绘梨衣*
 
 在东京的时候终于一个人去看心心念念的隅田川花火大会，那天在晴空塔下的街道，体验着一直想看的城市里的花火大会，我觉得我在经历我的第二个夏天。对人生进度的体验焕然一新，觉得毕业以后是人生的一个新阶段，可是如今我觉得我仍然能够有刚毕业的时候那种感觉，对世间万物充满期待，不愿跌入平庸之海。
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2026/20250726_102221000_iOS.webp)
+![](https://pic.shong.win/2026/20250726_102221000_iOS.webp)
 
 > *2025.07.27 日本东京 隅田川花火大会*
 

@@ -3,7 +3,7 @@ title: 西西弗续
 date: 2012-08-17 08:44:00
 categories: essay
 toc: false
-cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/psbhana.webp
+cover: https://pic.shong.win/psbhana.webp
 ---
 
 "听过很多的故事 看过很多的恋人 但是 想你的时候 我就把他们都忘记了 不会拿来温习 计划 参考 警告
@@ -24,7 +24,7 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/psbhana.webp
 
 只是想留下一点点希望。
 
-![](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/psbhana.webp)
+![](https://pic.shong.win/psbhana.webp)
 
 守和教的：这是个小概率事件，
 

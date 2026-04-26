@@ -5,7 +5,7 @@ categories: essay
 tags:
   - cdqz
 toc: false
-cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.webp
+cover: https://pic.shong.win/2013/jiushiyiyu.webp
 ---
 
 十年前我在高中毕业的时候出过一本书，是高中三年来和同学们一起记录的玩笑和日常，书名为《九世呓语》，取名由来是我们高一是十一班，高二后，个别班级被拆分，其后班级序号前移，我们成了九班，书名谐音——九十一语（录）。
@@ -16,18 +16,18 @@ cover: https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.web
 
 是的，如今提到高中，得说是十(几)年前了，那三年间，我们一起记录，Rich 制作了电子相册，我攒下了很多照片和视频。我还记得高考出成绩的那天晚上，我下午还在忙着语录印书的事情。
 
-![alt text](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/jiushiyiyu.webp)
+![alt text](https://pic.shong.win/2013/jiushiyiyu.webp)
 
-![alt text](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/WP_20130819_008.webp)
+![alt text](https://pic.shong.win/2013/WP_20130819_008.webp)
 
 暑期来校的高一新生夏令营里，还制作了海报趁机贩卖。
-![alt text](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/WP_20130713_001.webp)
+![alt text](https://pic.shong.win/2013/WP_20130713_001.webp)
 
-![alt text](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/WP_20130720_012.webp)
+![alt text](https://pic.shong.win/2013/WP_20130720_012.webp)
 
-![alt text](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/poster.webp)
+![alt text](https://pic.shong.win/2013/poster.webp)
 
-![alt text](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/2013/f9cbf7d3572c11df8a04ee1a612762d0f603c2c0.webp)
+![alt text](https://pic.shong.win/2013/f9cbf7d3572c11df8a04ee1a612762d0f603c2c0.webp)
 
 贩卖后净收入一千余，事后请大家一起吃了顿大餐，给参与书籍排班的同学们送了纪念礼物。
 

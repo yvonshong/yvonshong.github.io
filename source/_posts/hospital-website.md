@@ -33,7 +33,7 @@ git 的客户端 SourceTree 和 GitFlow
 
 gitflow 最主要的是区分了 master-develop，并在 develop 上建立 feature，master 上建 hotfix。
 
-![gitflow](https://gcore.jsdelivr.net/gh/yvonshong/picbed@master/o_git-flow-nvie.webp)
+![gitflow](https://pic.shong.win/o_git-flow-nvie.webp)
 
 C:\Users\daiwe\Documents\picbed\o_git-flow-nvie.png
 
