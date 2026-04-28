@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PDF 文献库解决方案——Zotero | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="论工作方式的形成，和效率工具，我言必及我大一开始使用的：  outlook 日历：做日程管理，有时间跨度和排他性的任务； todo：之前是 wunderlist，做任务管理，有 ddl 和优先级的设定； 以及我之前最重要的文档工具 OneNote；  但是在存储管理 pdf 文件上，迷糊了很多年。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PDF 文献库解决方案——Zotero">
+<meta property="og:url" content="https://www.yvonshong.com/2023/05/29/get-started-with-zotero/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="论工作方式的形成，和效率工具，我言必及我大一开始使用的：  outlook 日历：做日程管理，有时间跨度和排他性的任务； todo：之前是 wunderlist，做任务管理，有 ddl 和优先级的设定； 以及我之前最重要的文档工具 OneNote；  但是在存储管理 pdf 文件上，迷糊了很多年。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.shong.win/HAbatdcnuM37PKf.webp">
+<meta property="article:published_time" content="2023-05-29T09:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-28T16:30:49.066Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="onedrive">
+<meta property="article:tag" content="zotero">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.shong.win/HAbatdcnuM37PKf.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "PDF 文献库解决方案——Zotero",
+  "url": "https://www.yvonshong.com/2023/05/29/get-started-with-zotero/",
+  "image": "https://pic.shong.win/HAbatdcnuM37PKf.webp",
+  "datePublished": "2023-05-29T09:00:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "https://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://pic.shong.win/screenshot-20251210-230924.webp"><link rel="canonical" href="https://www.yvonshong.com/2023/05/29/get-started-with-zotero/index.html"><link rel="preconnect" href="https://gcore.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://gcore.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PDF 文献库解决方案——Zotero',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">PDF 文献库解决方案——Zotero</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">PDF 文献库解决方案——Zotero</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-29T09:00:00.000Z" title="发表于 2023-05-29 17:00:00">2023-05-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">719</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>论工作方式的形成，和效率工具，我言必及我大一开始使用的：</p>
+<ul>
+<li>outlook 日历：做日程管理，有时间跨度和排他性的任务；</li>
+<li>todo：之前是 wunderlist，做任务管理，有 ddl 和优先级的设定；</li>
+<li>以及我之前最重要的文档工具 OneNote；</li>
+</ul>
+<p>但是在存储管理 pdf 文件上，迷糊了很多年。</p>
+<span id="more"></span>
+
+<p>有时候会追求在 pdf 上手写笔记，有时候又追求键盘输入的可搜索性。先后尝试过：</p>
+<ol>
+<li>把 PDF 文件保存进 OneNote，在里面做批注。最后发现 OneNote 根本就不是做这个的，OneNote 会变得巨大打开变得巨慢，阅读体验也很差。</li>
+<li>还原到本质，用文件夹进行管理，Surface 上做批注。缺点是文件夹的层级会十分犹豫，因为论文类型的 PDF 更适合多 tag 的描述，当然其实在足够优秀的搜索效果面前，tag 也是可以忽略的。</li>
+<li>把 PDF 保存在 Notebility，在里面做批注。软件实现了 OneDrive 的保存，但是不跨平台，只支持 Mac + iPad 平台，Windows 用户震怒。</li>
+<li>尝试过 Mendeley，是专门的文献管理软件，虽然文献信息可上传至云端备份，但账户存储空间只有<strong>2G的免费空间</strong>，多余的文献将无法同步其文件。因此，重装系统或者更换电脑后，未同步 PDF 文件的文献将无法同步至新平台上。其对英文文献的友好程度较高，但不利于中文文献的管理。</li>
+</ol>
+<p>最后终于用上了 Zotero，它的好处有：</p>
+<ul>
+<li>文献信息整理，有文献库的基本功能，搜索，标签，一应俱全。</li>
+<li>支持 OneDrive 同步！M365用户狂喜。</li>
+<li>有很多插件，支持中文文献。</li>
+</ul>
+<h1 id="Zotero"><a href="#Zotero" class="headerlink" title="Zotero"></a>Zotero</h1><p>注册和下载： <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zotero.org/">https://www.zotero.org/</a></p>
+<h1 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h1><h2 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h2><ul>
+<li>Edit 编辑 &gt;&gt; Preference 首选项 &gt;&gt; Advanced &gt;&gt; General &gt;&gt; Language &gt;&gt; 中文（简体）</li>
+</ul>
+<h2 id="OneDrive-同步"><a href="#OneDrive-同步" class="headerlink" title="OneDrive 同步"></a>OneDrive 同步</h2><ul>
+<li>编辑 &gt;&gt; 首选项 &gt;&gt; 同步 &gt;&gt; 登录 会用 <code>Zotero</code> 同步书目条例</li>
+<li>编辑 &gt;&gt; 首选项 &gt;&gt; 高级 &gt;&gt; 文件和文件夹  &gt;&gt; 已链接附件的根文件夹 &gt;&gt; 选择 到 OneDrive 自己的 Zotero/storage 文件夹下</li>
+<li>数据存储位置 为默认</li>
+</ul>
+<p>Ubuntu 下 OneDrive 同步可参考 <a href="https://www.yvonshong.com/2022/01/28/get-started-with-obsidian/">Get started with Obsidian</a></p>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><p>官方插件列表 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zotero.org/support/plugins">https://www.zotero.org/support/plugins</a></p>
+<h2 id="ZotFile"><a href="#ZotFile" class="headerlink" title="ZotFile"></a>ZotFile</h2><p>用于管理附件，自动PDF重命名，移动和附加到Zotero项目，下载： <a target="_blank" rel="noopener" href="https://github.com/jlegewie/zotfile">https://github.com/jlegewie/zotfile</a></p>
+<p>设置：</p>
+<ul>
+<li>工具 &gt;&gt; ZotFile Preference &gt;&gt; Source Folder for Attaching New Files &gt;&gt; 到自己的  <code>OneDrive/Documents/Zotero/storage</code>  文件夹下</li>
+<li>工具 &gt;&gt; ZotFile Preference &gt;&gt; Location of Files &gt;&gt; 到自己的  <code>OneDrive/Documents/Zotero/storage</code>  文件夹下</li>
+<li>工具 &gt;&gt; ZotFile Preference &gt;&gt; Location of Files &gt;&gt; Use subfolder defined by <code>/%t</code></li>
+</ul>
+<h2 id="茉莉花-Jasminum"><a href="#茉莉花-Jasminum" class="headerlink" title="茉莉花 Jasminum"></a>茉莉花 Jasminum</h2><p>下载： <a target="_blank" rel="noopener" href="https://github.com/l0o0/jasminum">Jasminum - 茉莉花</a></p>
+<p>设置：</p>
+<p><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic2.zhimg.com/80/v2-a12eb6a0a0d3b0a556c2f7eccc19efcd_720w.webp"></p>
+<p>enjoy it!</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com/2023/05/29/get-started-with-zotero/">https://www.yvonshong.com/2023/05/29/get-started-with-zotero/</a></span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/onedrive/">onedrive</a><a class="post-meta__tags" href="/tags/zotero/">zotero</a></div><div class="post-share"><div class="social-share" data-image="https://pic.shong.win/HAbatdcnuM37PKf.webp" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pic.shong.win/It31kXcofTA9UB2.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/It31kXcofTA9UB2.webp" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img class="cover" src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/2013/jiushiyiyu.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">我们把往事的记忆幻化成光影纸质想使之永垂不朽</div></div><div class="info-2"><div class="info-item-1">十年前我在高中毕业的时候出过一本书，是高中三年来和同学们一起记录的玩笑和日常，书名为《九世呓语》，取名由来是我们高一是十一班，高二后，个别班级被拆分，其后班级序号前移，我们成了九班，书名谐音——九十一语（录）。   首先献上这次做的网页：九世呓语 主页 www.yvonshong.com/911/ 是的，如今提到高中，得说是十(几)年前了，那三年间，我们一起记录，Rich 制作了电子相册，我攒下了很多照片和视频。我还记得高考出成绩的那天晚上，我下午还在忙着语录印书的事情。   暑期来校的高一新生夏令营里，还制作了海报趁机贩卖。    贩卖后净收入一千余，事后请大家一起吃了顿大餐，给参与书籍排班的同学们送了纪念礼物。 如今趁着十年之际，现发布了书籍的电子版。 以及其中包含的系列内容：  Three years 系列视频 - Bilibili 毕业去向统计 - 飞书文档 访问密码请联系 Yvon PDF 下载链接 - 《九世呓语》下载 在线阅读网页 - 《九世呓语》在线阅读  也分享一下我在其中写的 急 部分，没办法，年少时中二用序破急来命名书的章节。。。 我还翻到了我当时在夏令营上...</div></div></div></a><a class="pagination-related" href="/2023/05/15/introduction-to-nano-pi-r2s/" title="从零开始 NanoPi R2S"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">从零开始 NanoPi R2S</div></div><div class="info-2"><div class="info-item-1">半年前购置了软路由，最近才配置上，全当做个笔记。   硬件 NanoPi R2S TF 卡（8G 以上就够了， Class 10 以上标准，更好的可以上 Industrial ） Type-C 电源线（无需支持快充标准） 10W 以上充电头   刷系统刷机工具win32diskimager 固件无需忍受百度云小水管： 官方固件 Google Drive 下载链接 在 Windows 下以管理员身份运行 win32diskimager，在界面上选择你的 TF 卡盘符，选择解压后的固件文件，点击 Write 按钮烧写到 TF 卡。 刷机完成后将 TF 卡插入，接电，会自动启动系统。此时 NanoPi 正面 SYS 灯红灯闪烁。 连线电脑直连 modem-router-nanopi-pc 接线方式：原家庭路由和光猫的接线方式不变，R2S 的 WAN 口连接原家庭主路由的 LAN 口，R2S 无需设置，R2S 的 LAN 口连接电脑网口； 验证方法：电脑网卡设置成“自动获得 IP 地址”就可正常上网。 此方法可快速检测 R2S 是否存在硬件故障，用命令 ping www.baidu.co...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2022/01/28/get-started-with-obsidian/" title="Get started with Obsidian"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-28</div><div class="info-item-2">Get started with Obsidian</div></div><div class="info-2"><div class="info-item-1">Obsidian 是根据卢曼卡片盒方法论构建的次世代笔记系统，基于本地 markdown 编辑和双向链接特殊语法。具体使用方式可以参考《卡片盒阅读法》和 Notion。   官网 obsidian.md ，目前支持 Windows, macOS, Linux, iOS, iPadOS, Android.同步支持 Obsidian 应用内付费同步， 苹果生态支持 iCloud 同步，可自建其他云盘同步和 Git 同步。 我个人的使用方案是： Windows, Linux(Ubuntu 20.04), macOS, 都使用 Onedrive 同步； 手机上不使用。 安装官网 obsidian.md 启动 Launch可以直接在 https://obsidian.md/download 下载 deb。 Linux 下是 AppImage，每一次启动时都需要在 terminal 敲击命令，而不是点击图标，所以可以自制 launch 文件。  icon: 首先下载好 Obsidian 的图标;  新建 Obsidian.desktop 文件:  123456[Desktop Entry]N...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Zotero"><span class="toc-text">Zotero</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE"><span class="toc-text">基础设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E8%A8%80"><span class="toc-text">语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OneDrive-%E5%90%8C%E6%AD%A5"><span class="toc-text">OneDrive 同步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-text">插件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ZotFile"><span class="toc-text">ZotFile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8C%89%E8%8E%89%E8%8A%B1-Jasminum"><span class="toc-text">茉莉花 Jasminum</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/26/hexo-picbed-dns/" title="Hexo 图床方案和国内解析优化">Hexo 图床方案和国内解析优化</a><time datetime="2026-04-26T12:30:00.000Z" title="发表于 2026-04-26 20:30:00">2026-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/2026/20250823_114403000_iOS.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三十岁的墓志铭"/></a><div class="content"><a class="title" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭">三十岁的墓志铭</a><time datetime="2026-04-10T14:00:00.000Z" title="发表于 2026-04-10 22:00:00">2026-04-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/2013/jiushiyiyu.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2023/05/29/get-started-with-zotero/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://www.yvonshong.com/2023/05/29/get-started-with-zotero/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = 'PDF 文献库解决方案——Zotero'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://gcore.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

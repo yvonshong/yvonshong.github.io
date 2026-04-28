@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>西西弗续 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="“听过很多的故事 看过很多的恋人 但是 想你的时候 我就把他们都忘记了 不会拿来温习 计划 参考 警告 过去已经不在了 将来也不想考虑 只想此时此刻 为了你任性地勇敢” ———安东尼《云治》">
+<meta property="og:type" content="article">
+<meta property="og:title" content="西西弗续">
+<meta property="og:url" content="https://www.yvonshong.com/2012/08/17/sisyphus/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="“听过很多的故事 看过很多的恋人 但是 想你的时候 我就把他们都忘记了 不会拿来温习 计划 参考 警告 过去已经不在了 将来也不想考虑 只想此时此刻 为了你任性地勇敢” ———安东尼《云治》">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.shong.win/psbhana.webp">
+<meta property="article:published_time" content="2012-08-17T00:44:00.000Z">
+<meta property="article:modified_time" content="2026-04-28T16:30:49.065Z">
+<meta property="article:author" content="Yvon Shong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.shong.win/psbhana.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "西西弗续",
+  "url": "https://www.yvonshong.com/2012/08/17/sisyphus/",
+  "image": "https://pic.shong.win/psbhana.webp",
+  "datePublished": "2012-08-17T00:44:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "https://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://pic.shong.win/screenshot-20251210-230924.webp"><link rel="canonical" href="https://www.yvonshong.com/2012/08/17/sisyphus/index.html"><link rel="preconnect" href="https://gcore.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://gcore.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '西西弗续',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://pic.shong.win/psbhana.webp);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">西西弗续</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">西西弗续</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2012-08-17T00:44:00.000Z" title="发表于 2012-08-17 08:44:00">2012-08-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/essay/">essay</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">723</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>“听过很多的故事 看过很多的恋人 但是 想你的时候 我就把他们都忘记了 不会拿来温习 计划 参考 警告</p>
+<p>过去已经不在了 将来也不想考虑 只想此时此刻 为了你任性地勇敢” ———安东尼《云治》</p>
+<span id="more"></span>
+
+<p>前天去逛了另一家西西弗书店，店里的非书籍类确实很精致，很高兴的看到摆有花种，却苦于找不到想要的玫瑰花，还是买了个再倒掉，装自己以前留下的种子。</p>
+<p>上次种花还留着的备用种子。</p>
+<p>不敢再种下去的种子。</p>
+<p>本着是若我不种 就不会知道它开不出来了这种自欺欺人的理念，将它装进了封闭的小试管里。</p>
+<p>我才不管你高温失活还是干燥失水，只想不要破碎掉不要风干成屑。</p>
+<p>只是想留下一点点希望。</p>
+<p><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/psbhana.webp"></p>
+<p>守和教的：这是个小概率事件，</p>
+<p>路鸣泽却说：但不等于零。</p>
+<p>其实我是在害怕以后不敢种花了。而或许，我已经为我以前说的那句“为一朵花闪耀的日子”这句没有谓语的非句子找到了谓语。为什么不开花结果就得闲置在一边。</p>
+<p>“你知道西西弗书店名字的由来么？就西西弗的神话。”</p>
+<p>“他是一个君王，西西弗因足智多谋触怒了众神，诸神惩罚西西弗不断地把巨石滚上山顶，而石头因为它自身的重量又会滚下去，他们完全有理由相信没有比这徒劳而无望的工作更可怕的惩罚了，然后西西弗看着石头马上朝着更低的地方滚下去，在那里，他不得不把它重新滚上山顶。西西弗要永远地、并且没有任何希望地重复着这个毫无意义的动作。”</p>
+<p>我看到他回到山下，迈着沉重而整齐的步子，走向他永远不知道尽头的痛苦。当他爬上山顶，渐渐凌越在诸神的领地，而他爬上山顶所要进行的斗争本身就是足以使一个人心里感到充实。西西弗是幸福的。</p>
+<p>至于一直在纠结的爱自己的问题，西西弗的目的并不是要推石头上山，而这个过程他已经幸福而已。<br>并不是迫不及待的去爱，而喜欢自己喜欢一个人的状态而已。</p>
+<p>放暑假前曾几天之内把最喜欢的安东尼的绘本抄完了 相比于两年前 有了不一样的感受</p>
+<p>付出都是值得的</p>
+<p>那些为一朵花闪耀的日子 填充在现在的我和之前的我之间的缝隙 </p>
+<p>这些都是你给我的爱吧</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com/2012/08/17/sisyphus/">https://www.yvonshong.com/2012/08/17/sisyphus/</a></span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://pic.shong.win/psbhana.webp" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pic.shong.win/It31kXcofTA9UB2.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/It31kXcofTA9UB2.webp" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2012/08/24/last-year-in-high-school/" title="我不怕千万人阻挡"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">我不怕千万人阻挡</div></div><div class="info-2"><div class="info-item-1">2012 年暑假   别人的暑假从七月算起，我们却还在补课，提前进入的高三。零诊后的释放，挥别高二。补课最后过于喜欢安东尼的《这些都是你给我的爱》，把整个绘本抄完了，也是想着和高一读这本时心境又大不一样，毕竟，否定之否定嘛。 这个暑假也是太多的经历。虽然说生活不是时光旅行，我们还是又重回到了图书馆，陪着去听演唱会，练习游泳，约去打羽毛球，一起做蛋糕，第一次滑刀冰。学着去做好多好多自己不会做的和自己不敢做的事。 最开始是看见一句话：小的时候觉得游泳很麻烦不去学，等到长大后喜欢的人约你去游泳你只有耸肩说：我不会诶。 我们都是需要这样大胆的尝试，任性的勇敢。其实这都过于温暖。 为你做的微小动作和一起的时间。过程中都会情不自禁。 那是秘密。 “你要赶紧来爱我，等我变成长颈鹿，你就只能看到我的膝盖了”云治里，鹿角男孩望着远处的城市的方向，终究放心不下一个人，伸长了脖子去探望，最后终变成了长颈鹿。 那些失恋了的人，带着过去的记忆生活，犹豫着是不是要忘记，可曾经那么真心的喜悦和担心过，怎么可能彻底忘记。或许只要等到对的时间，让你觉得一切都好了，犹如季节变化多端冷热交替。遇见另一个长颈鹿，他是特...</div></div></div></a><a class="pagination-related" href="/2012/04/30/rose/" title="玫瑰色"><img class="cover" src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/psbflower.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">玫瑰色</div></div><div class="info-2"><div class="info-item-1">清明时种下花的种子再也不会开，纵使自己每天给它浇水那也怎样，天气好的时候捧着它到走廊去晒太阳，贴上标签怕它掉了，说那是自己的花要对它负责，可它不会给你长出幼芽的机会。  Una rosa es una rosa. 玫瑰终究是玫瑰，如果长出来的花定会太脆弱，仅是靠着浇水的滋润，无法拥抱自由的土壤灿烂的阳光，那离开它离开 B-612 的人又何尝不是呢。 结果是爱上了浇花的过程。回校时为它满心欢喜，一直惦记着为什么还没有发芽，放在窗边放在桌上，最初只是想圆去年的一个愿望，更多感受到的却是一种迟到的苦涩，近三十天，好多个月，一点点的推下去更多的是知道它不会发芽了对吧，自己当初种的时候只是以为好好爱着它就对了吧。  再也不要让一朵花如此举足轻重的充溢着自己的脑海，可却被告知是自己对花还不够好，连芽都没有长出来。可就是没有长出来的过程当中，为一朵花闪耀的日子。 考完半期的那天，一个人坐在操场主席台边，夕阳，将世界像血一样染红了的，太阳最终的宿命。说着那句独白，“我还可以看多少次这样悲哀的天色。” 眼中玫瑰色的夕阳也比不过满天星夜。 Rose. 其实再也不用了对吧，自己也再也不会去了对吧。 I...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">人生应当如盛夏🔆</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/26/hexo-picbed-dns/" title="Hexo 图床方案和国内解析优化">Hexo 图床方案和国内解析优化</a><time datetime="2026-04-26T12:30:00.000Z" title="发表于 2026-04-26 20:30:00">2026-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/2026/20250823_114403000_iOS.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三十岁的墓志铭"/></a><div class="content"><a class="title" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭">三十岁的墓志铭</a><time datetime="2026-04-10T14:00:00.000Z" title="发表于 2026-04-10 22:00:00">2026-04-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/12/16/homelab/" title="All-in-One HomeLab 和多设备多系统远程方案">All-in-One HomeLab 和多设备多系统远程方案</a><time datetime="2025-12-16T23:00:00.000Z" title="发表于 2025-12-17 07:00:00">2025-12-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tittle-tattle-about-input-method/" title="输入法杂谈">输入法杂谈</a><time datetime="2023-06-15T11:00:00.000Z" title="发表于 2023-06-15 19:00:00">2023-06-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽"><img src="https://pic.shong.win/screenshot-20251210-230924.webp" data-lazy-src="https://pic.shong.win/2013/jiushiyiyu.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="我们把往事的记忆幻化成光影纸质想使之永垂不朽"/></a><div class="content"><a class="title" href="/2023/06/07/what-we-were-talking-about-ten-years-ago/" title="我们把往事的记忆幻化成光影纸质想使之永垂不朽">我们把往事的记忆幻化成光影纸质想使之永垂不朽</a><time datetime="2023-06-07T02:00:00.000Z" title="发表于 2023-06-07 10:00:00">2023-06-07</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2020 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2012/08/17/sisyphus/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://www.yvonshong.com/2012/08/17/sisyphus/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '西西弗续'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://gcore.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
