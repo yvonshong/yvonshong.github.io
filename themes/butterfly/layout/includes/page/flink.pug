@@ -26,8 +26,8 @@
               for(let j = 0; j < lists.length; j++){
                 let avatarHtml = '';
                 const avatarStr = lists[j].avatar || '';
-                const isEmoji = [...avatarStr].length <= 2 && /\p{Emoji}/u.test(avatarStr);
-                const isIcon = avatarStr.startsWith('fa ') || avatarStr.startsWith('fas ') || avatarStr.startsWith('fab ') || avatarStr.startsWith('far ') || avatarStr.startsWith('fa-') || avatarStr.includes('fa-');
+                const isEmoji = [...avatarStr].length <= 2 && !avatarStr.includes('/') && !avatarStr.includes('.') && /\p{Extended_Pictographic}/u.test(avatarStr);
+                const isIcon = avatarStr.startsWith('fa') && !avatarStr.includes('/') && !avatarStr.includes('.');
                 if (isEmoji) {
                   avatarHtml = `<span class="emoji-avatar">${avatarStr}</span>`;
                 } else if (isIcon) {
@@ -78,8 +78,8 @@
             -
               let avatarHtml = ''
               const avatarStr = j.avatar || ''
-              const isEmoji = [...avatarStr].length <= 2 && /\p{Emoji}/u.test(avatarStr)
-              const isIcon = avatarStr.startsWith('fa ') || avatarStr.startsWith('fas ') || avatarStr.startsWith('fab ') || avatarStr.startsWith('far ') || avatarStr.startsWith('fa-') || avatarStr.includes('fa-')
+              const isEmoji = [...avatarStr].length <= 2 && !avatarStr.includes('/') && !avatarStr.includes('.') && /\p{Extended_Pictographic}/u.test(avatarStr)
+              const isIcon = avatarStr.startsWith('fa') && !avatarStr.includes('/') && !avatarStr.includes('.')
               if (isEmoji) {
                 avatarHtml = `<span class="emoji-avatar">${avatarStr}</span>`
               } else if (isIcon) {

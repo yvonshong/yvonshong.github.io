@@ -1,7 +1,7 @@
 if theme.aside.card_flink && theme.aside.card_flink.enable
   -
-    const isEmoji = (str) => str && [...str].length <= 2 && /\p{Emoji}/u.test(str)
-    const isIcon = (str) => str && (str.startsWith('fa ') || str.startsWith('fas ') || str.startsWith('fab ') || str.startsWith('far ') || str.startsWith('fa-') || str.includes('fa-'))
+    const isEmoji = (str) => str && [...str].length <= 2 && !str.includes('/') && !str.includes('.') && /\p{Extended_Pictographic}/u.test(str)
+    const isIcon = (str) => str && str.startsWith('fa') && !str.includes('/') && !str.includes('.')
   -
   .card-widget.card-flink
     .item-headline

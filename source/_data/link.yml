@@ -1,15 +1,15 @@
 - class_name: 友链
   class_desc: 友情链接
   link_list:
-    - name: Yvon Shong Gallery
+    - name: photography
       link: https://www.yvonshong.com/gallery/
-      avatar: https://pic.shong.win/screenshot-20251210-230924.webp
+      avatar: fas fa-photo-film
       descr: 画廊
-    - name: 
+    - name: travel
       link: https://www.yvonshong.com/map/
       avatar: fas fa-earth-americas
-      descr: map and flights
+      descr: 旅途轨迹
     - name: 九世呓语
       link: https://yvonshong.com/911/
       avatar: fas fa-book
-      descr: 九世呓语
+      descr: 高中毕业纪念册

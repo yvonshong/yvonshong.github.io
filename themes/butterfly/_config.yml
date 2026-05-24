@@ -2,7 +2,7 @@
 # 核心导航与社交 (Menu & Social)
 # ==============================================================================
 menu:
-  主页: / || fas fa-home
+  # 主页: / || fas fa-home
   技术: /categories/tech/ || fas fa-microchip
   随笔: /categories/essay/ || fas fa-pen-nib
   画廊: https://www.yvonshong.com/gallery/ || fas fa-images
