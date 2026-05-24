@@ -24,11 +24,23 @@
                 lists.sort(() => Math.random() - 0.5)
               }
               for(let j = 0; j < lists.length; j++){
+                let avatarHtml = '';
+                const avatarStr = lists[j].avatar || '';
+                const isEmoji = [...avatarStr].length <= 2 && /\p{Emoji}/u.test(avatarStr);
+                const isIcon = avatarStr.startsWith('fa ') || avatarStr.startsWith('fas ') || avatarStr.startsWith('fab ') || avatarStr.startsWith('far ') || avatarStr.startsWith('fa-') || avatarStr.includes('fa-');
+                if (isEmoji) {
+                  avatarHtml = `<span class="emoji-avatar">${avatarStr}</span>`;
+                } else if (isIcon) {
+                  avatarHtml = `<i class="${avatarStr}"></i>`;
+                } else {
+                  avatarHtml = `<img class="no-lightbox" src="${avatarStr || "!{url_for(theme.error_img.flink)}"}" onerror='this.onerror=null;this.src="!{url_for(theme.error_img.flink)}"' alt="${lists[j].name}" />`;
+                }
+
                 listResult += `
                   <div class="flink-list-item">
                     <a href="${lists[j].link}" title="${lists[j].name}" target="_blank">
                       <div class="flink-item-icon">
-                        <img class="no-lightbox" src="${lists[j].avatar}" onerror='this.onerror=null;this.src="!{url_for(theme.error_img.flink)}"' alt="${lists[j].name}" />
+                        ${avatarHtml}
                       </div>
                       <div class="flink-item-name">${lists[j].name}</div>
                       <div class="flink-item-desc" title="${lists[j].descr}">${lists[j].descr}</div>
@@ -64,11 +76,22 @@
 
           each j in i.link_list
             -
+              let avatarHtml = ''
+              const avatarStr = j.avatar || ''
+              const isEmoji = [...avatarStr].length <= 2 && /\p{Emoji}/u.test(avatarStr)
+              const isIcon = avatarStr.startsWith('fa ') || avatarStr.startsWith('fas ') || avatarStr.startsWith('fab ') || avatarStr.startsWith('far ') || avatarStr.startsWith('fa-') || avatarStr.includes('fa-')
+              if (isEmoji) {
+                avatarHtml = `<span class="emoji-avatar">${avatarStr}</span>`
+              } else if (isIcon) {
+                avatarHtml = `<i class="${avatarStr}"></i>`
+              } else {
+                avatarHtml = `<img class="no-lightbox" src="${url_for(avatarStr || theme.error_img.flink)}" onerror='this.onerror=null;this.src="${url_for(theme.error_img.flink)}"' alt="${j.name}" />`
+              }
               listResult += `
                 <div class="flink-list-item">
                   <a href="${j.link}" title="${j.name}" target="_blank">
                     <div class="flink-item-icon">
-                      <img class="no-lightbox" src="${j.avatar}" onerror='this.onerror=null;this.src="${url_for(theme.error_img.flink)}"' alt="${j.name}" />
+                      ${avatarHtml}
                     </div>
                     <div class="flink-item-name">${j.name}</div>
                     <div class="flink-item-desc" title="${j.descr}">${j.descr}</div>

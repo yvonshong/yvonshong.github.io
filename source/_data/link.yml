@@ -1,0 +1,15 @@
+- class_name: 友链
+  class_desc: 友情链接
+  link_list:
+    - name: Yvon Shong Gallery
+      link: https://www.yvonshong.com/gallery/
+      avatar: https://pic.shong.win/screenshot-20251210-230924.webp
+      descr: 画廊
+    - name: 
+      link: https://www.yvonshong.com/map/
+      avatar: fas fa-earth-americas
+      descr: map and flights
+    - name: 九世呓语
+      link: https://yvonshong.com/911/
+      avatar: fas fa-book
+      descr: 九世呓语

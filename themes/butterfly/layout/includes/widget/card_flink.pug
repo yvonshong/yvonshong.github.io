@@ -1,0 +1,25 @@
+if theme.aside.card_flink && theme.aside.card_flink.enable
+  -
+    const isEmoji = (str) => str && [...str].length <= 2 && /\p{Emoji}/u.test(str)
+    const isIcon = (str) => str && (str.startsWith('fa ') || str.startsWith('fas ') || str.startsWith('fab ') || str.startsWith('far ') || str.startsWith('fa-') || str.includes('fa-'))
+  -
+  .card-widget.card-flink
+    .item-headline
+      i.fas.fa-link
+      span= theme.aside.card_flink.title || '友情链接'
+    .aside-list
+      if site.data.link
+        each i in site.data.link
+          if i.link_list
+            each j in i.link_list
+              .aside-list-item
+                a.thumbnail(href=url_for(j.link) title=j.name target="_blank")
+                  if isEmoji(j.avatar)
+                    span.emoji-avatar= j.avatar
+                  else if isIcon(j.avatar)
+                    i(class=j.avatar)
+                  else
+                    img(src=url_for(j.avatar || theme.error_img.flink) onerror=`this.onerror=null;this.src='${url_for(theme.error_img.flink)}'` alt=j.name)
+                .content
+                  a.title(href=url_for(j.link) title=j.name target="_blank")= j.name
+                  time(title=j.descr || '')= j.descr || ''

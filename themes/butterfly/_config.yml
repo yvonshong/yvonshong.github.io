@@ -5,7 +5,7 @@ menu:
   主页: / || fas fa-home
   技术: /categories/tech/ || fas fa-microchip
   随笔: /categories/essay/ || fas fa-pen-nib
-  标签: /tags/ || fas fa-tags
+  画廊: https://www.yvonshong.com/gallery/ || fas fa-images
   # 关于: /about/ || fas fa-user  # 对应 Yilia 的 aboutme
 # the subtitle on homepage (主頁subtitle)
 
@@ -76,7 +76,10 @@ aside:
     sort: date
     sort_order: desc
   card_categories:
+    enable: false
+  card_flink:
     enable: true
+    title: 友情链接
   card_tags:
     enable: true
   card_archives:

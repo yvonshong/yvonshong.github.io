@@ -65,6 +65,28 @@
               transition: filter 375ms ease-in .2s, transform .3s
               object-fit: cover
 
+            i,
+            .emoji-avatar
+              display: flex
+              align-items: center
+              justify-content: center
+              width: 100%
+              height: 100%
+              background: var(--light-grey, #f6f8fa)
+              color: var(--font-color)
+              transition: transform .3s
+
+            i
+              font-size: 1.5em
+
+            .emoji-avatar
+              font-size: 1.8em
+
+            &:hover
+              i,
+              .emoji-avatar
+                transform: scale(1.1)
+
           .img-alt
             display: none
 
