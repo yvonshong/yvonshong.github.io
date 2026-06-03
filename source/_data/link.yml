@@ -1,7 +1,7 @@
 - class_name: 友链
   class_desc: 友情链接
   link_list:
-    - name: photography
+    - name: photograph
       link: https://www.yvonshong.com/gallery/
       avatar: fas fa-photo-film
       descr: 画廊
