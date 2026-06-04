@@ -1,6 +1,6 @@
 ---
 title: 一样的夏了夏天
-date: 2011-06-12 12:05:41:00
+date: 2011-06-12 12:05:41
 categories: essay
 toc: false
 ---
