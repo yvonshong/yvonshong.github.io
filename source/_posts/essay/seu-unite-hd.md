@@ -3,7 +3,7 @@ title: 写在前路未知时·爱在心口难开
 date: 2014-05-24 18:26:00
 categories: essay
 toc: false
-cover: https://pic.shong.win/AZjLBpGWvN2oKOq.webp
+cover: https://pic.yvonshong.com/AZjLBpGWvN2oKOq.webp
 ---
 
 今天凌晨 3、4 点写的...懒得改时间称呼了...说不出感动的话 等下还有去和他们自习 hhhh 爱在心口难开
@@ -26,12 +26,12 @@ cover: https://pic.shong.win/AZjLBpGWvN2oKOq.webp
 
 大一入学百团大战的时候，是被这张喷绘吸引的：
 
-![](https://pic.shong.win/rGkb37DQg5BYRdq.webp)
+![](https://pic.yvonshong.com/rGkb37DQg5BYRdq.webp)
 
 这是上一届社巡闭幕式，那种全体穿会服的成员感
 这是今年的我们：
 
-![](https://pic.shong.win/AZjLBpGWvN2oKOq.webp)
+![](https://pic.yvonshong.com/AZjLBpGWvN2oKOq.webp)
 
 然后报了学团联活动中心，且不接受调剂。
 
@@ -61,25 +61,25 @@ cover: https://pic.shong.win/AZjLBpGWvN2oKOq.webp
 
 下周值班去把我社巡给大家签名的我的会服 拿去偷偷盖一个学团联的章以彰显我活动中心日常审批的职能 hhhhh
 
-![](https://pic.shong.win/P1ydMVamgDNQozX.webp)
+![](https://pic.yvonshong.com/P1ydMVamgDNQozX.webp)
 
-![](https://pic.shong.win/bDoQ6utGSXY9mJk.webp)
+![](https://pic.yvonshong.com/bDoQ6utGSXY9mJk.webp)
 
-![](https://pic.shong.win/5Pa7vMcLFHqiWrJ.webp)
+![](https://pic.yvonshong.com/5Pa7vMcLFHqiWrJ.webp)
 
-![](https://pic.shong.win/HEYShmV1LcZf5CW.webp)
+![](https://pic.yvonshong.com/HEYShmV1LcZf5CW.webp)
 
-![](https://pic.shong.win/L26vJs1kPtqSV3Q.webp)
+![](https://pic.yvonshong.com/L26vJs1kPtqSV3Q.webp)
 
-![](https://pic.shong.win/xNQwL8KYSImvGPF.webp)
+![](https://pic.yvonshong.com/xNQwL8KYSImvGPF.webp)
 
-![](https://pic.shong.win/sjB1hWuEg4K8QNx.webp)
+![](https://pic.yvonshong.com/sjB1hWuEg4K8QNx.webp)
 
-![](https://pic.shong.win/AuGjUBrxX7lhV5N.webp)
+![](https://pic.yvonshong.com/AuGjUBrxX7lhV5N.webp)
 
-![](https://pic.shong.win/7mgztGOLnA9u2oa.webp)
+![](https://pic.yvonshong.com/7mgztGOLnA9u2oa.webp)
 
-![](https://pic.shong.win/kqMoyJWN7vLCbal.webp)
+![](https://pic.yvonshong.com/kqMoyJWN7vLCbal.webp)
 
 还有好多想说的...时间轴也好混乱 等下周结果出来了再说吧
 
