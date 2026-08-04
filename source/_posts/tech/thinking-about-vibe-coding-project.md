@@ -37,7 +37,7 @@ AI 没有消除产品和软件系统的复杂度。它更像是降低了实现�
 
 ### 个人网站与项目展示
 
-我的个人网站主要保存在 [yvonshong.github.io](https://github.com/yvonshong/yvonshong.github.io) 仓库中，另外还有一个用于项目展示的 [proj](https://github.com/yvonshong/proj) 仓库。公开仓库目前仍将其描述为个人网站，并保留了 Hexo、主题、静态资源和自动化工作流等结构。
+我的个人网站主要保存在 [yvonshong.github.io](https://github.com/yvonshong/yvonshong.github.io) 仓库中，另外还有一个用于项目展示的 [proj](https://proj.yvonshong.com/) 仓库。公开仓库目前仍将其描述为个人网站，并保留了 Hexo、主题、静态资源和自动化工作流等结构。
 
 我后来把个人网站迁移到了 Vercel 加 Cloudflare 的方案下。
 
@@ -47,7 +47,7 @@ AI 没有消除产品和软件系统的复杂度。它更像是降低了实现�
 
 ### Gallery：从展示图片到设计观看体验
 
-我重新设计了个人网站中的图片画廊，项目代码保存在 [Gallery](https://github.com/yvonshong/gallery) 仓库中。当前项目使用 React、TypeScript 和 Vite，并包含独立的脚本、产品需求文档和自动化工作流。
+我重新设计了个人网站中的[图片画廊](https://yvonshong.github.io/gallery/)，项目代码保存在 [Gallery](https://github.com/yvonshong/gallery) 仓库中。当前项目使用 React、TypeScript 和 Vite，并包含独立的脚本、产品需求文档和自动化工作流。
 
 Gallery 的基础功能并不复杂，但我在交互和视觉上花了很多时间。它也是目前我对交互和美感都比较满意的项目之一。
 
@@ -63,7 +63,7 @@ Agent 在这里主要承担实现工作。它可以快速生成不同的页面�
 
 ### 地图和手势交互
 
-我还完成了两个与地图展示和交互有关的项目，分别保存在 [holoearth](https://github.com/yvonshong/holoearth) 和 [map](https://github.com/yvonshong/map) 仓库中。其中，map 项目还包含地图数据、地理编码脚本和网页端交互代码。
+我还完成了两个与地图展示和交互有关的项目，分别保存在 [holoearth](https://www.yvonshong.com/holoearth/) 和 [map](https://www.yvonshong.com/map) 仓库中。其中，map 项目还包含地图数据、地理编码脚本和网页端交互代码。
 
 这些项目整体上属于纯前端网页，从工程规模来看，与普通博客或展示页不会相差特别多，但使用了一些比较特殊的地图和手势库。
 
@@ -81,11 +81,11 @@ Agent 可以帮助我快速理解陌生的库、生成初始代码、处理事�
 
 其中包括大学时期完成的 [MatlabLens](https://github.com/yvonshong/MatlabLens)。这是一个受到 Office Lens 启发的 MATLAB GUI 项目，包含图片加载、透视校正、裁剪、降噪、对比度调整、二值化、撤销和保存等功能。
 
-我还重新整理了文字内容项目 [九世呓语](https://github.com/yvonshong/911)。这个项目使用 Markdown 和 HonKit 组织内容，并生成可以在线阅读的网页。
+我还重新整理了文字内容项目 [九世呓语](https://yvonshong.github.io/911/)。这个项目使用 Markdown 和 HonKit 组织内容，并生成可以在线阅读的网页。
 
-[初高中物理笔记](https://github.com/yvonshong/Junior_High_School_Physics_Note) 则被重新组织成了模块化的电子书，包含物理知识章节、公式渲染和自动化部署流程。
+[初高中物理笔记](https://yvonshong.github.io/Junior_High_School_Physics_Note/) 则被重新组织成了模块化的电子书，包含物理知识章节、公式渲染和自动化部署流程。
 
-此外还有过去的网页和书签项目 [website](https://github.com/yvonshong/website)、[农历日历生成器](https://github.com/yvonshong/Lunar_Calendar_Generator)，以及学生时期完成的 [XML 课程展示项目](https://github.com/yvonshong/xml)。XML 项目中保留了 DTD、XSD、XSL、XQuery、XML 和相关网页展示内容。
+此外还有过去的网页和书签项目 [website](http://www.yvonshong.com/website)、[农历日历生成器](https://github.com/yvonshong/Lunar_Calendar_Generator)，以及学生时期完成的 [XML 课程展示项目](https://www.yvonshong.com/xml/)。XML 项目中保留了 DTD、XSD、XSL、XQuery、XML 和相关网页展示内容。
 
 其他被重新整理的内容还包括班级展示网页、旅行地点展示、个人博客中的 Project 页面，以及过去积累的学习资料。
 
@@ -99,7 +99,7 @@ Agent 可以帮助我快速理解陌生的库、生成初始代码、处理事�
 
 ### LibrisArk：跨平台 PDF 管理器
 
-[LibrisArk](https://github.com/yvonshong/LibrisArk) 是我目前完成的工程量较大的项目之一。
+[LibrisArk](https://yvonshong.github.io/LibrisArk/) 是我目前完成的工程量较大的项目之一。
 
 它是一个面向 Ubuntu，同时考虑跨平台能力的 PDF 和文献管理器。公开仓库将它描述为一个 Local-First、AI-Enhanced 的桌面文献管理工具，使用 Tauri、Rust 和 SQLite，让用户尽可能保留对本地数据的控制。
 
@@ -127,7 +127,7 @@ Agent 可以帮助搭建跨平台应用框架，处理 PDF、标签和批注逻�
 
 ---
 
-我还开发了一个 Obsidian 插件 [GenWiki](https://github.com/yvonshong/genwiki)。
+我还开发了一个 Obsidian 插件 [GenWiki](https://community.obsidian.md/plugins/genwiki)。
 
 它的目标是把用户从网页上收藏的文档，逐步整理为一个具有 Wiki 结构的个人知识库。
 
@@ -207,9 +207,7 @@ Agent 可以帮助完成 iOS 应用框架、API 接入，以及音频、文本�
 
 前面的项目大多是个人工具、内容展示、知识管理或交互实验。
 
-[PassMap](https://github.com/yvonshong/passmap) 则开始涉及更加完整的业务系统。它不仅需要产品和工程，还涉及市场调研、商业模式、数据源、内容生产、流量获取、营销转化和数据分析。
-
-PassMap 的线上网站是 [passmap.jp](https://passmap.jp)。当前网站面向赴日旅行者，以互动地图和地区页面的方式展示日本交通套票，并支持中文、英语、日语和韩语。
+[PassMap](https://passmap.jp) 则开始涉及更加完整的业务系统。它不仅需要产品和工程，还涉及市场调研、商业模式、数据源、内容生产、流量获取、营销转化和数据分析。该网站面向赴日旅行者，以互动地图和地区页面的方式展示日本交通套票，并支持中文、英语、日语和韩语。
 
 ### 从 Deep Research 到产品上线
 
