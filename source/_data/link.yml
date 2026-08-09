@@ -13,3 +13,11 @@
       link: https://yvonshong.com/911/
       avatar: fas fa-book
       descr: 高中毕业纪念册
+    - name: PassMap Japan
+      link: https://passmap.jp
+      avatar: fas fa-map
+      descr: 日本交通套票地图网站
+    - name: Yian
+      link: https://yian.me
+      avatar: fas fa-blog
+      descr: Yian的博客
