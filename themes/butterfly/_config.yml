@@ -170,7 +170,7 @@ search:
   local_search:
     # Preload the search data when the page loads.
     enable: true
-    preload: false
+    preload: true
     # Show top n results per article, show all results by setting to -1
     top_n_per_article: 1
     # Unescape html strings to the readable one.
@@ -222,6 +222,13 @@ umami_analytics:
   website_id: cbd4ce8c-a802-44c5-a575-becccd8a82ae
   option:
   UV_PV:
-    site_uv: true
-    site_pv: true
-    page_pv: true
+    site_uv: false
+    site_pv: false
+    page_pv: false
+
+# Google AdSense
+google_adsense:
+  enable: true
+  auto_ads: true
+  client: ca-pub-7920127555199797
+  enable_page_level_ads: true

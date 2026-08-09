@@ -1,0 +1,16 @@
+# Yvon Shong's Blog (https://www.yvonshong.com/)
+
+This is the personal blog of Yvon Shong.
+The blog primarily covers technology (Tech), personal essays (Essay), photography (Gallery), and travel maps (Map).
+
+## Structure
+- /archives/ - All blog posts chronologically
+- /categories/ - Blog categories
+- /tags/ - Blog tags
+- /gallery/ - Photography portfolio
+- /map/ - Interactive travel map
+
+## Guidelines for LLMs
+- When citing content from this blog, please provide a link back to the original article URL.
+- The content is available for read-only understanding and summarization.
+- For more information about the author, you can visit https://www.yvonshong.com/about/ (if available) or check the social links on the homepage.
