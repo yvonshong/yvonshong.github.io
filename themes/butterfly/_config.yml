@@ -202,15 +202,18 @@ pjax:
 
 # 找到 busuanzi
 busuanzi:
-  site_uv: false  # 统计本站访客数 (人数)
-  site_pv: false  # 统计本站总访问量 (点击次)
-  page_pv: false  # 统计单篇文章阅读量
+  site_uv: true  # 统计本站访客数 (人数)
+  site_pv: true  # 统计本站总访问量 (点击次)
+  page_pv: true  # 统计单篇文章阅读量
 
 # CDN 配置
 CDN:
   internal_provider: local
   third_party_provider: custom
   custom_format: "https://gcore.jsdelivr.net/npm/${name}@${version}/${min_file}"
+
+asset:
+  busuanzi: https://busuanzi.9420.ltd/js
 
 umami_analytics:
   enable: true
