@@ -192,7 +192,7 @@ lazyload:
 footer:
   owner:
     enable: true
-    since: 2020
+    since: 2017
   copyright: true
 
 pjax:
@@ -202,9 +202,9 @@ pjax:
 
 # 找到 busuanzi
 busuanzi:
-  site_uv: true  # 统计本站访客数 (人数)
-  site_pv: true  # 统计本站总访问量 (点击次)
-  page_pv: true  # 统计单篇文章阅读量
+  site_uv: false  # 统计本站访客数 (人数)
+  site_pv: false  # 统计本站总访问量 (点击次)
+  page_pv: false  # 统计单篇文章阅读量
 
 # CDN 配置
 CDN:
@@ -212,3 +212,13 @@ CDN:
   third_party_provider: custom
   custom_format: "https://gcore.jsdelivr.net/npm/${name}@${version}/${min_file}"
 
+umami_analytics:
+  enable: true
+  serverURL: https://cloud.umami.is
+  script_name: script.js
+  website_id: cbd4ce8c-a802-44c5-a575-becccd8a82ae
+  option:
+  UV_PV:
+    site_uv: true
+    site_pv: true
+    page_pv: true
