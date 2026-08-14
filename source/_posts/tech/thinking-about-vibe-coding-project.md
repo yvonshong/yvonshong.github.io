@@ -1,6 +1,6 @@
 ---
 title: vibe coding 的软件工程感想
-date: 2026-08-204 18:10:00
+date: 2026-08-04 18:10:00
 categories: tech
 toc: true
 ---
