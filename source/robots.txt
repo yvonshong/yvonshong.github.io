@@ -5,6 +5,10 @@ Allow: /categories/
 Allow: /tags/
 Allow: /gallery/
 Allow: /map/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /search.xml
 
 Sitemap: https://www.yvonshong.com/sitemap.xml
 Sitemap: https://www.yvonshong.com/baidusitemap.xml
