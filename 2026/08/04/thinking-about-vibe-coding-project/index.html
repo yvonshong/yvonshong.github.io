@@ -1,0 +1,618 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vibe coding 的软件工程感想 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="过去一段时间，我借助不同的大模型、编码工具和 Agent，完成了一系列个人项目。 这些项目既包括个人网站、图片画廊和地图交互，也包括 PDF 管理器、Obsidian 插件、自托管 Agent、iOS 应用，以及最近开始尝试商业化的 PassMap。 我使用过 Claude Code、Gemini、Codex、ChatGPT、DeepSeek 等模型和编码工具，也尝试过 Xiaomi MiMo。在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vibe coding 的软件工程感想">
+<meta property="og:url" content="https://www.yvonshong.com/2026/08/04/thinking-about-vibe-coding-project/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="过去一段时间，我借助不同的大模型、编码工具和 Agent，完成了一系列个人项目。 这些项目既包括个人网站、图片画廊和地图交互，也包括 PDF 管理器、Obsidian 插件、自托管 Agent、iOS 应用，以及最近开始尝试商业化的 PassMap。 我使用过 Claude Code、Gemini、Codex、ChatGPT、DeepSeek 等模型和编码工具，也尝试过 Xiaomi MiMo。在">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp">
+<meta property="article:published_time" content="2026-08-04T10:10:00.000Z">
+<meta property="article:modified_time" content="2026-08-15T15:52:37.286Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="Yvon Shong, 个人博客, 技术, 随笔, 摄影, 算法， 自动驾驶， 全栈开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "vibe coding 的软件工程感想",
+  "url": "https://www.yvonshong.com/2026/08/04/thinking-about-vibe-coding-project/",
+  "image": "https://pic.yvonshong.com/HAbatdcnuM37PKf.webp",
+  "datePublished": "2026-08-04T10:10:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "https://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://pic.yvonshong.com/screenshot-20251210-230924.webp"><link rel="canonical" href="https://www.yvonshong.com/2026/08/04/thinking-about-vibe-coding-project/index.html"><link rel="preconnect" href="https://gcore.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-7920127555199797',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://gcore.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vibe coding 的软件工程感想',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="https://www.yvonshong.com/gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">vibe coding 的软件工程感想</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="https://www.yvonshong.com/gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">vibe coding 的软件工程感想</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-08-04T10:10:00.000Z" title="发表于 2026-08-04 18:10:00">2026-08-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">10.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>31分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>过去一段时间，我借助不同的大模型、编码工具和 Agent，完成了一系列个人项目。</p>
+<p>这些项目既包括个人网站、图片画廊和地图交互，也包括 PDF 管理器、Obsidian 插件、自托管 Agent、iOS 应用，以及最近开始尝试商业化的 PassMap。</p>
+<p>我使用过 Claude Code、Gemini、Codex、ChatGPT、DeepSeek 等模型和编码工具，也尝试过 Xiaomi MiMo。在使用方式上，我主要把 LLM 分成三种形态来使用：</p>
+<p>第一类是 Web 端交互，包括日常对话、Deep Research，以及类似 NotebookLM 这样的信息整理与知识回溯工具。这一类更偏向信息获取、分析和思考辅助。</p>
+<p>第二类是 Editor 和 CLI 形态。我会在 VS Code 中通过 OpenRouter 调用不同模型，在代码编辑环境中直接进行修改、重构和生成；CLI 则更多用于项目管理、脚本执行、构建流程和部署操作。这一类更贴近实际开发流程。</p>
+<p>第三类是 Agent 形态，例如 Cowork 或 OpenClaw。这类工具可以在更高层级上连续执行任务，完成从理解需求、拆解步骤到执行和反馈的一整套流程，更接近“自动化协作”的工作方式。</p>
+<p>刚开始时，我最直接的感受是：Vibe Coding 让我能够跨越不熟悉的语言和技术栈，快速做出过去很难独立完成的项目。</p>
+<p>但随着项目从个人页面发展到 LibrisArk，再发展到 PassMap，我逐渐发现，真正的瓶颈已经发生了变化。</p>
+<p>过去最困难的问题可能是“怎样实现”，现在更加困难的问题变成了：</p>
+<p>应该做什么？系统应该怎样组织？数据库应该怎样设计？怎样判断一个交互是好的？怎样验证用户真的需要？怎样让产品持续运行？又怎样让一个产品最终成为能够产生收益的业务？</p>
+<p>AI 没有消除产品和软件系统的复杂度。它更像是降低了实现成本，并把人的注意力推向了问题定义、系统设计、方案选择、结果验证和业务运营。</p>
+<h1 id="一、我做过的项目，以及-Agent-在其中的作用"><a href="#一、我做过的项目，以及-Agent-在其中的作用" class="headerlink" title="一、我做过的项目，以及 Agent 在其中的作用"></a>一、我做过的项目，以及 Agent 在其中的作用</h1><p>与其按时间顺序列出所有项目，我更愿意按照项目性质进行分类。因为不同类型的项目中，Agent 发挥作用的方式并不相同，而人的工作重点也会发生变化。</p>
+<h2 id="1-个人网站、内容展示与前端交互"><a href="#1-个人网站、内容展示与前端交互" class="headerlink" title="1. 个人网站、内容展示与前端交互"></a>1. 个人网站、内容展示与前端交互</h2><p>这一类项目的系统复杂度通常没有那么高，主要工作集中在内容组织、视觉设计和交互细节上，包括个人网站、Gallery、地图交互，以及对历史网页和旧项目的重新整理。</p>
+<h3 id="个人网站与项目展示"><a href="#个人网站与项目展示" class="headerlink" title="个人网站与项目展示"></a>个人网站与项目展示</h3><p>我的个人网站主要保存在 <a target="_blank" rel="noopener" href="https://github.com/yvonshong/yvonshong.github.io">yvonshong.github.io</a> 仓库中，另外还有一个用于项目展示的 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://proj.yvonshong.com/">proj</a> 仓库。公开仓库目前仍将其描述为个人网站，并保留了 Hexo、主题、静态资源和自动化工作流等结构。</p>
+<p>我后来把个人网站迁移到了 Vercel 加 Cloudflare 的方案下。</p>
+<p>这套方案同样能够实现 CI，在代码更新后自动进行构建和部署。相比继续使用 GitHub Pages，它的一个现实优势是可以减少 GitHub Pages 在国内访问受限所带来的影响。</p>
+<p>在这个项目中，Agent 可以帮助我调整部署配置、构建流程和页面代码，也可以快速排查部署错误。但真正需要我决定的是：为什么迁移，使用怎样的托管方案，如何组织网站内容，以及过去的项目和博客应该以什么方式重新呈现。</p>
+<h3 id="Gallery：从展示图片到设计观看体验"><a href="#Gallery：从展示图片到设计观看体验" class="headerlink" title="Gallery：从展示图片到设计观看体验"></a>Gallery：从展示图片到设计观看体验</h3><p>我重新设计了个人网站中的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://yvonshong.github.io/gallery/">图片画廊</a>，项目代码保存在 <a target="_blank" rel="noopener" href="https://github.com/yvonshong/gallery">Gallery</a> 仓库中。当前项目使用 React、TypeScript 和 Vite，并包含独立的脚本、产品需求文档和自动化工作流。</p>
+<p>Gallery 的基础功能并不复杂，但我在交互和视觉上花了很多时间。它也是目前我对交互和美感都比较满意的项目之一。</p>
+<p>在正式实现之前，我先对不同方案进行了选型，然后把主要精力放在图片应该怎样被浏览、怎样切换，以及页面应该呈现怎样的节奏上。</p>
+<p>除了页面本身，我还使用 Cloudflare R2 Storage 存储图片，实现了图片数据同步的脚本化，并加入了图片压缩流程。</p>
+<p>Agent 在这里主要承担实现工作。它可以快速生成不同的页面方案，接入 Cloudflare R2，编写数据同步和图片压缩脚本，并根据我的反馈不断修改前端细节。</p>
+<p>但真正决定产品质量的，并不是 Agent 能否把图片显示出来，而是人能否定义“什么是好的图片浏览体验”。</p>
+<p>这里所说的审美，也不只是简单判断页面好不好看，而是判断图片是否始终是视觉主体，信息有没有清晰的主次，动画是否恰到好处，操作是否符合直觉，以及桌面端和手机端能否保持一致的观看节奏。</p>
+<h3 id="地图和手势交互"><a href="#地图和手势交互" class="headerlink" title="地图和手势交互"></a>地图和手势交互</h3><p>我还完成了两个与地图展示和交互有关的项目，分别保存在 <a href="https://www.yvonshong.com/holoearth/">holoearth</a> 和 <a href="https://www.yvonshong.com/map">map</a> 仓库中。其中，map 项目还包含地图数据、地理编码脚本和网页端交互代码。</p>
+<p>这些项目整体上属于纯前端网页，从工程规模来看，与普通博客或展示页不会相差特别多，但使用了一些比较特殊的地图和手势库。</p>
+<p>然而项目的主要工作是做调整缩放、拖动、点击和移动等操作，让手势反馈更加自然。</p>
+<p>Agent 可以帮助我快速理解陌生的库、生成初始代码、处理事件，以及调试不同手势之间的冲突。</p>
+<p>但手势是否符合直觉、是否容易误触、页面是否让人感到顺畅，依然只能通过不断试用和人工判断完成。</p>
+<p>这让我意识到，对于很多前端项目来说，代码本身未必是最困难的部分。实现一个交互可能很快，但把它调整到自然、舒服和有完成度，需要大量细节判断。</p>
+<h3 id="历史项目的重新整理"><a href="#历史项目的重新整理" class="headerlink" title="历史项目的重新整理"></a>历史项目的重新整理</h3><p>我也借助大语言模型，对过去的一批项目进行了重新整理和优化。</p>
+<p>其中包括大学时期完成的 <a target="_blank" rel="noopener" href="https://github.com/yvonshong/MatlabLens">MatlabLens</a>。这是一个受到 Office Lens 启发的 MATLAB GUI 项目，包含图片加载、透视校正、裁剪、降噪、对比度调整、二值化、撤销和保存等功能。</p>
+<p>我还重新整理了文字内容项目 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://yvonshong.github.io/911/">九世呓语</a>。这个项目使用 Markdown 和 HonKit 组织内容，并生成可以在线阅读的网页。</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://yvonshong.github.io/Junior_High_School_Physics_Note/">初高中物理笔记</a> 则被重新组织成了模块化的电子书，包含物理知识章节、公式渲染和自动化部署流程。</p>
+<p>此外还有过去的网页和书签项目 <a href="http://www.yvonshong.com/website">website</a>、<a target="_blank" rel="noopener" href="https://github.com/yvonshong/Lunar_Calendar_Generator">农历日历生成器</a>，以及学生时期完成的 <a href="https://www.yvonshong.com/xml/">XML 课程展示项目</a>。XML 项目中保留了 DTD、XSD、XSL、XQuery、XML 和相关网页展示内容。</p>
+<p>其他被重新整理的内容还包括班级展示网页、旅行地点展示、个人博客中的 Project 页面，以及过去积累的学习资料。</p>
+<p>在这些项目中，Agent 更像一个“旧项目现代化助手”。它可以帮助我阅读旧代码、解释过去的实现、重构不清晰的部分、更新页面样式、补充说明文档，并把过去零散的内容重新组织起来。</p>
+<p>这类工作虽然并不是从零创造一个新产品，却降低了重新理解旧项目的成本，也让过去的积累重新获得了展示和使用价值。</p>
+<h2 id="2-文档管理与个人知识系统"><a href="#2-文档管理与个人知识系统" class="headerlink" title="2. 文档管理与个人知识系统"></a>2. 文档管理与个人知识系统</h2><p>与展示类网页相比，文档管理和个人知识系统涉及更多数据结构、状态管理和长期使用问题。LibrisArk 和 GenWiki 是其中两个比较典型的项目。</p>
+<h3 id="LibrisArk：跨平台-PDF-管理器"><a href="#LibrisArk：跨平台-PDF-管理器" class="headerlink" title="LibrisArk：跨平台 PDF 管理器"></a>LibrisArk：跨平台 PDF 管理器</h3><p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://yvonshong.github.io/LibrisArk/">LibrisArk</a> 是我目前完成的工程量较大的项目之一。</p>
+<p>它是一个面向 Ubuntu，同时考虑跨平台能力的 PDF 和文献管理器。公开仓库将它描述为一个 Local-First、AI-Enhanced 的桌面文献管理工具，使用 Tauri、Rust 和 SQLite，让用户尽可能保留对本地数据的控制。</p>
+<p>LibrisArk 的主要功能包括管理本地 PDF、为 PDF 添加标签、自动生成标签、管理用户批注，以及接入大语言模型，让模型阅读论文、生成结构化摘要，并围绕论文内容回答用户的问题。</p>
+<p>这个项目的特殊之处在于，我原本几乎完全不会使用其中涉及的一些编程语言和技术栈。</p>
+<p>在传统开发方式下，我可能需要先学习语言、框架和桌面应用开发，再开始实现产品。但在 Agent 的帮助下，我可以一边开发，一边理解相关技术。</p>
+<p>不过，LibrisArk 并不是直接从写代码开始的。</p>
+<p>我首先进行了大量功能需求讨论，明确产品到底想解决什么问题，然后设计系统方案，对不同功能进行优先级排期。开发时先实现大体框架，再逐渐补充 PDF 管理、标签、AI 问答和批注等功能，最后继续优化交互和细节。</p>
+<p>Agent 可以帮助搭建跨平台应用框架，处理 PDF、标签和批注逻辑，并接入大语言模型。它显著降低了陌生技术栈的进入门槛。</p>
+<p>但它无法自动决定产品边界，也不会自然知道哪些功能应该优先。</p>
+<p>人仍然需要判断产品到底解决什么问题，系统应该怎样组织，哪些功能属于核心流程，哪些功能可以推迟，以及用户操作是否真正合理。</p>
+<p>从 LibrisArk 开始，我更明确地意识到：Vibe Coding 可以加速实现，但无法替代产品需求、系统设计和功能排期。</p>
+<h3 id="GenWiki：让收藏内容逐渐形成知识网络"><a href="#GenWiki：让收藏内容逐渐形成知识网络" class="headerlink" title="GenWiki：让收藏内容逐渐形成知识网络"></a>GenWiki：让收藏内容逐渐形成知识网络</h3><p>我已在不改变你原有结构与语气的前提下，补充了 Karpathy / LLM Wiki / RAG 局限性这一层背景，使 GenWiki 的定位更“方法论化”而不是单纯工具描述。</p>
+<hr>
+<p>我还开发了一个 Obsidian 插件 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://community.obsidian.md/plugins/genwiki">GenWiki</a>。</p>
+<p>它的目标是把用户从网页上收藏的文档，逐步整理为一个具有 Wiki 结构的个人知识库。</p>
+<p>GenWiki 的设计灵感来自 Andrej Karpathy 提出的 “LLM Wiki” 概念。它试图解决传统 RAG（Retrieval-Augmented Generation）系统的一个核心局限：搜索是一次性的、碎片化的，而知识本身并不会在过程中持续累积和结构化。</p>
+<p>在传统 RAG 中，信息通常以“被检索 → 被回答 → 被丢弃”的方式存在，系统更像一个临时问答接口，而不是一个会随着使用不断成长的知识体。</p>
+<p>GenWiki 则尝试让 LLM 参与到一个更长期的过程：在 Obsidian vault 内持续地增量构建、结构化和审计个人知识库，使知识在不断使用中逐渐形成稳定的 Wiki 结构。</p>
+<p>它不只是对内容进行一次搜索。它会读取网页剪藏，把新内容和已有笔记结合起来，通过双向链接组织为持久的 Wiki 文件，并持续检查知识库中可能存在的冲突和空缺。</p>
+<p>在这个项目中，我尝试结合 LLM 的语义理解能力与脚本化流程，也就是一种面向 LLM 时代的 Skill（脚本化能力层），通过将提示词、规则与自动化脚本组合起来，对文档进行分类、整理并生成双向链接。</p>
+<h2 id="3-自托管-Agent-与移动端应用"><a href="#3-自托管-Agent-与移动端应用" class="headerlink" title="3. 自托管 Agent 与移动端应用"></a>3. 自托管 Agent 与移动端应用</h2><p>这一类项目主要是在探索新的运行环境和产品形态，包括在家中部署 OpenClaw，以及 Retake 和 Pocket Translator 两个 iOS 应用。</p>
+<h3 id="在家中部署-OpenClaw"><a href="#在家中部署-OpenClaw" class="headerlink" title="在家中部署 OpenClaw"></a>在家中部署 OpenClaw</h3><p>我在家中自行部署了 OpenClaw。</p>
+<p>这个过程让我接触了本地部署、自托管、环境配置和服务运行等问题。与普通网页相比，自托管更容易暴露出基础设施层面的复杂性。</p>
+<p>很多问题并不来自代码本身，而是来自依赖版本、系统权限、网络配置、运行环境，以及不同服务之间的连接方式。</p>
+<p>Agent 很适合帮助阅读部署文档、生成安装命令、编写脚本，并提供问题排查路径。</p>
+<p>但最终仍然需要人结合真实机器和真实网络环境，判断问题到底发生在哪里。</p>
+<p>在这个过程中，我明显感受到了一种 Skill 的持续进化。</p>
+<p>每解决一次环境问题、部署问题或链路问题，相关经验就会被内化为新的能力；这些能力又会反过来影响下一次任务的处理方式。</p>
+<p>因此，像 OpenClaw 这样的自托管系统，更像是在“养”一个系统。</p>
+<p>它不是部署成功一次就结束了，而是在持续运行、调整配置、调试问题和积累经验的过程中逐渐稳定。Agent 可以给出方向，但最终仍然需要人把系统一点点调顺。</p>
+<p>这也让我意识到，Vibe Coding 降低的是系统的创建成本，却不一定会降低系统长期的维护成本。</p>
+<p>一个服务可以很快被搭建出来，但依赖会升级、接口会变化、配置会失效，运行环境也可能出现新的问题。每增加一个组件，实际上也增加了一份未来需要承担的维护责任。</p>
+<h3 id="Retake：围绕场景复刻的-iOS-相机应用"><a href="#Retake：围绕场景复刻的-iOS-相机应用" class="headerlink" title="Retake：围绕场景复刻的 iOS 相机应用"></a>Retake：围绕场景复刻的 iOS 相机应用</h3><p>我还做了一个名为 <a target="_blank" rel="noopener" href="https://github.com/yvonshong/Retake">Retake</a> 的 iOS 应用。</p>
+<p>Retake 面向动画圣地巡礼、电影取景地、历史照片匹配和场景旅行摄影。当前版本允许用户选择动画截图、电影画面或旧照片，将其作为半透明图层叠加在实时相机画面上，通过调整透明度和透视关系完成场景对齐，再拍摄一张不包含叠加层的照片。</p>
+<p>这个项目的仓库中不仅包含应用代码，也保留了 PRD 和系统设计文档。</p>
+<p>这说明即使是一个看起来相对轻量的移动端应用，也仍然需要先明确使用场景、交互流程和系统边界。</p>
+<p>Agent 可以帮助快速搭建 iOS 项目框架、实现相机叠加和状态控制，但“用户怎样完成一次自然的场景复刻”，依然是一个产品和交互问题。</p>
+<h3 id="Pocket-Translator：实时翻译应用"><a href="#Pocket-Translator：实时翻译应用" class="headerlink" title="Pocket Translator：实时翻译应用"></a>Pocket Translator：实时翻译应用</h3><p>另一个 iOS 项目是 <a target="_blank" rel="noopener" href="https://github.com/yvonshong/PocketTranslator">Pocket Translator</a>。</p>
+<p>它的核心是调用 Gemini Live Translation API，为用户提供实时翻译能力。</p>
+<p>Agent 可以帮助完成 iOS 应用框架、API 接入，以及音频、文本和状态管理相关的代码。即使我对部分移动端技术并不熟悉，也可以较快完成一个可以运行的版本。</p>
+<p>但这个项目真正困难的部分仍然是交互。</p>
+<p>用户应该在什么时候开始说话？系统什么时候显示翻译结果？怎样让用户知道当前正在录音、识别还是翻译？实时翻译应该怎样避免打断交流？又怎样减少整个流程中的操作步骤？</p>
+<p>模型提供的是翻译能力，真正把这种能力变成产品，仍然需要围绕具体使用场景重新设计。</p>
+<h2 id="4-从技术项目走向真实业务"><a href="#4-从技术项目走向真实业务" class="headerlink" title="4. 从技术项目走向真实业务"></a>4. 从技术项目走向真实业务</h2><p>前面的项目大多是个人工具、内容展示、知识管理或交互实验。</p>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://passmap.jp/">PassMap</a> 则开始涉及更加完整的业务系统。它不仅需要产品和工程，还涉及市场调研、商业模式、数据源、内容生产、流量获取、营销转化和数据分析。该网站面向赴日旅行者，以互动地图和地区页面的方式展示日本交通套票，并支持中文、英语、日语和韩语。</p>
+<h3 id="从-Deep-Research-到产品上线"><a href="#从-Deep-Research-到产品上线" class="headerlink" title="从 Deep Research 到产品上线"></a>从 Deep Research 到产品上线</h3><p>在正式写代码前，我先用两天和 AI 做了大量市场与竞品分析（Deep Research + 多轮对话），尝试梳理需求、商业模式和产品方向。但事后看，这一步仍然不够：AI 能扩展信息和假设，却无法验证真实用户行为。</p>
+<p>随后我用一天搭建了前后端和数据库，这一阶段仍然遵循基本的 PRD、系统设计和功能排期。但很快暴露出问题：数据库 Schema 设计不够早期收敛，导致后续前后端、导入脚本和内容工具多次返工。</p>
+<p>接着我又用一天做了内容生产工具，本质上是在补“内容系统”这个最初被忽略的模块。但这个模块在最初设计中并不存在，只能不断在已有系统上叠加功能，导致整体结构逐渐变得松散。</p>
+<p>最后一天完成上线。之后工作的重心也从“把系统做出来”，转向数据完善、用户验证，以及 SEO、GEO 和内容与增长层面的优化。</p>
+<h3 id="数据与技术架构"><a href="#数据与技术架构" class="headerlink" title="数据与技术架构"></a>数据与技术架构</h3><p>PassMap 的网页托管和 CI 构建主要使用 Vercel，数据库使用 Supabase 进行管理和托管。</p>
+<p>在数据层面，PassMap 的设计经历了一个明显的<strong>数据源迁移过程</strong>。最初我考虑使用 OpenStreetMap 作为基础地理与交通数据来源，但在实际评估后发现，日本国土交通省提供的数据更适合该项目的业务场景。这些数据本身已经结构化地包含了铁路线路、站点、城市信息以及各类交通运营商信息，因此在完整性和业务贴合度上更高。</p>
+<p>基于这一数据源的变化，我编写了一系列脚本，对原始数据进行清洗、转换与批量导入，使其能够适配后续的数据库结构与查询需求。这一步实际上也决定了后续系统设计的基础形态，因为数据来源的结构直接影响了实体建模方式。</p>
+<p>在数据分析与业务追踪层面，我在网页中引入了多种埋点与统计工具，用于观察用户行为与商业转化路径。目前主要包括 Vercel 的页面分析与转化统计能力，以及 Google AdSense 和 Affiliate 联盟管理工具，用于分别追踪流量表现、广告收益与联盟转化效果。</p>
+<p>在这一过程中，我逐渐意识到一个关键问题：<strong>不同类型的数据指标需要严格分层管理</strong>。例如页面访问量、搜索表现、广告展示数据以及联盟转化数据，本质上属于不同业务层级的指标，如果混合在同一分析体系中，会导致对用户行为和商业效果的误判。因此后续需要进一步明确各类数据的归属系统与统计边界。</p>
+<p>在技术架构层面，PassMap 采用了典型的前后端分离 + 托管式服务组合。前端与 CI 构建依赖 Vercel，数据库使用 Supabase 进行托管与管理，从而减少基础设施维护成本，并提升部署效率。</p>
+<p>在数据模型设计上，系统需要管理多类核心实体，包括铁路线路、站点、城市名称、铁路运营商、航路运营商、巴士运营商以及套票信息等。这些实体之间存在较强的关联关系，因此数据库 Schema 的设计直接影响后续查询效率与数据一致性。</p>
+<p>此外，系统还需要支持多语言能力，而这里的多语言并不仅仅是前端 UI 文案的切换，而是<strong>数据库层级的多语言建模问题</strong>。这意味着同一条套票或站点数据，需要在不同语言之间保持结构一致性，同时支持灵活查询与扩展。</p>
+<p>这一设计进一步影响了多个系统层面，包括数据库 Schema 结构、查询逻辑、数据维护方式、内容生产流程以及前后端数据传输量。如果设计不合理，会导致数据冗余增加、查询复杂度上升，以及前端加载性能下降。</p>
+<p>因此，后续优化的重点将集中在两个方向：一是进一步优化数据库结构与查询路径，减少不必要的数据冗余；二是优化前后端数据传输机制，降低请求体积与加载延迟，从而提升整体页面性能与用户体验。</p>
+<h3 id="商业模式和数据闭环"><a href="#商业模式和数据闭环" class="headerlink" title="商业模式和数据闭环"></a>商业模式和数据闭环</h3><p>PassMap 当前考虑的核心盈利模式之一是 Affiliate 联盟分佣。</p>
+<p>当商业模式确定为联盟营销之后，产品就不只是展示套票，还需要管理联盟链接、记录用户点击、区分不同来源的转化，并衡量最终产生的收益。</p>
+<p>我希望逐渐建立的分析链路是：用户进入页面，在网页中浏览和点击套票，通过页面埋点观察访问行为，再通过联盟管理工具记录后续转化，最终量化内容、流量和商业结果之间的关系。</p>
+<h3 id="品牌、用户验证与内容营销"><a href="#品牌、用户验证与内容营销" class="headerlink" title="品牌、用户验证与内容营销"></a>品牌、用户验证与内容营销</h3><p>PassMap 下一阶段的工作包括完善首页品牌、Logo、Slogan，以及更加完整地展示套票信息。</p>
+<p>与此同时，我也需要更早地接触真实用户，确认当前产品是否真正满足需求。</p>
+<p>需要验证的问题并不只是“用户喜不喜欢这个网站”，而是更加具体的问题：用户会按照地区、线路、旅行天数还是价格寻找套票？他们最难理解的是使用范围、价格、购买方式，还是套票是否划算？什么信息不足会导致他们离开？他们是否愿意通过联盟链接跳转购买？</p>
+<p>这些问题无法仅靠 AI 对话和竞品研究回答。</p>
+<p>在真实用户验证之后，我才会进一步调整产品和内容。</p>
+<p>目前，PassMap 的核心流量可能主要依赖 SEO，之后还会针对 GEO 进行优化，再逐步开展小红书、Twitter／X 和 Instagram 等渠道的内容营销。</p>
+<p>不过，在开始大量生产营销内容之前，我希望先设计完整的内容生产工具链。</p>
+<p>其中包括内容生产 Skill、多语言支持、内容模板、平台格式转换，以及如何把中文内容转化成适合 Twitter／X 和 Instagram 发布的英语内容。</p>
+<p>这里给自己的提醒是：不要一开始就直接大量生产内容，而应该先明确内容生产的基本架构、数据来源、审核方式和发布流程。</p>
+<p>后续，我也可能把 Admin 中的一部分内容生产能力拆分出来，但这属于更后期的工作，不应该在当前阶段抢占最核心问题的优先级。</p>
+<h1 id="二、从做出产品到让业务运转"><a href="#二、从做出产品到让业务运转" class="headerlink" title="二、从做出产品到让业务运转"></a>二、从做出产品到让业务运转</h1><p>做完 PassMap 的初始版本之后，我越来越明确地意识到，把一个产品做出来和让一个业务真正运转，是两件完全不同的事情。</p>
+<p>Vibe Coding 可以让我很快完成一个网页、App 或者工具，但产品可以运行，并不意味着业务可以产生收益。</p>
+<p>代码只是业务系统中的一部分。</p>
+<h2 id="1-商业模式会反过来改变产品"><a href="#1-商业模式会反过来改变产品" class="headerlink" title="1. 商业模式会反过来改变产品"></a>1. 商业模式会反过来改变产品</h2><p>做 Side Project 时，很容易产生一种错觉：只要产品足够好，就会自然获得用户和收入。</p>
+<p>但真正需要回答的问题是，钱从哪里来，用户为什么愿意付费，或者什么样的用户行为能够转化为收入。</p>
+<p>以 PassMap 为例，如果商业模式是联盟分佣，那么产品就不仅需要展示套票，还需要管理联盟链接、记录点击、追踪转化来源，并计算最终结果。</p>
+<p>商业模式一旦发生变化，系统功能、数据库结构、内容策略和分析方式都会跟着变化。</p>
+<p>因此，商业模式并不是产品完成以后再考虑的附加问题。它从一开始就会影响产品应该怎样设计。</p>
+<h2 id="2-内容生产本身就是一个系统"><a href="#2-内容生产本身就是一个系统" class="headerlink" title="2. 内容生产本身就是一个系统"></a>2. 内容生产本身就是一个系统</h2><p>在 PassMap 开发初期，我把重点放在前端、后端和数据库上，却没有充分意识到内容生产本身也是一个大型模块。</p>
+<p>一个内容型产品运行之后，需要持续进行内容录入、编辑、图片处理、翻译、审核、更新和多平台发布。</p>
+<p>这意味着内容生产不能只是临时编写几个脚本。</p>
+<p>它同样需要需求分析、数据结构、工作流设计、自动化工具和人工审核机制。</p>
+<p>从这个角度看，内容生产工具本身也是一个软件工程项目。</p>
+<h2 id="3-工具需求来自真实业务摩擦"><a href="#3-工具需求来自真实业务摩擦" class="headerlink" title="3. 工具需求来自真实业务摩擦"></a>3. 工具需求来自真实业务摩擦</h2><p>很多工具并不是一开始就计划开发的，而是在业务推进过程中才发现必须存在，是因为业务流程中真实存在摩擦。</p>
+<p>为了导入交通数据，需要批量处理脚本；为了生产套票页面，需要 Admin 内容工具；为了做多语言营销，需要翻译和内容转换能力；为了衡量效果，需要埋点和数据分析；为了管理分佣，需要 Affiliate 管理工具。</p>
+<p>判断一个工具是否有价值，应该看它是否解决了当前业务中的真实问题。</p>
+<h2 id="4-意识到业务复杂，不代表同时做完所有事情"><a href="#4-意识到业务复杂，不代表同时做完所有事情" class="headerlink" title="4. 意识到业务复杂，不代表同时做完所有事情"></a>4. 意识到业务复杂，不代表同时做完所有事情</h2><p>一个真正运转的业务，通常可以分成几个层面来看：基础设施层面包括域名、邮箱、公司注册、数据库、前后端架构与持续集成；数据与内容层面包括多语言支持、数据源接入、数据维护，以及用户内容生产与个人内容生产；产品与体验层面包括交互优化与用户反馈机制；商业与增长层面则包括支付、金融注册与金融渠道，以及数据分析、SEO、GEO 和内容营销。</p>
+<p>但是，意识到业务复杂，并不意味着所有事情都应该同时完成。</p>
+<p>早期产品更需要找到一个最小的业务闭环。</p>
+<p>对 PassMap 来说，这个闭环可以被概括为：</p>
+<p>用户通过搜索或内容进入网站，找到适合自己的套票，点击联盟链接，完成后续购买，并产生可以追踪的分佣。</p>
+<p>围绕这个闭环，当前真正重要的问题是：套票信息是否准确，页面能否帮助用户完成决策，搜索能否带来真实用户，联盟点击能否被正确追踪，以及用户最终是否发生转化。</p>
+<p>相比之下，公司注册、复杂的内容自动化、完整的后台拆分和更高级的数据系统虽然可能重要，但不一定属于当前阶段最需要解决的问题。</p>
+<p>业务虽然复杂，每个阶段真正的瓶颈通常只有少数几个。</p>
+<h2 id="5-用户验证应该更早发生"><a href="#5-用户验证应该更早发生" class="headerlink" title="5. 用户验证应该更早发生"></a>5. 用户验证应该更早发生</h2><p>Deep Research、竞品分析和与 AI 多轮讨论，能够帮助形成假设，却不能证明假设成立。</p>
+<p>用户调研也不应该只出现在产品全部完成之后。</p>
+<p>在更早的阶段，可以通过少量访谈、落地页、搜索数据、页面点击和真实内容，验证用户究竟在寻找什么。</p>
+<p>这样可以避免围绕一个未经验证的需求，快速生成大量功能和代码。</p>
+<p>Vibe Coding 降低了试错成本，但这并不意味着应该用完整系统验证每一个假设。很多问题可以先通过更小的实验解决。</p>
+<h1 id="三、对-Vibe-Coding-时代的重新理解"><a href="#三、对-Vibe-Coding-时代的重新理解" class="headerlink" title="三、对 Vibe Coding 时代的重新理解"></a>三、对 Vibe Coding 时代的重新理解</h1><h2 id="1-AI-降低了实现门槛"><a href="#1-AI-降低了实现门槛" class="headerlink" title="1. AI 降低了实现门槛"></a>1. AI 降低了实现门槛</h2><p>Vibe Coding 最大的变化，是个人可以很快把一个想法变成可以运行的产品。</p>
+<p>即使面对不熟悉的语言、框架、数据库、跨平台应用、iOS 开发或插件系统，也可以借助 Agent 快速完成初始版本。</p>
+<p>过去可能需要先花很长时间学习技术栈，现在可以一边开发，一边让 Agent 帮助理解和实现。</p>
+<p>这极大提高了个人做项目的速度，也让一个人能够同时处理过去需要不同角色完成的工作。</p>
+<p>但它本质上仍然是一个效率放大器，最终放大的不是“能力本身”，而是输入的想法与创意质量。如果方向和创意本身是模糊或低质量的，AI 只会更快地把这种不确定性变成一个完整的系统。</p>
+<h2 id="2-AI-不仅放大生产力，也会放大决策质量"><a href="#2-AI-不仅放大生产力，也会放大决策质量" class="headerlink" title="2. AI 不仅放大生产力，也会放大决策质量"></a>2. AI 不仅放大生产力，也会放大决策质量</h2><p>实现速度变快，并不意味着软件工程的基本原则变得不重要，反而更需要被严格遵循。</p>
+<p>恰恰相反，当代码可以被快速生成时，软件工程中的“错误传播速度”也被同步放大：一个早期不合理的决策，会在短时间内扩散到整个系统的各个层面。</p>
+<p>从软件工程的角度看，这本质上是<strong>技术债务的提前加速显现</strong>。例如在需求阶段没有做好清晰的需求管理（Requirements Management），或者在 PRD 中没有明确边界条件与非功能性需求（如性能、可扩展性、数据一致性），都会在后续开发中被 Agent 快速“规模化实现”，从而放大问题。</p>
+<p>如果数据库 Schema 在系统设计阶段（System Design）没有被充分建模，那么 Agent 会基于这个不完整甚至错误的结构，迅速生成前端、后端、API、数据脚本和业务逻辑。此时问题不再局限于数据库层，而会扩展为跨层级的系统性重构成本。</p>
+<p>同样，在缺乏合理架构设计（Architecture Design）和模块划分的情况下，快速生成的代码往往会形成强耦合结构，使得后续的迭代、扩展和重构成本显著上升。</p>
+<p>因此，传统软件工程中的关键实践并没有因为 Vibe Coding 而失效，反而变得更加关键：</p>
+<p><strong>需求管理（Requirements Management）</strong>：明确用户问题、边界条件与验收标准，而不是仅停留在功能描述<br><strong>系统设计（System Design）</strong>：在实现之前定义数据模型、模块边界与依赖关系<br><strong>敏捷开发（Agile Development）</strong>：通过小步迭代持续验证假设，而不是一次性完成大规模实现<br><strong>验证与测试（Testing &amp; Validation）</strong>：通过单元测试、集成测试与端到端验证控制 AI 生成代码的不确定性<br><strong>持续集成与上线流程（CI/CD &amp; Deployment）</strong>：确保每一次变更都可追踪、可回滚、可验证<br><strong>可观测性与监控（Observability &amp; Monitoring）</strong>：通过日志、指标与链路追踪持续理解系统真实运行状态<br><strong>安全与数据治理（Security &amp; Data Governance）</strong>：明确数据流向、权限边界与隐私处理方式，控制外部模型与服务带来的风险</p>
+<p>在这个意义上，Vibe Coding 并没有削弱软件工程的重要性，而是改变了它的作用方式：从“限制开发速度的约束”，变成“防止系统性错误被快速放大的控制机制”。</p>
+<p>Vibe Coding 减少的是代码实现成本，而不是系统复杂度。系统复杂度不仅没有消失，反而因为生成速度提升而更快显现。</p>
+<p>更准确地说，AI 不仅会放大生产力，也会放大早期决策的质量。</p>
+<p>在软件工程体系正确的情况下（需求清晰、架构合理、测试完善、发布流程规范），Agent 能够快速放大正向收益；但在工程基础薄弱的情况下，它也会以同样的速度放大设计缺陷、架构问题与技术债务。</p>
+<h2 id="3-提前设计，不等于把所有事情都想清楚"><a href="#3-提前设计，不等于把所有事情都想清楚" class="headerlink" title="3. 提前设计，不等于把所有事情都想清楚"></a>3. 提前设计，不等于把所有事情都想清楚</h2><p>PassMap 的数据库返工让我意识到 Schema 需要尽早设计，但这并不意味着项目开始前应该把所有功能和架构一次性想清楚。</p>
+<p>人在项目早期不可能了解全部需求，很多问题只有在真正实现、使用和测试后才会暴露。</p>
+<p>更合理的做法，是提前识别修改成本高、影响范围大、未来难以迁移的决策。</p>
+<p>核心数据实体、实体之间的关系、唯一标识、多语言结构、权限边界、数据来源、更新机制和关键转化事件，都值得较早设计。</p>
+<p>而次要页面样式、低频自动化、非核心后台功能和未经验证的复杂功能，则应该保持可调整，甚至故意推迟。</p>
+<p>真正重要的是判断哪些决策一旦错误，会产生最大的返工成本。</p>
+<h2 id="4-需求变更与重构：软件复杂性不可消除，只能被管理"><a href="#4-需求变更与重构：软件复杂性不可消除，只能被管理" class="headerlink" title="4. 需求变更与重构：软件复杂性不可消除，只能被管理"></a>4. 需求变更与重构：软件复杂性不可消除，只能被管理</h2><p>即使前期进行了设计，开发过程中仍然会出现需求变更、功能调整、数据结构变化和代码重构。</p>
+<p>这并不一定代表前期设计失败。</p>
+<p>从软件工程的基本共识来看，这其实是系统复杂性的必然结果。正如 Brooks 在《No Silver Bullet》中所指出的，软件开发中不存在能够显著降低复杂度的“银弹”，因为软件的本质复杂性（essential complexity）来自问题本身，而不是实现方式。换句话说，无论使用多先进的工具、语言或 AI，系统的复杂度都不会被消除，只会在不同层级之间转移。</p>
+<p>软件系统本身具有不可消除的复杂性（inherent complexity）。人不可能在项目开始时就完全掌握所有“未知的未知”（unknown unknowns），也无法在缺乏真实使用反馈的情况下穷尽所有边界条件。因此，很多需求只有在系统被实现、被测试、被真实使用之后才会逐渐显现。</p>
+<p>从这个意义上说，重构并不是失败的标志，而是软件演化过程的一部分。正如持续演进式设计（evolutionary design）所强调的，系统不是一次性构建完成的，而是在不断反馈中逐步逼近合理结构。</p>
+<p>因此，返工和重构无法完全消失，也不应该被视为异常。更现实的目标，是在承认复杂性不可消除的前提下，尽可能降低其扩散成本：例如提前保护核心领域模型、稳定关键数据结构、控制高耦合边界，同时允许非核心模块保持可变性与可替换性。</p>
+<p>换句话说，软件工程不要期望消除变化，而是要管理变化；复杂度无法消除，但是在不可避免的复杂度中建立结构化的秩序。</p>
+<h2 id="5-Agent-可以参与思考，但人承担最终责任"><a href="#5-Agent-可以参与思考，但人承担最终责任" class="headerlink" title="5. Agent 可以参与思考，但人承担最终责任"></a>5. Agent 可以参与思考，但人承担最终责任</h2><p>简单地说“Agent 负责实现，人负责判断”并不完全准确。</p>
+<p>Agent 不只是写代码。它也可以辅助需求讨论、竞品研究、架构分析、风险识别、测试设计和数据分析。</p>
+<p>但人需要定义目标、提供上下文、建立约束和评价标准，并对最终结果承担责任。</p>
+<p>Agent 可以生成多个交互方案，但人需要明确什么样的交互才算自然；Agent 可以提出多个系统架构，但人需要判断哪一个更容易维护；Agent 可以实现商业功能，却不能自动证明商业模式成立。</p>
+<p>真正无法外包给 Agent 的，并不是某一种具体操作，而是对目标、取舍、风险和结果的责任。</p>
+<h2 id="6-人的工作从生产转向编排和验收"><a href="#6-人的工作从生产转向编排和验收" class="headerlink" title="6. 人的工作从生产转向编排和验收"></a>6. 人的工作从生产转向编排和验收</h2><p>在 Vibe Coding 时代，人仍然需要承担几个关键角色。</p>
+<p>首先是把握方向。人需要决定做什么、不做什么、先做什么，以及项目最终要走向哪里。</p>
+<p>其次是建立审美和评价标准。页面是否美观、信息是否清晰、交互是否自然、内容是否统一，都需要具体的判断标准，而不只是模糊的感觉。</p>
+<p>再次是监督和验收。Agent 生成的功能需要经过人工检查，边界情况、数据错误和真实用户体验都不能仅凭代码已经运行来判断。</p>
+<p>最后是方案选择。Agent 可以生成大量候选方案，人必须判断哪个方案更符合需求、更容易维护，也更值得投入。</p>
+<p>因此，人的角色更像是编排者、评审者和最终责任人。</p>
+<h1 id="四、进一步复盘后，我意识到自己还忽略了什么"><a href="#四、进一步复盘后，我意识到自己还忽略了什么" class="headerlink" title="四、进一步复盘后，我意识到自己还忽略了什么"></a>四、进一步复盘后，我意识到自己还忽略了什么</h1><p>除产品、系统和业务之外，还有一些问题，是我在进一步复盘这些项目后才更加明确地意识到的。</p>
+<h2 id="1-可验证性比“代码能运行”更重要"><a href="#1-可验证性比“代码能运行”更重要" class="headerlink" title="1. 可验证性比“代码能运行”更重要"></a>1. 可验证性比“代码能运行”更重要</h2><p>我过去更多强调人工验收，但随着 LibrisArk 和 PassMap 变得复杂，仅靠人工点击页面已经无法覆盖所有情况。</p>
+<p>Agent 生成代码时，也应该同步考虑测试、类型检查、数据校验、日志、错误监控、数据库迁移和回滚机制。</p>
+<p>对于数据导入，需要确认数据数量、唯一性、关联关系和异常值；对于核心业务功能，需要提前定义什么结果才算正确；对于线上系统，需要能够发现错误发生在什么时间、影响了哪些用户，以及应该如何恢复。</p>
+<p>Vibe Coding 的成熟程度，不应该只看代码生成得有多快，也应该看生成结果是否容易验证。</p>
+<h2 id="2-创建成本和长期所有权成本不是一回事"><a href="#2-创建成本和长期所有权成本不是一回事" class="headerlink" title="2. 创建成本和长期所有权成本不是一回事"></a>2. 创建成本和长期所有权成本不是一回事</h2><p>AI 让增加功能变得非常容易。</p>
+<p>但每增加一个模型、云服务、API、框架、数据源、自动化脚本或外部平台，也意味着未来多承担一份维护责任。</p>
+<p>PassMap 使用 Vercel、Supabase、分析工具、AdSense、Affiliate、外部交通数据源、多语言数据库和内容工具。每一个单独看都不复杂，但组合起来会形成持续的运维和维护成本。</p>
+<p>服务可能调整价格，API 可能变化，数据源可能停止更新，脚本也可能在没有人注意时失败。</p>
+<p>因此，Vibe Coding 降低了创建成本，却不一定降低长期所有权成本。</p>
+<p>创建一个功能之前，除了考虑它现在能带来什么，也应该考虑未来是否愿意继续维护它。</p>
+<h2 id="3-安全、隐私和数据责任不能被速度掩盖"><a href="#3-安全、隐私和数据责任不能被速度掩盖" class="headerlink" title="3. 安全、隐私和数据责任不能被速度掩盖"></a>3. 安全、隐私和数据责任不能被速度掩盖</h2><p>LibrisArk 会读取用户的论文和批注，Pocket Translator 会处理声音和翻译数据，OpenClaw 涉及本地服务、网络和 API Key，PassMap 则使用外部数据源并生成面向用户的信息。</p>
+<p>这些项目都涉及安全、隐私和数据责任。</p>
+<p>需要明确哪些数据会发送给第三方模型，数据存储在哪里，API Key 如何管理，服务是否暴露到公网，外部数据是否允许再次加工，以及自动生成的内容出现错误时由谁负责。</p>
+<p>AI 可以让功能迅速完成，但功能越接近真实用户，就越需要对数据和结果承担责任。</p>
+<h2 id="4-项目越容易开始，越需要学会停止"><a href="#4-项目越容易开始，越需要学会停止" class="headerlink" title="4. 项目越容易开始，越需要学会停止"></a>4. 项目越容易开始，越需要学会停止</h2><p>Vibe Coding 降低项目启动成本后，我遇到的新问题可能不再是“没有能力实现”，而是项目越来越多。</p>
+<p>个人网站、Gallery、地图、LibrisArk、GenWiki、OpenClaw、Retake、Pocket Translator、PassMap，以及不断被重新整理的历史项目，都会占用注意力和维护精力。</p>
+<p>同时还有一个更隐性的状态：<strong>因为实现变得太容易，很容易进入持续兴奋的开发状态，沉迷在 Vibe Coding 的即时反馈里，经常不自觉地熬夜推进项目。短期看效率很高，但从长期来看，这并不是一个可持续的工作方式。</strong></p>
+<p>因此，需要区分哪些项目只是学习实验，哪些用于作品展示，哪些是自己长期使用的个人工具，哪些是真正准备持续经营的商业项目。</p>
+<p>学习实验完成目标后可以结束；作品展示只需要保持可访问；个人工具根据自己的使用频率维护；商业项目则需要围绕用户、收入和长期运营持续投入。</p>
+<p>当创造变得容易，选择不做什么、停止什么、以及控制投入节奏（包括时间和精力），反而会变得更加重要。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com/2026/08/04/thinking-about-vibe-coding-project/">https://www.yvonshong.com/2026/08/04/thinking-about-vibe-coding-project/</a></span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pic.yvonshong.com/It31kXcofTA9UB2.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/It31kXcofTA9UB2.webp" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2026/08/14/autonomous-vehicle-retrofit/" title="从零搭建自动驾驶车：车辆和传感器改装手册"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">从零搭建自动驾驶车：车辆和传感器改装手册</div></div><div class="info-2"><div class="info-item-1"> 我在上份工作作为负责人深度对接过多家一线主机厂，很多项目涉及到数据采集车的改装，将主机厂提供的一辆普通量产乘用车，快速、专业地改装为能够支持海量高频数据采集的真值车，交付给主机厂使用。  这篇手册其实也存了很久，也会思考AI时代下还有什么是不能靠LLM获得的知识呢，最后还是顺手发出来吧。 整体流程：提出改装需求定义 -&gt; 委外改装施工管控 -&gt; 硬件与电气交付验收 -&gt; 传感器标定 -&gt; 软件系统调试。 已验证车型：广泛覆盖各级别车型，包含：奔驰、大众、理想、红旗、长安、多款欧洲豪华车企等等。 一、整车及计算平台选型车辆基础平台要求在项目初期选择基底车型时，主要考量以下几个核心维度：  纯电车型优先：电池包容量大，原车的高压/低压系统能够更好地支撑后续大功率计算平台的取电需求。 驻车空调支持：数据采集与软件调试往往伴随长时间原地驻车，驻车空调是保障设备散热与人员舒适度的刚需。 底盘线控开放度：能够低成本获取或破解制动、转向、轮速等关键 CAN 协议。  计算平台架构方案 方案一：工控机 + 独立显卡（x86 架构）。目前行业主流且最稳妥的方案，算力上限高...</div></div></div></a><a class="pagination-related" href="/2026/04/26/hexo-picbed-dns/" title="Hexo 图床方案和国内解析优化"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hexo 图床方案和国内解析优化</div></div><div class="info-2"><div class="info-item-1">近期对博客的部署架构和访问速度进行了一次调整。主要包括主题更换、图床搭建，以及基于 Vercel 和 GitHub Pages 的双线路由部署。在此做个操作记录。   1. 更换 Butterfly 主题之前使用的是 Yilia 主题。随着博客内容增多，开始需要全局本地搜索功能。 目前将主题切换到了 Butterfly。Butterfly 集成了丰富的第三方搜索插件接口，也提供了较大的自定义空间，能够更好地满足当前长篇文章和多标签的管理需求。 2. 图床方案：GitHub Actions + Cloudflare R2之前的方案：通过代理节点加速 GitHub 原图访问，但稳定性不可控。国内的对象存储服务（如七牛云）绑定 HTTPS 又需要额外计费。 当前的方案：切换至 Cloudflare R2 存储，配合 GitHub Actions 实现图片的自动压缩和上传。 工作流逻辑： 将文章原图（jpg/png）推送到独立的图片分支（如 raw 分支）。 GitHub 监听到改动后，触发 Actions 脚本： 筛选出体积大于 128KB 的图片。 将图片压缩并转换为 .webp 格...</div></div></div></a></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">Yvon Shong 的个人博客，主要分享技术内容、生活随笔。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%88%91%E5%81%9A%E8%BF%87%E7%9A%84%E9%A1%B9%E7%9B%AE%EF%BC%8C%E4%BB%A5%E5%8F%8A-Agent-%E5%9C%A8%E5%85%B6%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-text">一、我做过的项目，以及 Agent 在其中的作用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E3%80%81%E5%86%85%E5%AE%B9%E5%B1%95%E7%A4%BA%E4%B8%8E%E5%89%8D%E7%AB%AF%E4%BA%A4%E4%BA%92"><span class="toc-text">1. 个人网站、内容展示与前端交互</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E4%B8%8E%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA"><span class="toc-text">个人网站与项目展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gallery%EF%BC%9A%E4%BB%8E%E5%B1%95%E7%A4%BA%E5%9B%BE%E7%89%87%E5%88%B0%E8%AE%BE%E8%AE%A1%E8%A7%82%E7%9C%8B%E4%BD%93%E9%AA%8C"><span class="toc-text">Gallery：从展示图片到设计观看体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E5%92%8C%E6%89%8B%E5%8A%BF%E4%BA%A4%E4%BA%92"><span class="toc-text">地图和手势交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%86%E5%8F%B2%E9%A1%B9%E7%9B%AE%E7%9A%84%E9%87%8D%E6%96%B0%E6%95%B4%E7%90%86"><span class="toc-text">历史项目的重新整理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86%E4%B8%8E%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E7%B3%BB%E7%BB%9F"><span class="toc-text">2. 文档管理与个人知识系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LibrisArk%EF%BC%9A%E8%B7%A8%E5%B9%B3%E5%8F%B0-PDF-%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">LibrisArk：跨平台 PDF 管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GenWiki%EF%BC%9A%E8%AE%A9%E6%94%B6%E8%97%8F%E5%86%85%E5%AE%B9%E9%80%90%E6%B8%90%E5%BD%A2%E6%88%90%E7%9F%A5%E8%AF%86%E7%BD%91%E7%BB%9C"><span class="toc-text">GenWiki：让收藏内容逐渐形成知识网络</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%87%AA%E6%89%98%E7%AE%A1-Agent-%E4%B8%8E%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BA%94%E7%94%A8"><span class="toc-text">3. 自托管 Agent 与移动端应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%AE%B6%E4%B8%AD%E9%83%A8%E7%BD%B2-OpenClaw"><span class="toc-text">在家中部署 OpenClaw</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Retake%EF%BC%9A%E5%9B%B4%E7%BB%95%E5%9C%BA%E6%99%AF%E5%A4%8D%E5%88%BB%E7%9A%84-iOS-%E7%9B%B8%E6%9C%BA%E5%BA%94%E7%94%A8"><span class="toc-text">Retake：围绕场景复刻的 iOS 相机应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pocket-Translator%EF%BC%9A%E5%AE%9E%E6%97%B6%E7%BF%BB%E8%AF%91%E5%BA%94%E7%94%A8"><span class="toc-text">Pocket Translator：实时翻译应用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BB%8E%E6%8A%80%E6%9C%AF%E9%A1%B9%E7%9B%AE%E8%B5%B0%E5%90%91%E7%9C%9F%E5%AE%9E%E4%B8%9A%E5%8A%A1"><span class="toc-text">4. 从技术项目走向真实业务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Deep-Research-%E5%88%B0%E4%BA%A7%E5%93%81%E4%B8%8A%E7%BA%BF"><span class="toc-text">从 Deep Research 到产品上线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84"><span class="toc-text">数据与技术架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E9%97%AD%E7%8E%AF"><span class="toc-text">商业模式和数据闭环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%81%E7%89%8C%E3%80%81%E7%94%A8%E6%88%B7%E9%AA%8C%E8%AF%81%E4%B8%8E%E5%86%85%E5%AE%B9%E8%90%A5%E9%94%80"><span class="toc-text">品牌、用户验证与内容营销</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BB%8E%E5%81%9A%E5%87%BA%E4%BA%A7%E5%93%81%E5%88%B0%E8%AE%A9%E4%B8%9A%E5%8A%A1%E8%BF%90%E8%BD%AC"><span class="toc-text">二、从做出产品到让业务运转</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%95%86%E4%B8%9A%E6%A8%A1%E5%BC%8F%E4%BC%9A%E5%8F%8D%E8%BF%87%E6%9D%A5%E6%94%B9%E5%8F%98%E4%BA%A7%E5%93%81"><span class="toc-text">1. 商业模式会反过来改变产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7%E6%9C%AC%E8%BA%AB%E5%B0%B1%E6%98%AF%E4%B8%80%E4%B8%AA%E7%B3%BB%E7%BB%9F"><span class="toc-text">2. 内容生产本身就是一个系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%B7%A5%E5%85%B7%E9%9C%80%E6%B1%82%E6%9D%A5%E8%87%AA%E7%9C%9F%E5%AE%9E%E4%B8%9A%E5%8A%A1%E6%91%A9%E6%93%A6"><span class="toc-text">3. 工具需求来自真实业务摩擦</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%84%8F%E8%AF%86%E5%88%B0%E4%B8%9A%E5%8A%A1%E5%A4%8D%E6%9D%82%EF%BC%8C%E4%B8%8D%E4%BB%A3%E8%A1%A8%E5%90%8C%E6%97%B6%E5%81%9A%E5%AE%8C%E6%89%80%E6%9C%89%E4%BA%8B%E6%83%85"><span class="toc-text">4. 意识到业务复杂，不代表同时做完所有事情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%94%A8%E6%88%B7%E9%AA%8C%E8%AF%81%E5%BA%94%E8%AF%A5%E6%9B%B4%E6%97%A9%E5%8F%91%E7%94%9F"><span class="toc-text">5. 用户验证应该更早发生</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AF%B9-Vibe-Coding-%E6%97%B6%E4%BB%A3%E7%9A%84%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3"><span class="toc-text">三、对 Vibe Coding 时代的重新理解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-AI-%E9%99%8D%E4%BD%8E%E4%BA%86%E5%AE%9E%E7%8E%B0%E9%97%A8%E6%A7%9B"><span class="toc-text">1. AI 降低了实现门槛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-AI-%E4%B8%8D%E4%BB%85%E6%94%BE%E5%A4%A7%E7%94%9F%E4%BA%A7%E5%8A%9B%EF%BC%8C%E4%B9%9F%E4%BC%9A%E6%94%BE%E5%A4%A7%E5%86%B3%E7%AD%96%E8%B4%A8%E9%87%8F"><span class="toc-text">2. AI 不仅放大生产力，也会放大决策质量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%8F%90%E5%89%8D%E8%AE%BE%E8%AE%A1%EF%BC%8C%E4%B8%8D%E7%AD%89%E4%BA%8E%E6%8A%8A%E6%89%80%E6%9C%89%E4%BA%8B%E6%83%85%E9%83%BD%E6%83%B3%E6%B8%85%E6%A5%9A"><span class="toc-text">3. 提前设计，不等于把所有事情都想清楚</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%9C%80%E6%B1%82%E5%8F%98%E6%9B%B4%E4%B8%8E%E9%87%8D%E6%9E%84%EF%BC%9A%E8%BD%AF%E4%BB%B6%E5%A4%8D%E6%9D%82%E6%80%A7%E4%B8%8D%E5%8F%AF%E6%B6%88%E9%99%A4%EF%BC%8C%E5%8F%AA%E8%83%BD%E8%A2%AB%E7%AE%A1%E7%90%86"><span class="toc-text">4. 需求变更与重构：软件复杂性不可消除，只能被管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Agent-%E5%8F%AF%E4%BB%A5%E5%8F%82%E4%B8%8E%E6%80%9D%E8%80%83%EF%BC%8C%E4%BD%86%E4%BA%BA%E6%89%BF%E6%8B%85%E6%9C%80%E7%BB%88%E8%B4%A3%E4%BB%BB"><span class="toc-text">5. Agent 可以参与思考，但人承担最终责任</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BA%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E4%BB%8E%E7%94%9F%E4%BA%A7%E8%BD%AC%E5%90%91%E7%BC%96%E6%8E%92%E5%92%8C%E9%AA%8C%E6%94%B6"><span class="toc-text">6. 人的工作从生产转向编排和验收</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BF%9B%E4%B8%80%E6%AD%A5%E5%A4%8D%E7%9B%98%E5%90%8E%EF%BC%8C%E6%88%91%E6%84%8F%E8%AF%86%E5%88%B0%E8%87%AA%E5%B7%B1%E8%BF%98%E5%BF%BD%E7%95%A5%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-text">四、进一步复盘后，我意识到自己还忽略了什么</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%AF%E9%AA%8C%E8%AF%81%E6%80%A7%E6%AF%94%E2%80%9C%E4%BB%A3%E7%A0%81%E8%83%BD%E8%BF%90%E8%A1%8C%E2%80%9D%E6%9B%B4%E9%87%8D%E8%A6%81"><span class="toc-text">1. 可验证性比“代码能运行”更重要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%88%90%E6%9C%AC%E5%92%8C%E9%95%BF%E6%9C%9F%E6%89%80%E6%9C%89%E6%9D%83%E6%88%90%E6%9C%AC%E4%B8%8D%E6%98%AF%E4%B8%80%E5%9B%9E%E4%BA%8B"><span class="toc-text">2. 创建成本和长期所有权成本不是一回事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%AE%89%E5%85%A8%E3%80%81%E9%9A%90%E7%A7%81%E5%92%8C%E6%95%B0%E6%8D%AE%E8%B4%A3%E4%BB%BB%E4%B8%8D%E8%83%BD%E8%A2%AB%E9%80%9F%E5%BA%A6%E6%8E%A9%E7%9B%96"><span class="toc-text">3. 安全、隐私和数据责任不能被速度掩盖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%A1%B9%E7%9B%AE%E8%B6%8A%E5%AE%B9%E6%98%93%E5%BC%80%E5%A7%8B%EF%BC%8C%E8%B6%8A%E9%9C%80%E8%A6%81%E5%AD%A6%E4%BC%9A%E5%81%9C%E6%AD%A2"><span class="toc-text">4. 项目越容易开始，越需要学会停止</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/15/autonomous-vehicle-timesync/" title="从零搭建自动驾驶车：传感器的时间同步与触发">从零搭建自动驾驶车：传感器的时间同步与触发</a><time datetime="2026-08-15T15:49:00.000Z" title="发表于 2026-08-15 23:49:00">2026-08-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/14/autonomous-vehicle-retrofit/" title="从零搭建自动驾驶车：车辆和传感器改装手册">从零搭建自动驾驶车：车辆和传感器改装手册</a><time datetime="2026-08-14T21:00:00.000Z" title="发表于 2026-08-15 05:00:00">2026-08-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/04/thinking-about-vibe-coding-project/" title="vibe coding 的软件工程感想">vibe coding 的软件工程感想</a><time datetime="2026-08-04T10:10:00.000Z" title="发表于 2026-08-04 18:10:00">2026-08-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/26/hexo-picbed-dns/" title="Hexo 图床方案和国内解析优化">Hexo 图床方案和国内解析优化</a><time datetime="2026-04-26T12:30:00.000Z" title="发表于 2026-04-26 20:30:00">2026-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭"><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/2026/20250823_114403000_iOS.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三十岁的墓志铭"/></a><div class="content"><a class="title" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭">三十岁的墓志铭</a><time datetime="2026-04-10T14:00:00.000Z" title="发表于 2026-04-10 22:00:00">2026-04-10</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2017 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2026/08/04/thinking-about-vibe-coding-project/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://www.yvonshong.com/2026/08/04/thinking-about-vibe-coding-project/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = 'vibe coding 的软件工程感想'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://gcore.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script>(() => {
+  const option = null
+  const config = {"site_uv":false,"site_pv":false,"page_pv":false,"token":null}
+
+  const runTrack = () => {
+    if (typeof umami !== 'undefined' && typeof umami.track === 'function') {
+      umami.track(props => ({ ...props, url: window.location.pathname, title: GLOBAL_CONFIG_SITE.title }))
+    } else {
+      console.warn('Umami Analytics: umami.track is not available')
+    }
+  }
+
+  const loadUmamiJS = () => {
+    btf.getScript('https://cloud.umami.is/script.js', {
+      'data-website-id': 'cbd4ce8c-a802-44c5-a575-becccd8a82ae',
+      'data-auto-track': 'false',
+      ...option
+    }).then(() => {
+      runTrack()
+    }).catch(error => {
+      console.error('Umami Analytics: Error loading script', error)
+    })
+  }
+
+  const getData = async (isPost) => {
+    try {
+      const now = Date.now()
+      const keyUrl = isPost ? `&url=${window.location.pathname}` : ''
+      const headerList = { 'Accept': 'application/json' }
+
+      if (true) {
+        headerList['Authorization'] = `Bearer ${config.token}`
+      } else {
+        headerList['x-umami-api-key'] = config.token
+      }
+
+      const res = await fetch(`https://cloud.umami.is/api/websites/cbd4ce8c-a802-44c5-a575-becccd8a82ae/stats?startAt=0000000000&endAt=${now}${keyUrl}`, {
+        method: "GET",
+        headers: headerList
+      })
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
+      }
+
+      return await res.json()
+    } catch (error) {
+      console.error('Umami Analytics: Failed to fetch data', error)
+      throw error
+    }
+  }
+
+  const insertData = async () => {
+    try {
+      if (GLOBAL_CONFIG_SITE.pageType === 'post' && config.page_pv) {
+        const pagePV = document.getElementById('umamiPV')
+        if (pagePV) {
+          const data = await getData(true)
+          if (data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            pagePV.textContent = data.pageviews.value
+          } else {
+            console.warn('Umami Analytics: Invalid page view data received')
+          }
+        }
+      }
+
+      if (config.site_uv || config.site_pv) {
+        const data = await getData(false)
+
+        if (config.site_uv) {
+          const siteUV = document.getElementById('umami-site-uv')
+          if (siteUV && data && data.visitors && typeof data.visitors.value !== 'undefined') {
+            siteUV.textContent = data.visitors.value
+          } else if (siteUV) {
+            console.warn('Umami Analytics: Invalid site UV data received')
+          }
+        }
+
+        if (config.site_pv) {
+          const sitePV = document.getElementById('umami-site-pv')
+          if (sitePV && data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            sitePV.textContent = data.pageviews.value
+          } else if (sitePV) {
+            console.warn('Umami Analytics: Invalid site PV data received')
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Umami Analytics: Failed to insert data', error)
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', runTrack, 'umami_analytics_run_track')
+  btf.addGlobalFn('pjaxComplete', insertData, 'umami_analytics_insert')
+
+
+  loadUmamiJS()
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertData)
+  } else {
+    setTimeout(insertData, 100)
+  }
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>

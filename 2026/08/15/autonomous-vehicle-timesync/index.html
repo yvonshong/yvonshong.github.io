@@ -1,0 +1,519 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>从零搭建自动驾驶车：传感器的时间同步与触发 | Yvon Shong</title><meta name="author" content="Yvon Shong"><meta name="copyright" content="Yvon Shong"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="在自动驾驶系统里，车上往往搭载了多颗高清相机、激光雷达和毫米波雷达。你可以把它们想象成一群各自戴着不同品牌手表的“目击证人”。如果这些手表的时间没有被强行对齐，当一辆对向来车高速驶过时，相机记录的画面是“下午3点整”，而雷达记录的点云却可能显示“下午3点零2毫秒”。 当下游的感知算法试图把这些来自不同传感器的“证词”揉在一起进行多传感器融合时，工程灾难就发生了。最直观的痛点就是产生“幽灵障碍物”—">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零搭建自动驾驶车：传感器的时间同步与触发">
+<meta property="og:url" content="https://www.yvonshong.com/2026/08/15/autonomous-vehicle-timesync/index.html">
+<meta property="og:site_name" content="Yvon Shong">
+<meta property="og:description" content="在自动驾驶系统里，车上往往搭载了多颗高清相机、激光雷达和毫米波雷达。你可以把它们想象成一群各自戴着不同品牌手表的“目击证人”。如果这些手表的时间没有被强行对齐，当一辆对向来车高速驶过时，相机记录的画面是“下午3点整”，而雷达记录的点云却可能显示“下午3点零2毫秒”。 当下游的感知算法试图把这些来自不同传感器的“证词”揉在一起进行多传感器融合时，工程灾难就发生了。最直观的痛点就是产生“幽灵障碍物”—">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp">
+<meta property="article:published_time" content="2026-08-15T15:49:00.000Z">
+<meta property="article:modified_time" content="2026-08-15T15:52:37.286Z">
+<meta property="article:author" content="Yvon Shong">
+<meta property="article:tag" content="autonomous-vehicle">
+<meta property="article:tag" content="lidar">
+<meta property="article:tag" content="gnss">
+<meta property="article:tag" content="timesync">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "从零搭建自动驾驶车：传感器的时间同步与触发",
+  "url": "https://www.yvonshong.com/2026/08/15/autonomous-vehicle-timesync/",
+  "image": "https://pic.yvonshong.com/HAbatdcnuM37PKf.webp",
+  "datePublished": "2026-08-15T15:49:00.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Yvon Shong",
+      "url": "https://www.yvonshong.com"
+    }
+  ]
+}</script><link rel="shortcut icon" href="https://pic.yvonshong.com/screenshot-20251210-230924.webp"><link rel="canonical" href="https://www.yvonshong.com/2026/08/15/autonomous-vehicle-timesync/index.html"><link rel="preconnect" href="https://gcore.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.5.2"><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'undefined')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          const mediaQueryDark = window.matchMedia('(prefers-color-scheme: dark)')
+          const mediaQueryLight = window.matchMedia('(prefers-color-scheme: light)')
+
+          if (theme === undefined) {
+            if (mediaQueryLight.matches) activateLightMode()
+            else if (mediaQueryDark.matches) activateDarkMode()
+            else {
+              const hour = new Date().getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            mediaQueryDark.addEventListener('change', () => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else {
+            theme === 'light' ? activateLightMode() : activateDarkMode()
+          }
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-7920127555199797',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"pagination":{"enable":true,"hitsPerPage":8},"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://gcore.jsdelivr.net/npm/@egjs/infinitegrid@4.12.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '从零搭建自动驾驶车：传感器的时间同步与触发',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="Yvon Shong" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="https://www.yvonshong.com/gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Yvon Shong</span></a><a class="nav-page-title" href="/"><span class="site-name">从零搭建自动驾驶车：传感器的时间同步与触发</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/tech/"><i class="fa-fw fas fa-microchip"></i><span> 技术</span></a></div><div class="menus_item"><a class="site-page" href="/categories/essay/"><i class="fa-fw fas fa-pen-nib"></i><span> 随笔</span></a></div><div class="menus_item"><a class="site-page" href="https://www.yvonshong.com/gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">从零搭建自动驾驶车：传感器的时间同步与触发</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-08-15T15:49:00.000Z" title="发表于 2026-08-15 23:49:00">2026-08-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/tech/">tech</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">4.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>14分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="container post-content" id="article-container"><p>在自动驾驶系统里，车上往往搭载了多颗高清相机、激光雷达和毫米波雷达。你可以把它们想象成一群各自戴着不同品牌手表的“目击证人”。如果这些手表的时间没有被强行对齐，当一辆对向来车高速驶过时，相机记录的画面是“下午3点整”，而雷达记录的点云却可能显示“下午3点零2毫秒”。</p>
+<p>当下游的感知算法试图把这些来自不同传感器的“证词”揉在一起进行多传感器融合时，工程灾难就发生了。最直观的痛点就是产生“幽灵障碍物”——由于这看似微不足道的时间差，运动物体在算法推算出的位置与真实物理位置发生了严重偏移。</p>
+<p>当你在做联合标定，尝试把激光雷达的三维点云投影到二维图像上时，会发现电线杆和车辆的边缘怎么也重叠不上。特别是在车辆高速行驶时，哪怕仅仅几毫秒的时间误差，都会被瞬间放大成几十厘米的定位误差。</p>
+<p>因此，为了实现精准的传感器前融合并降低控制延迟，我们必须在底层构建一套极其严谨的硬件级授时体系，把全车所有传感器的“手表”，强行拨到绝对一致的微秒级精度。</p>
+<hr>
+<h1 id="一、时钟源设备和常见协议"><a href="#一、时钟源设备和常见协议" class="headerlink" title="一、时钟源设备和常见协议"></a>一、时钟源设备和常见协议</h1><p>惯性导航（GNSS/IMU） 最常见的绝对时间提供者。通过接收卫星信号解算出高精度时间，并下发给其他设备。缺点是严重依赖卫星信号，长期在隧道、地库或厂房内无法使用。</p>
+<p>主机：域控或者工控机IPC 在一些低成本或简单的架构中，直接让域控充当时钟源，将自己的系统时间通过网络分发给各个传感器。</p>
+<p>TSN 交换机（Time-Sensitive Networking） 顾名思义“时间敏感网络”，它绝不仅是一个扩展网口的中转站。在自动驾驶中，当海量的激光雷达点云和相机画面同时涌入交换机造成网络拥塞时，普通交换机会让授时报文排队，产生巨大且不可控的延迟抖动（Jitter）。 而 TSN 交换机的核心能力在于“时间感知调度”与“硬件时间戳”。它能在硬件底层识别授时报文，并赋予最高优先级（甚至打断其他正在传输的庞大数据帧），确保授时数据在微秒甚至纳秒级的确定性时间内送达。它自带硬件高精度时钟，在无GPS信号时可作为主时钟；也可以接收惯导授时后再分发给传感器，从而把高频对时的脏活累活从域控/IPC上彻底剥离出来。</p>
+<p>在深入了解各授时协议之前，先理清几个调试时间同步时最常看的核心参数：</p>
+<blockquote>
+<p>Offset（时间偏差）： 从时钟与主时钟之间的绝对时间差。这是对时算法最终要消除的目标值。如果看到 ptp4l 打印的 Offset 稳定在几十纳秒以内，说明同步状态极佳。<br>Delay（网络传输时延）： 同步报文从主时钟发出到从时钟收到所花费的时间。无论是 NTP 还是 PTP，算法机制的核心都在于如何准确测量并补偿这个 Delay。<br>Jitter（网络抖动）： 传输延迟的变化量。如果每次报文的 Delay 都恒定，那很容易补偿；但如果忽快忽慢（Jitter很大），软件就很难算准真正的 Offset。PTP最大的贡献就是干掉了操作系统协议栈带来的巨大 Jitter。<br>而常见的协议包括：</p>
+</blockquote>
+<p>NTP (Network Time Protocol): 最常见的局域网/互联网授时协议。纯软件实现，精度通常在毫秒级（几毫秒到几十毫秒）。对于自动驾驶中高频的激光雷达和相机来说，精度往往不够用。</p>
+<p>PTP (IEEE 1588v2): 精确时间同步协议。通过在网卡硬件层打时间戳，消除了操作系统网络栈带来的延迟抖动。精度能达到微秒甚至纳秒级，是目前主流自动驾驶传感器首选的对时方案。</p>
+<p>PTP 的核心对时原理是主从设备之间互发报文，在硬件底层记录下 4 个关键的时间点（t1, t2, t3, t4）：</p>
+<blockquote>
+<ol>
+<li>主发从收： 主时钟发出 Sync 报文（记录发出时间 t1），从时钟收到（记录接收时间 t2）。</li>
+<li>从发主收： 从时钟发出 Delay_Req 请求（记录发出时间 t3），主时钟收到（记录接收时间 t4，并通过 Delay_Resp 报文把 t4 告诉从时钟）。 基于“网络一来一回的耗时是对称的”这一假设，从时钟拿到这 4 个值后，就能算出核心参数:<br>单向延迟 (delay) = $\frac{(t_2-t_1)+(t_4-t_3)}{2}$<br>时间偏差 (offset) = (t2 - t1) - delay, 算出 offset 后，从时钟直接修调自己的本地时间即可完成对齐。</li>
+</ol>
+</blockquote>
+<p>gPTP (IEEE 802.1AS) 可以理解为PTP在车载TSN网络里的“定制精简版”。它和PTP最大的差别在于：gPTP只支持二层网络（MAC层转发），不支持IP层路由，并且强制要求网络链路中的每一个交换节点都必须支持该协议（不能有普通交换机混入），从而在车载以太网中保证极致的低时延和确定性。</p>
+<hr>
+<h1 id="二、授时系统设计"><a href="#二、授时系统设计" class="headerlink" title="二、授时系统设计"></a>二、授时系统设计</h1><p>在实际工程落地上，我们通常面临三种主要的授时架构设计。这三种架构不是非此即彼不能兼容的，比如会GPS给工控机授时，工控机给传感器授时。</p>
+<h2 id="方案一：基于惯性导航的绝对授时"><a href="#方案一：基于惯性导航的绝对授时" class="headerlink" title="方案一：基于惯性导航的绝对授时"></a>方案一：基于惯性导航的绝对授时</h2><p>这是目前最正统的方案，所有设备最终都和高精度的卫星时间对齐。（至于卫星的时间怎么来的？可以参考 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://zhuanlan.zhihu.com/p/157925827">走进自动驾驶传感器（三）——卫星导航系统）</a></p>
+<ul>
+<li>如果惯导支持 PTP/gPTP 协议</li>
+</ul>
+<p>最理想情况，稍微高端一些的车载组合导航往往自带网口，并在硬件层支持 PTP。直接在惯导后台开启 PTP Master 模式即可。此时的信号流向是： 卫星-&gt;组合导航master-&gt;各个传感器和域控</p>
+<ul>
+<li>如果惯导不支持 PTP，只输出 PPS+GPRMC</li>
+</ul>
+<p>很多传统惯导或 GPS 模块只提供最原始的两根线，串口数据线 + 脉冲线来同步时间。</p>
+<blockquote>
+<p>RS232 串口发 GPRMC 协议： 里面包含字符串形式的当前年月日时分秒的绝对时间。但串口传输有延迟，时间并不精准。<br>PPS（Pulse Per Second）秒脉冲信号： 每逢整秒发一个极其精准的硬件电平跳变方波电信号，代表这一秒的绝对起点。 GPRMC 告诉你现在是几分几秒，PPS 告诉你这一秒准确的起跑线在哪。</p>
+</blockquote>
+<p>拿到这两根线后，下游设备怎么接？</p>
+<ul>
+<li>域控直连方案： 现在的自动驾驶域控通常自带 PPS 接收引脚和 RS232 接口，可以直接接入并在底层驱动中解析，最后由域控通过 PTP 协议分发给其他传感器。</li>
+<li>普通工控机/PC方案： 普通电脑主板没有接收 PPS 方波的 GPIO 接口。通常需要设计一块转接板，用单片机接收 PPS 和 GPRMC，对齐后通过 PCIe/网线 喂给工控机，有的相机采集卡也在集成这部分功能。</li>
+<li>专业授时盒方案： 嫌自己画板子写底层驱动麻烦，可以直接买现成的硬件授时盒，如星旗 XQ500 等。授时盒吃进 PPS+GPRMC 信号，直接从网口吐出 PTP 协议。</li>
+</ul>
+<p>此场景下的信号流向：</p>
+<ul>
+<li>工控机接转接板：卫星-&gt;惯导master-&gt;串口/PPS线-&gt;工控机转接板-&gt;工控机-&gt;传感器</li>
+<li>域控直连：卫星-&gt;惯导-&gt; 串口/PPS线-&gt;域控-&gt;传感器<br>授时盒方案：卫星-&gt;惯导-&gt;串口/PPS线-&gt;授时盒-&gt;传感器和工控机</li>
+<li>惯性导航的守时机制：当车辆驶入隧道或地库，卫星信号完全丢失时，整个系统将进入“守时”状态。此时时间的准确性完全依赖主时钟内部的高精度晶振。通常高端的惯性导航内部都自带非常优秀的晶振，能长时间扛住漂移。</li>
+</ul>
+<h2 id="方案二：基于域控-IPC的内部授时"><a href="#方案二：基于域控-IPC的内部授时" class="headerlink" title="方案二：基于域控/IPC的内部授时"></a>方案二：基于域控/IPC的内部授时</h2><p>在一些低成本或封闭园区场景下，干脆不接外部 GPS，直接利用域控/IPC 内部的时钟芯片作为全车时间的起点。此时的信号流向是： 域控/IPC master-&gt;交换机-&gt;各个传感器</p>
+<p>但是域控或工控机在断开外界基准后，内部时钟极易随温度变化发生严重漂移。如果是普通的工控机主板只有普通石英晶振，可能几分钟就会漂移好几个毫秒；而专门设计的优秀域控，通常会搭载温度补偿晶振TCXO或恒温晶振OCXO，以此保证在无 GPS 时依然能维持几小时的高精度。</p>
+<h2 id="方案三：基于-TSN-交换机的局部授时"><a href="#方案三：基于-TSN-交换机的局部授时" class="headerlink" title="方案三：基于 TSN 交换机的局部授时"></a>方案三：基于 TSN 交换机的局部授时</h2><p>彻底不依赖 GPS 卫星，不关心绝对真实时间的局部系统，只求系统内所有传感器的时间能严格对齐。此时的信号流向是： TSN交换机 master-&gt;各个传感器和域控</p>
+<p>为什么引入 TSN 而不是直接用域控？ 极低成本的方案确实可以直接用域控作主时钟。但在高阶自动驾驶中，当海量的激光雷达点云和多路高清相机画面同时涌入交换机，造成严重网络拥塞时，普通交换机会让 PTP 授时报文在队列中排队，产生巨大且不可控的延迟抖动。因此必须引入 TSN 交换机，利用其底层的时间感知调度机制优先保障授时报文；这样做不仅解决了拥塞抖动问题，还能把高频对时的脏活从域控身上分担出来。</p>
+<p>守时与稳定性保障： 作为整个感知网络的“心脏”，车载 TSN 交换机内部通常都会标配车规级的高精度晶振。因此，即使在没有外部 GPS 作为绝对基准的“局部授时”模式下，它也能凭借过硬的硬件素质，长期维持极低的时钟漂移，为全车提供一个非常稳固的相对时间基准。</p>
+<h2 id="工控机-域控的软件配置"><a href="#工控机-域控的软件配置" class="headerlink" title="工控机/域控的软件配置"></a>工控机/域控的软件配置</h2><p>在域控或者工控机上，我们通常依靠开源工具包 linuxptp 来实现底层时间同步。它主要包含两个极其核心的守护进程：</p>
+<ol>
+<li>ptp4l (PTP for Linux)，这是负责在以太网上跑 PTP/gPTP 协议的核心程序。负责和外部主时钟互发网络报文，算出偏差，然后只负责把当前网卡的硬件时钟 PHC，Physical Hardware Clock，对准。</li>
+</ol>
+<p><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://picx.zhimg.com/v2-28f267fea33a4e01e29bdb076f4fb105_1440w.jpg"></p>
+<ol start="2">
+<li>phc2sys (PHC to System)：ptp4l 把网卡时间对准了，但自动驾驶算法读取的往往是 Linux 的系统时间。phc2sys 的作用顾名思义，就是将网卡的 PTP 硬件时钟PHC同步给 Linux 的系统内核时钟。</li>
+</ol>
+<blockquote>
+<p>工程避坑，虚拟局域网VLAN的划分：在车载以太网中，为了防止数据拥塞，经常会划 VLAN。比如个别激光雷达的“点云数据报文”被配置走某个特定的 VLAN，但是它的“gPTP 对时报文”却不走 VLAN（走默认的 Native 网络），或者走了另一个 VLAN。在配置域控网卡和交换机时，一定要确认数据平面和对时平面的策略是否匹配，否则很容易出现“能收到雷达点云，但永远对不上时”的 Bug。</p>
+</blockquote>
+<h1 id="三、终端传感器"><a href="#三、终端传感器" class="headerlink" title="三、终端传感器"></a>三、终端传感器</h1><p>传感器的时间同步通常分为两大流派：</p>
+<ul>
+<li>支持硬件授时/触发： 传感器本身有能力接收外界的精确时间（PTP/PPS/Fsync），并在硬件底层为采集到的数据打上精确的时间戳。</li>
+<li>不支持授时，只能软同步： 传感器只管疯狂发数据，完全依赖域控或工控机在网卡或驱动层面“收到数据的那一刻”打上系统时间戳。这种方式受网络传输延迟和 CPU 调度的影响极大，极易产生时间抖动。</li>
+</ul>
+<h2 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h2><p>相机界一直存在一个痛点：早期相机较少原生支持网络授时，通常严重依赖主动硬触发。不过目前一些高端的自动驾驶采集板卡已经集成了串口和 GPIO，能直接吃进 PPS+GPRMC，把授时，触发和相机采集卡做在了一起。</p>
+<p>帧同步信号 Fsync，Frame Synchronization，本质上就是一根周期性打方波的物理电平信号线。相机的感光 Sensor 硬件一旦检测到这个方波的上升沿（或下降沿），就会在微秒级内被强制唤醒，开始当前帧的曝光。这正是“硬触发”名字的由来。通常是由域控 MCU 触发，域控内部的 MCU 先通过 PTP 把自己的系统时间对得绝对准，然后通过底层的硬件定时器，严格按照算法要求的帧率（如 30Hz）往 GPIO 引脚上往外打方波。 嫌域控发方波抖动大，可以直接外挂一个专用的硬件授时盒。授时盒吃进 GPS 的 PPS 信号，经过内部 FPGA 极其稳定的分频后，直接输出多路 Fsync 方波给所有相机。</p>
+<p>车规相机系统通常由控制器（SoC + 解串器 Deserializer）、摄像头（串行器 Serializer + 传感器）组成。</p>
+<p><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic2.zhimg.com/v2-467810dc779300621a5a8b4030fe4c61_1440w.jpg"></p>
+<p>工作机制是外部的 Fsync 信号输入到控制器后，会经过控制器侧的 Deserializer 透明转发到多路摄像头的 Serializer，从而实现“多路相机在同一微秒同时按下快门”。为了支持 Fsync 透传，解串器和串行器都必须正确配置。这一路 Fsync 信号不仅能给相机用，还可以同时分发给 LiDAR 等其他传感器，实现真正的多传感器物理级绝对同步。由于纯走硬件电平，Fsync 信号的传播延迟基本在微秒级，完全可忽略。</p>
+<p>一张图像的产生其实经历了漫长的链路：</p>
+<p>触发信号到达 -&gt; 曝光开始 -&gt; 曝光结束 -&gt; ISP传输开始 -&gt; ISP传输结束 -&gt; 系统接收到数据</p>
+<p><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic2.zhimg.com/v2-add208175877f82ce9ecfa9ee58e45dd_1440w.jpg"></p>
+<p>那算法到底用哪个时间？ 如果用“系统接收到数据”的时间，中间已经隔了十几毫秒的传输和曝光延迟了！因此，算法端通常强制要求底层驱动推算出曝光中间时刻（或者曝光开始时刻）来作为这张图片的绝对“传感器时间”。因为相机的曝光时长（Exposure Time）是随环境光动态变化的，用中间时刻最能代表车辆在那一瞬间的真实位置。</p>
+<h2 id="激光雷达"><a href="#激光雷达" class="headerlink" title="激光雷达"></a>激光雷达</h2><p>相比相机，激光雷达的授时接口通常更丰富。</p>
+<ul>
+<li>主流方案： 目前市面上的固态/半固态激光雷达，几乎全部首选接入以太网或者车载以太网跑 PTP/gPTP。</li>
+<li>老式方案： 直接吃 PPS + GPRMC。这在以前的机械式多线雷达时代非常常见（雷达适配器上会专门带一根接 GPS 模块的线）。</li>
+</ul>
+<blockquote>
+<p>关于雷达的时间戳： 相机的全局快门是一瞬间完成的，但激光雷达是一束光一束光扫出来的，类似相机Rolling Shutter的果冻效应。扫完一整圈组成一帧数据需要较长的时间，比如 10Hz 就是 100ms。<br>工程上通常需要开启雷达的同步角（Sync Angle）设置，强制雷达在转到某个特定角度，比如正前方时作为一帧的绝对起点。以此来保证雷达输出帧率的绝对稳定，并方便和相机的 Fsync 频率强绑定。</p>
+</blockquote>
+<p>雷达点云的一帧生命周期： 触发信号 -&gt; 扫描开始 -&gt; 持续发包(每个UDP包含多个点) -&gt; 扫描结束 -&gt; 驱动组装完成一帧 在处理激光雷达数据时，必须极其严谨地区分以下几个时间戳概念：</p>
+<ol>
+<li>触发时间戳： 雷达底层收到 PPS 或 PTP 同步时刻的瞬间。通常不会使用。</li>
+<li>点时间戳（Point Timestamp）： 雷达硬件会给每一个激光点附带一个内部时间偏移量。在做运动去畸变（Motion Deskew）时，算法必须依赖这精确到微秒的逐点绝对时间，把每一个点“拉扯”回自车在那个瞬间的真实位姿。</li>
+<li>UDP包的时间戳；雷达扫描时会把接收器一次收到的多个发射器返回的多个点，组成一个UDP包，打上一个时间戳。</li>
+<li>帧时间戳（Frame Timestamp）： 驱动把几百个 UDP 包拼成一整帧点云后，赋予这一帧的总时间。你可以把它强行打在和相机触发一致的时间点上，方便后续做前融合。</li>
+<li>系统接收时间： 域控网卡收到数据包的系统时间（受网络波动影响大，仅作监控用，绝不能喂给算法）。</li>
+</ol>
+<h2 id="毫米波雷达"><a href="#毫米波雷达" class="headerlink" title="毫米波雷达"></a>毫米波雷达</h2><p>由于传统毫米波雷达的数据量较小，通常采用 CAN/CAN-FD 网络进行传输。</p>
+<p>CAN 报文里的时间戳，有的是基于 AUTOSAR 规范（StbM 模块）的全局时间同步协议。它的原理本质上就是 CAN 总线上的“微缩版 PTP”。有的是系统接收打戳， 雷达自身不管绝对时间，只发一个相对计数值（或者根本不带时间）。全靠域控底层的 CAN 驱动在收到该报文的硬件中断瞬间打上当前的系统时间。这种方式受 CAN 总线仲裁排队延迟的影响极大，误差通常在几毫秒甚至几十毫秒跳动。</p>
+<p>随着 4D 成像毫米波雷达的数据量剧增，越来越多的雷达也开始改用车载以太网接口，并在对时协议上全面向 gPTP 靠拢。</p>
+<hr>
+<p>时间同步，表面上看只是自动驾驶系统里一个不起眼的底层基础设施，但它却构成了整个感知与融合网络信任的基石。也是我们工程师调试时常会去分析的因素。从天上的卫星信号，到车内的核心枢纽，最后精准落实到每个传感器引脚上那一次次微秒级的方波跳动与激光雷达点云每个点的时间戳。这条冗长的链路中，任何一环出现毫秒级的误差，都会在高速行驶的物理世界中，瞬间被放大成几十厘米甚至足以致命的控制误差。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com">Yvon Shong</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://www.yvonshong.com/2026/08/15/autonomous-vehicle-timesync/">https://www.yvonshong.com/2026/08/15/autonomous-vehicle-timesync/</a></span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/autonomous-vehicle/">autonomous-vehicle</a><a class="post-meta__tags" href="/tags/lidar/">lidar</a><a class="post-meta__tags" href="/tags/gnss/">gnss</a><a class="post-meta__tags" href="/tags/timesync/">timesync</a></div><div class="post-share"><div class="social-share" data-image="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp" data-sites="facebook,twitter,wechat,weibo"></div><link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://gcore.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>人民币版的赞</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pic.yvonshong.com/It31kXcofTA9UB2.webp" rel="external nofollow noreferrer" target="_blank"><img class="post-qr-code-img" src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/It31kXcofTA9UB2.webp" alt="Wechat"/></a><div class="post-qr-code-desc">Wechat</div></li></ul></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/08/14/autonomous-vehicle-retrofit/" title="从零搭建自动驾驶车：车辆和传感器改装手册"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">从零搭建自动驾驶车：车辆和传感器改装手册</div></div><div class="info-2"><div class="info-item-1"> 我在上份工作作为负责人深度对接过多家一线主机厂，很多项目涉及到数据采集车的改装，将主机厂提供的一辆普通量产乘用车，快速、专业地改装为能够支持海量高频数据采集的真值车，交付给主机厂使用。  这篇手册其实也存了很久，也会思考AI时代下还有什么是不能靠LLM获得的知识呢，最后还是顺手发出来吧。 整体流程：提出改装需求定义 -&gt; 委外改装施工管控 -&gt; 硬件与电气交付验收 -&gt; 传感器标定 -&gt; 软件系统调试。 已验证车型：广泛覆盖各级别车型，包含：奔驰、大众、理想、红旗、长安、多款欧洲豪华车企等等。 一、整车及计算平台选型车辆基础平台要求在项目初期选择基底车型时，主要考量以下几个核心维度：  纯电车型优先：电池包容量大，原车的高压/低压系统能够更好地支撑后续大功率计算平台的取电需求。 驻车空调支持：数据采集与软件调试往往伴随长时间原地驻车，驻车空调是保障设备散热与人员舒适度的刚需。 底盘线控开放度：能够低成本获取或破解制动、转向、轮速等关键 CAN 协议。  计算平台架构方案 方案一：工控机 + 独立显卡（x86 架构）。目前行业主流且最稳妥的方案，算力上限高...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2026/08/14/autonomous-vehicle-retrofit/" title="从零搭建自动驾驶车：车辆和传感器改装手册"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-15</div><div class="info-item-2">从零搭建自动驾驶车：车辆和传感器改装手册</div></div><div class="info-2"><div class="info-item-1"> 我在上份工作作为负责人深度对接过多家一线主机厂，很多项目涉及到数据采集车的改装，将主机厂提供的一辆普通量产乘用车，快速、专业地改装为能够支持海量高频数据采集的真值车，交付给主机厂使用。  这篇手册其实也存了很久，也会思考AI时代下还有什么是不能靠LLM获得的知识呢，最后还是顺手发出来吧。 整体流程：提出改装需求定义 -&gt; 委外改装施工管控 -&gt; 硬件与电气交付验收 -&gt; 传感器标定 -&gt; 软件系统调试。 已验证车型：广泛覆盖各级别车型，包含：奔驰、大众、理想、红旗、长安、多款欧洲豪华车企等等。 一、整车及计算平台选型车辆基础平台要求在项目初期选择基底车型时，主要考量以下几个核心维度：  纯电车型优先：电池包容量大，原车的高压/低压系统能够更好地支撑后续大功率计算平台的取电需求。 驻车空调支持：数据采集与软件调试往往伴随长时间原地驻车，驻车空调是保障设备散热与人员舒适度的刚需。 底盘线控开放度：能够低成本获取或破解制动、转向、轮速等关键 CAN 协议。  计算平台架构方案 方案一：工控机 + 独立显卡（x86 架构）。目前行业主流且最稳妥的方案，算力上限高...</div></div></div></a><a class="pagination-related" href="/2020/05/09/approach-autonomous-driving-sensor-lidar/" title="走进自动驾驶传感器（一）——激光雷达"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2020-05-09</div><div class="info-item-2">走进自动驾驶传感器（一）——激光雷达</div></div><div class="info-2"><div class="info-item-1">写在前面： 笔者为自动驾驶创业公司的研发工程师，工作时接触较多 LiDAR，使用较多点云数据，本文为笔者收集整理的一篇关于激光雷达的科普，查阅了一些资料包括论文和传感器使用手册，结合一些个人认为激光雷达在实际应用过程中需要了解的一些基本概念和基础知识，如有问题欢迎指正，如需转载请私信联系。 欢迎关注本专栏，关注我的持续更新。（光收藏不点赞的是人么（╯‵□′）╯︵┴─┴）   激光雷达，也称光学雷达（LIght Detection And Ranging）是激光探测与测距系统的简称，它通过测定传感器发射器与目标物体之间的传播距离，分析目标物体表面的反射能量大小、反射波谱的幅度、频率和相位等信息，从而呈现出目标物精确的三维结构信息。 自上世纪 60 年代激光被发明不久，激光雷达就大规模发展起来。目前激光雷达厂商主要使用波长为 905nm 和 1550nm 的激光发射器，波长为 1550nm 的光线不容易在人眼液体中传输，这意味着采用波长为 1550nm 激光的激光雷达的功率可以相当高，而不会造成视网膜损伤。更高的功率，意味着更远的探测距离，更长的波长，意味着更容易穿透粉尘雾霾。但受制...</div></div></div></a><a class="pagination-related" href="/2023/03/12/focus-on-lidar-1/" title="聚焦激光雷达（一）——扫描器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-12</div><div class="info-item-2">聚焦激光雷达（一）——扫描器</div></div><div class="info-2"><div class="info-item-1">之前撰写过相机硬件的系列文章，从滤镜、镜头、快门、 CMOS 到 ISP 芯片，几年前写过一篇激光雷达入门介绍 Yvon Shong：走进自动驾驶传感器（一）——激光雷达，当时只是初步提及了激光雷达的一些基本性质。 而这几年激光雷达作为逐渐成熟的自动驾驶/高阶辅助驾驶传感器，价格逐步下降，产品也层出不穷，笔者于去年入职了中国激光雷达第一股，禾赛科技（内推禾赛科技自动驾驶、光电芯片等岗位），伴随着制造商和供应链逐渐成熟的进程，激光雷达有了更繁复的分类和功能，所以也想对激光雷达进行一次系统性的大拆解，撰写激光雷达系列文章。   本系列文章将从扫描器，发射器，探测器到处理模块，从硬件到软件算法等模块，来介绍激光雷达。欢迎关注本专栏，您的帮助从点赞本文章开始 ヽ(ﾟ▽ﾟ)ノ。  之前的文章 ， 在之前的文章中，我们粗略的提及了激光雷达扫描结构的不同，激光雷达的扫描结构主要分为： 机械式、混合固态（MEMS振镜式、转镜式、棱镜式）、纯固态（FLASH、OPA）。本章节将详细介绍激光雷达细分的扫描结构和原理，以及一些新型的技术。  机械式机械式激光雷达是指其发射系统和接收系统一起随着转轴进行...</div></div></div></a><a class="pagination-related" href="/2023/03/28/focus-on-lidar-2/" title="聚焦激光雷达（二）——激光器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-28</div><div class="info-item-2">聚焦激光雷达（二）——激光器</div></div><div class="info-2"><div class="info-item-1">之前我们讲述了激光雷达扫描器件的原理，而作为激光雷达的发射器，我查阅了很多教材、论文、厂家说明文档、行研报告和科普文，发现没有一篇写得比较系统的科普文章，因为并没有找到读到一篇就能讲透的文。教材讲得很深入，但不同教材侧重点又不同，为了深入剖析激光雷达，梳理我自己的知识系统而写本篇。如有问题，请各位不吝指正。欢迎点赞关注后再收藏。    激光器原理所有激光器都包含以下三个组件：1、泵浦源；2、受激介质；3、谐振腔。 受激介质位于激光器内部，取决于不同的激光器结构设计，受激介质是一种包含可将激发光的能量转换为激光的原子的物质，可能是气体混合物 、固体晶体棒或玻璃纤维。激光介质在获得泵浦源从外部获得的能量供给时，受激产生能量辐射。 被激发的介质位于谐振腔两端两个镜子的中间位置，其中一个镜子是半透半反镜，受激介质产生的能量辐射在谐振腔内放大，与此同时，只有特定的辐射光能够穿过单向透镜，形成一束辐射光，这一辐射光束即是激光。   激光的原理   泵浦源泵浦源的作用是对增益介质进行激励使其辐射发光。具体而言，泵浦源提供能量激励原子跃迁到高能级，以实现粒子数反转（使高能态粒子数多于低能态粒子数...</div></div></div></a><a class="pagination-related" href="/2023/04/01/focus-on-lidar-3/" title="聚焦激光雷达（三）——接收器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-01</div><div class="info-item-2">聚焦激光雷达（三）——接收器</div></div><div class="info-2"><div class="info-item-1">接收元器件是决定激光雷达性能的核心零部件之一，激光雷达靠激光器发射激光，然后探测器接收漫反射回来的光，利用光电效应将光信号转化为电信号，从而实现对光信号的探测。   可以看到接收探测器的根本原理是光电效应，目前车载激光雷达中的半导体探测器按照工作原理可以分为：  PIN-PD：是在最基础的光电二极管的基础上扩宽了势垒区，价格低廉，结构简单，响应速度快，但没有增益，灵敏度有限。 APD：在 PIN 光电二极管的基础上，加上一定的反向电压，相当于人为增加了势垒，在外界光电效应的触发下，少量光生载流子引发雪崩效应电流倍增。输出电流与入射光子数量呈线性关系，相当于一个具有增益的光电二极管，这可进一步增大光检测的灵敏度，同时较大反向电压的作用也可进一步提高其响应速度，这就是雪崩光电二极管（APD），APD 已经是光通信技术中用来接收微弱光信号的一种基本器件。 SPAD：APD 工作电压在雪崩电压以上（盖革模式），每个入射的光子都会触发雪崩效应，灵敏度极高，甚至可以探测单个光子，但由于其工作于临界状态，需要配合猝灭电路设计，只能识别有无而无法识别强度，通常采用阵列的方式，利用多个传感器感知到...</div></div></div></a><a class="pagination-related" href="/2023/05/11/focus-on-lidar-5/" title="聚焦激光雷达（五）——处理器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-11</div><div class="info-item-2">聚焦激光雷达（五）——处理器</div></div><div class="info-2"><div class="info-item-1">我们在系列文章中，讲解了发射器，扫描器，接收器，光学系统，接下来便是激光雷达中的核心电子元件——处理器。由于篇幅原因，本文暂不涉及激光雷达的控制流程，或者是激光雷达的时间同步、脉冲的编解码、点云的解算等问题，仅依次介绍处理器硬件中涉及到的电子元件。文后附有几种激光雷达的拆解案例，罗列了激光雷达处理器中涉及到的电子元件，如有兴趣可点赞收藏该文章。   激光脉冲驱动控制器通常发射端每个激光器需要链接一个激光器脉冲驱动控制器 LD Driver，它负责在接收到主控芯片的发光指令后，给激光器发送一个控制信号。实现激光的脉冲式发射和编码，通过配置脉冲强度和脉冲宽度，增加编码功能，增强抗干扰能力。 驱动控制器要求控制信号能越快越好，有足够陡峭的上升沿。通常在低速信号电路中，信号从 0(低电平) 变成 1(高电平) 可以看成是瞬间完成的，但在高速电路中， 从 0 跳到 1 的时间消耗就无法忽略了，上升沿指的就是这个从 0 到 1 的过程，反之下降沿就是从 1 到 0 的过程。 之所以对上升沿有较高要求，是因为激光对人眼有加热效应，受到人眼安全约束，但可以通过提高瞬时功率，提高探测距离，缩短发光...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="disqus_thread"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/HAbatdcnuM37PKf.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Yvon Shong</div><div class="author-info-description">Yvon Shong 的个人博客，主要分享技术内容、生活随笔。</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">67</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">26</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="http://zhihu.com/people/yvonshong"><i class="fab fa-zhihu"></i><span>关注知乎</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/6083595" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab fa-bilibili" style="color: #fb7299;"></i></a><a class="social-icon" href="http://github.com/yvonshong" target="_blank" title="Github"><i class="fab fa-github" style="color: #dbd6d1;"></i></a><a class="social-icon" href="mailto:yvon@shong.win" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #f0ad4e;"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss" style="color: #f26522;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%97%B6%E9%92%9F%E6%BA%90%E8%AE%BE%E5%A4%87%E5%92%8C%E5%B8%B8%E8%A7%81%E5%8D%8F%E8%AE%AE"><span class="toc-text">一、时钟源设备和常见协议</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%8E%88%E6%97%B6%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-text">二、授时系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%83%AF%E6%80%A7%E5%AF%BC%E8%88%AA%E7%9A%84%E7%BB%9D%E5%AF%B9%E6%8E%88%E6%97%B6"><span class="toc-text">方案一：基于惯性导航的绝对授时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9F%9F%E6%8E%A7-IPC%E7%9A%84%E5%86%85%E9%83%A8%E6%8E%88%E6%97%B6"><span class="toc-text">方案二：基于域控&#x2F;IPC的内部授时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%89%EF%BC%9A%E5%9F%BA%E4%BA%8E-TSN-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%B1%80%E9%83%A8%E6%8E%88%E6%97%B6"><span class="toc-text">方案三：基于 TSN 交换机的局部授时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E6%8E%A7%E6%9C%BA-%E5%9F%9F%E6%8E%A7%E7%9A%84%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="toc-text">工控机&#x2F;域控的软件配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%88%E7%AB%AF%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="toc-text">三、终端传感器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E6%9C%BA"><span class="toc-text">相机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE"><span class="toc-text">激光雷达</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%AB%E7%B1%B3%E6%B3%A2%E9%9B%B7%E8%BE%BE"><span class="toc-text">毫米波雷达</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/15/autonomous-vehicle-timesync/" title="从零搭建自动驾驶车：传感器的时间同步与触发">从零搭建自动驾驶车：传感器的时间同步与触发</a><time datetime="2026-08-15T15:49:00.000Z" title="发表于 2026-08-15 23:49:00">2026-08-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/14/autonomous-vehicle-retrofit/" title="从零搭建自动驾驶车：车辆和传感器改装手册">从零搭建自动驾驶车：车辆和传感器改装手册</a><time datetime="2026-08-14T21:00:00.000Z" title="发表于 2026-08-15 05:00:00">2026-08-15</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/04/thinking-about-vibe-coding-project/" title="vibe coding 的软件工程感想">vibe coding 的软件工程感想</a><time datetime="2026-08-04T10:10:00.000Z" title="发表于 2026-08-04 18:10:00">2026-08-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/26/hexo-picbed-dns/" title="Hexo 图床方案和国内解析优化">Hexo 图床方案和国内解析优化</a><time datetime="2026-04-26T12:30:00.000Z" title="发表于 2026-04-26 20:30:00">2026-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭"><img src="https://pic.yvonshong.com/screenshot-20251210-230924.webp" data-lazy-src="https://pic.yvonshong.com/2026/20250823_114403000_iOS.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="三十岁的墓志铭"/></a><div class="content"><a class="title" href="/2026/04/10/epitaph-at-thirty/" title="三十岁的墓志铭">三十岁的墓志铭</a><time datetime="2026-04-10T14:00:00.000Z" title="发表于 2026-04-10 22:00:00">2026-04-10</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2017 - 2026 By Yvon Shong</span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.5.2"></script><script src="/js/main.js?v=5.5.2"></script><script src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+
+  const disqusReset = conf => {
+    window.DISQUS && window.DISQUS.reset({
+      reload: true,
+      config: conf
+    })
+  }
+
+  const loadDisqus = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyDisqus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    window.disqus_identifier = isShuoshuo ? path : '/2026/08/15/autonomous-vehicle-timesync/'
+    window.disqus_url = isShuoshuo ? location.origin + path : 'https://www.yvonshong.com/2026/08/15/autonomous-vehicle-timesync/'
+
+    const disqus_config = function () {
+      this.page.url = disqus_url
+      this.page.identifier = disqus_identifier
+      this.page.title = '从零搭建自动驾驶车：传感器的时间同步与触发'
+    }
+
+    if (window.DISQUS) disqusReset(disqus_config)
+    else {
+      const script = document.createElement('script')
+      script.src = 'https://shong.disqus.com/embed.js'
+      script.setAttribute('data-timestamp', +new Date())
+      document.head.appendChild(script)
+    }
+
+    btf.addGlobalFn('themeChange', () => disqusReset(disqus_config), 'disqus')
+  }
+
+  const getCount = async() => {
+    try {
+      const eleGroup = document.querySelector('#post-meta .disqus-comment-count')
+      if (!eleGroup) return
+      const cleanedLinks = eleGroup.href.replace(/#post-comment$/, '')
+
+      const res = await fetch(`https://disqus.com/api/3.0/threads/set.json?forum=shong&api_key=&thread:link=${cleanedLinks}`,{
+        method: 'GET'
+      })
+      const result = await res.json()
+
+      const count = result.response.length ? result.response[0].posts : 0
+      eleGroup.textContent = count
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Disqus' === 'Disqus'
+      ? window.shuoshuoComment = { loadComment: loadDisqus }
+      : window.loadOtherComment = loadDisqus
+    return
+  }
+
+  if ('Disqus' === 'Disqus' || !false) {
+    if (false) btf.loadComment(document.getElementById('disqus_thread'), loadDisqus)
+    else {
+      loadDisqus()
+      
+    }
+  } else {
+    window.loadOtherComment = loadDisqus
+  }
+})()</script></div><script src="https://gcore.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => {
+      try {
+        fn()
+      } catch (err) {
+        console.debug('Pjax callback failed:', err)
+      }
+    })
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script>(() => {
+  const option = null
+  const config = {"site_uv":false,"site_pv":false,"page_pv":false,"token":null}
+
+  const runTrack = () => {
+    if (typeof umami !== 'undefined' && typeof umami.track === 'function') {
+      umami.track(props => ({ ...props, url: window.location.pathname, title: GLOBAL_CONFIG_SITE.title }))
+    } else {
+      console.warn('Umami Analytics: umami.track is not available')
+    }
+  }
+
+  const loadUmamiJS = () => {
+    btf.getScript('https://cloud.umami.is/script.js', {
+      'data-website-id': 'cbd4ce8c-a802-44c5-a575-becccd8a82ae',
+      'data-auto-track': 'false',
+      ...option
+    }).then(() => {
+      runTrack()
+    }).catch(error => {
+      console.error('Umami Analytics: Error loading script', error)
+    })
+  }
+
+  const getData = async (isPost) => {
+    try {
+      const now = Date.now()
+      const keyUrl = isPost ? `&url=${window.location.pathname}` : ''
+      const headerList = { 'Accept': 'application/json' }
+
+      if (true) {
+        headerList['Authorization'] = `Bearer ${config.token}`
+      } else {
+        headerList['x-umami-api-key'] = config.token
+      }
+
+      const res = await fetch(`https://cloud.umami.is/api/websites/cbd4ce8c-a802-44c5-a575-becccd8a82ae/stats?startAt=0000000000&endAt=${now}${keyUrl}`, {
+        method: "GET",
+        headers: headerList
+      })
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`)
+      }
+
+      return await res.json()
+    } catch (error) {
+      console.error('Umami Analytics: Failed to fetch data', error)
+      throw error
+    }
+  }
+
+  const insertData = async () => {
+    try {
+      if (GLOBAL_CONFIG_SITE.pageType === 'post' && config.page_pv) {
+        const pagePV = document.getElementById('umamiPV')
+        if (pagePV) {
+          const data = await getData(true)
+          if (data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            pagePV.textContent = data.pageviews.value
+          } else {
+            console.warn('Umami Analytics: Invalid page view data received')
+          }
+        }
+      }
+
+      if (config.site_uv || config.site_pv) {
+        const data = await getData(false)
+
+        if (config.site_uv) {
+          const siteUV = document.getElementById('umami-site-uv')
+          if (siteUV && data && data.visitors && typeof data.visitors.value !== 'undefined') {
+            siteUV.textContent = data.visitors.value
+          } else if (siteUV) {
+            console.warn('Umami Analytics: Invalid site UV data received')
+          }
+        }
+
+        if (config.site_pv) {
+          const sitePV = document.getElementById('umami-site-pv')
+          if (sitePV && data && data.pageviews && typeof data.pageviews.value !== 'undefined') {
+            sitePV.textContent = data.pageviews.value
+          } else if (sitePV) {
+            console.warn('Umami Analytics: Invalid site PV data received')
+          }
+        }
+      }
+    } catch (error) {
+      console.error('Umami Analytics: Failed to insert data', error)
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', runTrack, 'umami_analytics_run_track')
+  btf.addGlobalFn('pjaxComplete', insertData, 'umami_analytics_insert')
+
+
+  loadUmamiJS()
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', insertData)
+  } else {
+    setTimeout(insertData, 100)
+  }
+})()</script><script async data-pjax src="/"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><i class="fas fa-spinner fa-pulse" id="loading-status" hidden="hidden"></i><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="local-search-input"><input placeholder="Search..." type="text"/></div><hr/><div id="local-search-results"></div><div class="ais-Pagination" id="local-search-pagination" style="display:none;"><ul class="ais-Pagination-list"></ul></div><div id="local-search-stats"></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=5.5.2"></script></div></div></body></html>
