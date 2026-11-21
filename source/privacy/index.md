@@ -69,4 +69,4 @@ Cookie 是网站存储在你浏览器中的小型文本文件。本站及本站�
 
 ## 9. 联系我
 
-如果你对本隐私政策有任何疑问，请通过邮件联系：[yvon@shong.win](mailto:yvon@shong.win)
+如果你对本隐私政策有任何疑问，请通过邮件联系：[i@yvonshong.com](mailto:i@yvonshong.com)

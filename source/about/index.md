@@ -23,7 +23,7 @@ comments: false
 
 ## 联系方式
 
-- 📧 Email：[yvon@shong.win](mailto:yvon@shong.win)
+- 📧 Email：[i@yvonshong.com](mailto:i@yvonshong.com)
 - 💻 GitHub：[yvonshong](https://github.com/yvonshong)
 - 📺 Bilibili：[yvonshong](https://space.bilibili.com/6083595)
 - 📝 知乎：[yvonshong](https://www.zhihu.com/people/yvonshong)
