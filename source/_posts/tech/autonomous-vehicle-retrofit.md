@@ -8,7 +8,7 @@ tags:
 - autonomous-vehicle
 - gnss
 ---
-![](https://pic1.zhimg.com/70/v2-a7ea784412ab906cf0cf6ecda361fc2a_1440w.avis?source=172ae18b&biz_tag=Post)
+![](https://pic.yvonshong.com/v2-a7ea784412ab906cf0cf6ecda361fc2a_1440w.avif)
 
 我在上份工作作为负责人深度对接过多家一线主机厂，很多项目涉及到数据采集车的改装，将主机厂提供的一辆普通量产乘用车，快速、专业地改装为能够支持海量高频数据采集的真值车，交付给主机厂使用。
 
@@ -43,7 +43,7 @@ tags:
 - 介质选择：SSD 搭配 SATA/NVMe 硬盘盒。
 - 总线压力测试：需重点核算数据总线与网线带宽，应对高并发流数据的写入压力。例如，一颗 800 万像素相机满帧率运行产生的数据吞吐量，就足以匹敌一颗高线束激光雷达。
 
-![](https://pic2.zhimg.com/v2-89079a01056ef465e55c8431a61bd1cf_1440w.jpg)
+![](https://pic.yvonshong.com/v2-89079a01056ef465e55c8431a61bd1cf_1440w.jpg)
 
 ## 网络通信与附属外设
 
@@ -110,11 +110,11 @@ tags:
 - 车辆的3D数模获取：车企能否提供车辆外观数模或 3D 扫描数据。如果无法获取，则需增加整车 3D 扫描的成本与周期，这是传感器支架开模的基础。
 传感器的数模：选型的产品通常产品资料会带数模或者开孔尺寸信息。
 
-![](https://pic2.zhimg.com/v2-327c600238694d6dea09eac82fdc376f_1440w.jpg)
+![](https://pic.yvonshong.com/v2-327c600238694d6dea09eac82fdc376f_1440w.jpg)
 
 > 3D模型下载
 
-![](https://pic4.zhimg.com/v2-315399e8f8390c760c7eb5fac928ee63_1440w.jpg)
+![](https://pic.yvonshong.com/v2-315399e8f8390c760c7eb5fac928ee63_1440w.jpg)
 
 > 孔位尺寸信息，以便设计转接板
 
@@ -132,7 +132,7 @@ tags:
 
 - IP 与拓扑规划：系统性地规划并分配所有传感器设备、计算节点、通信模块的静态网络地址，形成清晰的网络拓扑结构图，避免 IP 冲突。同时也画好传感器硬件连接图，以供改装厂施工。
 
-![](https://pic1.zhimg.com/v2-a7f01dad9b64aaf6cd3958b55e91d682_1440w.jpg)
+![](https://pic.yvonshong.com/v2-a7f01dad9b64aaf6cd3958b55e91d682_1440w.jpg)
 
 > 禾赛激光雷达连接示意图
 
@@ -175,7 +175,7 @@ tags:
     - 外参标定标定：这是多传感器融合的基础，通常涉及惯导杆臂值测量（Lever Arm）、RBV（车体坐标系到IMU的旋转）、LiDAR to GNSS、LiDAR to Camera，以及 GNSS to Body 等一系列严密的外参标定流程。
 - 数据系统核心部署：全面验证多传感器的硬件授时（PTP/PPS）与硬触发（Trigger）是否严格对齐，部署数据采集系统。
 
-![](https://picx.zhimg.com/v2-7a28ad1ffcdd387f27cfbb1ef44341b1_1440w.jpg)
+![](https://pic.yvonshong.com/v2-7a28ad1ffcdd387f27cfbb1ef44341b1_1440w.jpg)
 
 > 一张在东京看到的 waymo robotaxi 镇楼
 

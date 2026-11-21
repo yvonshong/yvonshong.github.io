@@ -2,11 +2,11 @@
   class_desc: 友情链接
   link_list:
     - name: photograph
-      link: https://www.yvonshong.com/gallery/
+      link: https://yvonshong.com/gallery/
       avatar: fas fa-photo-film
       descr: 画廊
     - name: travel
-      link: https://www.yvonshong.com/map/
+      link: https://yvonshong.com/map/
       avatar: fas fa-earth-americas
       descr: 旅途轨迹
     - name: 九世呓语

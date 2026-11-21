@@ -17,9 +17,9 @@ toc: true
 
 除了光圈（曝光孔径大小），快门（曝光时间），还有一个是成像元件的感光度，ISO为感光度的国际标准，在摄影中我们便用 ISO 指代感光度。为了介绍 ISO，我们完全可以先来熟悉下光学中的相关物理概念。
 
-![](https://pic4.zhimg.com/80/v2-e1345246e5802e4dbb4cf832b3b44083_720w.jpg)
+![](https://pic.yvonshong.com/v2-e1345246e5802e4dbb4cf832b3b44083_720w.jpg)
 
-![](https://pic4.zhimg.com/80/v2-f12000d1eeeda82b7fc7c5560b8d975f_720w.jpg)
+![](https://pic.yvonshong.com/v2-f12000d1eeeda82b7fc7c5560b8d975f_720w.jpg)
 
 ## 胶片的 ISO
 感光度ISO代表感光速度的标准，代表胶卷使用的颗粒，CCD或者CMOS感光元件的感光速度，数值越高就说明该感光材料的感光能力越强。从公式我们可以看出，感光度越高，对曝光量，光的积分通量的要求就越少。
@@ -47,13 +47,13 @@ toc: true
 
 光圈，快门，ISO。
 
-![](https://pic4.zhimg.com/80/v2-6a010158968f084e500bdda89f5ecdb3_720w.jpg)
+![](https://pic.yvonshong.com/v2-6a010158968f084e500bdda89f5ecdb3_720w.jpg)
 
 光圈与快门对曝光的控制光圈和快门是调整和控制曝光量的装置，它们是倍增或是倍减的关系，**这种关系可以通过不同的组合来得到相同的曝光量**。例如说，光圈F8、1/30秒为正确曝光值时，如果用光圈f5.6、1/60秒，或是f11、1/15秒来组合，它们所得到的曝光量也是一样的。而ISO也是呈倍数关系，来控制曝光量。这样，摄影师可以根据自己的目的来选择光圈，快门速度和 ISO。
 
 虽然他们都能控制曝光量，但是各自有不同的特点。
 
-![](https://pic2.zhimg.com/80/v2-ca92e3338af012e0f6706e60803b84b5_720w.jpg)
+![](https://pic.yvonshong.com/v2-ca92e3338af012e0f6706e60803b84b5_720w.jpg)
 
 光圈越大，进光口径越大，进光量越多，景深越小。
 
@@ -68,7 +68,7 @@ toc: true
 
 这是一个 camera sim 网页，可以在上面调节光圈，iso，快门，物距，焦距，白平衡等。
 
-![](https://pic4.zhimg.com/80/v2-77d6785454e77628e7aed3b3730dded3_720w.jpg)
+![](https://pic.yvonshong.com/v2-77d6785454e77628e7aed3b3730dded3_720w.jpg)
 
 ---
 

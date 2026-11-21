@@ -49,7 +49,7 @@ tags:
 - 编辑 >> 首选项 >> 高级 >> 文件和文件夹  >> 已链接附件的根文件夹 >> 选择 到 OneDrive 自己的 Zotero/storage 文件夹下
 - 数据存储位置 为默认
 
-Ubuntu 下 OneDrive 同步可参考 [Get started with Obsidian](https://www.yvonshong.com/2022/01/28/get-started-with-obsidian/)
+Ubuntu 下 OneDrive 同步可参考 [Get started with Obsidian](https://yvonshong.com/2022/01/28/get-started-with-obsidian/)
 
 
 # 插件
@@ -72,6 +72,6 @@ Ubuntu 下 OneDrive 同步可参考 [Get started with Obsidian](https://www.yvon
 
 设置：
 
-![](https://pic2.zhimg.com/80/v2-a12eb6a0a0d3b0a556c2f7eccc19efcd_720w.webp)
+![](https://pic.yvonshong.com/v2-a12eb6a0a0d3b0a556c2f7eccc19efcd_720w.webp)
 
 enjoy it!

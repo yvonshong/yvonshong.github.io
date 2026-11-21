@@ -20,7 +20,7 @@ toc: true
 
 同时激光器要达到高功率短脉冲，不仅需要快速的激光脉冲驱动，还需要一个能够快速响应 LD 驱动的大功率电流源，常见的是 TI 的 GaN FET。
 
-![](https://pic4.zhimg.com/80/v2-261b8cf7d1c458a6e510ef36ed50405f_720w.webp)
+![](https://pic.yvonshong.com/v2-261b8cf7d1c458a6e510ef36ed50405f_720w.webp)
 
 大电流窄脉冲驱动能力能够实现驱动 GaN 产生脉冲宽度小于 3 ns、峰值电流超过 30 A 的电流脉冲， 控制激光器产生高峰值功率窄脉宽的光脉冲信号，有利于提升激光雷达产品的测远能力和测距精度。
 
@@ -34,13 +34,13 @@ toc: true
   
 光学式编码器轴带动光栅盘旋转时，经发光元件发出的光被光栅盘狭缝切割成断续光线，并被接收元件接收产生初始信号。该信号经后继电路处理后,输出脉冲信号。光栅实际上是一个刻有规则透光和不透光线条的圆盘，光敏元件接收的光通量随透光线条同步变化，光敏元件输出波形经整形后，变为脉冲信号，每转一圈，输出一个脉冲。根据脉冲的变化，可以精确测量和控制设备位移量。
 
-![](https://pic3.zhimg.com/80/v2-6f3a046c3a455c04a9e2460f53c5e66e_720w.webp)
+![](https://pic.yvonshong.com/v2-6f3a046c3a455c04a9e2460f53c5e66e_720w.webp)
 
 > 透射型旋转编码器
 
 反射型将来自光源的光束，反射到由柱面透镜和棱镜组成的转盘上，并将其作为受光元件进行检测，从而易于实现产品的小型化。 这些光学元件的特点是精度高、分辨率高，不易受磁场影响。
 
-![](https://pic1.zhimg.com/80/v2-3bd8b3a1bbe10d03ef22838757e50d38_720w.webp)
+![](https://pic.yvonshong.com/v2-3bd8b3a1bbe10d03ef22838757e50d38_720w.webp)
 
 > 反射型旋转编码器
 
@@ -48,7 +48,7 @@ toc: true
 
 磁性编码器通过磁阻元件检测，在外圆周上交替排列的磁化 N 极和 S 极的旋转圆盘的磁极变化，将其转换为电信号，并以方波形式输出。 其特点是体积小、重量轻，而且由于没有发光元件，因此功耗比光学式低。但磁性容易受到外界影响。
 
-![](https://pic1.zhimg.com/80/v2-c4e988b1cef94579b617fc47a54b4804_720w.webp)
+![](https://pic.yvonshong.com/v2-c4e988b1cef94579b617fc47a54b4804_720w.webp)
 
 > 磁性编码器
 
@@ -60,7 +60,7 @@ toc: true
 
 在接收端，APD 或 SiPM 接收到光子后产生电流，理论上通过这个电流即可获知光强， 然而实际上尽管反射光信号已经经过了 SiPM 或 APD 的放大，却仍然较小，信号过于微弱，满足不了系统载噪比要求，通常需要在前端要采用低噪声放大器进行放大，以提高信噪比。
 
-![](https://pic1.zhimg.com/80/v2-2e4c434ed7f895aa440166b35c5e603c_720w.webp)
+![](https://pic.yvonshong.com/v2-2e4c434ed7f895aa440166b35c5e603c_720w.webp)
 
 > 速腾 M1 接收端的 TIA
 
@@ -74,13 +74,13 @@ toc: true
 
 TDC，Time-to-Digital Converter 时间数字转换器，精确测量电信号时间间隔，主要发挥计时器功能，通常用于低功耗、低成本、环境简单的系统，此时只 TDC 需要连接到主控芯片和光接收器之间，当主控芯片发出发光信号时，也同步给 TDC 一个开始计时的信号，随后反射回来的光经过 TIA 转换成放大的电压，再经过比较器与参考电压比较，判断是否有光入射，TDC 则将比较器的输出当做结束信号，完成计时，并将时间信息送回主控芯片。
 
-![](https://pic2.zhimg.com/80/v2-3ef6a975dc5f6539e6f7848cf77a3da5_720w.webp)
+![](https://pic.yvonshong.com/v2-3ef6a975dc5f6539e6f7848cf77a3da5_720w.webp)
 
 > TDC 的波形处理：通过时钟来读出前沿和脉宽，无峰值
 
 TDC 功耗低、成本低、集成度高，但是采集到的信息量较少，难以做波形处理，适合低成本场景。
 
-![](https://pic4.zhimg.com/80/v2-f531075fe487faf38bbe233ce4aca8fb_720w.webp)
+![](https://pic.yvonshong.com/v2-f531075fe487faf38bbe233ce4aca8fb_720w.webp)
 
 > TI 基于 TDC 的 ToF 方案
 
@@ -88,7 +88,7 @@ TDC 功耗低、成本低、集成度高，但是采集到的信息量较少，�
 
 ADC，Analog-to-Digital Converter，模数转换器，将连续变化的电信号，转换为离散的数字量。
 
-![](https://pic1.zhimg.com/80/v2-be14341103ebddc6a4b566d9f9c478d8_720w.webp)
+![](https://pic.yvonshong.com/v2-be14341103ebddc6a4b566d9f9c478d8_720w.webp)
 
 > ADC 的波形处理：边沿检测得到上升沿时间、脉宽、峰值
 
@@ -96,7 +96,7 @@ ADC 通常用于更复杂的系统，ADC 对反射光信号进行持续采样，
 
 ADC 能够采集到完整的波形，信息丰富，易应用波形处理算法（处理拖点、雨雾等）。但功耗高、成本高、集成度低。它适合更精密测量需求。
 
-![](https://pic2.zhimg.com/80/v2-969538423a128cb565b4e157dcebedfd_720w.webp)
+![](https://pic.yvonshong.com/v2-969538423a128cb565b4e157dcebedfd_720w.webp)
 
 > TI 基于 ADC 的 ToF 方案
 
@@ -114,7 +114,7 @@ ADC 能够采集到完整的波形，信息丰富，易应用波形处理算法�
 
 而以下是 TI 的 机械旋转式 LiDAR 的电路模块图 [Mechanically scanning LIDAR](https://link.zhihu.com/?target=https%3A//www.ti.com/solution/automotive-mechanically-scanning-lidar%3Fvariantid%3D34407%26subsystemid%3D20812%23block-diagram)，可以看到通常还会有一些温度传感器和相应的温度控制，来避免激光雷达电路板处在极端温度环境。还包含整个系统的电源相关驱动模块。
 
-![](https://pic4.zhimg.com/80/v2-630c1fb5bee03fbcda7e0d20f3205377_720w.webp)
+![](https://pic.yvonshong.com/v2-630c1fb5bee03fbcda7e0d20f3205377_720w.webp)
 
 > LiDAR 各模块控制信号链路，以及电源，接口，时钟，监测和诊断模块
 
@@ -124,7 +124,7 @@ ADC 能够采集到完整的波形，信息丰富，易应用波形处理算法�
 
 但由于激光雷达模拟芯片技术难度相对有限，且厂商之间尚无统一的设计标准，因此考虑到适用性和降本需求，众多激光雷达厂商开始自研 ASIC 或 SOC 芯片将以上功能集成到单个芯片中。
 
-![](https://pic4.zhimg.com/80/v2-11c58befc88a644e1d394dce3d3b5537_720w.webp)
+![](https://pic.yvonshong.com/v2-11c58befc88a644e1d394dce3d3b5537_720w.webp)
 
 > 激光雷达专用芯片及功能模块示意图
 
@@ -139,7 +139,7 @@ ADC 能够采集到完整的波形，信息丰富，易应用波形处理算法�
 
 Velodyne 16 线激光雷达的主板是该设备的核心，具有许多控制器，RF 组件和开关。包括 Intel，Microchip，ADI 和 TI 的组件。
 
-![](https://pic1.zhimg.com/80/v2-3e69fde8179be553884c7382a8bef0b4_720w.webp)
+![](https://pic.yvonshong.com/v2-3e69fde8179be553884c7382a8bef0b4_720w.webp)
 
 > VLP 16 主板
 
@@ -149,7 +149,7 @@ Velodyne 16 线激光雷达的主板是该设备的核心，具有许多控制�
 - 英特尔： Cyclone III FPGA，8 MB 闪存（主板背面）
 - 英飞凌：双 MOSFET 驱动器（主板背面）
 
-![](https://pic1.zhimg.com/80/v2-a64d40dc552c87566fe16ee8cc4e11d0_720w.webp)
+![](https://pic.yvonshong.com/v2-a64d40dc552c87566fe16ee8cc4e11d0_720w.webp)
 
 > VLP 16 电源板
 
@@ -166,7 +166,7 @@ Velodyne 16 线激光雷达的主板是该设备的核心，具有许多控制�
 
 Ouster OS1 激光雷达传感器的主板上的组件包括：
 
-![](https://pic4.zhimg.com/80/v2-56fa05fd0c999208031bf031a35290c3_720w.webp)
+![](https://pic.yvonshong.com/v2-56fa05fd0c999208031bf031a35290c3_720w.webp)
 
 > Ouster OS1 主板
 
@@ -177,7 +177,7 @@ Ouster OS1 激光雷达传感器的主板上的组件包括：
 - Analog Devices：射频功率检测器
 - Macronix：串行 NOR 闪存 16MB
 
-![](https://pic4.zhimg.com/80/v2-e0b633bc93580c885f95e4191b55b6b7_720w.webp)
+![](https://pic.yvonshong.com/v2-e0b633bc93580c885f95e4191b55b6b7_720w.webp)
 
 > Ouster 内部转子板
 
@@ -190,7 +190,7 @@ Ouster OS1 激光雷达传感器的主板上的组件包括：
 - TI：电流分流监视器芯片
 
 
-![](https://pic1.zhimg.com/80/v2-b981d90046a26f7f71cca97598023aec_720w.webp)
+![](https://pic.yvonshong.com/v2-b981d90046a26f7f71cca97598023aec_720w.webp)
 
 > Ouster 电机板
 
@@ -203,7 +203,7 @@ Ouster OS1 激光雷达传感器的主板上的组件包括：
 
 ## Livox HAP
 
-![](https://pic4.zhimg.com/80/v2-5ef8b9fdda2ac0a3c2daf3cbf488599f_720w.webp)
+![](https://pic.yvonshong.com/v2-5ef8b9fdda2ac0a3c2daf3cbf488599f_720w.webp)
 
 > 大疆 Livox HAP 主控板以及两大控制芯片
 
@@ -211,7 +211,7 @@ Ouster OS1 激光雷达传感器的主板上的组件包括：
 - Xilinx：Xilinx：Zynq Ultra Scale+ MPSoC
 
 ## RoboSense Helios
-![](https://pic3.zhimg.com/80/v2-498ea5eddde66583994a71c76d79ff26_720w.webp)
+![](https://pic.yvonshong.com/v2-498ea5eddde66583994a71c76d79ff26_720w.webp)
 
 > RS Helios 主控板
 
@@ -225,7 +225,7 @@ Ouster OS1 激光雷达传感器的主板上的组件包括：
 
 在激光雷达里面还有一个数字适配器板，主要包含包含
 
-![](https://pic4.zhimg.com/80/v2-52eee3cf900c8270e6dc3476941ebb93_720w.webp)
+![](https://pic.yvonshong.com/v2-52eee3cf900c8270e6dc3476941ebb93_720w.webp)
 
 > RS Helios 数字转接板
 
@@ -236,7 +236,7 @@ Ouster OS1 激光雷达传感器的主板上的组件包括：
 
 另一块辅助板：
 
-![](https://pic1.zhimg.com/80/v2-1f3ba1d685d0107a1b45f5bb1e893f40_720w.webp)
+![](https://pic.yvonshong.com/v2-1f3ba1d685d0107a1b45f5bb1e893f40_720w.webp)
 
 > RS Helios 激光雷达辅助板
 

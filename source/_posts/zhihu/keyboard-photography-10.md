@@ -33,11 +33,11 @@ toc: true
 
 由于偏光镜只容许光线在单一震动方向通过，光线的强度因此随之减低。使用的时候，需要旋转偏光镜到合适的角度，才可以看到效果。同时也减弱了光，一般和无偏光镜相比，在同一个曝光值拍摄下，会减光约 1-1.5EV 曝光，必要时需要上三脚架。若是用于超广角镜头上，也可能会发生暗角的情况。
 
-![](https://pic3.zhimg.com/80/v2-63eb84f401b020d097f7bd37f075ed5e_720w.jpg)
+![](https://pic.yvonshong.com/v2-63eb84f401b020d097f7bd37f075ed5e_720w.jpg)
 
-![](https://pic3.zhimg.com/80/v2-f7e44585b1edc6c874964632b38bcdce_720w.jpg)
+![](https://pic.yvonshong.com/v2-f7e44585b1edc6c874964632b38bcdce_720w.jpg)
 
-![](https://pic4.zhimg.com/80/v2-ef1104832bdbad07451c4f7a7f2a19af_720w.jpg)
+![](https://pic.yvonshong.com/v2-ef1104832bdbad07451c4f7a7f2a19af_720w.jpg)
 
 # 减光镜 Neutral Density
 
@@ -49,7 +49,7 @@ ND 镜有标识，代表了它的减光强度。目前常见的有 ND8、ND64 �
 
 ND 镜由于减光，会造成相机无法获取到足够的光线对焦。建议取消半按对焦，对焦、构图之后上滤镜。一些质量较差的 ND 镜会令照片偏色，不同厂商对 ND 镜减光量的表达方式也不一。
 
-![](https://pic4.zhimg.com/80/v2-ab5227f295651ebf98bc7d50187a29eb_720w.jpg)
+![](https://pic.yvonshong.com/v2-ab5227f295651ebf98bc7d50187a29eb_720w.jpg)
 
 # 渐变镜 Graduated Neutral Density
 
@@ -57,7 +57,7 @@ ND 镜由于减光，会造成相机无法获取到足够的光线对焦。建�
 
 在数码摄影未流行时，渐变镜可说是每个摄影者的必需品。现在不少数码相机已经具备 HDR 功能（将多张不同曝光的照片合成)，但效果与渐变镜不尽相同，所以不能完全取代。
 
-![](https://pic1.zhimg.com/80/v2-ba06ffab6c3410027116a8adbeb55290_720w.jpg)
+![](https://pic.yvonshong.com/v2-ba06ffab6c3410027116a8adbeb55290_720w.jpg)
 
 GND 和 ND 相比，除了减光等级。同样推荐先构图对焦，后上 GND。并需要对好 GND 的减光位置。
 
@@ -66,7 +66,7 @@ GND 和 ND 相比，除了减光等级。同样推荐先构图对焦，后上 GN
 # 硬渐变
 中灰渐变镜主要用于平衡高反差场景中的曝光。当我们需要拍摄天空较亮，而地面较暗的风景时，这种滤镜能够避免天空部分过曝或地面部分的曝光不足。硬渐变适用于天地分界明显的场景，例如拍摄沙漠这种地平线较为平整的风景。
 
-![](https://pic1.zhimg.com/80/v2-0afd0351244701f360f8c68c110d91ac_720w.jpg)
+![](https://pic.yvonshong.com/v2-0afd0351244701f360f8c68c110d91ac_720w.jpg)
 
 
 其特征是在透明和暗部区域之间有一个清晰的边界，所以硬渐变一般应用在画面明暗区域过渡非常明显的情况下，例如有地平线和海平线这样的画面。
@@ -75,13 +75,13 @@ GND 和 ND 相比，除了减光等级。同样推荐先构图对焦，后上 GN
 
 其特征是拥有一个较为平缓过渡的渐变区域，软边中灰渐变镜的简便效果能够很自然地压暗现场光，而不会在画面中出现突兀的明暗分界，像是层峦叠嶂的山地风景，通常很难将天与地完全分开，而且地平线也并不是平直的。因此，在这里我们需要用软渐变中灰渐变镜来代替硬渐变滤镜，以取得相似的效果。在避免画面出现过曝或欠曝的同时，软渐变也不会在画面中留下生硬而明显的明暗分界线。
 
-![](https://pic3.zhimg.com/80/v2-7ed4e9468c40cfefb658325069b5f13e_720w.jpg)
+![](https://pic.yvonshong.com/v2-7ed4e9468c40cfefb658325069b5f13e_720w.jpg)
 
 # 反向渐变
 
 反向渐变镜颜色最深的部分是在滤镜中间，向滤镜边缘慢慢减淡。但是对于日出日落爱好者，太阳处于画面中间，上述两款普通中灰渐变镜面对这种情况就相形见绌，而反向渐变镜则是一件利器。反向渐变镜的颜色深度由中心向边缘递减，中心部分颜色最深，而边缘部分则最浅。这种设计很好地应对了日出日落时，地平线部分最亮，天空和海面（地面）则相对较暗的情况，因而能够避免画面局部过曝现象的产生。日出日落时分，太阳光的亮度在画面的中间时使用效果最明显，在实际拍摄的时候使用滤镜颜色最深的部位挡住画面最亮的地方，从而平衡画面反差。
 
-![](https://pic4.zhimg.com/80/v2-25d5dc056e9cc51b6a04940c1d4cb437_720w.jpg)
+![](https://pic.yvonshong.com/v2-25d5dc056e9cc51b6a04940c1d4cb437_720w.jpg)
 
 # 暖色镜 Warming 、冷色镜 Cooling
 
@@ -105,25 +105,25 @@ GND 和 ND 相比，除了减光等级。同样推荐先构图对焦，后上 GN
 
 当然星空摄影还是建议直接去低光污染的区域。。。
 
-![](https://pic3.zhimg.com/80/v2-41ed27c5dda57a142e47ca3bff9aefd2_720w.jpg)
+![](https://pic.yvonshong.com/v2-41ed27c5dda57a142e47ca3bff9aefd2_720w.jpg)
 
 
 # 近摄镜
 
 近摄镜又叫微距镜，作用是让镜头可以拍摄微距的效果（丐版近摄环）。原理其实就是在镜头前，放了一块放大镜。缺点是：装上了之后，镜头无法对焦无限远。
 
-![](https://pic1.zhimg.com/80/v2-91d05fc9446ebee4a0d0328bf391eaf0_720w.jpg)
+![](https://pic.yvonshong.com/v2-91d05fc9446ebee4a0d0328bf391eaf0_720w.jpg)
 
 
 # 折返滤镜
 
 此类滤镜，是在滤镜上放置一些不透明的小图案。在拍摄之后，由于光学作用，会在虚化的斑点中呈现出图案。
 
-![](https://pic2.zhimg.com/80/v2-7257e9bd12c08ad3e134aacff0e362fd_720w.jpg)
+![](https://pic.yvonshong.com/v2-7257e9bd12c08ad3e134aacff0e362fd_720w.jpg)
 
 > *图源卡色官网*
 
-![](https://pic3.zhimg.com/80/v2-2a958f90103572b4e2a44fd37a5e5316_720w.jpg)
+![](https://pic.yvonshong.com/v2-2a958f90103572b4e2a44fd37a5e5316_720w.jpg)
 
 > *图源卡色官网*
 
@@ -135,15 +135,15 @@ GND 和 ND 相比，除了减光等级。同样推荐先构图对焦，后上 GN
 - 星空拍摄：过滤掉低亮度星星，增大高亮度星星的星点范围。可以更明显的拍摄星点和星座。
 - 风光拍摄：营造童话、梦幻般的效果。
 
-![](https://pic4.zhimg.com/80/v2-f120d805a94e3e08349eb829c29145b7_720w.jpg)
+![](https://pic.yvonshong.com/v2-f120d805a94e3e08349eb829c29145b7_720w.jpg)
 
 > *柔焦镜用于人像拍摄（人像朦胧，柔化皮肤等）From 卡色官网*
 
-![](https://pic2.zhimg.com/80/v2-efb45179a2e0c3b82c0170af67f9c6d1_720w.jpg)
+![](https://pic.yvonshong.com/v2-efb45179a2e0c3b82c0170af67f9c6d1_720w.jpg)
 
 > *柔焦镜下的星空（让亮星更亮）From 卡色官网*
 
-![](https://pic1.zhimg.com/80/v2-aa904defe0c25d49024c2d28da317b3c_720w.jpg)
+![](https://pic.yvonshong.com/v2-aa904defe0c25d49024c2d28da317b3c_720w.jpg)
 
 > *梦幻般的景色效果 From 卡色官网*
 
@@ -153,7 +153,7 @@ GND 和 ND 相比，除了减光等级。同样推荐先构图对焦，后上 GN
 
 特殊效果滤镜（星光镜，柔光镜等）。随着后期软件的发展，此类滤镜在慢慢淡出历史的舞台。
 
-![](https://pic4.zhimg.com/80/v2-2a351388f3efc147c28eb4f057bbded7_720w.jpg)
+![](https://pic.yvonshong.com/v2-2a351388f3efc147c28eb4f057bbded7_720w.jpg)
 
 # Reference
 

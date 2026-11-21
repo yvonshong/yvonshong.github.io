@@ -41,7 +41,7 @@ toc: true
 
 毫米波雷达基本工作原理是利用高频电路产生特定调制频率（FMCW）的电磁波，并通过天线发送电磁波和接收从目标反射回来的电磁波，可以同时对多个目标进行测距、测速以及方位角测量；测速是根据多普勒效应，通过计算返回接收天线的雷达波的频率变化就可以得到目标相对于雷达的运动速度，和飞行时间，来得到目标物距离。而方位测量（包括水平角度和垂直角度）是通过天线的阵列收到同一目标反射的雷达波的相位差计算得到目标的方位角。
 
-![](https://pic4.zhimg.com/80/v2-a23034cd8bbd6cdc37eb1b7e1094fa9b_720w.jpg)
+![](https://pic.yvonshong.com/v2-a23034cd8bbd6cdc37eb1b7e1094fa9b_720w.jpg)
 
 > *毫米波雷达基本工作原理示意图*
 
@@ -67,7 +67,7 @@ FMCW 雷达收发同时，理论上不存在脉冲雷达所存在的测距盲区
 - 单频连续波 CW
 - 调频连续波 FMCW
 
-![](https://pic2.zhimg.com/80/v2-fa63307c3e515b38d7cdfec09a84ea65_720w.jpg)
+![](https://pic.yvonshong.com/v2-fa63307c3e515b38d7cdfec09a84ea65_720w.jpg)
 
 > *毫米波雷达不同工作方式*
 
@@ -83,7 +83,7 @@ FMCW 雷达收发同时，理论上不存在脉冲雷达所存在的测距盲区
 
 24.0GHz 到 24.25GHz，窄带带宽 250 MHz，波长大于 1cm，严格来讲属于厘米波雷达。频带还包括一个带宽为 5GHz 的超宽带（UWB）2022 年 1 月 1 日以后，UWB 频段将无法在欧洲和美国使用，只有窄带频段可以长期使用。
 
-![](https://pic1.zhimg.com/80/v2-59dda6f336ba9df663ce2d151d2fb88c_720w.jpg)
+![](https://pic.yvonshong.com/v2-59dda6f336ba9df663ce2d151d2fb88c_720w.jpg)
 
 > 24GHz 毫米波雷达应用频段示意图
 
@@ -91,20 +91,20 @@ FMCW 雷达收发同时，理论上不存在脉冲雷达所存在的测距盲区
 
 其中 76-77GHz 频段可用于远程车载雷达，并且该频段有等效同性各向辐射功率的优势，同时满足高传输功率和宽工作带宽，可以同时做到长距离探测和高距离分辨率。波长更短所以收发天线面积大幅减小，雷达体积更小。77-81GHz 短程雷达（SRR）频段是新加入的频段，可提供高达 4 GHz 的宽扫描带宽，非常适合需要高范围分辨率的应用。
 
-![](https://pic2.zhimg.com/80/v2-507a12cd203c65d5375633673e138291_720w.jpg)
+![](https://pic.yvonshong.com/v2-507a12cd203c65d5375633673e138291_720w.jpg)
 > *77GHz 毫米波雷达应用频段示意图*
 
 # 硬件结构
 
 汽车使用的雷达不像军事雷达体积那么庞大，是小型传感器，可以很容易地安装在前格栅或保险杠下面。
 
-![](https://pic1.zhimg.com/80/v2-e89b0dc79f360b8ec3dab99e7b670da0_720w.jpg)
+![](https://pic.yvonshong.com/v2-e89b0dc79f360b8ec3dab99e7b670da0_720w.jpg)
 
 > 毫米波雷达基本结构组成示意图
 
 高频信号由压控振荡器产生，通过功率分配器将一部分经过额外放大后馈送至发射天线，另一部分耦合至混频器，与接收的回波混频后低通滤波，得到基带差频信号，经过模数转换后送至信号处理器处理。
 
-![](https://pic3.zhimg.com/80/v2-e6582201bf25f1f0949e08527ed792be_720w.jpg)
+![](https://pic.yvonshong.com/v2-e6582201bf25f1f0949e08527ed792be_720w.jpg)
 
 > 结构框图
 
@@ -114,7 +114,7 @@ FMCW 雷达收发同时，理论上不存在脉冲雷达所存在的测距盲区
 
 混频器：在 FMCW 雷达中，混频器混频器将回波信号与频率合成器产生的扫频信号相减，获得频移或中频信号（IF）。
 
-![](https://pic1.zhimg.com/80/v2-595c63142114bd4004701b056c754bb8_720w.jpg)
+![](https://pic.yvonshong.com/v2-595c63142114bd4004701b056c754bb8_720w.jpg)
 
 > *AWR1843 核心解决方案框图*
 
@@ -124,7 +124,7 @@ FMCW 雷达收发同时，理论上不存在脉冲雷达所存在的测距盲区
 
 天线：天线通过将能量聚焦在所需方向来增加信号的强度，天线的波束宽度决定了雷达传感器的视场，比如横向绝对覆盖车道数。天线辐射不仅包括主波束，还包括副瓣。天线的旁瓣指向不同的方向，可以感知不在主波束内的目标，也可能产生误报。为了避免旁瓣检测，必须将旁瓣电平从主波束的峰值压制到 30dB 以上。
 
-![](https://pic1.zhimg.com/80/v2-30c063af4b625d0c580f5b13b592f700_720w.jpg)
+![](https://pic.yvonshong.com/v2-30c063af4b625d0c580f5b13b592f700_720w.jpg)
 
 > 天线方向图是天线发射的相对场强的几何方向图
 
@@ -162,7 +162,7 @@ FMCW 雷达收发同时，理论上不存在脉冲雷达所存在的测距盲区
 
 大家可以使用 Oxford 组发布的雷达数据集 [Oxford Radar Dataset](https://link.zhihu.com/?target=https%3A//dbarnes.github.io/radar-robotcar-dataset/) 进行数据集上的开发。 该雷达数据集在城市环境中采集了多段数据，使用的雷达是 Navtech 开发的一款 76Ghz~77Ghz 毫米波雷达，这款雷达通过窄波束进行机械扫描，类似机械式的 LiDAR，相对分辨率较低，波束宽度 1.8°。机械扫描每次间隔 0.9°，即每旋转一圈获得 400 个角度向测量。机械旋转速度约 4Hz, 距离分辨率 4.32cm, 最大测距 163m。
 
-![](https://pic4.zhimg.com/80/v2-19f7c6ac94308beddb731a581d63532b_720w.jpg)
+![](https://pic.yvonshong.com/v2-19f7c6ac94308beddb731a581d63532b_720w.jpg)
 
 > Oxford Radar RobotCar Dataset
 
@@ -242,7 +242,7 @@ FMCW 雷达接收信号的相位对目标位置的微小变化极为敏感，可
 ## 调频信号 chirp
 雷达主要有两种体制，脉冲雷达和连续波雷达，更具体的分类已在前文中提及。
 
-![](https://pic2.zhimg.com/80/v2-bd654807fa43c75c4a483a3fa6513f81_720w.jpg)
+![](https://pic.yvonshong.com/v2-bd654807fa43c75c4a483a3fa6513f81_720w.jpg)
 
 > *调频连续波：信号的频率随着时间增加的正弦波信号*
 
@@ -256,7 +256,7 @@ FMCW 有几个主要的参数需要注意，分别是带宽 B，斜率 S，信�
 
 通过混频之后出来的中频信号其实不止一个，通过乘法器之后有几个频段的信号，我们还需要经过低通滤波器筛选出我们需要的信号。
 
-![](https://pic3.zhimg.com/80/v2-f988a91926f0b012c020b5fab521b71a_720w.jpg)
+![](https://pic.yvonshong.com/v2-f988a91926f0b012c020b5fab521b71a_720w.jpg)
 
 > IF 信号的模型图
 
@@ -294,13 +294,13 @@ $$R_{max} = \frac{f_{c} \cdot c}{2S} = \frac{f_{c} \cdot c\cdot T_c}{2B}$$
 
 对单一信号进行傅里叶变换时，也能体现出时域信号的频率信息和相位信息。
 
-![](https://pic3.zhimg.com/80/v2-c261469aa2b17e368f050d754822d0de_720w.jpg)
+![](https://pic.yvonshong.com/v2-c261469aa2b17e368f050d754822d0de_720w.jpg)
 
 > 相同频率不同相位的信号进行傅里叶变换
 
 混频器输出的中频信号的初始相位则是两个输入的初始相位之差。
 
-![](https://pic1.zhimg.com/80/v2-7398032f3a649928b31bbcabf83bab98_720w.jpg)
+![](https://pic.yvonshong.com/v2-7398032f3a649928b31bbcabf83bab98_720w.jpg)
 
 A-D 点（C-F 点）之间的相位差是：
 
@@ -319,38 +319,38 @@ $$\Delta \phi =4\pi R/ \lambda$$
 
 [Heinrich：傅里叶分析之掐死教程（完整版）](https://zhuanlan.zhihu.com/p/19763358)
 
-![](https://pic4.zhimg.com/80/v2-7fe00f29c338f0be2f1d0f1a389ac5bf_720w.jpg)
+![](https://pic.yvonshong.com/v2-7fe00f29c338f0be2f1d0f1a389ac5bf_720w.jpg)
 
 > 掐死傅里叶变换教程图
 
 # FMCW 雷达原理
 单频的连续波谱(Continuous Wave)，可以通过多普勒效应产生的频率偏移来估算相对速度，但我们只发出相同的正弦或余弦信号，接收到的波也是呈周期性变化的，所以我们无从知道从发出到接受到底经过了多少个波长，从而无法确定信号从发出到接受所经历的时间(Time of Flight)，也就无法测算距离。
 
-![](https://pic1.zhimg.com/80/v2-5d4c64df2b633bbf4256411b12c98564_720w.jpg)
+![](https://pic.yvonshong.com/v2-5d4c64df2b633bbf4256411b12c98564_720w.jpg)
 
 > 信号的频率随时间变化呈线性升高的线性调频脉冲
 
 于是，我们引入了调频/调幅(FMCW/AMCW)，使发出信号的频率或者幅度处于不断的变化中，使得既可测距又可测速。在汽车领域，我们一般使用调频技术。
 
-![](https://pic4.zhimg.com/80/v2-d67a461deeacfc3542ba693161a20f77_720w.jpg)
+![](https://pic.yvonshong.com/v2-d67a461deeacfc3542ba693161a20f77_720w.jpg)
 
 > 脉冲 FMCW 和正弦 FMCW 时间域变化图
 
 FMCW 雷达在扫频周期内发射频率变化的连续波，被物体反射后的回波与发射信号有一定的频率差，经过混频之后得到几个频率不同的中频信号。不同的中频即代表不同的距离，通过测量频率差可以获得目标与雷达之间的距离信息。
 
-![](https://pic1.zhimg.com/80/v2-89f3648f723ad3362d1bba9d03d7a3f8_720w.jpg)
+![](https://pic.yvonshong.com/v2-89f3648f723ad3362d1bba9d03d7a3f8_720w.jpg)
 
 > 傅里叶变换（FFT）之后的中频频谱
 
 调频连续波雷达最常用的两种波形方式是锯齿波和三角波，锯齿波形一般只使用上行坡道，而三角形波形使用上行坡道和下行坡道。
 
-![](https://pic1.zhimg.com/80/v2-ec1aecc43115140ec6074232ddef96f0_720w.jpg)
+![](https://pic.yvonshong.com/v2-ec1aecc43115140ec6074232ddef96f0_720w.jpg)
 
 > 锯齿波
 
 ## 多普勒效应
 
-![](https://pic3.zhimg.com/80/v2-efb4b15107bdeff4e04557f39e4e6b4a_720w.jpg)
+![](https://pic.yvonshong.com/v2-efb4b15107bdeff4e04557f39e4e6b4a_720w.jpg)
 
 多普勒效应是波源和观察者有相对运动时，观察者接受到波的频率与波源发出的频率并不相同的现象。波源与目标接近使得接受和反射的频率变高，而波源远离目标使得接受和反射的频率变低。
 
@@ -372,7 +372,7 @@ $$ f_{D}=\frac{2 \nu_{r}}{\lambda}$$
 
 相对静止物体，没有多普勒效应，发射频率和接收频率是相同的，上升沿期间的频率差值等于下降沿期间的测量值。但是，雷达的斜坡频率是随时间不断变化的，所以当我们得到拍频 $f_b$ ，就得到了信号传输时间。
 
-![](https://pic4.zhimg.com/80/v2-8981259e7bf8d5ed3389f92340a2384f_720w.jpg)
+![](https://pic.yvonshong.com/v2-8981259e7bf8d5ed3389f92340a2384f_720w.jpg)
 
 对于运动目标，则上升/下降沿期间的频率差不同，我们可以通过这二个频率差，中和多普勒效应，来计算距离和速度。
 
@@ -390,11 +390,11 @@ $$v=\frac{\lambda}{2}f_D = \frac{\lambda}{4} |f_{b1} - f_{b2} |$$
 
 假设两个相距很近的目标，被雷达探测到，两个回波信号混频之后得到了两个中频信号，这两个中频信号的时间 T 相差很小，因此中频信号的频率相差很小。
 
-![](https://pic2.zhimg.com/80/v2-eb5ee46ce34f2f038d164be0d29a8a31_720w.jpg)
+![](https://pic.yvonshong.com/v2-eb5ee46ce34f2f038d164be0d29a8a31_720w.jpg)
 
 如果雷达没有能力分辨那么这两个目标就会被雷达当成是一个目标，两个目标的信息被融合了。
 
-![](https://pic1.zhimg.com/80/v2-8a81e1413b623a949ca8358654b99840_720w.jpg)
+![](https://pic.yvonshong.com/v2-8a81e1413b623a949ca8358654b99840_720w.jpg)
 
 傅里叶变换理论指出，通过延长 IF 信号，可以提高分辨率。 要延长 IF 信号，还必须按比例增加带宽。延长的 IF 信号会产生一个有两个分离峰值的 IF 谱。
 
@@ -406,7 +406,7 @@ $$f_c = \frac{2SR}{c} \geq \frac{1}{T_c}$$
 
 $$f_c = S\cdot \tau = 2SR/c$$
 
-![](https://pic3.zhimg.com/80/v2-f988a91926f0b012c020b5fab521b71a_720w.jpg)
+![](https://pic.yvonshong.com/v2-f988a91926f0b012c020b5fab521b71a_720w.jpg)
 
 根据线性调频连续波的基本原理，我们知道 频率差 $f_c$ 是绝对大于脉冲重复频率（PRF）的。因为时间越大频率越小，时间越小频率越大。
 
@@ -420,7 +420,7 @@ $$R\geq\frac{c}{2S \cdot T_c}=\frac{c}{2B}$$
 
 $$R_{res}=\frac{c}{2B}$$
 
-![](https://pic3.zhimg.com/80/v2-a38594112d70e1d6dc101e94f216292a_720w.jpg)
+![](https://pic.yvonshong.com/v2-a38594112d70e1d6dc101e94f216292a_720w.jpg)
 
 多个目标的信号在同一斜率下，带宽越大，信号的持续时间越长，因此频谱分辨率越高。只要带宽（覆盖的频率范围）一样，无论信号持续的时间如何都不会影响雷达的距离分辨率。以下是几种典型的带宽和分辨率之间的关系：
 
@@ -435,17 +435,17 @@ $$R_{res}=\frac{c}{2B}$$
 
 如果希望测得多个物体的距离和速度，就必须对发射信号的频率进行一定的处理。
 
-![](https://pic1.zhimg.com/80/v2-20ecddd76e9d65168bb737b9227318d0_720w.jpg)
+![](https://pic.yvonshong.com/v2-20ecddd76e9d65168bb737b9227318d0_720w.jpg)
 
 再进行上述一系列操作可以得到交点坐标图:
 
-![](https://pic1.zhimg.com/80/v2-d6624246b03d4eaaac2831eedd1a3228_720w.jpg)
+![](https://pic.yvonshong.com/v2-d6624246b03d4eaaac2831eedd1a3228_720w.jpg)
 
 如果按照原来的频率变换进行处理，则会得到四个交点（图中实线或者虚线各有四个交点），即得到四个距离和速度，从而无法对所探测物体进行判断。
 
 而改变第二个周期的扫频带宽后，将会得到不同扫频带宽发出信号的两个共同交点，从而确定所测两个物体与自己的相对距离和速度。
 
-![](https://pic1.zhimg.com/80/v2-8bcceadaa969951187610a3174c1a11c_720w.jpg)
+![](https://pic.yvonshong.com/v2-8bcceadaa969951187610a3174c1a11c_720w.jpg)
 
 > 实际中也可以改变扫频周期来获得不同的扫频信号
 
@@ -485,11 +485,11 @@ $$R_{max} = \frac{f_{c} \cdot c}{2S} = \frac{f_{c} \cdot c\cdot T_c}{2B}$$
 
 当相对速度 $v_r<0$ ，R 不断减小，故 $f_b$ 也不断减小。传递的电磁波被压缩，频率有所增大。
 
-![](https://pic2.zhimg.com/80/v2-b18f399e57a9f726c399fd17813e63b9_720w.jpg)
+![](https://pic.yvonshong.com/v2-b18f399e57a9f726c399fd17813e63b9_720w.jpg)
 
 为了简化模型，且考虑到信号从发出到接收所经历的时间极短，加速度不变，汽车相对速度几乎不变，信号频率变化如下所示：
 
-![](https://pic3.zhimg.com/80/v2-20fe107501e0ee8cea63a0f7ecf794fe_720w.jpg)
+![](https://pic.yvonshong.com/v2-20fe107501e0ee8cea63a0f7ecf794fe_720w.jpg)
 
 差频从原来的 $f_b =\frac{ 2SR}{c}=\frac{f_c}{t_c} \cdot \frac{2R}{c}$ 增加了 $v_r$ 影响项，转变为如下关系式：
 
@@ -513,9 +513,9 @@ $$v_r =- \frac{c}{4f_S}(f_{b1}+f_{b2}) =- \frac{\lambda}{4\pi T_c}(f_{b1}+f_{b2}
 
 处理器接收并处理一帧中所有单个 chirp 后，开始对 chirps 串序列进行多普勒 FFT。
 
-![](https://pic1.zhimg.com/80/v2-4f30af8f00c86a991606fdb7432bb978_720w.jpg)
+![](https://pic.yvonshong.com/v2-4f30af8f00c86a991606fdb7432bb978_720w.jpg)
 
-![](https://pic4.zhimg.com/80/v2-8460b75e07007bfc97ad40cd3a609d0b_720w.jpg)
+![](https://pic.yvonshong.com/v2-8460b75e07007bfc97ad40cd3a609d0b_720w.jpg)
 
 距离 FFT(逐行)和多普勒 FFT(逐列)的联合操作可视作每帧对应数字化采样点的二维 FFT。二维 FFT 可同时分辨出目标的距离和速度，也就是说，二维 FFT 的峰值位置对应雷达前方目标的距离和速度。
 
@@ -525,13 +525,13 @@ $$v_r =- \frac{c}{4f_S}(f_{b1}+f_{b2}) =- \frac{\lambda}{4\pi T_c}(f_{b1}+f_{b2}
 
 为了测量多个目标的速度，雷达系统必须发射两个以上的线性调频脉冲。它发射一组 N 个等间隔线性调频信号。
 
-![](https://pic1.zhimg.com/80/v2-8c976df390d4570b8074b059398f77a0_720w.jpg)
+![](https://pic.yvonshong.com/v2-8c976df390d4570b8074b059398f77a0_720w.jpg)
 
 > 线性调频脉冲帧随时间变化的频率
 
 然后通过积累，比如说一帧发射 128 个 chirp 信号，每个信号 128 个点。距离维度的 FFT 只能够求出其距离值，而要求出速度就必然需要在速度维再做一次 FFT。
 
-![](https://pic2.zhimg.com/80/v2-7ba411f7b9ca7c876192976adf3318a1_720w.jpg)
+![](https://pic.yvonshong.com/v2-7ba411f7b9ca7c876192976adf3318a1_720w.jpg)
 
 ## 速度分辨率
 
@@ -577,7 +577,7 @@ FMCW 雷达系统可以使用水平面估算反射信号的角度，也称为到
 
 物体距离的很小变化即可导致距离 FFT 或多普勒 FFT 峰值的相位变化，该结果被用于执行角度估算，对目标角度信息的解析需要至少两个 RX 天线，单发单收天线无法进行角度估计。 $d$ 是天线到物体的距离。
 
-![](https://pic4.zhimg.com/80/v2-7b2ae3feb1bb8dd18d576ebf0de373d3_720w.jpg)
+![](https://pic.yvonshong.com/v2-7b2ae3feb1bb8dd18d576ebf0de373d3_720w.jpg)
 
 相位变化在数学上可以推导出：
 
@@ -585,7 +585,7 @@ $$\Delta \phi =\frac{2\pi \Delta d}{\lambda}$$
 
 在假设平面波前的前提下，基本几何显示 $\Delta d =l \cdot sin(\theta)$ ，其中 $l$ 是天线之间的距离。因此，到达角 $\theta$ 可根据使用下面的式子测得的 $\Delta \phi$ 计算出来：
 
-![](https://pic3.zhimg.com/80/v2-f4c92f0e9faf703920111b9e5dbca28a_720w.jpg)
+![](https://pic.yvonshong.com/v2-f4c92f0e9faf703920111b9e5dbca28a_720w.jpg)
 
 $$\theta=sin^{-1} (\frac{\lambda \Delta \phi}{ 2\pi l})$$
 

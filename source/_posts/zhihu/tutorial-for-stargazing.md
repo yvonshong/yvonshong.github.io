@@ -12,7 +12,7 @@ toc: true
 <!-- more -->
 
   
-![](https://pic3.zhimg.com/80/v2-9e360e91c823cf48f9744c45cc2eab66_720w.webp)
+![](https://pic.yvonshong.com/v2-9e360e91c823cf48f9744c45cc2eab66_720w.webp)
 
 > 2019 年 9 月 于河北张家口冰山梁 这辈子第一次看的银河
 
@@ -27,7 +27,7 @@ toc: true
 
 京郊附近到张家口或者东灵山，光污染便比较低了，上海附近的话得到浙西大峡谷。
 
-![](https://pic3.zhimg.com/80/v2-5377026cdc37ea4090086d4daa333d92_720w.webp)
+![](https://pic.yvonshong.com/v2-5377026cdc37ea4090086d4daa333d92_720w.webp)
 
 > 2020 年 8 月 于浙江宁波渔山列岛，光害较高，银河比较黯淡
 
@@ -40,7 +40,7 @@ toc: true
 -   iOS: [日出日落月相](https://link.zhihu.com/?target=https%3A//apps.apple.com/cn/app/%25E6%2597%25A5%25E5%2587%25BA%25E6%2597%25A5%25E8%2590%25BD%25E6%259C%2588%25E7%259B%25B8/id1468244490)
 -   Android: [日出日落月相官方新版本-安卓iOS版下载-应用宝官网](https://link.zhihu.com/?target=https%3A//sj.qq.com/appdetail/com.xueping.solunar)
 
-![](https://pic4.zhimg.com/80/v2-838495b10373c1096e06e6309eb835a3_720w.webp)
+![](https://pic.yvonshong.com/v2-838495b10373c1096e06e6309eb835a3_720w.webp)
 
 举个例子，比如这个情况，整晚月亮不落，观星条件就很差
 
@@ -54,7 +54,7 @@ toc: true
 
 -   这款小程序/app几乎可以满足所有观星需求
 
-![](https://pic2.zhimg.com/80/v2-5aae08b5b5466403ed711b5a64726ff9_720w.webp)
+![](https://pic.yvonshong.com/v2-5aae08b5b5466403ed711b5a64726ff9_720w.webp)
 
 ## 天气
 
@@ -64,13 +64,13 @@ toc: true
 
 莉景天气能够看到一些朝霞晚霞预报。彩云天气能够看到比较准确的当前的云图，windy能够协助查看几天后的云图。
 
-![](https://pic1.zhimg.com/80/v2-997ad8e210dcd4b152caed0148b0b644_720w.webp)
+![](https://pic.yvonshong.com/v2-997ad8e210dcd4b152caed0148b0b644_720w.webp)
 
 理想的情况是不下雨，万里无云。
 
 ## 拍摄
 
-![](https://pic1.zhimg.com/80/v2-bc17adeee9eaf7b8501fc902dd8230c8_720w.webp)
+![](https://pic.yvonshong.com/v2-bc17adeee9eaf7b8501fc902dd8230c8_720w.webp)
 
 > 2021 年 8 月 于河北张家口阳原县
 
@@ -87,7 +87,7 @@ toc: true
 
 我通常都懒得算了，银河大部分时间拍广角，直接光圈最大（提高进光量），曝光时间30s（提高进光量），ISO 从6400开始往下压， ISO 是亮度的增益，越低的话噪点就能够越少。其实不用完全遵循 400 法则，只需要现场多试几张就知道了，光圈开最大，曝光只要不拖线就最长，ISO 从高往低尝试。
 
-![](https://pic2.zhimg.com/80/v2-7486d77f7c616ca5f912d29881023989_720w.webp)
+![](https://pic.yvonshong.com/v2-7486d77f7c616ca5f912d29881023989_720w.webp)
 
 > 2023 年 5 月 于浙江杭州临安浙西大峡谷
 
@@ -101,6 +101,6 @@ toc: true
 
 打开 Stellarium>>设置>>脚本>>太阳系编辑器>>设置>>太阳系>>导入MPC格式的轨道参数>>选择天体类型[彗星]，从互联网下载天体列表，选择书签[MPC's lists of observable comets]>>获取轨道信息>>下载完便可搜索 C/2021 A1 添加，便可以搜到该彗星了。
 
-![](https://pic2.zhimg.com/80/v2-13a8e18e8996ee955bcf2803376c498d_720w.webp)
+![](https://pic.yvonshong.com/v2-13a8e18e8996ee955bcf2803376c498d_720w.webp)
 
 讲得比较零零碎碎，因为涉及的方面比较多，可能还会有住宿问题，导致需要露营，大晚上还需要保暖，还需要考虑电源，考虑露水等等。也还没入深空摄影的坑，暂时先写这么多吧。

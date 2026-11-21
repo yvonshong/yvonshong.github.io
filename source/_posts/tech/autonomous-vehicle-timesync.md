@@ -106,7 +106,7 @@ gPTP (IEEE 802.1AS) 可以理解为PTP在车载TSN网络里的“定制精简版
 
 1. ptp4l (PTP for Linux)，这是负责在以太网上跑 PTP/gPTP 协议的核心程序。负责和外部主时钟互发网络报文，算出偏差，然后只负责把当前网卡的硬件时钟 PHC，Physical Hardware Clock，对准。
 
-![](https://picx.zhimg.com/v2-28f267fea33a4e01e29bdb076f4fb105_1440w.jpg)
+![](https://pic.yvonshong.com/v2-28f267fea33a4e01e29bdb076f4fb105_1440w.jpg)
 
 
 2. phc2sys (PHC to System)：ptp4l 把网卡时间对准了，但自动驾驶算法读取的往往是 Linux 的系统时间。phc2sys 的作用顾名思义，就是将网卡的 PTP 硬件时钟PHC同步给 Linux 的系统内核时钟。
@@ -132,7 +132,7 @@ gPTP (IEEE 802.1AS) 可以理解为PTP在车载TSN网络里的“定制精简版
 
 车规相机系统通常由控制器（SoC + 解串器 Deserializer）、摄像头（串行器 Serializer + 传感器）组成。
 
-![](https://pic2.zhimg.com/v2-467810dc779300621a5a8b4030fe4c61_1440w.jpg)
+![](https://pic.yvonshong.com/v2-467810dc779300621a5a8b4030fe4c61_1440w.jpg)
 
 
 工作机制是外部的 Fsync 信号输入到控制器后，会经过控制器侧的 Deserializer 透明转发到多路摄像头的 Serializer，从而实现“多路相机在同一微秒同时按下快门”。为了支持 Fsync 透传，解串器和串行器都必须正确配置。这一路 Fsync 信号不仅能给相机用，还可以同时分发给 LiDAR 等其他传感器，实现真正的多传感器物理级绝对同步。由于纯走硬件电平，Fsync 信号的传播延迟基本在微秒级，完全可忽略。
@@ -141,7 +141,7 @@ gPTP (IEEE 802.1AS) 可以理解为PTP在车载TSN网络里的“定制精简版
 
 触发信号到达 -> 曝光开始 -> 曝光结束 -> ISP传输开始 -> ISP传输结束 -> 系统接收到数据
 
-![](https://pic2.zhimg.com/v2-add208175877f82ce9ecfa9ee58e45dd_1440w.jpg)
+![](https://pic.yvonshong.com/v2-add208175877f82ce9ecfa9ee58e45dd_1440w.jpg)
 
 那算法到底用哪个时间？ 如果用“系统接收到数据”的时间，中间已经隔了十几毫秒的传输和曝光延迟了！因此，算法端通常强制要求底层驱动推算出曝光中间时刻（或者曝光开始时刻）来作为这张图片的绝对“传感器时间”。因为相机的曝光时长（Exposure Time）是随环境光动态变化的，用中间时刻最能代表车辆在那一瞬间的真实位置。
 

@@ -30,17 +30,17 @@ ISP(Image Signal Process），在相机成像的整个环节中，它负责接�
 3. ISP：将传感器得到的信号进行处理得到可视图像
 4. 最后由手机或相机设备处理器处理储存和显示图片
 
-![](https://pic4.zhimg.com/80/v2-f05f47c44ff63b0e1a9ed9827db33b6f_720w.jpg)
+![](https://pic.yvonshong.com/v2-f05f47c44ff63b0e1a9ed9827db33b6f_720w.jpg)
 
 ISP 通过运行在其上的 firmware（固件）对 ISP 逻辑，从而对 lens 和 sensor 进行相应控制，进而完成自动光圈、自动曝光、自动白平衡等功能。
 
-![](https://pic1.zhimg.com/80/v2-d2646adbb8262ca4c686d79c198d8c10_720w.jpg)
+![](https://pic.yvonshong.com/v2-d2646adbb8262ca4c686d79c198d8c10_720w.jpg)
 
 ISP 由 ISP 逻辑及运行在其上的 Firmware 组成，逻辑单元除了完成一部分算法处理外，还可以统计出当前图像的实时信息。Firmware 通过获取 ISP 逻辑的图像统计信息，重新计算，反馈控制 lens、sensor 和 ISP 逻辑，以达到自动调节图像质量的目的。
 
 ISP 的 Firmware 包含三部分，一部分是 ISP 控制单元和基础算法库，一部分是 AE/AWB/AF 算法库，一部分是 sensor 库。Firmware 设计的基本思想是单独提供 3A 算法库，由 ISP 控制单元调度基础算法库和 3A 算法库，同时 sensor 库分别向 ISP 基础算法库和 3A 算法库注册函数回调，以实现差异化的 sensor 适配。
 
-![](https://pic1.zhimg.com/80/v2-90035ae49338a2ef41bb987310cd1c18_720w.jpg)
+![](https://pic.yvonshong.com/v2-90035ae49338a2ef41bb987310cd1c18_720w.jpg)
 
 > ISP firmware 架构
 
@@ -74,7 +74,7 @@ CPU 处理器包括：AP、BP、CP。 BP：基带处理器、AP：应用处理�
 ## 外置 ISP 架构
 指在 AP 外部单独布置 ISP 芯片用于图像信号处理。外置 ISP 的架构图一般如下所示：
 
-![](https://pic3.zhimg.com/80/v2-066894f892c59345910a80c566d1036a_720w.jpg)
+![](https://pic.yvonshong.com/v2-066894f892c59345910a80c566d1036a_720w.jpg)
 
 > 外置 ISP 架构
 
@@ -95,7 +95,7 @@ CPU 处理器包括：AP、BP、CP。 BP：基带处理器、AP：应用处理�
 
 在 AP 内部嵌入了 ISP IP，直接使用 AP 内部的 ISP 进行图像信号处理。 内置 ISP 的架构图一般如下所示：
 
-![](https://pic4.zhimg.com/80/v2-9a4c0d65998c56fbd0ed654552e87e47_720w.png)
+![](https://pic.yvonshong.com/v2-9a4c0d65998c56fbd0ed654552e87e47_720w.png)
 
 > 内置 ISP 架构
 
@@ -115,7 +115,7 @@ CPU 处理器包括：AP、BP、CP。 BP：基带处理器、AP：应用处理�
 
 ISP 的功能比较杂，基本上跟图像效果有关的它都有份。它内部包含多个图像算法处理模块，实际情况下，不同芯片的 ISP，其处理流程和模块可能会稍有不同，但是其原理、实现功能都是一样的。
 
-![](https://pic4.zhimg.com/v2-c54998adc8b9506e7cbfb6aad9734683_r.jpg)
+![](https://pic.yvonshong.com/v2-c54998adc8b9506e7cbfb6aad9734683_r.jpg)
 
 
 # ISP 输入图像的格式
@@ -125,7 +125,7 @@ ISP 的功能比较杂，基本上跟图像效果有关的它都有份。它内�
 
 常用的 Bayer 格式有 RGGB,、GRBG、GBRG 等多种，因此需要正确配置 ISP 以反应 sensor 的数据格式。华为 P30Pro 夜间拍摄能力较强，用到了 RYYB 的滤镜阵列设计。
 
-![](https://pic3.zhimg.com/v2-19e2191999c915f7805a676c29343972_r.jpg)
+![](https://pic.yvonshong.com/v2-19e2191999c915f7805a676c29343972_r.jpg)
 
 > GBRG/GRBG/RGGB
 
@@ -146,7 +146,7 @@ BLC， Black Level Correction
 
 Black Level 是用来定义图像数据为 0 时对应的信号电平。由于暗电流的影响，传感器出来的实际原始数据并不是我们需要的黑平衡（数据不为 0）。所以，为减少暗电流对图像信号的影响，可以采用的有效的方法是从已获得的图像信号中减去参考暗电流信号，那么就可以将黑电平矫正过来。
 
-![](https://pic3.zhimg.com/v2-a61c79ef16ca7704a7be8c6d81ce267e_r.jpg)
+![](https://pic.yvonshong.com/v2-a61c79ef16ca7704a7be8c6d81ce267e_r.jpg)
 
 # 镜头阴影校正
 
@@ -170,26 +170,26 @@ Chroma shading，指由于镜头对不同波长的光线折射率不同引起焦
 
 画面边缘镜头能量衰减，由于镜头中都会存在多处光阑，当入射光线偏离光轴角度较大时，部分光线就会被光阑遮挡而不能参与成像，因此越靠近 sensor 边缘的像素接收到的曝光量就越低。
 
-![](https://pic1.zhimg.com/v2-f4768f838f4b4b93ec565a6fb454a204_r.jpg)
+![](https://pic.yvonshong.com/v2-f4768f838f4b4b93ec565a6fb454a204_r.jpg)
 
 边缘像素微透镜焦点和感光面的错位，这个问题在手机 sensor 上通常会更严重一些，因此设计手机 sensor 的厂家会采取一些特定的方法去缓解这个问题。
 
-![](https://pic4.zhimg.com/v2-06e0aa0a139968885d0cbcdc985cb73b_r.jpg)
+![](https://pic.yvonshong.com/v2-06e0aa0a139968885d0cbcdc985cb73b_r.jpg)
 
 找到中心点后，以中心点为原心，向周围以圆为单位补 Gain，离中心点越远，补的越大。
 
-![](https://pic4.zhimg.com/80/v2-be7d27c298924498aadcef3b7bcee323_720w.jpg)
+![](https://pic.yvonshong.com/v2-be7d27c298924498aadcef3b7bcee323_720w.jpg)
 
 
 一种常用的方法是在微透镜上做文章，即从中心像素开始，微透镜的尺寸略小于感光面的面积一点点，这样越往边缘微透镜与感光面之间的错位就越大，刚好可以补偿入射光线角度增大导致的焦点偏移，使光线可以更好地聚焦到感光面上。
 
-![](https://pic2.zhimg.com/v2-80534a9f4920f68b18f7c89af29a6d21_r.jpg)
+![](https://pic.yvonshong.com/v2-80534a9f4920f68b18f7c89af29a6d21_r.jpg)
 
 不过深入研究会发现，这个补偿办法其实也是有局限的，如果 sensor 采用的是下图左所示的 FSI 工艺（前照式），从像素微观结构来看，当入射光线角度比较大时，会有较多光线与像素中的金属布线层发生吸收、散射从而产生损失，单纯移动微透镜的位置并不能有效解决这个问题。但是，如果像素采用的是背照式工艺，因为布线层在硅片的另外一侧，所以光线损失会少，补偿效果更加有效。
 
 Vigetting 是由镜头引起的现象，所以 LSC 校正也是针对特定镜头的。若果产品的适配镜头发生变化，原则上需要重新进行 LSC 校正。另外，Vigetting 现象在 sensor 靶面较大、镜头焦距较短时表现更加明显。采用非球面镜头通常可以改善 vignetting。
 
-![](https://pic3.zhimg.com/v2-c71df7508723571c227c055fba12b63e_r.jpg)
+![](https://pic.yvonshong.com/v2-c71df7508723571c227c055fba12b63e_r.jpg)
 
 ## Chroma shading
 
@@ -197,7 +197,7 @@ Chromatic Aberration Correction， Chromatic Dispersion，色差，色散
 
 光学上透镜无法将各种波长的色光都聚焦在同一点上的现象。它的产生是因为透镜对不同波长的色光有不同的折射率（色散现象）。对于波长较长的色光，透镜的折射率较低。在成像上，色散表现为高光区与低光区交界上呈现出带有颜色的“边缘”，这是由于透镜的焦距与折射率有关，从而光谱上的每一种颜色无法聚焦在光轴上的同一点。色差可以是纵向的，由于不同波长的色光的焦距各不相同，从而它们各自聚焦在距离透镜远近不同的点上；色差也可以是横向或平行排列的，由于透镜的放大倍数也与折射率有关，此时它们会各自聚焦在焦平面上不同的位置。
 
-![](https://pic3.zhimg.com/v2-ac510af72d2502c344f35dc7b840afb2_r.jpg)
+![](https://pic.yvonshong.com/v2-ac510af72d2502c344f35dc7b840afb2_r.jpg)
 
 除了在镜头设计时通过采用具有相同色散特性而方向相反的不同光学材料组成成对的镜片组等手段来控制色差，在 ISP 过程中也能处理色差，对于横向色差，通常在图像全局上进项校正，将红绿蓝三 个颜色通道调整到相同的放大倍数，一般通过标定三个颜色平面的增益来修正，为了控制标定表格的存储空间，通常只标定 MxN 个关键点，任意位置处的像素增益可以使用相邻四个标定关键点通过双线性插值的方法动态计算得到。这对于固定的光学镜头比较有效，但是对变焦镜头则难以适用。
 
@@ -220,7 +220,7 @@ GB， Green Balance
 
 还有一个说法是： Sensor 芯片的 Gr，Gb 通道获取的能量或者是输出的数据不一致，造成这种情况的原因之一是 Gr，GB 通道的半导体制造工艺方面存在差异，另一方面是 Microlens 的存在，特别是 sensor 边缘区域，GB，Gr 因为有角度差异，导致接收到的光能不一致。如果两者差异比较大，就会出现类似迷宫格子情况。
 
-![](https://pic4.zhimg.com/v2-b969b43d6e77e947edc27c56bda3c473_r.jpg)
+![](https://pic.yvonshong.com/v2-b969b43d6e77e947edc27c56bda3c473_r.jpg)
 
 # 去除噪声
 
@@ -240,7 +240,7 @@ Senor 的感光器件包含模拟部分，所以信号中的噪声很难避免�
 
 这些噪声会使图像整体变得模糊， 而且丢失很多细节， 所以需要对图像进行去噪处理。和很多图像处理算法一样，降噪即可以在空域(spatial domain)上实现，也可以在频域(frequency domain)上实现，比较有常用频域方法有傅里叶变换，离散余弦变换(DCT)，小波变换，多尺度几何分析等。随着人工智能技术的发展，近些年来还涌现了一批基于深度学习技术实现的降噪算法。后面提到的这些方法虽然都有不错的性能，但是对算力要求都比较高，并不一定适合处理高分辨率的实时视频流，所以在 ISP 产品中应用的并不广泛，目前适合 ISP 应用的降噪算法还是以经典低通滤波器的改进版本更为常见。
 
-![](https://pic2.zhimg.com/v2-75bdbddc9a1bcc0e7f4ec359b4723829_r.jpg)
+![](https://pic.yvonshong.com/v2-75bdbddc9a1bcc0e7f4ec359b4723829_r.jpg)
 
 
 目前在 RAW 域降噪基本都需要将 RAW 图像按照颜色分成四个通道(R,Gr,Gb,B)，然后在各个通道上分别应用滤波器进行平滑，根据滤波器的特点和复杂度大致可以分成以下几类：
@@ -280,11 +280,11 @@ Demosaic 是 ISP 的主要功能之一。sensor 的像素点上覆盖着 CFA（�
 
 经过滤色板的作用之后，每个像素点只能感应到一种颜色。必须要找到一种方法来复原该像素点其它两个通道的信息，寻找该点另外两个通道的值的过程就是颜色插补的过程。由于图像是连续变化的，因此一个像素点的 R、G、B 的值应该是与周围的像素点相联系的，因此可以利用其周围像素点的值来获得该点其它两个通道的值。目前最常用的插补算法是利用该像素点周围像素的平均值来计算该点的插补值。
 
-![](https://pic1.zhimg.com/v2-ef431f241088506d450d70f02c8a8574_r.jpg)
+![](https://pic.yvonshong.com/v2-ef431f241088506d450d70f02c8a8574_r.jpg)
 
 Demosaic 算法的主要难点在于，RAW 域的任何一个像点（photosite）只包含一个真实的采样值，而构成像素（R,G,B）的其它两个值需要从周围像点中预测得到。既然是预测，就一定会发生预测不准的情况，这是不可避免的，而预测不准会带来多种负面影响，包括拉链效应（zipper artifacts），边缘模糊，颜色误差等。而由于彩色插值“推测式”算法，R+B 时最容易推测出来的——就是 Magenta 洋红，就是拍照时紫边的主色。
 
-![](https://pic1.zhimg.com/v2-76ac299508eb670687eb2fe038398a58_r.jpg)
+![](https://pic.yvonshong.com/v2-76ac299508eb670687eb2fe038398a58_r.jpg)
 
 > Demosaic 拉链效应，边缘模糊，伪彩
 
@@ -316,7 +316,7 @@ AWB， Automatic White Balance
 但是图像传感器本身并不具有这种颜色恒常性的特点，获取的图像容易受到光源颜色的影响。 如白炽灯照明下拍出的照片易偏黄；而在户外日光充足则拍摄出来景物也会偏蓝。 因此，其在不同光线下拍摄到的图像，会受到光源颜色的影响而发生变化。例如在晴朗的天空下拍摄到的图像可能偏蓝，而在烛光下拍摄到的物体颜色会偏红。因此，为了消除光源颜色对于图像传感器成像的影响，自动白平衡功能就是模拟了人类视觉系统的颜色恒常性特点来消除光源颜色对图像的影响，让不同色温光线条件下白色物体，Sensor 的输出都转换为更接近白色。 它会通过摄像机内部的电路调整，改变蓝、绿、红三个通道电平的平衡关系，使反射到镜头里的光线都呈现为消色。如果以偏红的色光来调整白平衡，那么该色光的影像就为消色，而其他色彩的景物就会偏蓝（补色关系）。
 
 
-![](https://pic4.zhimg.com/v2-084604900bd4be636f97e3bbb43b85c7_r.jpg)
+![](https://pic.yvonshong.com/v2-084604900bd4be636f97e3bbb43b85c7_r.jpg)
 
 白平衡与色温相关，用于衡量图像的色彩真实性和准确性。简单的说，就是通过图像调整，使在各种光学条件下拍摄出的照片色彩和人眼所看到的景物色彩完全相同。
 
@@ -346,7 +346,7 @@ AWB 已经将白色校准了，CCM 就是用来校准除白色以外其他颜色
 
 一般情况下，对颜色进行校正的过程，都会伴随有对颜色饱和度的调整。颜色的饱和度是指色彩的纯度，某色彩的纯度越高，则其表现的就越鲜明；纯度越低，表现的则比较黯淡。RGB 三原色的饱和度越高，则可显示的色彩范围就越广泛。
 
-![](https://pic3.zhimg.com/80/v2-517d9feaa332028ea09300b918501f12_720w.jpg)
+![](https://pic.yvonshong.com/v2-517d9feaa332028ea09300b918501f12_720w.jpg)
 
 # 伽马校正
 
@@ -364,7 +364,7 @@ Gamma 曲线是一种特殊的色调曲线，当 Gamma 值等于 1 的时候，�
 
 现在常用的伽马校正是利用查表法来实现的，即首先根据一个伽马值，将不同亮度范围的理想输出值在查找表中设定好，在处理图像的时候，只需要根据输入的亮度，既可以得到其理想的输出值。在进行伽马校正的同时，可以一定范围的抑制图像较暗部分的噪声值，并提高图像的对比度。还可以实现图像现显示精度的调整，比如从 10bit 精度至 8bit 精度的调整。
 
-![](https://pic4.zhimg.com/80/v2-d0fec9583b95a4f6edb507711678c757_720w.jpg)
+![](https://pic.yvonshong.com/v2-d0fec9583b95a4f6edb507711678c757_720w.jpg)
 
 # 颜色空间变换
 
@@ -411,7 +411,7 @@ Sharp， Edge Enhance，边缘增强。
 
 CMOS 输入的图像将引入各种噪声，有随机噪声、量化噪声、固定模式噪声等。ISP 降噪处理过程中，势必将在降噪的同时，把一些图像细节给消除了，导致图像不够清晰。为了消除降噪过程中对图像细节的损失，需要对图像进行锐化处理，通过滤波器获取图像的高频分量，按照一定的比例将高频部分和原图进行加权求和获取锐化后的图像，还原图像的相关细节。
 
-![](https://pic3.zhimg.com/80/v2-edb2ad53be7f364260d37b7fe9152c5e_720w.jpg)
+![](https://pic.yvonshong.com/v2-edb2ad53be7f364260d37b7fe9152c5e_720w.jpg)
 
 # 自动曝光
 
@@ -431,7 +431,7 @@ AE 模块根据自动测光系统获得当前图像的曝光量，再自动配�
 - 曝光补偿：控制相应的参数使得曝光调节生效。主要是通过设定曝光时间和曝光增益来实现的。 通过光强测量时得到的当前图像的照度和增益值与目标亮度值的比较来获得应该设置的曝光时间和增益调整量。在实际情况下，相机通常还会采用镜头的光圈/快门系统来增加感光的范围。
 在进行曝光和增益调整的过程中，一般都是变步长来调整的，这样可以提高调整的速度和精度。
 
-![](https://pic1.zhimg.com/80/v2-f0fc95daf9f0e3f5ebba1e6ea51a003c_720w.jpg)
+![](https://pic.yvonshong.com/v2-f0fc95daf9f0e3f5ebba1e6ea51a003c_720w.jpg)
 
 > 增益和曝光的步长设定
 
@@ -452,7 +452,7 @@ X-talk （Crosstalk），Bayer 域去颜色串扰
 
 串扰是两条信号线之间的耦合、信号线之间的互感和互容引起线上的噪声。
 
-![](https://pic1.zhimg.com/80/v2-4680c1105a84d9d1ddd06084ff7238a4_720w.jpg)
+![](https://pic.yvonshong.com/v2-4680c1105a84d9d1ddd06084ff7238a4_720w.jpg)
 
 > 三种类型的串扰
 
@@ -460,7 +460,7 @@ X-talk （Crosstalk），Bayer 域去颜色串扰
 ## spectral xtalk
 RGB 频谱的串扰造成的。比如 color filter R 会有部分 G,B 的能量通过。color filter 的带通带宽宽的话会增大频谱干扰，但频谱干扰其实不可避免。
 
-![](https://pic1.zhimg.com/80/v2-1bfb4d2331e89ae0a2f421e22817ba00_720w.jpg)
+![](https://pic.yvonshong.com/v2-1bfb4d2331e89ae0a2f421e22817ba00_720w.jpg)
 
 > spectral xtalk
 
@@ -468,7 +468,7 @@ RGB 频谱的串扰造成的。比如 color filter R 会有部分 G,B 的能量�
 
 不同 pixel 的电子井由于储存了过多的电子荷溢出到邻近的电子井中。和电荷井的容限有关，电荷井越深，容限高，但是过高就会引起 spacial xtalk。三星的 Isocell 技术在像素之间引入绝缘层减少了此串扰。
 
-![](https://pic4.zhimg.com/80/v2-3524fdefd73575c1e2e5acd7f046d5af_720w.jpg)
+![](https://pic.yvonshong.com/v2-3524fdefd73575c1e2e5acd7f046d5af_720w.jpg)
 
 > electronic xtalk
 
@@ -477,7 +477,7 @@ RGB 频谱的串扰造成的。比如 color filter R 会有部分 G,B 的能量�
 
 由于光线角度的问题，本该照射到 R pixel 的光由 R pixel 来接受，但是可能因为空间太窄，进入相邻像素单元或其他无效区域内的现象。随着单位面积像素数的增加，特别是现在 4800 万以上的 sensor，像素之间的间距太小，又没有隔离层的情况下，sensor 边缘像素 spacial xtalk 会加剧。
 
-![](https://pic1.zhimg.com/80/v2-8b30acdbf9f752a38d2e871c6df76230_720w.png)
+![](https://pic.yvonshong.com/v2-8b30acdbf9f752a38d2e871c6df76230_720w.png)
 
 > spatial xtalk
 
@@ -515,7 +515,7 @@ P-IRIS 是通过控制 P-IRIS 镜头中的步进电机动态精确的控制光�
 
 P-IRIS 需要与增益和曝光时间相配合来管理光线的微小变化从而进一步优化图像质量，使最佳光圈位置保留尽可能长的时间。但超过增益和曝光时间的调节能力时，P-IRIS 再调节光圈到不同位置。
 
-![](https://pic2.zhimg.com/v2-45399a99d31e3e98ebf9f5b9e9aca279_r.jpg)
+![](https://pic.yvonshong.com/v2-45399a99d31e3e98ebf9f5b9e9aca279_r.jpg)
 
 > P-IRIS 控制方法及步骤
 

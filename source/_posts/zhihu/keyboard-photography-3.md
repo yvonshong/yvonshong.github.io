@@ -20,17 +20,17 @@ toc: true
 
 全画幅的概念是直接从胶片时代继承过来的，我们称传感器面积与 35mm 底片相同的相机为全画幅相机。所以焦距为 x 的残幅相机，我们称呼它的 35mm 等效焦距为 2x。
 
-![](https://pic4.zhimg.com/80/v2-5ee00675bec2d808e6f5ac9ffeb58cfb_720w.jpg)
+![](https://pic.yvonshong.com/v2-5ee00675bec2d808e6f5ac9ffeb58cfb_720w.jpg)
 
 为了计算的方便，我们直接将 35mm 等效焦距记为实际焦距乘以焦距转换率（裁切系数）。典型的裁切系数有尼康、索尼 APS-C 格式是 1.5 ，佳能的 APS-C 格式是 1.6 倍， M4/3 格式是 2 。
 
-![](https://pic4.zhimg.com/80/v2-0f5e7eaa7be9e3aee65a7a7a0c5fa633_720w.jpg)
+![](https://pic.yvonshong.com/v2-0f5e7eaa7be9e3aee65a7a7a0c5fa633_720w.jpg)
 
 > 剪切系数
 
 **等效焦距的本质是视角等效**，但为什么我们要讲等效焦距，而不是等效视角，虽然后者似乎看起来似乎给人带来更直观的认知，但是没有办法，没人能口算 arctan/tan 三角函数。。。等效焦距的提出，为三角函数（正切和反正切）对于一般人来说不容易快速计算这个问题提供了简单的数学工具。
 
-![](https://pic4.zhimg.com/80/v2-d64697565072a35c6eaa16e1f1ee0a0b_720w.jpg)
+![](https://pic.yvonshong.com/v2-d64697565072a35c6eaa16e1f1ee0a0b_720w.jpg)
 
 $fov=2*arctan(\frac{W}{2f})$
 
@@ -38,7 +38,7 @@ $fov=2*arctan(\frac{W}{2f})$
 
 等效光圈也是同理，当然不是说镜头的光圈值真的改变了，而是在**画幅不同的情况下，我们能直接根据各自的等效光圈值来进行比较景深、弱光性能以及同结构下的分辨率**等效果。
 
-![](https://pic2.zhimg.com/80/v2-0c3eb1076a2c783eccd8f811499f9e75_720w.jpg)
+![](https://pic.yvonshong.com/v2-0c3eb1076a2c783eccd8f811499f9e75_720w.jpg)
 
 1. 实际景深其实与焦距、画幅、光圈 F 值都无关，可以认为只取决于光圈的实际口径和对焦距离。
 1. 等效光圈决定景深，等效焦距除以等效光圈决定远景虚化能力。

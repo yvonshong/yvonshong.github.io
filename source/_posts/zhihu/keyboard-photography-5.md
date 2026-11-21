@@ -17,7 +17,7 @@ toc: true
 <!-- more -->
 
 
-![](https://pic2.zhimg.com/80/v2-2cb830c7bf0372b3ba69d3e274c0cd4d_720w.jpg)
+![](https://pic.yvonshong.com/v2-2cb830c7bf0372b3ba69d3e274c0cd4d_720w.jpg)
 
 > *外置 ISP 架构*
 
@@ -27,7 +27,7 @@ ISP 的过程后续会再单独开坑（![键盘摄影（七）——深入理�
 # CCD
 **Charge-coupled Device**，电荷耦合器件，它的工作方式是通过镜头的光线使得每一个光电二极管的电容积累一定的电荷，而电荷的数量则正比于该处的入射光强。结束曝光后，周边的控制电路会将 CCD 每一列中的每个电容把自己的电荷传给相邻的下一个像素的电容，最后经过传感器末端的一个电荷放大器，转化为电压信号。
 
-![](https://pic4.zhimg.com/80/v2-11daf7b09eeb60db1536827a4de44363_720w.jpg)
+![](https://pic.yvonshong.com/v2-11daf7b09eeb60db1536827a4de44363_720w.jpg)
 
 > *CCD 结构*
 
@@ -35,7 +35,7 @@ ISP 的过程后续会再单独开坑（![键盘摄影（七）——深入理�
 
 CMOS，**Complementary Metal-Oxide-Semiconductor**，互补式金属氧化物半导体，每个像素的光电二极管都会连接一个放大器和 ADC 电路，读出该像素的值。
 
-![](https://pic1.zhimg.com/v2-817a627f24d653344f6d48631d8eac58_r.jpg)
+![](https://pic.yvonshong.com/v2-817a627f24d653344f6d48631d8eac58_r.jpg)
 
 > *CMOS 结构*
 
@@ -82,11 +82,11 @@ CMOS 为主动式采集，光电二极管产生的电荷会直接经过独立配
 
 实际上色彩空间可以不只是由 RGB 来表示，比如 CYYM （青黄品红）和 RYYB（红黄蓝），优点是这些颜色在光的频谱上覆盖得更宽，允许更多光线通过传感器，但这样的阵列在 ISP 后续的去马赛克变换算法中更为复杂，在颜色插值时容易出现问题，所以没有大面积普及。
 
-![](https://pic4.zhimg.com/80/v2-c5d403d06241d6c5fe3565b690f09cd7_720w.jpg)
+![](https://pic.yvonshong.com/v2-c5d403d06241d6c5fe3565b690f09cd7_720w.jpg)
 
 > *拜耳滤镜*
 
-![](https://pic4.zhimg.com/80/v2-36aecc21e88191e8b31847211272514f_720w.jpg)
+![](https://pic.yvonshong.com/v2-36aecc21e88191e8b31847211272514f_720w.jpg)
 
 有了对不同颜色的响应，然后通过去马赛克算法，利用周围不同颜色的像素去估计该位置的周围颜色数值应该是多少。比如绿色过滤器的像素精确测量了绿色成分，而该像素红色和蓝色的成分则是从邻区插值获取的。
 
@@ -96,7 +96,7 @@ CMOS 为主动式采集，光电二极管产生的电荷会直接经过独立配
 
 当我们细究到一个传感器像素时，光电二极管表面布了很多电路，会影响光的吸收率，所以我们发明了微透镜阵列，在每个像素井上增加一个微透镜，保证更多的光传进像素井中。
 
-![](https://pic1.zhimg.com/80/v2-c2c577c1672246be40f70aaae290d060_720w.jpg)
+![](https://pic.yvonshong.com/v2-c2c577c1672246be40f70aaae290d060_720w.jpg)
 
 > *微透镜阵列*
 
@@ -105,12 +105,12 @@ CMOS 为主动式采集，光电二极管产生的电荷会直接经过独立配
 
 相比于前照式，我们发明了背照式，直接把电路布线在光电二极管背后，提高光的吸收率。
 
-![](https://pic4.zhimg.com/80/v2-b7312933de4835cf1633c74345034a83_720w.jpg)
+![](https://pic.yvonshong.com/v2-b7312933de4835cf1633c74345034a83_720w.jpg)
 
 > *前照式和背照式的原理图*
 
 
-![](https://pic3.zhimg.com/80/v2-fab4a27d922c7ddbc946d22707b3dd3a_720w.jpg)
+![](https://pic.yvonshong.com/v2-fab4a27d922c7ddbc946d22707b3dd3a_720w.jpg)
 
 > *前照式和背照式的结构图*
 
@@ -124,7 +124,7 @@ CMOS 传感器感光区域表面的信号处理电路电路部分阻碍了微透
 传感器像素的背面整个都可以用做接受部分，所以开口率也和 CCD 传感器一样接近 100%。每个像素的信号处理电路不受面积制约，可以做成比较复杂的放大器（比如负反馈放大器）。各像素间的一致性大大改善，降低固定模式噪声。
 
 
-![](https://pic1.zhimg.com/80/v2-901c2c00421a3d5746c12d76b4c98e08_720w.jpg)
+![](https://pic.yvonshong.com/v2-901c2c00421a3d5746c12d76b4c98e08_720w.jpg)
 
 > *非堆栈式和堆栈式的对比*
 

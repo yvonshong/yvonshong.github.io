@@ -63,7 +63,7 @@ Agent 在这里主要承担实现工作。它可以快速生成不同的页面�
 
 ### 地图和手势交互
 
-我还完成了两个与地图展示和交互有关的项目，分别保存在 [holoearth](https://www.yvonshong.com/holoearth/) 和 [map](https://www.yvonshong.com/map) 仓库中。其中，map 项目还包含地图数据、地理编码脚本和网页端交互代码。
+我还完成了两个与地图展示和交互有关的项目，分别保存在 [holoearth](https://yvonshong.com/holoearth/) 和 [map](https://yvonshong.com/map) 仓库中。其中，map 项目还包含地图数据、地理编码脚本和网页端交互代码。
 
 这些项目整体上属于纯前端网页，从工程规模来看，与普通博客或展示页不会相差特别多，但使用了一些比较特殊的地图和手势库。
 
@@ -85,7 +85,7 @@ Agent 可以帮助我快速理解陌生的库、生成初始代码、处理事�
 
 [初高中物理笔记](https://yvonshong.github.io/Junior_High_School_Physics_Note/) 则被重新组织成了模块化的电子书，包含物理知识章节、公式渲染和自动化部署流程。
 
-此外还有过去的网页和书签项目 [website](http://www.yvonshong.com/website)、[农历日历生成器](https://github.com/yvonshong/Lunar_Calendar_Generator)，以及学生时期完成的 [XML 课程展示项目](https://www.yvonshong.com/xml/)。XML 项目中保留了 DTD、XSD、XSL、XQuery、XML 和相关网页展示内容。
+此外还有过去的网页和书签项目 [website](http://www.yvonshong.com/website)、[农历日历生成器](https://github.com/yvonshong/Lunar_Calendar_Generator)，以及学生时期完成的 [XML 课程展示项目](https://yvonshong.com/xml/)。XML 项目中保留了 DTD、XSD、XSL、XQuery、XML 和相关网页展示内容。
 
 其他被重新整理的内容还包括班级展示网页、旅行地点展示、个人博客中的 Project 页面，以及过去积累的学习资料。
 

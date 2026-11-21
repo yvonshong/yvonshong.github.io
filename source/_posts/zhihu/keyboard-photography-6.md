@@ -19,7 +19,7 @@ toc: true
 
 我们线性代数学习的矩阵*向量的乘法，其本质是对向量进行变换，如下述的旋转过程，v 向量变换到 v' 向量，可以用矩阵来表示为
 
-![](https://pic3.zhimg.com/v2-e1ebe291f2772f3833c8c9ab85acceb6_r.jpg)
+![](https://pic.yvonshong.com/v2-e1ebe291f2772f3833c8c9ab85acceb6_r.jpg)
 
 > *旋转*
 
@@ -27,7 +27,7 @@ $$\begin{bmatrix}  x' \\ y'  \end{bmatrix} =  \begin{bmatrix}  cos\theta && -sin
 
 平移可以表示为
 
-![](https://pic3.zhimg.com/v2-899529d1f72fce9d1d8322e0f82b3a9a_r.jpg)
+![](https://pic.yvonshong.com/v2-899529d1f72fce9d1d8322e0f82b3a9a_r.jpg)
 
 > *平移*
 
@@ -49,7 +49,7 @@ $$\begin{bmatrix}  X_{world} \\ 1  \end{bmatrix} =  \begin{bmatrix}  R^T && -R^T
 
 理解了坐标系内的变换，我们便可以使用数学工具来描述世界坐标系下的物体，在相机坐标系下的位置，本质就是一个坐标系的变换。
 
-![](https://pic2.zhimg.com/80/v2-b45a02f0b2941e326f9119e790df6b95_720w.jpg)
+![](https://pic.yvonshong.com/v2-b45a02f0b2941e326f9119e790df6b95_720w.jpg)
 
 $$X_{camera}=\begin{bmatrix}  x_c \\ y_c \\ z_c  \end{bmatrix} , X_{world}=\begin{bmatrix}  x_w \\ y_w\\ z_w  \end{bmatrix}  $$
 
@@ -71,7 +71,7 @@ $$O_{cam}^{world} = R^TO_{cam}^{camera}-R^Tt = -R^Tt$$
 
 初中物理中我们便学过的针孔相机模型可以近似为小孔成像模型，而我们日程生活中接触到的相机大部分是按照针孔相机模型来设计的，镜头组实现针孔的作用，让光照射到了 CMOS 上，汇聚了更多光的同时，也由于工艺的原因带来了畸变。在不考虑畸变或者恢复畸变的前提下，我们可以用下述小孔成像模型来模拟拍摄物体，镜头，CMOS 上的像的关系。
 
-![](https://pic1.zhimg.com/v2-66d7752c7c57cb2ddbe675593922c990_r.jpg)
+![](https://pic.yvonshong.com/v2-66d7752c7c57cb2ddbe675593922c990_r.jpg)
 
 物体在 A 点，Z 为物距，BP' 为像平面，X 为水平方向上的距离，Y 为竖直方向上的距离，该图为水平方向截面图，并将符号皆表示为正。
 
@@ -93,7 +93,7 @@ $$\begin{bmatrix}  X' \\ Y' \end{bmatrix}  = \begin{bmatrix}  f\frac{x_c}{z_c} \
 
 而像素平面上的点其像素坐标 (u,v)，它的坐标原点在图像的左上角，而上述的物理像平面是中心为原点，所以我们需要移动坐标原点：
 
-![](https://pic2.zhimg.com/v2-1e4d538b1aaa415c38bffeef29ff6241_r.jpg)
+![](https://pic.yvonshong.com/v2-1e4d538b1aaa415c38bffeef29ff6241_r.jpg)
 
 $$\begin{bmatrix}  u \\ v  \end{bmatrix} =  \begin{bmatrix}  \frac{X'}{dx} + c_x\\  \frac{Y'}{dy}+c_y  \end{bmatrix} $$
 
@@ -107,7 +107,7 @@ $$\begin{bmatrix}  u \\ v  \end{bmatrix} =  \begin{bmatrix}  \frac{f}{dx}\frac{X
 
 通常 fx = fy
 
-![](https://pic4.zhimg.com/80/v2-840b26867ec61861a6a17763b42df5f7_720w.jpg)
+![](https://pic.yvonshong.com/v2-840b26867ec61861a6a17763b42df5f7_720w.jpg)
 
 我们再写成齐次的形式
 
@@ -127,17 +127,17 @@ $$ \begin{bmatrix}  u \\ v \\ 1  \end{bmatrix} =  \frac{1}{Z_c} \begin{bmatrix} 
 
 我们再来看一看相机坐标系下的物体在鱼眼相机中是怎么成像的。
 
-![](https://pic4.zhimg.com/v2-1c49b58d80b53f3c703ece8670c3fe2f_r.jpg)
+![](https://pic.yvonshong.com/v2-1c49b58d80b53f3c703ece8670c3fe2f_r.jpg)
 
 鱼眼相机的投影模型为了将尽可能大的场景投影到有限的图像平面内，允许了相机畸变的存在。我们可以把鱼眼相机简化成一个利用球面透镜发生折射的模型（相比于针孔相机是小孔成像，其中符合相似三角形关系）。
 
-![](https://pic2.zhimg.com/80/v2-bf38684a198076bfb16b0859d4157871_720w.jpg)
+![](https://pic.yvonshong.com/v2-bf38684a198076bfb16b0859d4157871_720w.jpg)
 
 而由于折射率设计的不同，我们简单介绍几种常见的投影模型。投影模型主要讲解了相机坐标系下的点是如何投影到球面透镜上，然后在图像平面成像的。
 
 ## 等距投影模型
 
-![](https://pic1.zhimg.com/80/v2-aeaa153c2963822c4d3c15b9ac3cd4c0_720w.jpg)
+![](https://pic.yvonshong.com/v2-aeaa153c2963822c4d3c15b9ac3cd4c0_720w.jpg)
 
 $$r_d =f \theta$$
 
@@ -149,33 +149,33 @@ $$r =tan(\theta_d)$$
 
 ## 等立体角投影模型
 
-![](https://pic1.zhimg.com/80/v2-5dab2b2aefc62c98f836d77888496cac_720w.jpg)
+![](https://pic.yvonshong.com/v2-5dab2b2aefc62c98f836d77888496cac_720w.jpg)
 
 $$r_d =2f sin(\frac{\theta}{2})$$
 
 ## 正交投影模型
 
-![](https://pic3.zhimg.com/80/v2-a6f3eaf27c36fc90a31cfc43fb6a3fca_720w.jpg)
+![](https://pic.yvonshong.com/v2-a6f3eaf27c36fc90a31cfc43fb6a3fca_720w.jpg)
 
 $$r_d =f sin(\theta)$$
 
 ## 体视投影模型
 
-![](https://pic3.zhimg.com/80/v2-df876dc8ccbf38f04aa615bd8cc6eaca_720w.jpg)
+![](https://pic.yvonshong.com/v2-df876dc8ccbf38f04aa615bd8cc6eaca_720w.jpg)
 
 $$r_d =2ftan(\frac{ \theta}{2})$$
 
 我们可以用下图来横向比较不同投影模型直接的关系
 
-![](https://pic3.zhimg.com/v2-bcb8383afc12ef2910a6d8a1f59f44be_r.jpg)
+![](https://pic.yvonshong.com/v2-bcb8383afc12ef2910a6d8a1f59f44be_r.jpg)
 
-![](https://pic4.zhimg.com/80/v2-39c65395276279413ff6cff5b2dfb61b_720w.jpg)
+![](https://pic.yvonshong.com/v2-39c65395276279413ff6cff5b2dfb61b_720w.jpg)
 
 而鱼眼相机的整个成像模型可以表示为
 
 **世界坐标系 -> 相机坐标系 -> 归一化平面坐标系 -> 物理像平面 -> 像素坐标系**
 
-![](https://pic1.zhimg.com/80/v2-4a8fe2b1989692fe004bf2bb23d5ac04_720w.jpg)
+![](https://pic.yvonshong.com/v2-4a8fe2b1989692fe004bf2bb23d5ac04_720w.jpg)
 
 **相机坐标系 -> 归一化平面坐标系**
 
@@ -210,15 +210,15 @@ $$\begin{bmatrix}  u \\ v \\ 1  \end{bmatrix} =  \frac{1}{Z_c} \begin{bmatrix}  
 - 鱼眼型
 
 
-![](https://pic1.zhimg.com/80/v2-c10904996e1f693a11b90b10facbf604_720w.jpg)
+![](https://pic.yvonshong.com/v2-c10904996e1f693a11b90b10facbf604_720w.jpg)
 
 > 靠多个透镜实现鱼眼
 
-![](https://pic3.zhimg.com/80/v2-1c623b7ef84795e54fc6f23a4d6fc88a_720w.jpg)
+![](https://pic.yvonshong.com/v2-1c623b7ef84795e54fc6f23a4d6fc88a_720w.jpg)
 
 > 靠反射实现鱼眼
 
-![](https://pic2.zhimg.com/80/v2-cc33df833dcfb83822204691b6dc9369_720w.jpg)
+![](https://pic.yvonshong.com/v2-cc33df833dcfb83822204691b6dc9369_720w.jpg)
 
 > 多路相机拼接
 

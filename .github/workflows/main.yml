@@ -12,13 +12,13 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      # 1. 升级 Node.js 到 18.x 以支持 Hexo 6 和 Butterfly
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v3
+      # 1. Node.js 22 (LTS)
+      - name: Use Node.js 22.x
+        uses: actions/setup-node@v4
         with:
-          node-version: "18.x"
+          node-version: "22.x"
           # 暂时去掉了 cache: 'npm'，因为你刚删除了 lock 文件，缓存会失效报错
 
       - name: Setup Hexo env
