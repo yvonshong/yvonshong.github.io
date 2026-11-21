@@ -60,7 +60,8 @@ if theme.lightbox === 'fancybox'
 !=fragment_cache('injectHeadJs', function(){return inject_head_js()})
 
 //- google_adsense
-!=partial('includes/head/google_adsense', {}, {cache: true})
+if page.type !== '404' && !page.no_ads
+  !=partial('includes/head/google_adsense', {}, {cache: true})
 
 //- analytics
 !=partial('includes/head/analytics', {}, {cache: true})
