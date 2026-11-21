@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Allow: /gallery/
+Allow: /map/
+Disallow: /search.xml
+
+Sitemap: https://yvonshong.com/sitemap.xml
+Sitemap: https://yvonshong.com/baidusitemap.xml
